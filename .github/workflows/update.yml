@@ -3,7 +3,7 @@ name: Update Nike Daily News & Send Email
 on:
   schedule:
     # 매일 한국 시간 기준 오전 7시 실행 (UTC 22:00)
-    - cron: '0 22 * * *'
+   - cron: '50 21 * * *'
   workflow_dispatch: # 수동 실행 지원
 
 jobs:
