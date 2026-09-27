@@ -24,9 +24,9 @@ def clean(s):
     return re.sub(r'\s+', ' ', s).strip()
 
 for q in QUERIES:
-    # 2. 한국어(hl=ko), 한국지역(gl=KR, ceid=KR:ko) RSS 요청
+    # 2. 최근 24시간(전일 기준: when:1d) + 한국어/한국지역 설정
     url = "https://news.google.com/rss/search?" + urllib.parse.urlencode({
-        "q": q + " when:7d",
+        "q": q + " when:1d",
         "hl": "ko",
         "gl": "KR",
         "ceid": "KR:ko"
@@ -54,7 +54,7 @@ for q in QUERIES:
             if not any(w in low for w in ["나이키", "nike", "조던", "jordan", "컨버스", "converse"]):
                 continue
                 
-            # 4. 카테고리 자동 분류 (한글 키워드 추가)
+            # 4. 카테고리 자동 분류
             cat = "BUSINESS"
             if any(w in low for w in ["신발", "운동화", "스니커즈", "에어맥스", "페가수스", "조던", "신제품", "출시", "컬렉션", "shoe", "sneaker"]):
                 cat = "PRODUCT"
@@ -81,14 +81,14 @@ for q in QUERIES:
 items = items[:30]
 today = datetime.date.today().isoformat()
 
-# 수집 실패 시 기존 data/news.json 백업 유지
+# 만약 하루 동안 뉴스 수량이 적다면 이전 백업을 활용
 if not items:
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"items": []}
     items = old.get("items", [])
 
 data = {
     "date": today,
-    "insight": "최근 7일간 Google News에서 수집된 나이키 관련 한국어 기사입니다. 자동 수집본은 원문을 확인하기 전 참고용으로 사용하세요.",
+    "insight": "최근 24시간 동안 Google News에서 수집된 나이키 관련 주요 기사입니다.",
     "items": items
 }
 
