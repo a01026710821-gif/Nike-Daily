@@ -5,7 +5,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data/news.json"
 
-# 1. 한국어 검색 키워드 설정
 QUERIES = [
     '나이키',
     '나이키 주가',
@@ -23,8 +22,24 @@ def clean(s):
     s = html.unescape(s)
     return re.sub(r'\s+', ' ', s).strip()
 
+def extract_image(item_element):
+    # Google News RSS 미디어 썸네일 또는 description 내 img 태그 추출
+    try:
+        # media:content 또는 media:thumbnail 체크
+        for child in item_element:
+            if 'thumbnail' in child.tag or 'content' in child.tag:
+                url = child.attrib.get('url')
+                if url: return url
+        # description 태그 내부 img src 추출
+        desc = item_element.findtext("description") or ""
+        match = re.search(r'src=["\'](https?://[^"\']+)["\']', desc)
+        if match:
+            return match.group(1)
+    except Exception:
+        pass
+    return ""
+
 for q in QUERIES:
-    # 2. 최근 24시간(전일 기준: when:1d) + 한국어/한국지역 설정
     url = "https://news.google.com/rss/search?" + urllib.parse.urlencode({
         "q": q + " when:1d",
         "hl": "ko",
@@ -42,19 +57,17 @@ for q in QUERIES:
             pub = x.findtext("pubDate") or ""
             source = x.findtext("source") or "Google News"
             desc = clean(x.findtext("description"))
+            img_url = extract_image(x)
             
-            # 제목 중복 검사
             key = re.sub(r'[^가-힣a-z0-9]', '', title.lower())
             if not title or key in seen:
                 continue
             seen.add(key)
             
-            # 3. 키워드 필터링 (한글/영문 지원)
             low = title.lower() + " " + desc.lower()
             if not any(w in low for w in ["나이키", "nike", "조던", "jordan", "컨버스", "converse"]):
                 continue
                 
-            # 4. 카테고리 자동 분류
             cat = "BUSINESS"
             if any(w in low for w in ["신발", "운동화", "스니커즈", "에어맥스", "페가수스", "조던", "신제품", "출시", "컬렉션", "shoe", "sneaker"]):
                 cat = "PRODUCT"
@@ -72,16 +85,15 @@ for q in QUERIES:
                 "summary": summary,
                 "source": source,
                 "date": pub[:16],
-                "url": link
+                "url": link,
+                "image": img_url
             })
     except Exception as e:
         pass
 
-# 상위 30개 기사 추출
 items = items[:30]
 today = datetime.date.today().isoformat()
 
-# 만약 하루 동안 뉴스 수량이 적다면 이전 백업을 활용
 if not items:
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"items": []}
     items = old.get("items", [])
