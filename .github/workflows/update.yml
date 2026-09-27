@@ -2,9 +2,8 @@ name: Update Nike Daily News & Send Email
 
 on:
   schedule:
-    # 매일 한국 시간 기준 오전 7시 실행 (UTC 22:00)
-   - cron: '50 21 * * *'
-  workflow_dispatch: # 수동 실행 지원
+    - cron: '50 21 * * *'
+  workflow_dispatch:
 
 jobs:
   update-and-mail:
@@ -60,7 +59,6 @@ jobs:
               print('이메일 설정 정보가 부족하여 스킵합니다.')
               exit(0)
 
-          # 1. 구독자 목록 가져오기
           subscribers = []
           try:
               req = urllib.request.urlopen(sheet_url)
@@ -79,7 +77,6 @@ jobs:
               print('구독자가 없습니다.')
               exit(0)
 
-          # 2. 뉴스 데이터 읽기
           with open('data/news.json', 'r', encoding='utf-8') as f:
               news_data = json.load(f)
 
@@ -90,7 +87,6 @@ jobs:
 
           today_str = datetime.date.today().strftime('%Y년 %m월 %d일')
 
-          # 카테고리별 기사 분류
           top_story = articles[0] if len(articles) > 0 else None
           sub_top_1 = articles[1] if len(articles) > 1 else None
           sub_top_2 = articles[2] if len(articles) > 2 else None
@@ -98,7 +94,6 @@ jobs:
           product_brand_items = [a for a in articles[3:] if a.get('cat') in ['PRODUCT', 'BRAND']][:3]
           business_market_items = [a for a in articles[3:] if a.get('cat') in ['BUSINESS', 'MARKET', 'SPORTS']][:3]
 
-          # 만약 카테고리 기사가 모자라면 나머지로 채움
           remains = [a for a in articles[3:] if a not in product_brand_items and a not in business_market_items]
           while len(product_brand_items) < 3 and remains:
               product_brand_items.append(remains.pop(0))
@@ -109,97 +104,116 @@ jobs:
               if not item: return ''
               cat = item.get('cat', 'BUSINESS')
               title = item.get('title', '')
-              summary = item.get('summary', '')[:120] + '...' if len(item.get('summary', '')) > 120 else item.get('summary', '')
+              summary = item.get('summary', '')[:110] + '...' if len(item.get('summary', '')) > 110 else item.get('summary', '')
               source = item.get('source', '')
               date = item.get('date', '')
               url = item.get('url', '#')
+              img_url = item.get('image', '')
 
-              title_size = '20px' if is_large else '15px'
-              padding = '24px' if is_large else '18px'
+              title_size = '19px' if is_large else '14px'
+              padding = '20px' if is_large else '16px'
+
+              img_tag = ''
+              if img_url:
+                  img_tag = f'<div style=\"margin-bottom: 12px; max-height: 180px; overflow: hidden; border-radius: 4px;\"><img src=\"{img_url}\" style=\"width: 100%; height: auto; display: block; object-fit: cover;\" alt=\"news image\" /></div>'
 
               return f'''
-              <div style=\"background-color: #ffffff; border: 1px solid #e5e5e5; border-radius: 6px; padding: {padding}; height: 100%; box-sizing: border-box;\">
-                <div style=\"font-size: 11px; font-weight: 700; color: #666666; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 8px;\">{cat}</div>
-                <a href=\"{url}\" style=\"text-decoration: none; color: #111111; font-size: {title_size}; font-weight: 800; line-height: 1.35; display: block; margin-bottom: 10px;\">{title}</a>
-                <p style=\"font-size: 13px; color: #555555; line-height: 1.5; margin: 0 0 12px 0;\">{summary}</p>
+              <div style=\"background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: {padding}; box-sizing: border-box;\">
+                {img_tag}
+                <div style=\"font-size: 11px; font-weight: 800; color: #111111; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px;\">{cat}</div>
+                <a href=\"{url}\" style=\"text-decoration: none; color: #111111; font-size: {title_size}; font-weight: 800; line-height: 1.35; display: block; margin-bottom: 8px;\">{title}</a>
+                <p style=\"font-size: 13px; color: #555555; line-height: 1.5; margin: 0 0 10px 0;\">{summary}</p>
                 <div style=\"font-size: 11px; color: #888888;\">{source} &bull; {date}</div>
               </div>
               '''
 
-          # 3. 웹페이지 형태의 이메일 HTML 생성
           html = f'''
           <!DOCTYPE html>
           <html>
           <head>
             <meta charset=\"utf-8\">
           </head>
-          <body style=\"margin: 0; padding: 30px 10px; background-color: #f6f6f6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;\">
-            <div style=\"max-width: 680px; margin: 0 auto;\">
+          <body style=\"margin: 0; padding: 25px 10px; background-color: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;\">
+            <div style=\"max-width: 680px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06);\">
               
-              <!-- 상단 헤더 -->
-              <div style=\"margin-bottom: 25px;\">
-                <div style=\"font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: #777777; text-transform: uppercase; margin-bottom: 4px;\">NIKE INDUSTRY & MARKET INTELLIGENCE</div>
-                <h1 style=\"margin: 0 0 6px 0; font-size: 32px; font-weight: 900; letter-spacing: -1px; color: #111111;\">오늘의 나이키</h1>
-                <div style=\"font-size: 14px; color: #666666;\">나이키와 스포츠·패션 시장의 핵심 소식을 한눈에. ({today_str})</div>
-              </div>
-
-              <!-- 상단 피처드 섹션 (메인 1개 + 우측 2개) -->
-              <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 30px;\">
-                <tr>
-                  <td width=\"58%\" valign=\"top\" style=\"padding-right: 10px;\">
-                    {render_card(top_story, is_large=True)}
-                  </td>
-                  <td width=\"42%\" valign=\"top\" style=\"padding-left: 10px;\">
-                    <div style=\"margin-bottom: 12px;\">{render_card(sub_top_1)}</div>
-                    <div>{render_card(sub_top_2)}</div>
-                  </td>
-                </tr>
-              </table>
-
-              <!-- 섹션 1: 제품 · 브랜드 -->
-              <div style=\"border-bottom: 2px solid #111111; padding-bottom: 6px; margin-bottom: 15px;\">
-                <table width=\"100%\">
+              <!-- 나이키 시그니처 블랙 헤더 -->
+              <div style=\"background-color: #111111; padding: 25px 30px; text-align: left; color: #ffffff;\">
+                <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                   <tr>
-                    <td style=\"font-size: 16px; font-weight: 800; color: #111111;\">제품 · 브랜드</td>
-                    <td align=\"right\" style=\"font-size: 11px; font-weight: 700; color: #888888; text-transform: uppercase;\">PRODUCT / BRAND</td>
+                    <td>
+                      <div style=\"font-size: 10px; font-weight: 800; letter-spacing: 2px; color: #888888; text-transform: uppercase; margin-bottom: 4px;\">NIKE INDUSTRY & MARKET INTELLIGENCE</div>
+                      <div style=\"font-size: 28px; font-weight: 900; letter-spacing: -1px; color: #ffffff;\">NIKE DAILY</div>
+                    </td>
+                    <td align=\"right\" valign=\"bottom\">
+                      <div style=\"font-size: 12px; font-weight: 600; color: #aaaaaa;\">{today_str}</div>
+                    </td>
                   </tr>
                 </table>
               </div>
-              <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 30px;\">
-                <tr>
+
+              <div style=\"padding: 25px;\">
+                <!-- 상단 메인 기사 영역 -->
+                <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 25px;\">
+                  <tr>
+                    <td width=\"58%\" valign=\"top\" style=\"padding-right: 8px;\">
+                      {render_card(top_story, is_large=True)}
+                    </td>
+                    <td width=\"42%\" valign=\"top\" style=\"padding-left: 8px;\">
+                      <div style=\"margin-bottom: 12px;\">{render_card(sub_top_1)}</div>
+                      <div>{render_card(sub_top_2)}</div>
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- 제품 · 브랜드 섹션 -->
+                <div style=\"border-bottom: 2px solid #111111; padding-bottom: 6px; margin-bottom: 15px;\">
+                  <table width=\"100%\">
+                    <tr>
+                      <td style=\"font-size: 15px; font-weight: 800; color: #111111;\">제품 · 브랜드</td>
+                      <td align=\"right\" style=\"font-size: 11px; font-weight: 700; color: #888888;\">PRODUCT / BRAND</td>
+                    </tr>
+                  </table>
+                </div>
+                <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 25px;\">
+                  <tr>
           '''
 
           for item in product_brand_items:
-              html += f'<td width=\"33%\" valign=\"top\" style=\"padding: 0 5px;\">{render_card(item)}</td>'
+              html += f'<td width=\"33%\" valign=\"top\" style=\"padding: 0 4px;\">{render_card(item)}</td>'
 
           html += f'''
-                </tr>
-              </table>
-
-              <!-- 섹션 2: 기업 · 경영 -->
-              <div style=\"border-bottom: 2px solid #111111; padding-bottom: 6px; margin-bottom: 15px;\">
-                <table width=\"100%\">
-                  <tr>
-                    <td style=\"font-size: 16px; font-weight: 800; color: #111111;\">기업 · 경영</td>
-                    <td align=\"right\" style=\"font-size: 11px; font-weight: 700; color: #888888; text-transform: uppercase;\">CORPORATE / BUSINESS</td>
                   </tr>
                 </table>
-              </div>
-              <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 30px;\">
-                <tr>
+
+                <!-- 기업 · 경영 섹션 -->
+                <div style=\"border-bottom: 2px solid #111111; padding-bottom: 6px; margin-bottom: 15px;\">
+                  <table width=\"100%\">
+                    <tr>
+                      <td style=\"font-size: 15px; font-weight: 800; color: #111111;\">기업 · 경영</td>
+                      <td align=\"right\" style=\"font-size: 11px; font-weight: 700; color: #888888;\">CORPORATE / BUSINESS</td>
+                    </tr>
+                  </table>
+                </div>
+                <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 25px;\">
+                  <tr>
           '''
 
           for item in business_market_items:
-              html += f'<td width=\"33%\" valign=\"top\" style=\"padding: 0 5px;\">{render_card(item)}</td>'
+              html += f'<td width=\"33%\" valign=\"top\" style=\"padding: 0 4px;\">{render_card(item)}</td>'
 
           html += f'''
-                </tr>
-              </table>
+                  </tr>
+                </table>
+              </div>
 
-              <!-- 하단 푸터 -->
-              <div style=\"border-top: 1px solid #e5e5e5; padding-top: 20px; text-align: center; font-size: 12px; color: #888888;\">
-                <p style=\"margin: 0 0 8px 0;\">본 메일은 <b>NIKE DAILY</b> 자동 뉴스레터 구독자에게 발송됩니다.</p>
-                <a href=\"https://a01026710821-gif.github.io/Nike-Daily/\" style=\"color: #111111; font-weight: bold; text-decoration: underline;\">웹사이트 전체보기 &rarr;</a>
+              <!-- 하단 푸터 및 구독 관리 -->
+              <div style=\"background-color: #f9f9fb; border-top: 1px solid #eeeeee; padding: 20px 25px; text-align: center; font-size: 12px; color: #777777;\">
+                <p style=\"margin: 0 0 8px 0; font-weight: 600;\">본 메일은 NIKE DAILY 자동 뉴스레터 구독자에게 발송됩니다.</p>
+                <p style=\"margin: 0;\">
+                  <a href=\"https://a01026710821-gif.github.io/Nike-Daily/\" style=\"color: #111111; font-weight: bold; text-decoration: underline; margin-right: 12px;\">웹사이트에서 보기</a>
+                  <span style=\"color: #ccc;\">|</span>
+                  <a href=\"https://forms.google.com\" style=\"color: #888888; text-decoration: underline; margin-left: 12px;\">구독 관리 / 수신 거부</a>
+                </p>
               </div>
 
             </div>
@@ -207,7 +221,6 @@ jobs:
           </html>
           '''
 
-          # 4. 메일 전송
           try:
               server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
               server.login(gmail_user, gmail_pass)
