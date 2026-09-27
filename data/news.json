@@ -1,86 +1,246 @@
 {
   "date": "2026-09-27",
-  "insight": "최근 뉴스에서는 Nike의 제품·스포츠 카테고리 확장과 사업 회복 전략이 함께 관찰됩니다. 동시에 경쟁 브랜드로의 주요 선수 이동과 Converse 관련 브랜드 이슈가 보도되고 있어 제품 혁신과 브랜드 관리 양쪽을 함께 추적할 필요가 있습니다.",
+  "insight": "최근 7일간 Google News에서 수집된 Nike 관련 기사입니다. 자동 수집본은 원문을 확인하기 전 참고용으로 사용하세요.",
   "items": [
     {
       "cat": "BUSINESS",
-      "title": "JD Sports가 Nike의 회복 전략에 대해 긍정적 평가",
-      "summary": "영국 스포츠·패션 유통업체 JD Sports의 CFO가 Nike가 사업 회복을 위해 올바른 조치를 취하고 있다고 Reuters에 밝혔습니다.",
+      "title": "Britain's JD Sports says Nike turnaround is only a matter of time - Reuters",
+      "summary": "Britain's JD Sports says Nike turnaround is only a matter of time Reuters",
       "source": "Reuters",
-      "date": "2026-09-23",
-      "url": "https://www.reuters.com/business/retail-consumer/britains-jd-sports-says-nike-turnaround-is-only-matter-time-2026-09-23/"
+      "date": "Wed, 23 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPdk5mdHpYU1FCWk5Rdkh4TWxGY2I4QUpVT2lRUlQ0cEppeXVXVXllV3I5Y0h1XzJTR0p3ejVQOWF2SVAtY1hscDJ4dE9jR0t5RXVocndtRUZjTFBqWkxROEE2VHN2SExpMVNEemVyaURCalltc0ZRbnpXWkV1NEZuSVR3akdnN2FYYWVmRXU5T0UwTV8wNU9IOENCN3pfTk9NMU5fNnBfWVF0OVhkQWNUNTBnMEFGOTBPd3RtTQ?oc=5"
     },
     {
       "cat": "BRAND",
-      "title": "Converse, 광고 논란 이후 마케팅 일시 중단 보도",
-      "summary": "Reuters는 Nike 소유 브랜드 Converse가 논란이 된 광고 이후 해당 주의 마케팅을 중단했다고 보도했습니다.",
-      "source": "Reuters",
-      "date": "2026-09-25",
-      "url": "https://www.reuters.com/world/converse-pauses-social-media-ads-marketing-after-racism-uproar-bloomberg-news-reports-2026-09-25/"
+      "title": "Nike Shares Edge Lower After Converse Ad Controversy, Mbappé Exit - Forbes",
+      "summary": "Nike Shares Edge Lower After Converse Ad Controversy, Mbappé Exit Forbes",
+      "source": "Forbes",
+      "date": "Mon, 21 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPX0d5SGcxT05CQ24zY19TOHZzZFZYS1ZLbnlKLXktYTN3NWxNWFR1N2lFT09ydDUxeDM0OHdXYUtXb1N6d3dpNGl4OXNqclFrVi1zM3BqaVQtcFFKX2x0dU1ISGtkVUdWeE5KUV90d2FGZ281VkUxQXJuTDZ4V3gzOWlfdnFUalBVM2pON2tlM054aXowT25vOW5LWi1yNzRCa0hxbldUbWRsQkVxV2QycmlPVUVxeEE?oc=5"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "Nike gets hit with yet another bearish Wall Street hot take - Yahoo Finance",
+      "summary": "Nike gets hit with yet another bearish Wall Street hot take Yahoo Finance",
+      "source": "Yahoo Finance",
+      "date": "Mon, 21 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPWHc1Z0FTbDJRY3BHM1ZlaTFKeXU4MWlrSDM5Z0czS2liNW1HYlUyanVscXJSM0tibzJnTnUwUjByRVI2UDdIQU84T21mcGZNYXZuMHRveUhUcnJ0d0lwajN1WldQTlpqdHNPNGd1dlF1bzdaZmxfRXJTUUZWUE1yU05YWUE4LWJSVnA2cWRoZVZKSVY1MXJheXc4X1VkUk9FSi1ybzYwUXJQQ2wtQzFSdzM3XzQ2QTNQam02dEVqdnc?oc=5"
     },
     {
       "cat": "SPORTS",
-      "title": "Kylian Mbappé, Nike와의 장기 파트너십 종료 후 On으로 이동",
-      "summary": "Reuters는 프랑스 축구선수 Kylian Mbappé가 Nike와의 장기 파트너십을 종료하고 On과 계약했다고 보도했습니다.",
-      "source": "Reuters",
-      "date": "2026-09-18",
-      "url": "https://www.reuters.com/sports/swiss-sportswear-brand-signs-french-footballer-mbapp-nike-2026-09-18/"
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "Nike NBA Standard Issue 컬렉션 공개",
-      "summary": "Nike가 30개 팀을 위한 새로운 NBA Standard Issue 컬렉션을 공개했으며 9월과 10월 두 차례 출시 일정을 제시했습니다.",
-      "source": "NIKE Newsroom",
-      "date": "2026-09-09",
-      "url": "https://about.nike.com/en/newsroom/releases/nike-nba-standard-issue-collection-reinvents-fan-wear"
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "Jordan Brand Tatum 5 공개",
-      "summary": "Jordan Brand가 Jayson Tatum의 다섯 번째 시그니처 농구화 Tatum 5를 공개했습니다.",
-      "source": "NIKE Newsroom",
-      "date": "2026-09-09",
-      "url": "https://about.nike.com/en/newsroom/releases/jordan-brand-invites-players-to-control-the-game-with-jayson-tatum-new-signature-shoe-the-tatum-5"
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "Nike Hybrid 트레이닝 풋웨어 시스템",
-      "summary": "Nike가 러닝과 리프팅 등 하이브리드 트레이닝을 겨냥한 Hybrid Fly와 Hybrid RN을 공개했습니다.",
-      "source": "NIKE Newsroom",
-      "date": "2026-08-03",
-      "url": "https://about.nike.com/en/newsroom/releases/introducing-nike-hybrid-a-new-nike-training-performance-footwear-system-built-from-the-ground-up"
-    },
-    {
-      "cat": "BUSINESS",
-      "title": "Nike, FY2027 1분기 실적 발표 일정 공지",
-      "summary": "Nike는 FY2027 1분기 실적을 2026년 10월 1일 장 마감 후 발표할 예정이라고 공지했습니다.",
-      "source": "NIKE Investor Relations",
-      "date": "2026-08-28",
-      "url": "https://investors.nike.com/investors/news-events-and-reports/investor-news/investor-news-details/2026/NIKE-Inc--Announces-First-Quarter-Fiscal-2027-Earnings-and-Conference-Call/default.aspx"
+      "title": "Soccer superstar Kylian Mbappé on ending 20-year journey with Nike: 'It was time to change' - CNBC",
+      "summary": "Soccer superstar Kylian Mbappé on ending 20-year journey with Nike: 'It was time to change' CNBC",
+      "source": "CNBC",
+      "date": "Mon, 21 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOMV96R3hPRVdRdTl4NUlydXlOOVpZczVjd01rWWNXbTNJbnVZaWRGcHhMNXVtMldkaVNiWkkxUGViMWtJUHFUZGx2cV94dE1NWU85RHA1dFNkVS1xUnZIMlZ4dTRMSGtsTUJqT1ZEV2JjbVh1Tk9UbTdURlhtSFM3bGo3bF9Nd9IBiwFBVV95cUxOQUZVSVJvaFpSa2lReUhrTVdiTUxMVEpXcGlGQmRzZ0JWTk9sdU81TU5rZl9kdV84akNRMEJpM3FJOXpwNUlUVVJXdGNHcWxESWdRREZFZVBZYUF2RWcwUDNXOWJNNzZBejk3Szkzd3NIaDBjNXpOb1RSakpFVkxkaFVtX0hVc0tKOUhJ?oc=5"
     },
     {
       "cat": "MARKET",
-      "title": "Nike의 Dow Jones 잔류 여부에 시장 관심",
-      "summary": "Reuters는 Nike의 주가 하락으로 Dow Jones Industrial Average에서의 지위에 시장의 관심이 커지고 있다고 보도했습니다.",
-      "source": "Reuters",
-      "date": "2026-09-17",
-      "url": "https://www.reuters.com/business/media-telecom/nikes-falling-share-price-puts-its-dow-seat-jeopardy-2026-09-17/"
+      "title": "Nike Shares Holding Steady After S&P 100 Drop - WWD",
+      "summary": "Nike Shares Holding Steady After S&P 100 Drop WWD",
+      "source": "WWD",
+      "date": "Tue, 22 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOdUFtOXo3NVlIS1AtR3l2RmRacC13czVFS1BMaC1uaEVRdHExREg0RlhUbV95cm5uY2tMT0puWFFSSThIRjJfX0tmRFRMdjVFLVN5aV85b29OWnZMTGplRmQtbHVjVUIzc05SSlBPaVpWRTd6Sko0UjhLV3cteXA2WWhaeTc3NnJmd1JVZHF3MVhrc3NtU1RjVDV4UklGSUVPYXRUSnBOTUlsSXRsOEE?oc=5"
     },
     {
       "cat": "BUSINESS",
-      "title": "Nike와 University of Miami, 다년간 파트너십 재개",
-      "summary": "Nike와 University of Miami가 새로운 다년간 파트너십을 발표했습니다.",
-      "source": "NIKE Newsroom",
-      "date": "2026-09-18",
-      "url": "https://about.nike.com/en/newsroom"
+      "title": "Nike ‘regrets’ Karim Benzema talks after cancelling shoot at last minute over striker’s past - The New York Times",
+      "summary": "Nike ‘regrets’ Karim Benzema talks after cancelling shoot at last minute over striker’s past The New York Times",
+      "source": "The New York Times",
+      "date": "Thu, 24 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPSmxZQ0FHQndySXgwYzE2bE9WSENsYW1XS2g2d2dqRnV5RzJ1Y1lyczJ5WTVnY1V5dHdmYnBpRF9hbk5sTjNWQmFjRGI1NEg3VTBCVUp2XzZIUGdTbkRRQUpjMHoxVkdIbGdoQk9UZ2JzclpJOWpINXZNRTFRZEk1NmRNMA?oc=5"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "Nike co-founder gives $1bn to University of Oregon in historic donation - The Guardian",
+      "summary": "Nike co-founder gives $1bn to University of Oregon in historic donation The Guardian",
+      "source": "The Guardian",
+      "date": "Wed, 23 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPOWFwRm9jM1dRalRmY0htazIya3d2QTlkS3c5SWotYkV3bVhDck16dGI0MHpHMGRWZVdiOEI2LUQ1X3pxZk9WTFpXRmZWeEZzZEZ5NDJ1NHotNUg0TDJlX0l5MjJOOTF0NzhWOVN5eHFjdGdTVXBld19VWEk2T09RRnRPQXVLQk01aTQzNHh1U0hRdzA?oc=5"
     },
     {
       "cat": "PRODUCT",
-      "title": "Air Works: 전 세계 디자이너와 Air Max 공동 창작",
-      "summary": "Nike가 여러 도시의 디자이너들과 3D 프린팅 기반 Air Max 디자인을 개발하는 Air Works 프로그램을 진행하고 있습니다.",
-      "source": "NIKE Newsroom",
-      "date": "2026-08-31",
-      "url": "https://about.nike.com/en/newsroom/releases/nike-air-works-program-research-development-design-3d-printed-footwear"
+      "title": "Nike Pays Homage to Retro Outdoor Heritage With the Air Max 95 \"ACG\" - Hypebeast",
+      "summary": "Nike Pays Homage to Retro Outdoor Heritage With the Air Max 95 \"ACG\" Hypebeast",
+      "source": "Hypebeast",
+      "date": "Thu, 24 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPdmd6Nl9HeDJ3NkFoNms2OVk3VnVsM21jOVpNY01xOE1reEVIZ2hwbmdIbnVvT2NJTzlZcEJCcXFWVmQxOTVpN3A0al9fQTY3cE9fRzlRRHU0Q2lFS29OUEc0SUZUN1BrMW9UR0g2ZnJEQkZGLUtNS0ozemhNejUxcmpBa0ZMTVJha1EtTTVsUQ?oc=5"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Phil Knight | Nike Cofounder, Bill Bowerman, Air Jordan, & Philanthropy - britannica.com",
+      "summary": "Phil Knight | Nike Cofounder, Bill Bowerman, Air Jordan, & Philanthropy britannica.com",
+      "source": "britannica.com",
+      "date": "Wed, 23 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTE93QU8zZEMwOFhsS3pxTjBpaUpRN3I2eTI1TXRvc1prOTRabDBZQ1drd0ZpMWxfRXFFQ0tYQXRVcFlucTJ5SWVwTkJkaWFid1dCazhzbkFISQ?oc=5"
+    },
+    {
+      "cat": "MARKET",
+      "title": "‘Risks Are Rising’ for Nike and It’s Time to Sell the Stock, Says Bank of America - Investopedia",
+      "summary": "‘Risks Are Rising’ for Nike and It’s Time to Sell the Stock, Says Bank of America Investopedia",
+      "source": "Investopedia",
+      "date": "Fri, 25 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxQaWlJRHdfSnhPWHNRVDRmV20xS1MyNTRzSHZiaTNkVDRnU1FjRUg3VkNDem9GNlk0ZExQTUVCZ2V1cUc0UlhMUTZxeU1RaUlVaWxMV3pPY0NURUtSaFhUZE1lbWRjVlNVbkJXc2pISVl6amtqb2tMNEdLZ0xyUk1pbEZ6U2I3cE5uSm1ndlRpSmNWaVFMd3U5M25IX1ZzaTlHVWFHUVRWT2RiSkotLUFSUzZMS2Z2TzQ0RFRoZE5LaGtROGM0M205N3VBN2N1dw?oc=5"
+    },
+    {
+      "cat": "BRAND",
+      "title": "Nike cancels planned Karim Benzema campaign filming at the last minute - Yahoo Sports",
+      "summary": "Nike cancels planned Karim Benzema campaign filming at the last minute Yahoo Sports",
+      "source": "Yahoo Sports",
+      "date": "Thu, 24 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNVFBwcW5nNldnd0h6T21iT3V0UW1yaUxMQWN6NVhHSGxuRk1rWE1PV1ppb2UyUFRHdTFuWVVfMGtrU0taWDlEb1RabEluQ1VGZTM4ZFo5V3FGMm5WbEt0MGN6WW5OOWc1ZW9RakpqWjl6dU05dFBtb01kUmFfcEkzeUpod2U5Mm1pcnhN?oc=5"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Nike Offers a Second Life to Its Used Sneakers, Apparel at SoHo Pop-up - WWD",
+      "summary": "Nike Offers a Second Life to Its Used Sneakers, Apparel at SoHo Pop-up WWD",
+      "source": "WWD",
+      "date": "Thu, 24 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQLUg0LXhfUjZfTFgwZzhpSUItLURGMGJ2dGRkNVJkcERTbVc4b2FNMi1ZVkh1R3cxanBaUzFHUnVmOHUwRVJfdHhOSmdzc1kwenhweXhoc2hiSTBfNEhlRm1zTmlhbTVYYzk4U3RUbmYxYjhCVldEMzZjQU55SkpFY2piLWlKc0tIdzE5YlNxdkNjNWUwRTVPYVY1RDVnUWZKRjF2T0VWSjVfcTc5?oc=5"
+    },
+    {
+      "cat": "MARKET",
+      "title": "'Risks are rising' for Nike's turnaround, Bank of America says. Sell shares now - CNBC",
+      "summary": "'Risks are rising' for Nike's turnaround, Bank of America says. Sell shares now CNBC",
+      "source": "CNBC",
+      "date": "Fri, 25 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQRFp2MFBIc0pYSEFOYnBqTnFVa1pITGQ4TEFJMnRlTHc5cTMtaEFOSmItRUwwUjQ0Z2xpTEc4VVZSRm01cXRfMFBnelNsQTNqSzVKZkItZUhDakxxWjNOTk5nUXZUYUVTTVc1cVNQSmFEUE1TOEQtaTlVYmRMampVd0hHM0FpN0kxZTlydW9PRUYtVF93bnFTWDctQQ?oc=5"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "Lawsuit alleges Nike, NSAF failed to protect teen from rape at track camp - The Athletic - The New York Times",
+      "summary": "Lawsuit alleges Nike, NSAF failed to protect teen from rape at track camp - The Athletic The New York Times",
+      "source": "The New York Times",
+      "date": "Tue, 22 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPRldlb2piSUxuMTJHY1VDV3B5VW1zQnlNYXpvRmxIY2JVSjR2RXpUQ1ItaV9WRmNKWWpBVU0xZWFwbWxIUjZVT0MwR2k4N3JId1Y5clpYWWhfclVxdDFEWmhyckp1Z1FqREg2cWxBZnlYSUVOeVdvV25wZ05wRFlPU05CaldadjMzZ1Q4NUdaVQ?oc=5"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "Nike Founder Donates $1 Billion To The University Of Oregon - Forbes",
+      "summary": "Nike Founder Donates $1 Billion To The University Of Oregon Forbes",
+      "source": "Forbes",
+      "date": "Wed, 23 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNend2ZWc2THRkdUhTcC11UXNoN2VBSnZnMGdPUW9JQjhPRUlKcDNZT0VNUy1jdTlFVEVNYXEwOWFEdlFFNy1oVlJNdFh0VTQxZ2x3UlZ6YXNjMUM1UmRZelRLcjJSX29SQm96LVJYelJFTGdKdHllV3NBTUVEcnVxTmVGMUdzZk5jY2JyRU5xZGRxcGdKU0pLQWRHMG1qTjVCemJ3dGN5bE82OGZUampfSkJBcVVqeXlXS2lzM0h4MU0?oc=5"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Nike Air Max Plus \"Premier\" Replaces Signature TPU Cage With Tiempo-Inspired Leather Tooling - Hypebeast",
+      "summary": "Nike Air Max Plus \"Premier\" Replaces Signature TPU Cage With Tiempo-Inspired Leather Tooling Hypebeast",
+      "source": "Hypebeast",
+      "date": "Mon, 21 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPZWNtZWxVbHdPLVdVa2M5R2VGUGJlbEZ2cnNfaHVBbXpTYVNkUjdqMTdNS3lsY2JoVlpCMU1ITE95LVQzY1VnTmZCMllFUVpjY1pRMUVZaE1LY001Yk1uWjZSbDBERzhSN0hVdDlEaWlTbU9EYWNLNnVDZEVGMDdncmlDcGZ6NGRGWC1kdVNadGJ4ckRtS3VV?oc=5"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Nike’s Remastered Air Max 95 Big Bubble Is Getting New Special-edition Makeovers in Croc - WWD",
+      "summary": "Nike’s Remastered Air Max 95 Big Bubble Is Getting New Special-edition Makeovers in Croc WWD",
+      "source": "WWD",
+      "date": "Wed, 23 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOWmdxR1FVamxOZnBlemdzbGRQUkJlWDQ2RW5heEVnemptdGxxYWJ5MHUycWIyUUJMb21XRjByTTdhejAyekdvX2FnTkE5MWk3OXRBV21ISUJjUTZfVDY1ZXRIdExaYkQ0MGNMakttVnhUMHlSVmt3V2dFZU5UNFRBT2JtMElKVHBPZmdmM19pbGhnc0d6T01OQTFBRG9GTklfcm16RVJUeFE1aVUzOFlN?oc=5"
+    },
+    {
+      "cat": "SPORTS",
+      "title": "Mbappe Is Still Wearing Nike Boots Despite His New On Deal — and The Swoosh Had a Subtle Response - WWD",
+      "summary": "Mbappe Is Still Wearing Nike Boots Despite His New On Deal — and The Swoosh Had a Subtle Response WWD",
+      "source": "WWD",
+      "date": "Tue, 22 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQQnk0Z0VTM1pfTzNXbkVBc0xRcmd1SGtucE9TTWlVeWl5NGxGVzJ6WDM2QjU1VldFZ1EyRFViTUREc3VqNHJvY3o0T3ZjbldVYWViUU1WNElVT2lwd0szMnp5TzA3aFdpb0ZnSWc4bXZJWS1sYW9PS1E0VkFwZGpXTjFqNzdCbXlIeU5EY0NyZy1qOWtnbnJ3?oc=5"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "This Confetti Sole Nike Air Force 1 Low Celebrates Kobe Bryant's Five Championship Parades - WWD",
+      "summary": "This Confetti Sole Nike Air Force 1 Low Celebrates Kobe Bryant's Five Championship Parades WWD",
+      "source": "WWD",
+      "date": "Fri, 25 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPZ0hLTEVKMXRmMjFTU3d4TUJVaktBMlc3VHBHY09ORW1SajU0S1N1a0VSdnh6SHFHakNtMFVPX2dKcl91MnUweUwyVTNJN0xtT3JvVnRMeE1SdVRPM1ZlbzNOTkhLZ0xEZUowZkpLSnFLVlZFcW56LVV5d3U1cEg5UkJZMll6UWMtVkRiMEVxaHNEbThHWjg1Wkx0ZHQ4X3lhZk9BeWF4YVpBR0U?oc=5"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "The Nike Air Zoom Hyperslide Finally Drops This Week - Sports Illustrated",
+      "summary": "The Nike Air Zoom Hyperslide Finally Drops This Week Sports Illustrated",
+      "source": "Sports Illustrated",
+      "date": "Sat, 26 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQY21lcjZOS2Z0enpBREpsZ21YRlJMSzV5UjA1alR1enRFcDVpcnJqZ3puZHE4dzRrdDVSbEllcE5GS1ROV1NqVEp5c0ZDakZKbS0yclNabG9GSk53dWlLNERLTTV2cXE1SS1DQkdZMEFaaHczdi1NMl82NWRFWWw5TTZwaThUWWJvNWpzbEFESjA3VEFRaWc?oc=5"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "The Real Reason Kylian Mbappé Left Nike For On - Huddle Up | Joe Pompliano",
+      "summary": "The Real Reason Kylian Mbappé Left Nike For On Huddle Up | Joe Pompliano",
+      "source": "Huddle Up | Joe Pompliano",
+      "date": "Tue, 22 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE1IMnFmRm5pRWlSX3ZUa3BXS2dFc0ZIVGtBc1RGMzZVR21QN1BFb1Fva0ZqVVpLT0hyMWk4V0JxLW05RThsaUVFNFJxNjlaZGl5YTJWUGtvNkVBeTNDdGtLbW5BSnU3X3VOVVpsVjJlTzJDSkJf?oc=5"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Nike Air Max 95 \"I-95\" Pack Trades Running Aesthetics for Workboot Utility - Hypebeast",
+      "summary": "Nike Air Max 95 \"I-95\" Pack Trades Running Aesthetics for Workboot Utility Hypebeast",
+      "source": "Hypebeast",
+      "date": "Mon, 21 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOemxDTUJaWmNtVkNyX1BhRlJsWW9XRWJlcGJSTGFObVQyTFMwdXNGUldwd1V0cC1sdWFOSHIxM2lROXlFYUExVy05RWtQbkhOQ1BISHRHY3ZYTU1jMjBqUl9kNTNKUTVhelNrTjRBRHQ3Z3F0ZTdUZ1Q3dFZUeHVpMTl4QWxUOTlLcHdFWGFONXgyNE1Bakh6WnFKTlRyR2hMYkNER1hXN0dwRDdURHg2b0s3Y1U2bjdH?oc=5"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "Nike and Zellerfeld Unveil the 3D-Printed AIRMAX 1000.3 \"Stone/Burgundy Crush\" - Hypebeast",
+      "summary": "Nike and Zellerfeld Unveil the 3D-Printed AIRMAX 1000.3 \"Stone/Burgundy Crush\" Hypebeast",
+      "source": "Hypebeast",
+      "date": "Tue, 22 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQclpmYzJsaDBhZm02VDd1S2l4TlczWkRvSVUzSUY0VVpGOWFwcG9vcm92bzFhXzNfcm9kQ0c5blhzcm5IcTFKTWc2VVFiZm80VS1NOWhvek5IcnBvY0ZEN0E4bmVLYmFTdC10cjgwV1ZjcGh0cmFOMHo0UjVicTQtUjNRNGdmMHdoVkdEOVBzZFBvaVAzTWR3?oc=5"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Sabrina Ionescu’s Gets Her First Halloween Nike Sneaker With a Blood-dipped Swoosh - WWD",
+      "summary": "Sabrina Ionescu’s Gets Her First Halloween Nike Sneaker With a Blood-dipped Swoosh WWD",
+      "source": "WWD",
+      "date": "Thu, 24 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQWHBKTFhiMVR0YVB3UUVnbnE4MWxUdUJMdFJHVHNNWjEzQ0N6Z204WVBMQVpmQTZUUldCVFU5YnBJR1RYZGZwVmlEeERZV2hLbjNwRTBUdUFGRl9kTDFBNGRfYjlwQ3Mzdng4XzV6aWZrU3FOZ21aR3RZLUoySFdGWjV0RzFSZVJZNzIxSEFCckc5dVI5eVBtZ0FlVjE3UDNiZkZXckp3?oc=5"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "Nike’s Sleeper Hoka Challenger Gets the Tactical, All-Weather Treatment - Gear Patrol",
+      "summary": "Nike’s Sleeper Hoka Challenger Gets the Tactical, All-Weather Treatment Gear Patrol",
+      "source": "Gear Patrol",
+      "date": "Fri, 25 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFBaRXp1dzczRzM5U2NkVWFrREZPNDFJUV9aVmc5bUZTdEw0NUhldlF0bWwzRHNVZ1VxWjJDTU1tRzVYcDZZQnc0cTV4eThxc2dueklfeXVFZzlONVp3eUFyNDNmcmNoaGNCOXFaNA?oc=5"
+    },
+    {
+      "cat": "BRAND",
+      "title": "Converse pulls ad, apologizes after backlash over alleged KKK imagery, ABC News reports - Reuters",
+      "summary": "Converse pulls ad, apologizes after backlash over alleged KKK imagery, ABC News reports Reuters",
+      "source": "Reuters",
+      "date": "Tue, 22 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQa18wWnRxRmowSGlQSUtxX0FMYVFZSVQzUzBLaVlRZUEtMHBoaGZITndna200eTFDMUNBVUV4YWRieFlMRlY4amdNdEVaUHVuWUwwaWZ3S0FPQ2xMTGpMcU10SUZsMURiQkhid2toZll3RHo2TWx2RXF5N2ZTeWhGYWhSTzFNWDlUaERYMmU1azRVSWVXQ1Z4NzZUSUgzNGh4UzZpVVdmdF9tRE4yUG82NXJGTUJJZlIwd2NnM1hKYnMwX1BnVHhWLThvRW93bGxMSkE?oc=5"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "The Best Retro Sneakers of 2026: Nike, New Balance, Vans and More - Gear Patrol",
+      "summary": "The Best Retro Sneakers of 2026: Nike, New Balance, Vans and More Gear Patrol",
+      "source": "Gear Patrol",
+      "date": "Fri, 25 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1hdGVrUFBTT1kzVVVESXd5cGpMYWhMcU53OTQ1bGJUaU56a3JTNzIydlNkRlRteTA5RlBXbWdyLS1vdmF4U1l3T0I3aXpvWFMwOUFvY3BvSFFiY1NKQ1htYUFLenJUV2pJSUxOR2J3?oc=5"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "Cut in half: Nike Mind 002 Review (2026) - RunRepeat",
+      "summary": "Cut in half: Nike Mind 002 Review (2026) RunRepeat",
+      "source": "RunRepeat",
+      "date": "Fri, 25 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE8wUjVvQXNNbWNnNWNrb3VtX21ieGpHbDRPeFVTV0Rzem5sc0swN29ydXZLbXZDQjRfVzczTWR5R25RVzQxa2w2azNlNA?oc=5"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "Nike is dropping its first ‘One Piece’ collaboration and manga fans are going to want every piece - MLive.com",
+      "summary": "Nike is dropping its first ‘One Piece’ collaboration and manga fans are going to want every piece MLive.com",
+      "source": "MLive.com",
+      "date": "Fri, 25 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOX1dxSGZsU0w2Z242WDl4YkVwVmRTaUhibXZTS2FCaHJlUHB5VnE0OXNZUlF2M3h3ZlNWbHo3aWhTMlZfTkUyOEk3ay1OMHFPYXNFM1VERVdDTlgyTWxtMnZTakdtekZiRmtLS1Bmenc4V2loS2VtSnBOdElHT3FqeEhVX293VVJLRmJacmJEV2diTXgwTjFoX2hyUFd5a2FkOEwtbW5WVkdTQzlKM3drWTVnbU5oOTZqZVRmRzZwT1JDTTEyTHlINEY2Z3R3UklTQm85bW1R?oc=5"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Nike’s New Suburban-Coded Dad Shoe Is Actually an Air Jordan - Gear Patrol",
+      "summary": "Nike’s New Suburban-Coded Dad Shoe Is Actually an Air Jordan Gear Patrol",
+      "source": "Gear Patrol",
+      "date": "Thu, 24 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE12SEl6UkIyTlRTby1IX1JQbkVVZjJGNXdZY01Fa3RwVUJhMEYyNWZ1bVFnYWFlVS1LWlJGWW9ZWmFKaGRoeDNjWk5RY1NTendKbmFOTDBKbXFyc2RDSjdpSXpHeC10bzVEWUE?oc=5"
     }
   ]
 }
