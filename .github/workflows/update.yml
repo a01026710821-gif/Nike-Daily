@@ -79,7 +79,7 @@ jobs:
               print('구독자가 없습니다.')
               exit(0)
 
-          # 2. 뉴스 읽기
+          # 2. 뉴스 데이터 읽기
           with open('data/news.json', 'r', encoding='utf-8') as f:
               news_data = json.load(f)
 
@@ -90,71 +90,116 @@ jobs:
 
           today_str = datetime.date.today().strftime('%Y년 %m월 %d일')
 
-          # 3. 고급 일간지 HTML 템플릿 생성
+          # 카테고리별 기사 분류
+          top_story = articles[0] if len(articles) > 0 else None
+          sub_top_1 = articles[1] if len(articles) > 1 else None
+          sub_top_2 = articles[2] if len(articles) > 2 else None
+
+          product_brand_items = [a for a in articles[3:] if a.get('cat') in ['PRODUCT', 'BRAND']][:3]
+          business_market_items = [a for a in articles[3:] if a.get('cat') in ['BUSINESS', 'MARKET', 'SPORTS']][:3]
+
+          # 만약 카테고리 기사가 모자라면 나머지로 채움
+          remains = [a for a in articles[3:] if a not in product_brand_items and a not in business_market_items]
+          while len(product_brand_items) < 3 and remains:
+              product_brand_items.append(remains.pop(0))
+          while len(business_market_items) < 3 and remains:
+              business_market_items.append(remains.pop(0))
+
+          def render_card(item, is_large=False):
+              if not item: return ''
+              cat = item.get('cat', 'BUSINESS')
+              title = item.get('title', '')
+              summary = item.get('summary', '')[:120] + '...' if len(item.get('summary', '')) > 120 else item.get('summary', '')
+              source = item.get('source', '')
+              date = item.get('date', '')
+              url = item.get('url', '#')
+
+              title_size = '20px' if is_large else '15px'
+              padding = '24px' if is_large else '18px'
+
+              return f'''
+              <div style=\"background-color: #ffffff; border: 1px solid #e5e5e5; border-radius: 6px; padding: {padding}; height: 100%; box-sizing: border-box;\">
+                <div style=\"font-size: 11px; font-weight: 700; color: #666666; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 8px;\">{cat}</div>
+                <a href=\"{url}\" style=\"text-decoration: none; color: #111111; font-size: {title_size}; font-weight: 800; line-height: 1.35; display: block; margin-bottom: 10px;\">{title}</a>
+                <p style=\"font-size: 13px; color: #555555; line-height: 1.5; margin: 0 0 12px 0;\">{summary}</p>
+                <div style=\"font-size: 11px; color: #888888;\">{source} &bull; {date}</div>
+              </div>
+              '''
+
+          # 3. 웹페이지 형태의 이메일 HTML 생성
           html = f'''
           <!DOCTYPE html>
           <html>
           <head>
             <meta charset=\"utf-8\">
           </head>
-          <body style=\"margin: 0; padding: 20px 0; background-color: #f4f5f7; font-family: 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;\">
-            <div style=\"max-width: 600px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);\">
+          <body style=\"margin: 0; padding: 30px 10px; background-color: #f6f6f6; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;\">
+            <div style=\"max-width: 680px; margin: 0 auto;\">
               
-              <!-- 헤더 영역 -->
-              <div style=\"background-color: #111111; color: #ffffff; padding: 30px 25px; text-align: center;\">
-                <div style=\"font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #f35b04; text-transform: uppercase; margin-bottom: 6px;\">DAILY NEWSLETTER</div>
-                <h1 style=\"margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.5px;\">NIKE DAILY</h1>
-                <div style=\"font-size: 13px; color: #aaaaaa; margin-top: 8px;\">{today_str} 나이키 산업 & 시장 동향 리포트</div>
+              <!-- 상단 헤더 -->
+              <div style=\"margin-bottom: 25px;\">
+                <div style=\"font-size: 11px; font-weight: 700; letter-spacing: 1.5px; color: #777777; text-transform: uppercase; margin-bottom: 4px;\">NIKE INDUSTRY & MARKET INTELLIGENCE</div>
+                <h1 style=\"margin: 0 0 6px 0; font-size: 32px; font-weight: 900; letter-spacing: -1px; color: #111111;\">오늘의 나이키</h1>
+                <div style=\"font-size: 14px; color: #666666;\">나이키와 스포츠·패션 시장의 핵심 소식을 한눈에. ({today_str})</div>
               </div>
 
-              <!-- 서두 요약 -->
-              <div style=\"padding: 20px 25px 10px 25px; border-bottom: 1px solid #eeeeee;\">
-                <p style=\"margin: 0; font-size: 14px; color: #555555; line-height: 1.6;\">
-                  <b>{news_data.get('insight', '오늘의 나이키 관련 주요 뉴스 모음입니다.')}</b>
-                </p>
-              </div>
+              <!-- 상단 피처드 섹션 (메인 1개 + 우측 2개) -->
+              <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 30px;\">
+                <tr>
+                  <td width=\"58%\" valign=\"top\" style=\"padding-right: 10px;\">
+                    {render_card(top_story, is_large=True)}
+                  </td>
+                  <td width=\"42%\" valign=\"top\" style=\"padding-left: 10px;\">
+                    <div style=\"margin-bottom: 12px;\">{render_card(sub_top_1)}</div>
+                    <div>{render_card(sub_top_2)}</div>
+                  </td>
+                </tr>
+              </table>
 
-              <!-- 기사 리스트 -->
-              <div style=\"padding: 10px 25px;\">
+              <!-- 섹션 1: 제품 · 브랜드 -->
+              <div style=\"border-bottom: 2px solid #111111; padding-bottom: 6px; margin-bottom: 15px;\">
+                <table width=\"100%\">
+                  <tr>
+                    <td style=\"font-size: 16px; font-weight: 800; color: #111111;\">제품 · 브랜드</td>
+                    <td align=\"right\" style=\"font-size: 11px; font-weight: 700; color: #888888; text-transform: uppercase;\">PRODUCT / BRAND</td>
+                  </tr>
+                </table>
+              </div>
+              <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 30px;\">
+                <tr>
           '''
 
-          cat_colors = {
-              'PRODUCT': '#007aff',
-              'MARKET': '#34c759',
-              'BRAND': '#ff9500',
-              'SPORTS': '#ff2d55',
-              'BUSINESS': '#5856d6'
-          }
-
-          for item in articles[:10]:
-              cat = item.get('cat', 'BUSINESS')
-              badge_color = cat_colors.get(cat, '#5856d6')
-              
-              html += f'''
-                <div style=\"padding: 20px 0; border-bottom: 1px solid #f0f0f0;\">
-                  <div style=\"margin-bottom: 8px;\">
-                    <span style=\"background-color: {badge_color}; color: #ffffff; font-size: 10px; font-weight: bold; padding: 3px 8px; border-radius: 4px;\">{cat}</span>
-                    <span style=\"font-size: 12px; color: #888888; margin-left: 8px;\">{item.get('source', '')}</span>
-                  </div>
-                  <a href=\"{item['url']}\" style=\"text-decoration: none; font-size: 17px; font-weight: bold; color: #111111; line-height: 1.4; display: block; margin-bottom: 8px;\">
-                    {item['title']}
-                  </a>
-                  <p style=\"margin: 0 0 12px 0; font-size: 13px; color: #666666; line-height: 1.5;\">
-                    {item.get('summary', '')[:140]}...
-                  </p>
-                  <a href=\"{item['url']}\" style=\"display: inline-block; font-size: 12px; font-weight: bold; color: #f35b04; text-decoration: none;\">
-                    기사 원문 읽기 &rarr;
-                  </a>
-                </div>
-              '''
+          for item in product_brand_items:
+              html += f'<td width=\"33%\" valign=\"top\" style=\"padding: 0 5px;\">{render_card(item)}</td>'
 
           html += f'''
-              </div>
+                </tr>
+              </table>
 
-              <!-- 푸터 영역 -->
-              <div style=\"background-color: #f9f9f9; padding: 20px 25px; text-align: center; border-top: 1px solid #eeeeee; font-size: 12px; color: #888888;\">
-                <p style=\"margin: 0 0 6px 0;\">본 메일은 <b>NIKE DAILY</b> 뉴스레터 구독자에게 자동 발송됩니다.</p>
-                <p style=\"margin: 0;\"><a href=\"https://a01026710821-gif.github.io/Nike-Daily/\" style=\"color: #111111; font-weight: bold; text-decoration: underline;\">웹사이트에서 보기</a></p>
+              <!-- 섹션 2: 기업 · 경영 -->
+              <div style=\"border-bottom: 2px solid #111111; padding-bottom: 6px; margin-bottom: 15px;\">
+                <table width=\"100%\">
+                  <tr>
+                    <td style=\"font-size: 16px; font-weight: 800; color: #111111;\">기업 · 경영</td>
+                    <td align=\"right\" style=\"font-size: 11px; font-weight: 700; color: #888888; text-transform: uppercase;\">CORPORATE / BUSINESS</td>
+                  </tr>
+                </table>
+              </div>
+              <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 30px;\">
+                <tr>
+          '''
+
+          for item in business_market_items:
+              html += f'<td width=\"33%\" valign=\"top\" style=\"padding: 0 5px;\">{render_card(item)}</td>'
+
+          html += f'''
+                </tr>
+              </table>
+
+              <!-- 하단 푸터 -->
+              <div style=\"border-top: 1px solid #e5e5e5; padding-top: 20px; text-align: center; font-size: 12px; color: #888888;\">
+                <p style=\"margin: 0 0 8px 0;\">본 메일은 <b>NIKE DAILY</b> 자동 뉴스레터 구독자에게 발송됩니다.</p>
+                <a href=\"https://a01026710821-gif.github.io/Nike-Daily/\" style=\"color: #111111; font-weight: bold; text-decoration: underline;\">웹사이트 전체보기 &rarr;</a>
               </div>
 
             </div>
@@ -168,7 +213,7 @@ jobs:
               server.login(gmail_user, gmail_pass)
               for sub in subscribers:
                   msg = MIMEMultipart('alternative')
-                  msg['Subject'] = f\"[NIKE DAILY] {today_str} 나이키 뉴스 일간지\"
+                  msg['Subject'] = f\"[NIKE DAILY] 오늘의 나이키 뉴스 브리핑 ({today_str})\"
                   msg['From'] = gmail_user
                   msg['To'] = sub
                   msg.attach(MIMEText(html, 'html'))
