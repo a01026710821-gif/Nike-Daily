@@ -1,0 +1,86 @@
+{
+  "date": "2026-09-27",
+  "insight": "최근 뉴스에서는 Nike의 제품·스포츠 카테고리 확장과 사업 회복 전략이 함께 관찰됩니다. 동시에 경쟁 브랜드로의 주요 선수 이동과 Converse 관련 브랜드 이슈가 보도되고 있어 제품 혁신과 브랜드 관리 양쪽을 함께 추적할 필요가 있습니다.",
+  "items": [
+    {
+      "cat": "BUSINESS",
+      "title": "JD Sports가 Nike의 회복 전략에 대해 긍정적 평가",
+      "summary": "영국 스포츠·패션 유통업체 JD Sports의 CFO가 Nike가 사업 회복을 위해 올바른 조치를 취하고 있다고 Reuters에 밝혔습니다.",
+      "source": "Reuters",
+      "date": "2026-09-23",
+      "url": "https://www.reuters.com/business/retail-consumer/britains-jd-sports-says-nike-turnaround-is-only-matter-time-2026-09-23/"
+    },
+    {
+      "cat": "BRAND",
+      "title": "Converse, 광고 논란 이후 마케팅 일시 중단 보도",
+      "summary": "Reuters는 Nike 소유 브랜드 Converse가 논란이 된 광고 이후 해당 주의 마케팅을 중단했다고 보도했습니다.",
+      "source": "Reuters",
+      "date": "2026-09-25",
+      "url": "https://www.reuters.com/world/converse-pauses-social-media-ads-marketing-after-racism-uproar-bloomberg-news-reports-2026-09-25/"
+    },
+    {
+      "cat": "SPORTS",
+      "title": "Kylian Mbappé, Nike와의 장기 파트너십 종료 후 On으로 이동",
+      "summary": "Reuters는 프랑스 축구선수 Kylian Mbappé가 Nike와의 장기 파트너십을 종료하고 On과 계약했다고 보도했습니다.",
+      "source": "Reuters",
+      "date": "2026-09-18",
+      "url": "https://www.reuters.com/sports/swiss-sportswear-brand-signs-french-footballer-mbapp-nike-2026-09-18/"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Nike NBA Standard Issue 컬렉션 공개",
+      "summary": "Nike가 30개 팀을 위한 새로운 NBA Standard Issue 컬렉션을 공개했으며 9월과 10월 두 차례 출시 일정을 제시했습니다.",
+      "source": "NIKE Newsroom",
+      "date": "2026-09-09",
+      "url": "https://about.nike.com/en/newsroom/releases/nike-nba-standard-issue-collection-reinvents-fan-wear"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Jordan Brand Tatum 5 공개",
+      "summary": "Jordan Brand가 Jayson Tatum의 다섯 번째 시그니처 농구화 Tatum 5를 공개했습니다.",
+      "source": "NIKE Newsroom",
+      "date": "2026-09-09",
+      "url": "https://about.nike.com/en/newsroom/releases/jordan-brand-invites-players-to-control-the-game-with-jayson-tatum-new-signature-shoe-the-tatum-5"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Nike Hybrid 트레이닝 풋웨어 시스템",
+      "summary": "Nike가 러닝과 리프팅 등 하이브리드 트레이닝을 겨냥한 Hybrid Fly와 Hybrid RN을 공개했습니다.",
+      "source": "NIKE Newsroom",
+      "date": "2026-08-03",
+      "url": "https://about.nike.com/en/newsroom/releases/introducing-nike-hybrid-a-new-nike-training-performance-footwear-system-built-from-the-ground-up"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "Nike, FY2027 1분기 실적 발표 일정 공지",
+      "summary": "Nike는 FY2027 1분기 실적을 2026년 10월 1일 장 마감 후 발표할 예정이라고 공지했습니다.",
+      "source": "NIKE Investor Relations",
+      "date": "2026-08-28",
+      "url": "https://investors.nike.com/investors/news-events-and-reports/investor-news/investor-news-details/2026/NIKE-Inc--Announces-First-Quarter-Fiscal-2027-Earnings-and-Conference-Call/default.aspx"
+    },
+    {
+      "cat": "MARKET",
+      "title": "Nike의 Dow Jones 잔류 여부에 시장 관심",
+      "summary": "Reuters는 Nike의 주가 하락으로 Dow Jones Industrial Average에서의 지위에 시장의 관심이 커지고 있다고 보도했습니다.",
+      "source": "Reuters",
+      "date": "2026-09-17",
+      "url": "https://www.reuters.com/business/media-telecom/nikes-falling-share-price-puts-its-dow-seat-jeopardy-2026-09-17/"
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "Nike와 University of Miami, 다년간 파트너십 재개",
+      "summary": "Nike와 University of Miami가 새로운 다년간 파트너십을 발표했습니다.",
+      "source": "NIKE Newsroom",
+      "date": "2026-09-18",
+      "url": "https://about.nike.com/en/newsroom"
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Air Works: 전 세계 디자이너와 Air Max 공동 창작",
+      "summary": "Nike가 여러 도시의 디자이너들과 3D 프린팅 기반 Air Max 디자인을 개발하는 Air Works 프로그램을 진행하고 있습니다.",
+      "source": "NIKE Newsroom",
+      "date": "2026-08-31",
+      "url": "https://about.nike.com/en/newsroom/releases/nike-air-works-program-research-development-design-3d-printed-footwear"
+    }
+  ]
+}
