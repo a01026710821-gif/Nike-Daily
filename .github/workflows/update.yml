@@ -1,4 +1,4 @@
-name: Update Nike Daily News
+name: Update Nike Daily News & Send Email
 
 on:
   schedule:
@@ -7,7 +7,7 @@ on:
   workflow_dispatch: # 수동 실행 지원
 
 jobs:
-  update-news:
+  update-and-mail:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -24,7 +24,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install feedparser beautifulsoup4 lxml
+          pip install feedparser beautifulsoup4 lxml requests
 
       - name: Fetch Latest News
         run: |
@@ -36,3 +36,73 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add data/news.json
           git diff --quiet && git diff --staged --quiet || (git commit -m "Auto update news data" && git push)
+
+      - name: Send Email Newsletter
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          SUBSCRIBERS_SHEET_URL: ${{ secrets.SUBSCRIBERS_SHEET_URL }}
+        run: |
+          python -c "
+          import os, json, smtplib, csv, urllib.request
+          from email.mime.multipart import MIMEMultipart
+          from email.mime.text import MIMEText
+
+          sheet_url = os.environ.get('SUBSCRIBERS_SHEET_URL')
+          gmail_user = os.environ.get('GMAIL_USER')
+          gmail_pass = os.environ.get('GMAIL_APP_PASSWORD')
+
+          if not sheet_url or not gmail_user or not gmail_pass:
+              print('이메일 설정 정보가 부족하여 메일 발송을 스킵합니다.')
+              exit(0)
+
+          # 구독자 목록 가져오기
+          subscribers = []
+          try:
+              req = urllib.request.urlopen(sheet_url)
+              lines = [l.decode('utf-8') for l in req.readlines()]
+              reader = csv.reader(lines)
+              next(reader, None)
+              for row in reader:
+                  for col in row:
+                      if '@' in col:
+                          subscribers.append(col.strip())
+          except Exception as e:
+              print('구독자 목록 불러오기 실패:', e)
+
+          subscribers = list(set(subscribers))
+          if not subscribers:
+              print('구독자가 없습니다.')
+              exit(0)
+
+          # 뉴스 읽기
+          with open('data/news.json', 'r', encoding='utf-8') as f:
+              news_data = json.load(f)
+
+          articles = news_data.get('articles', [])
+          if not articles:
+              print('발송할 뉴스가 없습니다.')
+              exit(0)
+
+          # 메일 본문 작성
+          html = '<h2>🗞️ NIKE DAILY 오늘의 주요 뉴스</h2><hr><ul>'
+          for item in articles[:10]:
+              html += f'li style=\"margin-bottom:15px;\"><a href=\"{item[\"link\"]}\" style=\"font-size:16px; font-weight:bold; color:#111;\">{item[\"title\"]}</a><p style=\"color:#555;\">{item.get(\"summary\", \"\")}</p></li>'
+          html += '</ul><p><small>본 메일은 Nike Daily 뉴스레터 구독자에게 자동 발송됩니다.</small></p>'
+
+          # 메일 전송
+          try:
+              server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
+              server.login(gmail_user, gmail_pass)
+              for sub in subscribers:
+                  msg = MIMEMultipart('alternative')
+                  msg['Subject'] = '[NIKE DAILY] 오늘의 나이키 뉴스 브리핑'
+                  msg['From'] = gmail_user
+                  msg['To'] = sub
+                  msg.attach(MIMEText(html, 'html'))
+                  server.sendmail(gmail_user, sub, msg.as_string())
+                  print('발송 완료:', sub)
+              server.quit()
+          except Exception as e:
+              print('메일 발송 오류:', e)
+          "
