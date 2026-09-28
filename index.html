@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NIKE WEEKLY — 주간 뉴스 리포트</title>
+  <title>NIKE WEEKLY — 주간 뉴스 & 주가 리포트</title>
+  <!-- Chart.js 라이브러리 로드 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -21,7 +23,7 @@
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
     header {
-      padding: 30px 35px;
+      padding: 30px 35px 20px 35px;
       border-bottom: 1px solid #eee;
       display: flex;
       justify-content: space-between;
@@ -42,28 +44,51 @@
       font-weight: 900;
       letter-spacing: -1px;
     }
-    .header-right {
-      text-align: right;
-    }
     .date-str {
       font-size: 13px;
       font-weight: 600;
       color: #777;
-      margin-bottom: 6px;
     }
-    .stock-badge {
-      display: inline-block;
-      background: #f8f9fa;
-      border: 1px solid #e9ecef;
-      padding: 6px 12px;
-      border-radius: 6px;
+
+    /* 주가 차트 섹션 디자인 */
+    .stock-section {
+      background: #fafafa;
+      border-bottom: 1px solid #eee;
+      padding: 25px 35px;
+    }
+    .stock-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .stock-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #333;
+    }
+    .stock-price-info {
+      text-align: right;
+    }
+    .stock-price {
+      font-size: 22px;
+      font-weight: 900;
+      color: #111;
+    }
+    .stock-change {
       font-size: 13px;
       font-weight: 700;
+      margin-left: 6px;
     }
-    .stock-change { font-weight: 700; margin-left: 4px; }
     .up { color: #2e7d32; }
     .down { color: #d32f2f; }
     
+    .chart-container {
+      position: relative;
+      height: 180px;
+      width: 100%;
+    }
+
     .content { padding: 35px; }
     .section-title {
       font-size: 18px;
@@ -140,11 +165,22 @@
         <div class="brand-sub">WEEKLY INTELLIGENCE REPORT</div>
         <div class="brand-title">NIKE WEEKLY</div>
       </div>
-      <div class="header-right">
-        <div class="date-str" id="report-date">불러오는 중...</div>
-        <div class="stock-badge" id="stock-badge">NKE Loading...</div>
-      </div>
+      <div class="date-str" id="report-date">2026-09-28</div>
     </header>
+
+    <!-- 한 주간 주가 그래프 섹션 -->
+    <div class="stock-section">
+      <div class="stock-header">
+        <div class="stock-title">📈 NKE (NYSE) 지난주 주가 동향</div>
+        <div class="stock-price-info">
+          <span class="stock-price" id="stock-price">$82.50</span>
+          <span class="stock-change up" id="stock-change">+$1.20 (+1.48%)</span>
+        </div>
+      </div>
+      <div class="chart-container">
+        <canvas id="stockChart"></canvas>
+      </div>
+    </div>
 
     <div class="content">
       <div class="section-title">
@@ -166,18 +202,61 @@
   </div>
 
   <script>
+    let stockChartInstance = null;
+
     async function loadNews() {
       try {
         const res = await fetch('./data/news.json?v=' + new Date().getTime());
         const data = await res.json();
 
-        // 날짜 & 주가 업데이트
         document.getElementById('report-date').innerText = data.date || '';
+
+        // 주가 수치 반영
         if (data.stock) {
           const s = data.stock;
-          const colorClass = s.is_up ? 'up' : 'down';
-          document.getElementById('stock-badge').innerHTML = 
-            `NKE <strong>${s.price || ''}</strong> <span class="stock-change ${colorClass}">${s.change || ''}</span>`;
+          document.getElementById('stock-price').innerText = s.price || '';
+          const changeEl = document.getElementById('stock-change');
+          changeEl.innerText = s.change || '';
+          changeEl.className = 'stock-change ' + (s.is_up ? 'up' : 'down');
+
+          // 주가 5일 선 그래프 그리기
+          if (s.chart && s.chart.length > 0) {
+            const labels = s.chart.map(c => c.date);
+            const prices = s.chart.map(c => c.price);
+            
+            const ctx = document.getElementById('stockChart').getContext('2d');
+            if (stockChartInstance) stockChartInstance.destroy();
+
+            const chartColor = s.is_up ? '#2e7d32' : '#d32f2f';
+            const bgColor = s.is_up ? 'rgba(46, 125, 50, 0.08)' : 'rgba(211, 47, 47, 0.08)';
+
+            stockChartInstance = new Chart(ctx, {
+              type: 'line',
+              data: {
+                labels: labels,
+                datasets: [{
+                  label: '종가 ($)',
+                  data: prices,
+                  borderColor: chartColor,
+                  backgroundColor: bgColor,
+                  borderWidth: 2.5,
+                  fill: true,
+                  tension: 0.3,
+                  pointRadius: 4,
+                  pointHoverRadius: 6
+                }]
+              },
+              options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                  x: { grid: { display: false } },
+                  y: { grid: { color: '#f0f0f0' } }
+                }
+              }
+            });
+          }
         }
 
         const items = data.items || [];
