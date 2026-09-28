@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>NIKE WEEKLY — 주간 뉴스 & 주가 리포트</title>
-  <!-- Chart.js 라이브러리 로드 -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -50,7 +49,7 @@
       color: #777;
     }
 
-    /* 주가 차트 섹션 디자인 */
+    /* 주가 섹션 */
     .stock-section {
       background: #fafafa;
       border-bottom: 1px solid #eee;
@@ -90,18 +89,19 @@
     }
 
     .content { padding: 35px; }
+    
     .section-title {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 800;
       border-bottom: 2px solid #111;
-      padding-bottom: 8px;
-      margin: 35px 0 20px 0;
+      padding-bottom: 6px;
+      margin: 30px 0 15px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .section-title:first-child { margin-top: 0; }
-    .section-sub { font-size: 11px; color: #888; font-weight: 700; }
+    .section-sub { font-size: 10px; color: #888; font-weight: 800; text-transform: uppercase; }
     
     .grid {
       display: grid;
@@ -112,48 +112,48 @@
       background: #fff;
       border: 1px solid #e0e0e0;
       border-radius: 8px;
-      padding: 18px;
+      padding: 16px;
       display: flex;
       flex-direction: column;
     }
     .card img {
       width: 100%;
-      height: 140px;
+      height: 130px;
       object-fit: cover;
       border-radius: 4px;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
     .card-cat {
       font-size: 10px;
       font-weight: 800;
       text-transform: uppercase;
       color: #111;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
     .card-title {
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
       line-height: 1.35;
       color: #111;
       text-decoration: none;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     .card-title:hover { text-decoration: underline; }
     .card-desc {
-      font-size: 13px;
+      font-size: 12px;
       color: #555;
       line-height: 1.5;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       flex-grow: 1;
     }
-    .card-meta { font-size: 11px; color: #888; }
+    .card-meta { font-size: 10px; color: #888; }
     
     footer {
       background: #f9f9fb;
       border-top: 1px solid #eee;
       padding: 25px;
       text-align: center;
-      font-size: 13px;
+      font-size: 12px;
       color: #777;
     }
   </style>
@@ -165,16 +165,16 @@
         <div class="brand-sub">WEEKLY INTELLIGENCE REPORT</div>
         <div class="brand-title">NIKE WEEKLY</div>
       </div>
-      <div class="date-str" id="report-date">2026-09-28</div>
+      <div class="date-str" id="report-date">-</div>
     </header>
 
-    <!-- 한 주간 주가 그래프 섹션 -->
+    <!-- 주가 차트 -->
     <div class="stock-section">
       <div class="stock-header">
         <div class="stock-title">📈 NKE (NYSE) 지난주 주가 동향</div>
         <div class="stock-price-info">
-          <span class="stock-price" id="stock-price">$82.50</span>
-          <span class="stock-change up" id="stock-change">+$1.20 (+1.48%)</span>
+          <span class="stock-price" id="stock-price">-</span>
+          <span class="stock-change" id="stock-change">-</span>
         </div>
       </div>
       <div class="chart-container">
@@ -183,17 +183,33 @@
     </div>
 
     <div class="content">
+      <!-- 1. 제품 · 컬렉션 -->
       <div class="section-title">
-        <span>제품 · 브랜드</span>
-        <span class="section-sub">PRODUCT / BRAND</span>
+        <span>제품 · 컬렉션</span>
+        <span class="section-sub">PRODUCT</span>
       </div>
-      <div class="grid" id="product-grid"></div>
+      <div class="grid" id="grid-product"></div>
 
+      <!-- 2. 브랜드 · 마케팅 -->
       <div class="section-title">
-        <span>기업 · 경영</span>
-        <span class="section-sub">CORPORATE / BUSINESS</span>
+        <span>브랜드 · 마케팅</span>
+        <span class="section-sub">BRAND</span>
       </div>
-      <div class="grid" id="business-grid"></div>
+      <div class="grid" id="grid-brand"></div>
+
+      <!-- 3. 스포츠 · 선수 -->
+      <div class="section-title">
+        <span>스포츠 · 선수</span>
+        <span class="section-sub">SPORTS</span>
+      </div>
+      <div class="grid" id="grid-sports"></div>
+
+      <!-- 4. 증시 · 기업경영 -->
+      <div class="section-title">
+        <span>증시 · 기업경영</span>
+        <span class="section-sub">MARKET</span>
+      </div>
+      <div class="grid" id="grid-market"></div>
     </div>
 
     <footer>
@@ -211,7 +227,7 @@
 
         document.getElementById('report-date').innerText = data.date || '';
 
-        // 주가 수치 반영
+        // 주가 차트 바인딩
         if (data.stock) {
           const s = data.stock;
           document.getElementById('stock-price').innerText = s.price || '';
@@ -219,7 +235,6 @@
           changeEl.innerText = s.change || '';
           changeEl.className = 'stock-change ' + (s.is_up ? 'up' : 'down');
 
-          // 주가 5일 선 그래프 그리기
           if (s.chart && s.chart.length > 0) {
             const labels = s.chart.map(c => c.date);
             const prices = s.chart.map(c => c.price);
@@ -242,8 +257,7 @@
                   borderWidth: 2.5,
                   fill: true,
                   tension: 0.3,
-                  pointRadius: 4,
-                  pointHoverRadius: 6
+                  pointRadius: 4
                 }]
               },
               options: {
@@ -259,31 +273,36 @@
           }
         }
 
+        // 4개 카테고리 그리드 바인딩
         const items = data.items || [];
-        const productGrid = document.getElementById('product-grid');
-        const businessGrid = document.getElementById('business-grid');
+        const grids = {
+          PRODUCT: document.getElementById('grid-product'),
+          BRAND: document.getElementById('grid-brand'),
+          SPORTS: document.getElementById('grid-sports'),
+          MARKET: document.getElementById('grid-market')
+        };
 
-        productGrid.innerHTML = '';
-        businessGrid.innerHTML = '';
+        // 초기화
+        Object.values(grids).forEach(g => g.innerHTML = '');
 
         items.forEach(item => {
+          const cat = item.cat || 'BRAND';
+          const targetGrid = grids[cat] || grids['BRAND'];
+
           const imgHtml = item.image ? `<img src="${item.image}" alt="news">` : '';
           const cardHtml = `
             <div class="card">
               ${imgHtml}
-              <div class="card-cat">${item.cat || 'NEWS'}</div>
+              <div class="card-cat">${cat}</div>
               <a class="card-title" href="${item.url}" target="_blank">${item.title}</a>
-              <div class="card-desc">${(item.summary || '').substring(0, 100)}...</div>
+              <div class="card-desc">${(item.summary || '').substring(0, 90)}...</div>
               <div class="card-meta">${item.source || ''} &bull; ${item.date || ''}</div>
             </div>
           `;
 
-          if (['PRODUCT', 'BRAND'].includes(item.cat)) {
-            productGrid.innerHTML += cardHtml;
-          } else {
-            businessGrid.innerHTML += cardHtml;
-          }
+          targetGrid.innerHTML += cardHtml;
         });
+
       } catch (e) {
         console.error('데이터 로드 실패:', e);
       }
