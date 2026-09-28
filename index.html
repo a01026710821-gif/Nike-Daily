@@ -88,19 +88,53 @@
       width: 100%;
     }
 
-    .content { padding: 35px; }
+    /* 카테고리 필터 탭 스타일 */
+    .filter-bar {
+      display: flex;
+      gap: 8px;
+      padding: 20px 35px 0 35px;
+      overflow-x: auto;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: #f0f0f2;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #555;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover {
+      background: #e2e2e5;
+      color: #111;
+    }
+    .filter-btn.active {
+      background: #111111;
+      color: #ffffff;
+    }
+
+    .content { padding: 25px 35px 35px 35px; }
     
+    .section-group {
+      margin-top: 30px;
+    }
+    .section-group:first-child {
+      margin-top: 10px;
+    }
+
     .section-title {
       font-size: 16px;
       font-weight: 800;
       border-bottom: 2px solid #111;
       padding-bottom: 6px;
-      margin: 30px 0 15px 0;
+      margin-bottom: 15px;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .section-title:first-child { margin-top: 0; }
     .section-sub { font-size: 10px; color: #888; font-weight: 800; text-transform: uppercase; }
     
     .grid {
@@ -182,34 +216,51 @@
       </div>
     </div>
 
+    <!-- 카테고리 필터링 버튼 -->
+    <div class="filter-bar">
+      <button class="filter-btn active" onclick="filterCategory('ALL', this)">전체보기</button>
+      <button class="filter-btn" onclick="filterCategory('PRODUCT', this)">제품 · 컬렉션</button>
+      <button class="filter-btn" onclick="filterCategory('BRAND', this)">브랜드 · 마케팅</button>
+      <button class="filter-btn" onclick="filterCategory('SPORTS', this)">스포츠 · 선수</button>
+      <button class="filter-btn" onclick="filterCategory('MARKET', this)">증시 · 기업경영</button>
+    </div>
+
     <div class="content">
       <!-- 1. 제품 · 컬렉션 -->
-      <div class="section-title">
-        <span>제품 · 컬렉션</span>
-        <span class="section-sub">PRODUCT</span>
+      <div class="section-group" id="group-product">
+        <div class="section-title">
+          <span>제품 · 컬렉션</span>
+          <span class="section-sub">PRODUCT</span>
+        </div>
+        <div class="grid" id="grid-product"></div>
       </div>
-      <div class="grid" id="grid-product"></div>
 
       <!-- 2. 브랜드 · 마케팅 -->
-      <div class="section-title">
-        <span>브랜드 · 마케팅</span>
-        <span class="section-sub">BRAND</span>
+      <div class="section-group" id="group-brand">
+        <div class="section-title">
+          <span>브랜드 · 마케팅</span>
+          <span class="section-sub">BRAND</span>
+        </div>
+        <div class="grid" id="grid-brand"></div>
       </div>
-      <div class="grid" id="grid-brand"></div>
 
       <!-- 3. 스포츠 · 선수 -->
-      <div class="section-title">
-        <span>스포츠 · 선수</span>
-        <span class="section-sub">SPORTS</span>
+      <div class="section-group" id="group-sports">
+        <div class="section-title">
+          <span>스포츠 · 선수</span>
+          <span class="section-sub">SPORTS</span>
+        </div>
+        <div class="grid" id="grid-sports"></div>
       </div>
-      <div class="grid" id="grid-sports"></div>
 
       <!-- 4. 증시 · 기업경영 -->
-      <div class="section-title">
-        <span>증시 · 기업경영</span>
-        <span class="section-sub">MARKET</span>
+      <div class="section-group" id="group-market">
+        <div class="section-title">
+          <span>증시 · 기업경영</span>
+          <span class="section-sub">MARKET</span>
+        </div>
+        <div class="grid" id="grid-market"></div>
       </div>
-      <div class="grid" id="grid-market"></div>
     </div>
 
     <footer>
@@ -219,6 +270,31 @@
 
   <script>
     let stockChartInstance = null;
+
+    // 카테고리 필터링 함수
+    function filterCategory(cat, btnElement) {
+      // 버튼 활성화 클래스 변경
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      btnElement.classList.add('active');
+
+      const groups = {
+        PRODUCT: document.getElementById('group-product'),
+        BRAND: document.getElementById('group-brand'),
+        SPORTS: document.getElementById('group-sports'),
+        MARKET: document.getElementById('group-market')
+      };
+
+      if (cat === 'ALL') {
+        Object.values(groups).forEach(g => { if (g) g.style.display = 'block'; });
+      } else {
+        Object.keys(groups).forEach(key => {
+          if (groups[key]) {
+            groups[key].style.display = (key === cat) ? 'block' : 'none';
+          }
+        });
+      }
+    }
 
     async function loadNews() {
       try {
