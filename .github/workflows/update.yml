@@ -1,9 +1,10 @@
-name: Update Nike Daily News & Send Email
+name: Update Nike Weekly News & Send Email
 
 on:
   schedule:
-    - cron: '50 21 * * *'
-  workflow_dispatch:
+    # 매주 월요일 한국시간 오전 6시 50분 (일요일 21:50 UTC)
+    - cron: '50 21 * * 0'
+  workflow_dispatch: # 수동 실행 지원
 
 jobs:
   update-and-mail:
@@ -35,7 +36,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add data/news.json
           git diff --quiet && git diff --staged --quiet || (
-            git commit -m "Auto update news data" &&
+            git commit -m "Auto update weekly news data" &&
             git pull --rebase origin main &&
             git push
           )
@@ -81,6 +82,7 @@ jobs:
               news_data = json.load(f)
 
           articles = news_data.get('items', [])
+          stock = news_data.get('stock', {})
           if not articles:
               print('발송할 뉴스가 없습니다.')
               exit(0)
@@ -127,6 +129,10 @@ jobs:
               </div>
               '''
 
+          stock_price = stock.get('price', 'N/A')
+          stock_change = stock.get('change', 'N/A')
+          stock_color = '#d32f2f' if not stock.get('is_up', True) else '#2e7d32'
+
           html = f'''
           <!DOCTYPE html>
           <html>
@@ -136,16 +142,22 @@ jobs:
           <body style=\"margin: 0; padding: 25px 10px; background-color: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;\">
             <div style=\"max-width: 680px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06);\">
               
-              <!-- 헤더 영역 (검은색 텍스트로 명확하게 변경) -->
+              <!-- 헤더 영역 -->
               <div style=\"background-color: #ffffff; padding: 25px 30px; border-bottom: 1px solid #eeeeee;\">
                 <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                   <tr>
                     <td>
-                      <div style=\"font-size: 10px; font-weight: 800; letter-spacing: 2px; color: #777777; text-transform: uppercase; margin-bottom: 4px;\">NIKE INDUSTRY & MARKET INTELLIGENCE</div>
-                      <div style=\"font-size: 30px; font-weight: 900; letter-spacing: -1px; color: #111111;\">NIKE DAILY</div>
+                      <div style=\"font-size: 10px; font-weight: 800; letter-spacing: 2px; color: #777777; text-transform: uppercase; margin-bottom: 4px;\">WEEKLY INTELLIGENCE REPORT</div>
+                      <div style=\"font-size: 30px; font-weight: 900; letter-spacing: -1px; color: #111111;\">NIKE WEEKLY</div>
                     </td>
                     <td align=\"right\" valign=\"bottom\">
-                      <div style=\"font-size: 12px; font-weight: 600; color: #777777;\">{today_str}</div>
+                      <div style=\"font-size: 12px; font-weight: 600; color: #777777; margin-bottom: 6px;\">{today_str}</div>
+                      <!-- 주가 정보 배지 -->
+                      <div style=\"display: inline-block; background-color: #f8f9fa; border: 1px solid #e9ecef; padding: 6px 12px; border-radius: 6px; text-align: right;\">
+                        <span style=\"font-size: 11px; font-weight: 700; color: #555555;\">NKE </span>
+                        <span style=\"font-size: 13px; font-weight: 800; color: #111111;\">{stock_price}</span>
+                        <span style=\"font-size: 11px; font-weight: 700; color: {stock_color}; margin-left: 4px;\">{stock_change}</span>
+                      </div>
                     </td>
                   </tr>
                 </table>
@@ -206,9 +218,9 @@ jobs:
                 </table>
               </div>
 
-              <!-- 하단 푸터 영역 (웹사이트에서 보기만 표시) -->
+              <!-- 하단 푸터 -->
               <div style=\"background-color: #f9f9fb; border-top: 1px solid #eeeeee; padding: 20px 25px; text-align: center; font-size: 12px; color: #777777;\">
-                <p style=\"margin: 0 0 8px 0; font-weight: 600;\">본 메일은 NIKE DAILY 자동 뉴스레터 구독자에게 발송됩니다.</p>
+                <p style=\"margin: 0 0 8px 0; font-weight: 600;\">본 메일은 NIKE WEEKLY 주간 뉴스레터 구독자에게 발송됩니다.</p>
                 <p style=\"margin: 0;\">
                   <a href=\"https://a01026710821-gif.github.io/Nike-Daily/\" style=\"color: #111111; font-weight: bold; text-decoration: underline;\">웹사이트에서 보기</a>
                 </p>
@@ -224,7 +236,7 @@ jobs:
               server.login(gmail_user, gmail_pass)
               for sub in subscribers:
                   msg = MIMEMultipart('alternative')
-                  msg['Subject'] = f\"[NIKE DAILY] 오늘의 나이키 뉴스 브리핑 ({today_str})\"
+                  msg['Subject'] = f\"[NIKE WEEKLY] 나이키 주간 뉴스 리포트 ({today_str})\"
                   msg['From'] = gmail_user
                   msg['To'] = sub
                   msg.attach(MIMEText(html, 'html'))
