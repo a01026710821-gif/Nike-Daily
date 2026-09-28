@@ -3,7 +3,7 @@ name: Update Nike Weekly News & Send Email
 on:
   schedule:
     # 매주 월요일 한국시간 오전 6시 50분 (일요일 21:50 UTC)
-    - cron: '20 22 * * *'
+    - cron: '31 22 * * *'
   workflow_dispatch: # 수동 실행 지원
 
 jobs:
