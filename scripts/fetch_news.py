@@ -5,6 +5,33 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data/news.json"
 
+# 1. 주가 데이터 수집 (Yahoo Finance API)
+def fetch_nike_stock():
+    try:
+        url = "https://query1.finance.yahoo.com/v8/finance/chart/NKE?interval=1d&range=5d"
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+        res = urllib.request.urlopen(req, timeout=10)
+        data = json.loads(res.read().decode('utf-8'))
+        
+        meta = data['chart']['result'][0]['meta']
+        price = meta.get('regularMarketPrice')
+        prev_close = meta.get('chartPreviousClose')
+        
+        if price and prev_close:
+            change = price - prev_close
+            change_percent = (change / prev_close) * 100
+            sign = "+" if change >= 0 else ""
+            return {
+                "symbol": "NKE (NYSE)",
+                "price": f"${price:.2f}",
+                "change": f"{sign}${change:.2f} ({sign}{change_percent:.2f}%)",
+                "is_up": change >= 0
+            }
+    except Exception as e:
+        print("주가 정보 수집 실패:", e)
+    return {"symbol": "NKE (NYSE)", "price": "N/A", "change": "N/A", "is_up": True}
+
+# 2. 최근 7일간의 주간 뉴스 수집
 QUERIES = [
     '나이키',
     '나이키 주가',
@@ -23,25 +50,22 @@ def clean(s):
     return re.sub(r'\s+', ' ', s).strip()
 
 def extract_image(item_element):
-    # Google News RSS 미디어 썸네일 또는 description 내 img 태그 추출
     try:
-        # media:content 또는 media:thumbnail 체크
         for child in item_element:
             if 'thumbnail' in child.tag or 'content' in child.tag:
                 url = child.attrib.get('url')
                 if url: return url
-        # description 태그 내부 img src 추출
         desc = item_element.findtext("description") or ""
         match = re.search(r'src=["\'](https?://[^"\']+)["\']', desc)
-        if match:
-            return match.group(1)
+        if match: return match.group(1)
     except Exception:
         pass
     return ""
 
 for q in QUERIES:
+    # 주간지를 위해 when:7d 로 변경
     url = "https://news.google.com/rss/search?" + urllib.parse.urlencode({
-        "q": q + " when:1d",
+        "q": q + " when:7d",
         "hl": "ko",
         "gl": "KR",
         "ceid": "KR:ko"
@@ -93,6 +117,7 @@ for q in QUERIES:
 
 items = items[:30]
 today = datetime.date.today().isoformat()
+stock_info = fetch_nike_stock()
 
 if not items:
     old = json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {"items": []}
@@ -100,9 +125,10 @@ if not items:
 
 data = {
     "date": today,
-    "insight": "최근 24시간 동안 Google News에서 수집된 나이키 관련 주요 기사입니다.",
+    "stock": stock_info,
+    "insight": "한 주간 Google News에서 수집된 나이키 관련 주요 주간 브리핑입니다.",
     "items": items
 }
 
 OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-print("Updated", OUT, len(items), "items")
+print("Updated", OUT, len(items), "items with stock info")
