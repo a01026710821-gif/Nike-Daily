@@ -2,14 +2,10 @@
   "date": "2026-09-28",
   "stock": {
     "symbol": "NKE (NYSE)",
-    "price": "$35.75",
-    "change": "+$0.24 (+0.68%)",
+    "price": "$36.39",
+    "change": "+$0.29 (+0.80%)",
     "is_up": true,
     "chart": [
-      {
-        "date": "09/21",
-        "price": 36.1
-      },
       {
         "date": "09/22",
         "price": 36.1
@@ -25,27 +21,31 @@
       {
         "date": "09/25",
         "price": 35.75
+      },
+      {
+        "date": "09/28",
+        "price": 36.39
       }
     ]
   },
   "insight": "한 주간 Google News에서 수집된 나이키 관련 주간 브리핑입니다.",
   "items": [
     {
-      "cat": "PRODUCT",
-      "title": "슈프림과 나이키, 2026년 가을 어패럴 컬렉션 공개 - Hypebeast.KR",
-      "summary": "슈프림과 나이키, 2026년 가을 어패럴 컬렉션 공개 Hypebeast.KR",
+      "cat": "BUSINESS",
+      "title": "나이키 에어 맥스 95 \"ACG\", 레트로 아웃도어 헤리티지에 바치는 헌사 - Hypebeast.KR",
+      "summary": "나이키 에어 맥스 95 \"ACG\", 레트로 아웃도어 헤리티지에 바치는 헌사 Hypebeast.KR",
       "source": "Hypebeast.KR",
-      "date": "Mon, 21 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNS3Y2T2xMQXpCQlI0Y0ZZWTNGbnFYbl9hVUwtQV9RU0R0eG5ITkZMVGFUWUJHaGpkcTRJTTBqWUlUdTBYcVp5WFNWUXFrRVkyUGprb245SHBwcFBiM29HcTVncUdFeFRRUWpkRDdjcU9VMUVQTDdSb1k4T0NMQXZiZWh0M3FyeE5OQVdpdXBDNExKanYtMV9nbkltWms?oc=5",
+      "date": "Thu, 24 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQOVQwUUFSMEh3ZjQwcUNTS3YzVk9zUVlBUG1fSC1CdFlTNklzbDFkdlJLbFh1bi1PVi16YW9pMDBTOHJzaEwwWGROQjVjeERNWWxGQ0UwTFlPcEVaT1ozbW1rV2FBZmNNQ0pOVF83REEwbDhOWVJFT3ktSGJId1ptYUIyOXlGOWxEU19vcHdn?oc=5",
       "image": ""
     },
     {
       "cat": "BUSINESS",
-      "title": "조지아 헌터 벨, 애슬로스 런던에서 나이키 플라이웹 브라를 착용하다 - About Nike",
-      "summary": "조지아 헌터 벨, 애슬로스 런던에서 나이키 플라이웹 브라를 착용하다 About Nike",
+      "title": "나이키 - 순환형 솔루션 발전시키기 - About Nike",
+      "summary": "나이키 - 순환형 솔루션 발전시키기 About Nike",
       "source": "About Nike",
-      "date": "Mon, 21 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOQmlFMExHQi10OXY0Wnd5V1otR09zY285MkZ3eldYUEZTcVVvRml2ak1ncnZEYTJnRGk0VWxxbmRIWjFLSTlxejc0VnhDX2ZLWk0zdElmUHZYd214My10WWpmM2p2SjhIY25rUGhweFdhZ3J3R3FXcHhxM0hXN0lXNzktSjFmNl9SQUYtZE5RdmpHbGF2NlRKdjJRVDlfaFhaSFVrU09vYw?oc=5",
+      "date": "Wed, 23 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9PTjBnZHo1YVA3eldNSnI4R3BvN2tIalkwU1R3dUhlWF9mV04zaWg1WEJ0VGJpaGJQS2ZkeDV6M0lkYy1FcXFrYzFoZm5BZXNVNzJOaG9hV21CYUgyREpsZEtHMzh0ODFoX2pCUERJV2JkZFlyMk9DQWdRLTRkeHM?oc=5",
       "image": ""
     },
     {
@@ -59,29 +59,47 @@
     },
     {
       "cat": "BUSINESS",
-      "title": "나이키 에어 맥스 95 ‘I-95’ 팩, 러닝 감성 대신 워크부츠 유틸리티를 입다 - Hypebeast.KR",
-      "summary": "나이키 에어 맥스 95 ‘I-95’ 팩, 러닝 감성 대신 워크부츠 유틸리티를 입다 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Mon, 21 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxONnlJNm9fSnFHbHZrMFRPcmtFSmVFbGNja0VhTmRiQTFnT0w2NFd0WHhra0VXeXQ0VThUQzd5a1RJSmZ6bm1RSGViTzhWQV9hRlU3ckM3RjVPYU53UGt4UV9vT3otbWRXX3I1ZjVUQXhmMUFxZTNmQVJ3aVpDRnNmV3ExcmlVaUFfam1rSWFQZUFEOFU1N040cG1tVjA0a2RpUHpiZ213MDFtM2o4dGYtRmh0cGZmU28?oc=5",
+      "title": "혁신에서 아이콘으로, 나이키 문 슈 기획전 다시보기 - 디자인플러스",
+      "summary": "혁신에서 아이콘으로, 나이키 문 슈 기획전 다시보기 디자인플러스",
+      "source": "디자인플러스",
+      "date": "Tue, 22 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1wa0Q5RG5CSmlsMWEtQ0EyT0dFcUZWSDU3VzlMRGQ5RWQ2T0lSd1c4UDRmVmJLOVg3Sk9xaEdPaDF6X2ZxbHNIcG1LYk8?oc=5",
       "image": ""
     },
     {
       "cat": "BUSINESS",
-      "title": "나이키 - 순환형 솔루션 발전시키기 - About Nike",
-      "summary": "나이키 - 순환형 솔루션 발전시키기 About Nike",
-      "source": "About Nike",
+      "title": "나이키가 음바페에 보복했다. - vietnam.vn",
+      "summary": "나이키가 음바페에 보복했다. vietnam.vn",
+      "source": "vietnam.vn",
       "date": "Wed, 23 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9PTjBnZHo1YVA3eldNSnI4R3BvN2tIalkwU1R3dUhlWF9mV04zaWg1WEJ0VGJpaGJQS2ZkeDV6M0lkYy1FcXFrYzFoZm5BZXNVNzJOaG9hV21CYUgyREpsZEtHMzh0ODFoX2pCUERJV2JkZFlyMk9DQWdRLTRkeHM?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1YUkZrMFVYdEhoNnZka01lMDhnNGJMLTlsUVNrcDhkYlU0T1o3Z01VUWhwUmxSTkI2WnFzMkJhM3BFQk9pMTRIV2hLNHAyQUlKNndVNm1DRDk?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "MARKET",
+      "title": "나이키·맥도날드·LVMH…이 낡은 주식들을 살 때일까? [흔들리는 제국] - v.daum.net",
+      "summary": "나이키·맥도날드·LVMH…이 낡은 주식들을 살 때일까? [흔들리는 제국] v.daum.net",
+      "source": "v.daum.net",
+      "date": "Mon, 21 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFB3UW9oZk9Nem5wdkVhYjlueTJWQ09RNWUtOXJhbjJfX25IR1Mxa0VpU3c1TWNpazV5amRDbnZIbDU4Q3VWUkRCSzRiZFdEUHM?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "MARKET",
+      "title": "[美특징주]나이키, 실적 발표 앞두고 목표가 하향에도 상승 - edaily.co.kr",
+      "summary": "[美특징주]나이키, 실적 발표 앞두고 목표가 하향에도 상승 edaily.co.kr",
+      "source": "edaily.co.kr",
+      "date": "Mon, 28 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOYWpURkVnSm1QcFlaUTVDdUtfWTFGRHZlaW52OTQ3T2MyYVBQbFd4U1FEVjBnajBfOUMwNTBnX1NWWndrR3A0aUVIem5od1VTUWp6a3B1RkhhYjNIc1d5cTBFQUp4SHgxV1MzWW9Wbldpd0dNdXV4SmJqLWtjMXVDdg?oc=5",
       "image": ""
     },
     {
       "cat": "BUSINESS",
-      "title": "나이키 에어 맥스 95 \"ACG\", 레트로 아웃도어 헤리티지에 바치는 헌사 - Hypebeast.KR",
-      "summary": "나이키 에어 맥스 95 \"ACG\", 레트로 아웃도어 헤리티지에 바치는 헌사 Hypebeast.KR",
+      "title": "나이키, 자 모란트의 ‘트웰브 타임’ 할로윈 에디션 공개 예고 - Hypebeast.KR",
+      "summary": "나이키, 자 모란트의 ‘트웰브 타임’ 할로윈 에디션 공개 예고 Hypebeast.KR",
       "source": "Hypebeast.KR",
-      "date": "Thu, 24 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQOVQwUUFSMEh3ZjQwcUNTS3YzVk9zUVlBUG1fSC1CdFlTNklzbDFkdlJLbFh1bi1PVi16YW9pMDBTOHJzaEwwWGROQjVjeERNWWxGQ0UwTFlPcEVaT1ozbW1rV2FBZmNNQ0pOVF83REEwbDhOWVJFT3ktSGJId1ptYUIyOXlGOWxEU19vcHdn?oc=5",
+      "date": "Wed, 23 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNRGliUGl4SjhQY3pFUWM5Z1VjUU9lcTRwZHdhT0xXdEJ5dU54cF9meGxxVGk5SS0zQkFvRWtSMkxIOEQ2WTZCQ0hhazhiWWs0QV9XOGtIdFpKREMtSzhrOVBqbFJ3b0hWc2g2a0lXVGtwbjUzTHNEUkJONlcwOHVIYXlPeGNuUHFrelFxTmZPbEZzb1lVTGtv?oc=5",
       "image": ""
     },
     {
@@ -103,12 +121,12 @@
       "image": ""
     },
     {
-      "cat": "PRODUCT",
-      "title": "나이키 르브론 24 ‘초즌 1s’ 자세히 보기 출시 정보 | Hypebeast.KR - Hypebeast.KR",
-      "summary": "나이키 르브론 24 ‘초즌 1s’ 자세히 보기 출시 정보 | Hypebeast.KR Hypebeast.KR",
+      "cat": "BUSINESS",
+      "title": "나이키 '문 슈 OG 레더 SP', 빈티지 무드의 세 가지 컬러웨이로 귀환 - Hypebeast.KR",
+      "summary": "나이키 '문 슈 OG 레더 SP', 빈티지 무드의 세 가지 컬러웨이로 귀환 Hypebeast.KR",
       "source": "Hypebeast.KR",
-      "date": "Tue, 22 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxPemJVYzNsd0R4OGhxOVllRFc3d09pVTRwbEQyWWNhamNrbFZrR3FsalROX2p1NWJhTUdmYUJPWTAyd3lhaEtvM2hvYWozaUExM2l2a1VHdnprQjNMRTdiMmlrMnpVck9GQ1FIZG5fOW1HMFlZNnlveVRXY094cVJGYWs1NEZVX19BM2J5Xzl6dlhDQQ?oc=5",
+      "date": "Mon, 28 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPUWJXbDVKUmxvNGtQd0Z2VEN2R3B6MVQ5RXllX3l5WUlfV1o0Z0hKSjdubG9sOVBwWXZ6VERlaUd3cm85Y1FyUHpBazV2QnFXcnVaaC1kS250ZnZTNzJ5dUVJdWd1RGFYNU1wTlBEZ0RaaWJ6WWlpbWVSTk9UYXRxYllrYWhieTBxck8yWUhjRTFCdTVHa3RsbFVfQXh4RFM0T3dKSUtmUVFHaDh4dHcwYzhWekQySWtsTV9PX0tIT0MtOWoxdTc3aldkcWc0dGw0eERwTk5Ma3ZjcS1PRmZWQnBuVHV2eVdnRF9lSnI1TGlhRUJOajV6ZTVrQ1VBZm0tUWhXVWF3dDZVNmVXSFFLNmx6TDYyMVBSU2ctWE1ZU1FZc0RGOV85Y1pJaWJxVmJ1a0VXczNiNkpuQQ?oc=5",
       "image": ""
     },
     {
@@ -118,15 +136,6 @@
       "source": "Hypebeast.KR",
       "date": "Tue, 22 Sep 2026",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbXBwVDRFN0x4azZuSURqRmd0N3pDeVktMTdlaDJFckgwZ2QyWlYwYWNmVHRqT3RhUGV4RTZfMkZQbFhpNWVaS1JTNWNYeHNiTEFUN2EzUk4wenFZRkNxX1F6UG1EaUVCS2YwWS1wN2RGNlBIUHZpYzAwLUwySWp3ZnFoREpZUUcxa1lSU2xNbTE?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BUSINESS",
-      "title": "나이키, ‘퍼플 스모크’ 컬러의 마인드 001 슬립온 공개 - Hypebeast.KR",
-      "summary": "나이키, ‘퍼플 스모크’ 컬러의 마인드 001 슬립온 공개 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Mon, 21 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQb0ltb1ZFZUgzY0pTamNYaHotQ0dGd2gwQ2tuYjNFaGFwQkh2NlR5UVdkUkpkQnR2NVlNb3VRMzhSMlVLcUliSHU2aTd4anlUdk55OUpVOEE2WWxZXzFURFBmazRuWmZGeFh6cXk3U0R0bzFwVWpYanRCeWRjdTdSTEN3bkh5cVl3?oc=5",
       "image": ""
     },
     {
@@ -149,24 +158,6 @@
     },
     {
       "cat": "BUSINESS",
-      "title": "나이키 마인드 002, ‘페일리스트 퍼플’로 토부터 힐까지 펀칭 디테일 적용 - Hypebeast.KR",
-      "summary": "나이키 마인드 002, ‘페일리스트 퍼플’로 토부터 힐까지 펀칭 디테일 적용 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Mon, 21 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPM0V6UGJMLWxha2dIc1Fxb2d5V18zV3FxQlZLOFJVWUp0S0NXdF9CRGlaa2NtN25FX1owQ2JqNjJUcGZPYzRBdzlmeTQ1cVpPS05wME1TNm5qcFo5STZkMTZtemdQaFNUMHpxZDRLOU14cmdGbEJycC12NHd0U2l6b2g2Z19makNabkE?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BUSINESS",
-      "title": "나이키 에어 맥스 플러스 ‘프리미어’, 시그니처 TPU 케이지 대신 티엠포에서 영감 받은 가죽 패널 적용 - Hypebeast.KR",
-      "summary": "나이키 에어 맥스 플러스 ‘프리미어’, 시그니처 TPU 케이지 대신 티엠포에서 영감 받은 가죽 패널 적용 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Mon, 21 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQY3VTTjFWZGtDUTJKX1pZSk9Qb0ltLXVvMFRsVmdibFRLUV9idTNHMUZVM3VzbTZHNzUwc0NSdzdtZXEtelZsaUFOMmVlMTZldDU4OG16a1RnOXl4M0hDemd3MjBoZXBqUjFjNWNlM25RMnJraU8zZEtWYWxWVlZJWEUxT1lieWVKUUl4aFhPWGtycWVCTGc?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BUSINESS",
       "title": "나이키, AirWorks 프로그램 통해 3D 프린팅 에어 맥스 링크 공개 - Hypebeast.KR",
       "summary": "나이키, AirWorks 프로그램 통해 3D 프린팅 에어 맥스 링크 공개 Hypebeast.KR",
       "source": "Hypebeast.KR",
@@ -184,21 +175,21 @@
       "image": ""
     },
     {
-      "cat": "BUSINESS",
-      "title": "나이키와 젤러펠드, 3D 프린팅 AIRMAX 1000.3 ‘스톤/버건디 크러시’ 공개 - Hypebeast.KR",
-      "summary": "나이키와 젤러펠드, 3D 프린팅 AIRMAX 1000.3 ‘스톤/버건디 크러시’ 공개 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Tue, 22 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOMUlPY0pEbDU2cGw2YjNYWkFzd1hobnNyM2hoUEhWSDc2R3JxYkpaNWlrcm1kbmFOWVo0cFFaeUlnazRzRjlPYTRYWndWcTdNakd5cmRPMHgwbjh0ZmdoTGlENHhJREtSaDQwNnFEeHpla0RLSU43M2VoOF95dDAyVWhCVVh1QmhqSTFnMGNmS3lQMTRaTlE?oc=5",
-      "image": ""
-    },
-    {
       "cat": "PRODUCT",
       "title": "Jacquemus x Nike Moon Shoe ‘Emerald Rise’ 출시 정보 | Hypebeast.KR - Hypebeast.KR",
       "summary": "Jacquemus x Nike Moon Shoe ‘Emerald Rise’ 출시 정보 | Hypebeast.KR Hypebeast.KR",
       "source": "Hypebeast.KR",
       "date": "Tue, 22 Sep 2026",
       "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNYi1LdDNsRUVLZ2FRdHJMdDVSY2lJajEzSXRwdzc5YjA3NXJTUEFsUGVtTjdnelFxWm1xNi1lZ2NQOEF1NkVYdDdCRGVRVVZMM3UyTkVhckZOZU9vV2xIUnI0eEhMVWVKbktELWVULVdXLVNBd21oVlRfazd0SkRDTEMxd3hTN3RpUm81RUlVYVpzM1E?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "나이키와 젤러펠드, 3D 프린팅 AIRMAX 1000.3 ‘스톤/버건디 크러시’ 공개 - Hypebeast.KR",
+      "summary": "나이키와 젤러펠드, 3D 프린팅 AIRMAX 1000.3 ‘스톤/버건디 크러시’ 공개 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Tue, 22 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOMUlPY0pEbDU2cGw2YjNYWkFzd1hobnNyM2hoUEhWSDc2R3JxYkpaNWlrcm1kbmFOWVo0cFFaeUlnazRzRjlPYTRYWndWcTdNakd5cmRPMHgwbjh0ZmdoTGlENHhJREtSaDQwNnFEeHpla0RLSU43M2VoOF95dDAyVWhCVVh1QmhqSTFnMGNmS3lQMTRaTlE?oc=5",
       "image": ""
     },
     {
@@ -212,47 +203,20 @@
     },
     {
       "cat": "BUSINESS",
-      "title": "혁신에서 아이콘으로, 나이키 문 슈 기획전 다시보기 - 디자인플러스",
-      "summary": "혁신에서 아이콘으로, 나이키 문 슈 기획전 다시보기 디자인플러스",
-      "source": "디자인플러스",
-      "date": "Tue, 22 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMiTEFVX3lxTE1wa0Q5RG5CSmlsMWEtQ0EyT0dFcUZWSDU3VzlMRGQ5RWQ2T0lSd1c4UDRmVmJLOVg3Sk9xaEdPaDF6X2ZxbHNIcG1LYk8?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BUSINESS",
-      "title": "나이키, 거친 ‘NYC Rat’ 디테일로 재해석한 에어 포스 1 로우 공개 - Hypebeast.KR",
-      "summary": "나이키, 거친 ‘NYC Rat’ 디테일로 재해석한 에어 포스 1 로우 공개 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Mon, 21 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxNU2hVOHl3cHZrTkN1YUQtTGVGczVIdGx6N0dWVEtGSnpDdUs3aTYyWTZkVDhVTkZLT2lyX3IySE5acFdSYUVkQ0FJa2Z2dE53NHB2b0RBODBnQ0RzOW5kNWdBMlM2dUJNNzBIbjRSZXRMbFkzclpVdnF3Ynhic0s4SWg0RlVfLW8?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BUSINESS",
-      "title": "나이키가 음바페에 보복했다. - Vietnam.vn",
-      "summary": "나이키가 음바페에 보복했다. Vietnam.vn",
-      "source": "Vietnam.vn",
-      "date": "Wed, 23 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE1YUkZrMFVYdEhoNnZka01lMDhnNGJMLTlsUVNrcDhkYlU0T1o3Z01VUWhwUmxSTkI2WnFzMkJhM3BFQk9pMTRIV2hLNHAyQUlKNndVNm1DRDk?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "나이키, 위상 되찾는다…제품·매장·마케팅 새판[다시 뛰는 스우시③] - newsis.com",
-      "summary": "나이키, 위상 되찾는다…제품·매장·마케팅 새판[다시 뛰는 스우시③] newsis.com",
-      "source": "newsis.com",
-      "date": "Sat, 26 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE9xTlpHb3k4X2lCV1E2S1dXSlkwSm9HMGpBNnJmaFpUMFFqSW03ZVRkYzVVUmF3WWllYlp1SHV5SFpIeG9hQTBLcWZkSkp4YXBZSHBrdk5hRk5rSGM3WEJubk1xZkljSkE0NC01ZXFrcTRpd19SZ1pCWNIBeEFVX3lxTE9xTlpHb3k4X2lCV1E2S1dXSlkwSm9HMGpBNnJmaFpUMFFqSW03ZVRkYzVVUmF3WWllYlp1SHV5SFpIeG9hQTBLcWZkSkp4YXBZSHBrdk5hRk5rSGM3WEJubk1xZkljSkE0NC01ZXFrcTRpd19SZ1pCWA?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BUSINESS",
       "title": "나이키 공동 창립자 필 나이트, 오리건대학교에 10억 달러 기부 - Hypebeast.KR",
       "summary": "나이키 공동 창립자 필 나이트, 오리건대학교에 10억 달러 기부 Hypebeast.KR",
       "source": "Hypebeast.KR",
       "date": "Fri, 25 Sep 2026",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYkh1S0FhcnZZNWJQS2hGSS1nWE9rVTVNZjVnalpUeVZ0aHMyeThMWDNTVTU0OFVoMWRqbjNQeExwY0tsZEJCM25mbmVudnR2S0h1TlFXVjlpTlg3M2d1RXNORFpTeEZFUjFEREcxWUdFTnl2U1Q2aHhpMkdfWmlNWnRrSlZwb01ZME8yMEFRSnA5SzhfLTU1RC1lMlMwaUpWcHMwQmZ3?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "나이키 밑창에 붙인 호스 조각… 거인이 놓친 ‘러닝의 본질’ 파고들다[이준만의 세상을 바꾼 기업가들] - donga.com",
+      "summary": "나이키 밑창에 붙인 호스 조각… 거인이 놓친 ‘러닝의 본질’ 파고들다[이준만의 세상을 바꾼 기업가들] donga.com",
+      "source": "donga.com",
+      "date": "Tue, 22 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5rTFFXWDlxaGFLbDUwb0hCUTFhVDZUX0l4QTNOMlZlNTRsZGtTUzF4TGluek5KODlIU0FwSF9ieVhTTEEzVUhmakZNUE5ud1laNmxCcnpSTThDOVU4YzhVcTZxUkxJN2c0WWdjVTZkUkVZM0x1OEHSAWZBVV95cUxQbHllMkRLUG5LZUZCZ19lT2FXdkpyUHF0eEEzRGprTUJJUDBQTXVaUU5HSTRRVV9uX01MNE9YS2s2QkJ3RUZTOWJ0Wjl2SmlEQ1dWVmZoUWtIVUJzR2F6Z0k5ZFUycGc?oc=5",
       "image": ""
     },
     {
@@ -265,12 +229,30 @@
       "image": ""
     },
     {
+      "cat": "PRODUCT",
+      "title": "‘나이키라서 산다’ 옛말…미국 운동화 시장, 달라진 미국 신발 소비 : 이슈인사이드 - 재경일보",
+      "summary": "‘나이키라서 산다’ 옛말…미국 운동화 시장, 달라진 미국 신발 소비 : 이슈인사이드 재경일보",
+      "source": "재경일보",
+      "date": "Mon, 28 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFA0bVNIOWFuWktNVTNqVmJkcG1uSmxwRGxLSkdhSmFzVUNHbThYcDBuejYyNDBVR2xDM3RIemdNZU5HYmJtLXFCVW9xUQ?oc=5",
+      "image": ""
+    },
+    {
       "cat": "BUSINESS",
-      "title": "나이키 밑창에 붙인 호스 조각… 거인이 놓친 ‘러닝의 본질’ 파고들다[이준만의 세상을 바꾼 기업가들] - v.daum.net",
-      "summary": "나이키 밑창에 붙인 호스 조각… 거인이 놓친 ‘러닝의 본질’ 파고들다[이준만의 세상을 바꾼 기업가들] v.daum.net",
-      "source": "v.daum.net",
-      "date": "Tue, 22 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBwZ3duNmNqQUQzMUZrMzlIZ25HMllHOFQxNWtVVzMxREwzX01EVHhIYkdXR1J0OEcxMEFiRW1zeU1KZHFIYUlkN0N2QWlaR0E?oc=5",
+      "title": "나이키 아틀리에가 샤캐리 리처드슨을 위해 완성한 하이패션 드라마 - Hypebae",
+      "summary": "나이키 아틀리에가 샤캐리 리처드슨을 위해 완성한 하이패션 드라마 Hypebae",
+      "source": "Hypebae",
+      "date": "Thu, 24 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcFQta0tfdVlvSmdtTzRVWS0yX3NyS3Q2eVpHN3NYVG9TVEw0UVNVU1VXX2h5SWN5UjJwdnhzTW1YNFlacHlCSFdDOG05cnFkZEY2YUFYdV96QlVBamRGekRWQk96empNOGFJZWJPU1BMYzY3aWo1SjRZaXBXYnotRm5TWVBvQzdmN3QtVmVocnYwWFYzXzJ5XzRjSC1MTDZTZmJQUlZ6eHN5MlNYQ0xELUVZNA?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BUSINESS",
+      "title": "Nike Air Max 95 Big Bubble \"Cow Print\", 프린트 그래픽 대신 리얼 송아지 털을 입다 - Hypebeast.KR",
+      "summary": "Nike Air Max 95 Big Bubble \"Cow Print\", 프린트 그래픽 대신 리얼 송아지 털을 입다 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Mon, 28 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQakNVZjJWMU1XY01NQ3VXdGZOaEc4N3NQemc5Q3dQMUV2d0dyZUlrbDQtTE9yenJPSDJnYXlya1FzZHJVRUdXOWRqb3dFYWoxbzFmZndfdkZhYjNkZjB6UHVjVWJ4dktnLU84RUYtZHlZTHNxdmpmMlNTMHdlUlpsS3hwWkdWUUZZcU15NW5CRzh3Vld2MUE?oc=5",
       "image": ""
     },
     {
@@ -292,12 +274,30 @@
       "image": ""
     },
     {
+      "cat": "MARKET",
+      "title": "나이키·아디다스에 들어간 K소재…러닝 붐 타고 매출 '쑥' - 한국경제",
+      "summary": "나이키·아디다스에 들어간 K소재…러닝 붐 타고 매출 '쑥' 한국경제",
+      "source": "한국경제",
+      "date": "Wed, 23 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1BNlpPTWp3Uk9sUlFBLWpxd0lkZ2FUOV95MUFVZ3FjZGJtVkNWN0RlWnhEczk1OVk4SFQxUFM1RE5WaWF2VlhwckVqZ2puR3JFM1hwNzRGRkh1dw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 위상 되찾는다…제품·매장·마케팅 새판[다시 뛰는 스우시③] - 뉴시스",
+      "summary": "나이키, 위상 되찾는다…제품·매장·마케팅 새판[다시 뛰는 스우시③] 뉴시스",
+      "source": "뉴시스",
+      "date": "Sat, 26 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFA4cEtFaV8zUG5IODRtRTRuTmt4RDNFQlJJdjJ0am90TDEycDZKaXJ3RXdoUllCb1dXbWpveEZ6b1B5bmZyT05qVjZXQ1N5QVR6MXJpSVV1QUZxc29hR3Q5MNIBeEFVX3lxTE9xTlpHb3k4X2lCV1E2S1dXSlkwSm9HMGpBNnJmaFpUMFFqSW03ZVRkYzVVUmF3WWllYlp1SHV5SFpIeG9hQTBLcWZkSkp4YXBZSHBrdk5hRk5rSGM3WEJubk1xZkljSkE0NC01ZXFrcTRpd19SZ1pCWA?oc=5",
+      "image": ""
+    },
+    {
       "cat": "BUSINESS",
-      "title": "나이키 아틀리에가 샤캐리 리처드슨을 위해 완성한 하이패션 드라마 - Hypebae",
-      "summary": "나이키 아틀리에가 샤캐리 리처드슨을 위해 완성한 하이패션 드라마 Hypebae",
-      "source": "Hypebae",
-      "date": "Thu, 24 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcFQta0tfdVlvSmdtTzRVWS0yX3NyS3Q2eVpHN3NYVG9TVEw0UVNVU1VXX2h5SWN5UjJwdnhzTW1YNFlacHlCSFdDOG05cnFkZEY2YUFYdV96QlVBamRGekRWQk96empNOGFJZWJPU1BMYzY3aWo1SjRZaXBXYnotRm5TWVBvQzdmN3QtVmVocnYwWFYzXzJ5XzRjSC1MTDZTZmJQUlZ6eHN5MlNYQ0xELUVZNA?oc=5",
+      "title": "세계 1위 나이키 '휘청'…스포츠 중심으로 새판[다시 뛰는 스우시①] - 뉴시스",
+      "summary": "세계 1위 나이키 '휘청'…스포츠 중심으로 새판[다시 뛰는 스우시①] 뉴시스",
+      "source": "뉴시스",
+      "date": "Fri, 25 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE96UVhjWmlkS3R4X0s0OWtsZXkxT0JndGU2OHRUNFVPeWpHWWZQY1NwNFJraUNzbEFhSlV0d2Fvb255c2FndnpIUlhSdVNqMnhpVVVOcGViaEJYZnFuQ2hMWNIBeEFVX3lxTE4xSUp0OTAwX2hMQ21lWTc4SDRzOXZZR0xWY0Y0dVZSVGYzelpkd1JkdV9rMWlkZnlmUjRMV3pHa3pBSXJWSTU2QUpSOEhPWE5JNTdsZEhTNjdoV0UzcldndEt5Z016eC1fNXJENEczeFFxLXRpaDBEWA?oc=5",
       "image": ""
     }
   ]
