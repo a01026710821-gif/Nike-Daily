@@ -5,11 +5,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data/news.json"
 
-# 1. 한 주간(5일) 주가 데이터 수집 (Yahoo Finance API)
+# 1. 주가 데이터 수집 (Yahoo Finance API)
 def fetch_nike_stock():
     try:
         url = "https://query1.finance.yahoo.com/v8/finance/chart/NKE?interval=1d&range=5d"
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"})
+        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
         res = urllib.request.urlopen(req, timeout=10)
         data = json.loads(res.read().decode('utf-8'))
         
@@ -24,7 +24,6 @@ def fetch_nike_stock():
         change_percent = (change / prev_close) * 100 if prev_close else 0
         sign = "+" if change >= 0 else ""
 
-        # 차트용 일별 데이터 정리 (날짜, 종가)
         chart_data = []
         for ts, p in zip(timestamps, close_prices):
             if p is not None:
@@ -40,20 +39,7 @@ def fetch_nike_stock():
         }
     except Exception as e:
         print("주가 정보 수집 실패:", e)
-        # 기본 더미 데이터 (에러 방지용)
-        return {
-            "symbol": "NKE (NYSE)",
-            "price": "$82.50",
-            "change": "+$1.20 (+1.48%)",
-            "is_up": True,
-            "chart": [
-                {"date": "Mon", "price": 81.2},
-                {"date": "Tue", "price": 81.8},
-                {"date": "Wed", "price": 80.9},
-                {"date": "Thu", "price": 82.1},
-                {"date": "Fri", "price": 82.5}
-            ]
-        }
+        return {"symbol": "NKE (NYSE)", "price": "$82.50", "change": "+$1.20 (+1.48%)", "is_up": True, "chart": []}
 
 # 2. 최근 7일간의 주간 뉴스 수집
 QUERIES = [
@@ -61,7 +47,7 @@ QUERIES = [
     '나이키 주가',
     '나이키 운동화 OR 에어맥스 OR 조던',
     '나이키 실적 OR 매출',
-    '나이키 코리아'
+    '나이키 선수 OR 유니폼'
 ]
 
 UA = "Mozilla/5.0 (NIKE-WEEKLY/1.0)"
@@ -114,13 +100,16 @@ for q in QUERIES:
             if not any(w in low for w in ["나이키", "nike", "조던", "jordan", "컨버스"]):
                 continue
                 
-            cat = "BUSINESS"
-            if any(w in low for w in ["신발", "운동화", "스니커즈", "에어맥스", "페가수스", "조던", "신제품", "출시", "컬렉션"]):
-                cat = "PRODUCT"
-            elif any(w in low for w in ["광고", "캠페인", "브랜드", "마케팅"]):
-                cat = "BRAND"
-            elif any(w in low for w in ["주가", "주식", "실적", "매출", "영업이익", "증시", "시장"]):
+            # 💡 강화된 4가지 카테고리 세분화 로직
+            cat = "BRAND"  # 기본값
+            if any(w in low for w in ["축구", "농구", "선수", "국대", "유니폼", "스포츠", "엠바페", "손흥민", "nba", "올림픽", "골프"]):
+                cat = "SPORTS"
+            elif any(w in low for w in ["주가", "주식", "실적", "매출", "영업이익", "증시", "증권", "펀드", "투자"]):
                 cat = "MARKET"
+            elif any(w in low for w in ["신발", "운동화", "스니커즈", "에어맥스", "페가수스", "조던", "신제품", "출시", "컬렉션", "스니커"]):
+                cat = "PRODUCT"
+            elif any(w in low for w in ["광고", "캠페인", "브랜드", "마케팅", "팝업", "엠버서더"]):
+                cat = "BRAND"
                 
             summary = desc[:200] if desc else title
             items.append({
@@ -142,9 +131,9 @@ stock_info = fetch_nike_stock()
 data = {
     "date": today,
     "stock": stock_info,
-    "insight": "한 주간 Google News에서 수집된 나이키 관련 주간 브리핑입니다.",
+    "insight": "한 주간 Google News에서 수집된 나이키 관련 분야별 브리핑입니다.",
     "items": items
 }
 
 OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-print("Updated", OUT, len(items), "items with stock info and chart")
+print("Updated", OUT, len(items), "items with 4 detailed categories")
