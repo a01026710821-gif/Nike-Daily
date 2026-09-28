@@ -2,9 +2,8 @@ name: Update Nike Weekly News & Send Email
 
 on:
   schedule:
-    # 매주 월요일 한국시간 오전 6시 50분 (일요일 21:50 UTC)
-    - cron: '31 22 * * *'
-  workflow_dispatch: # 수동 실행 지원
+    - cron: '50 21 * * 0' # 매주 월요일 아침 6시 50분 (KST)
+  workflow_dispatch:
 
 jobs:
   update-and-mail:
@@ -36,7 +35,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add data/news.json
           git diff --quiet && git diff --staged --quiet || (
-            git commit -m "Auto update weekly news data" &&
+            git commit -m "Auto update news data" &&
             git pull --rebase origin main &&
             git push
           )
@@ -89,138 +88,93 @@ jobs:
 
           today_str = datetime.date.today().strftime('%Y년 %m월 %d일')
 
-          top_story = articles[0] if len(articles) > 0 else None
-          sub_top_1 = articles[1] if len(articles) > 1 else None
-          sub_top_2 = articles[2] if len(articles) > 2 else None
+          # 4개 카테고리별 분리
+          product_items = [a for a in articles if a.get('cat') == 'PRODUCT'][:3]
+          brand_items = [a for a in articles if a.get('cat') == 'BRAND'][:3]
+          sports_items = [a for a in articles if a.get('cat') == 'SPORTS'][:3]
+          market_items = [a for a in articles if a.get('cat') == 'MARKET'][:3]
 
-          product_brand_items = [a for a in articles[3:] if a.get('cat') in ['PRODUCT', 'BRAND']][:3]
-          business_market_items = [a for a in articles[3:] if a.get('cat') in ['BUSINESS', 'MARKET', 'SPORTS']][:3]
-
-          remains = [a for a in articles[3:] if a not in product_brand_items and a not in business_market_items]
-          while len(product_brand_items) < 3 and remains:
-              product_brand_items.append(remains.pop(0))
-          while len(business_market_items) < 3 and remains:
-              business_market_items.append(remains.pop(0))
-
-          def render_card(item, is_large=False):
+          def render_card(item):
               if not item: return ''
               cat = item.get('cat', 'BUSINESS')
               title = item.get('title', '')
-              summary = item.get('summary', '')[:110] + '...' if len(item.get('summary', '')) > 110 else item.get('summary', '')
+              summary = item.get('summary', '')[:100] + '...' if len(item.get('summary', '')) > 100 else item.get('summary', '')
               source = item.get('source', '')
               date = item.get('date', '')
               url = item.get('url', '#')
               img_url = item.get('image', '')
 
-              title_size = '19px' if is_large else '14px'
-              padding = '20px' if is_large else '16px'
-
               img_tag = ''
               if img_url:
-                  img_tag = f'<div style=\"margin-bottom: 12px; max-height: 180px; overflow: hidden; border-radius: 4px;\"><img src=\"{img_url}\" style=\"width: 100%; height: auto; display: block; object-fit: cover;\" alt=\"news image\" /></div>'
+                  img_tag = f'<div style=\"margin-bottom: 10px; max-height: 120px; overflow: hidden; border-radius: 4px;\"><img src=\"{img_url}\" style=\"width: 100%; height: auto; display: block; object-fit: cover;\" alt=\"news image\" /></div>'
 
               return f'''
-              <div style=\"background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; padding: {padding}; box-sizing: border-box;\">
+              <div style=\"background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 14px; box-sizing: border-box; height: 100%;\">
                 {img_tag}
-                <div style=\"font-size: 11px; font-weight: 800; color: #111111; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 6px;\">{cat}</div>
-                <a href=\"{url}\" style=\"text-decoration: none; color: #111111; font-size: {title_size}; font-weight: 800; line-height: 1.35; display: block; margin-bottom: 8px;\">{title}</a>
-                <p style=\"font-size: 13px; color: #555555; line-height: 1.5; margin: 0 0 10px 0;\">{summary}</p>
-                <div style=\"font-size: 11px; color: #888888;\">{source} &bull; {date}</div>
+                <div style=\"font-size: 10px; font-weight: 800; color: #111111; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px;\">{cat}</div>
+                <a href=\"{url}\" style=\"text-decoration: none; color: #111111; font-size: 13px; font-weight: 800; line-height: 1.35; display: block; margin-bottom: 6px;\">{title}</a>
+                <p style=\"font-size: 12px; color: #555555; line-height: 1.4; margin: 0 0 8px 0;\">{summary}</p>
+                <div style=\"font-size: 10px; color: #888888;\">{source} &bull; {date}</div>
               </div>
               '''
 
-          stock_price = stock.get('price', 'N/A')
-          stock_change = stock.get('change', 'N/A')
-          stock_color = '#d32f2f' if not stock.get('is_up', True) else '#2e7d32'
+          def render_section(title_kr, title_en, items):
+              if not items: return ''
+              section_html = f'''
+              <div style=\"border-bottom: 2px solid #111111; padding-bottom: 4px; margin-top: 25px; margin-bottom: 12px;\">
+                <table width=\"100%\">
+                  <tr>
+                    <td style=\"font-size: 14px; font-weight: 800; color: #111111;\">{title_kr}</td>
+                    <td align=\"right\" style=\"font-size: 10px; font-weight: 700; color: #888888;\">{title_en}</td>
+                  </tr>
+                </table>
+              </div>
+              <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 15px;\">
+                <tr>
+              '''
+              for item in items:
+                  section_html += f'<td width=\"33%\" valign=\"top\" style=\"padding: 0 4px;\">{render_card(item)}</td>'
+              section_html += '</tr></table>'
+              return section_html
+
+          stock_price_str = stock.get('price', '$0.00')
+          stock_change_str = stock.get('change', '')
+          stock_color = '#2e7d32' if stock.get('is_up', True) else '#d32f2f'
 
           html = f'''
           <!DOCTYPE html>
           <html>
-          <head>
-            <meta charset=\"utf-8\">
-          </head>
-          <body style=\"margin: 0; padding: 25px 10px; background-color: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;\">
-            <div style=\"max-width: 680px; margin: 0 auto; background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.06);\">
+          <head><meta charset=\"utf-8\"></head>
+          <body style=\"margin: 0; padding: 20px 10px; background-color: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\">
+            <div style=\"max-width: 680px; margin: 0 auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);\">
               
-              <!-- 헤더 영역 -->
-              <div style=\"background-color: #ffffff; padding: 25px 30px; border-bottom: 1px solid #eeeeee;\">
+              <!-- 헤더 -->
+              <div style=\"padding: 20px 25px; border-bottom: 1px solid #eeeeee;\">
                 <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                   <tr>
                     <td>
-                      <div style=\"font-size: 10px; font-weight: 800; letter-spacing: 2px; color: #777777; text-transform: uppercase; margin-bottom: 4px;\">WEEKLY INTELLIGENCE REPORT</div>
-                      <div style=\"font-size: 30px; font-weight: 900; letter-spacing: -1px; color: #111111;\">NIKE WEEKLY</div>
+                      <div style=\"font-size: 10px; font-weight: 800; letter-spacing: 1.5px; color: #777777; text-transform: uppercase; margin-bottom: 2px;\">WEEKLY INTELLIGENCE REPORT</div>
+                      <div style=\"font-size: 26px; font-weight: 900; letter-spacing: -1px; color: #111111;\">NIKE WEEKLY</div>
                     </td>
                     <td align=\"right\" valign=\"bottom\">
-                      <div style=\"font-size: 12px; font-weight: 600; color: #777777; margin-bottom: 6px;\">{today_str}</div>
-                      <!-- 주가 정보 배지 -->
-                      <div style=\"display: inline-block; background-color: #f8f9fa; border: 1px solid #e9ecef; padding: 6px 12px; border-radius: 6px; text-align: right;\">
-                        <span style=\"font-size: 11px; font-weight: 700; color: #555555;\">NKE </span>
-                        <span style=\"font-size: 13px; font-weight: 800; color: #111111;\">{stock_price}</span>
-                        <span style=\"font-size: 11px; font-weight: 700; color: {stock_color}; margin-left: 4px;\">{stock_change}</span>
-                      </div>
+                      <div style=\"font-size: 11px; font-weight: 700; color: #111111;\">NKE {stock_price_str} <span style=\"color:{stock_color};\">{stock_change_str}</span></div>
+                      <div style=\"font-size: 11px; color: #888888; margin-top: 2px;\">{today_str}</div>
                     </td>
                   </tr>
                 </table>
               </div>
 
-              <div style=\"padding: 25px;\">
-                <!-- 상단 메인 기사 영역 -->
-                <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 25px;\">
-                  <tr>
-                    <td width=\"58%\" valign=\"top\" style=\"padding-right: 8px;\">
-                      {render_card(top_story, is_large=True)}
-                    </td>
-                    <td width=\"42%\" valign=\"top\" style=\"padding-left: 8px;\">
-                      <div style=\"margin-bottom: 12px;\">{render_card(sub_top_1)}</div>
-                      <div>{render_card(sub_top_2)}</div>
-                    </td>
-                  </tr>
-                </table>
-
-                <!-- 제품 · 브랜드 섹션 -->
-                <div style=\"border-bottom: 2px solid #111111; padding-bottom: 6px; margin-bottom: 15px;\">
-                  <table width=\"100%\">
-                    <tr>
-                      <td style=\"font-size: 15px; font-weight: 800; color: #111111;\">제품 · 브랜드</td>
-                      <td align=\"right\" style=\"font-size: 11px; font-weight: 700; color: #888888;\">PRODUCT / BRAND</td>
-                    </tr>
-                  </table>
-                </div>
-                <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 25px;\">
-                  <tr>
-          '''
-
-          for item in product_brand_items:
-              html += f'<td width=\"33%\" valign=\"top\" style=\"padding: 0 4px;\">{render_card(item)}</td>'
-
-          html += f'''
-                  </tr>
-                </table>
-
-                <!-- 기업 · 경영 섹션 -->
-                <div style=\"border-bottom: 2px solid #111111; padding-bottom: 6px; margin-bottom: 15px;\">
-                  <table width=\"100%\">
-                    <tr>
-                      <td style=\"font-size: 15px; font-weight: 800; color: #111111;\">기업 · 경영</td>
-                      <td align=\"right\" style=\"font-size: 11px; font-weight: 700; color: #888888;\">CORPORATE / BUSINESS</td>
-                    </tr>
-                  </table>
-                </div>
-                <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\" style=\"margin-bottom: 25px;\">
-                  <tr>
-          '''
-
-          for item in business_market_items:
-              html += f'<td width=\"33%\" valign=\"top\" style=\"padding: 0 4px;\">{render_card(item)}</td>'
-
-          html += f'''
-                  </tr>
-                </table>
+              <!-- 4개 섹션 출력 -->
+              <div style=\"padding: 10px 20px 20px 20px;\">
+                {render_section('제품 · 컬렉션', 'PRODUCT', product_items)}
+                {render_section('브랜드 · 마케팅', 'BRAND', brand_items)}
+                {render_section('스포츠 · 선수', 'SPORTS', sports_items)}
+                {render_section('증시 · 기업경영', 'MARKET', market_items)}
               </div>
 
-              <!-- 하단 푸터 -->
-              <div style=\"background-color: #f9f9fb; border-top: 1px solid #eeeeee; padding: 20px 25px; text-align: center; font-size: 12px; color: #777777;\">
-                <p style=\"margin: 0 0 8px 0; font-weight: 600;\">본 메일은 NIKE WEEKLY 주간 뉴스레터 구독자에게 발송됩니다.</p>
+              <!-- 푸터 -->
+              <div style=\"background-color: #f9f9fb; border-top: 1px solid #eeeeee; padding: 15px 20px; text-align: center; font-size: 11px; color: #777777;\">
+                <p style=\"margin: 0 0 6px 0; font-weight: 600;\">본 메일은 NIKE WEEKLY 주간 뉴스레터 구독자에게 발송됩니다.</p>
                 <p style=\"margin: 0;\">
                   <a href=\"https://a01026710821-gif.github.io/Nike-Daily/\" style=\"color: #111111; font-weight: bold; text-decoration: underline;\">웹사이트에서 보기</a>
                 </p>
@@ -236,7 +190,7 @@ jobs:
               server.login(gmail_user, gmail_pass)
               for sub in subscribers:
                   msg = MIMEMultipart('alternative')
-                  msg['Subject'] = f\"[NIKE WEEKLY] 나이키 주간 뉴스 리포트 ({today_str})\"
+                  msg['Subject'] = f\"[NIKE WEEKLY] 주간 나이키 뉴스 리포트 ({today_str})\"
                   msg['From'] = gmail_user
                   msg['To'] = sub
                   msg.attach(MIMEText(html, 'html'))
