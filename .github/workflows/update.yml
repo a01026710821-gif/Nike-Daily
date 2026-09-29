@@ -152,13 +152,16 @@ jobs:
               <div style=\"padding: 20px 25px; border-bottom: 1px solid #eeeeee;\">
                 <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                   <tr>
-                    <td>
+                    <td valign=\"top\">
                       <div style=\"font-size: 10px; font-weight: 800; letter-spacing: 1.5px; color: #777777; text-transform: uppercase; margin-bottom: 2px;\">WEEKLY INTELLIGENCE REPORT</div>
                       <div style=\"font-size: 26px; font-weight: 900; letter-spacing: -1px; color: #111111;\">NIKE WEEKLY</div>
                     </td>
-                    <td align=\"right\" valign=\"bottom\">
+                    <td align=\"right\" valign=\"top\">
+                      <div style=\"margin-bottom: 6px;\">
+                        <a href=\"https://a01026710821-gif.github.io/Nike-Daily/\" style=\"font-size: 11px; font-weight: 800; color: #111111; background-color: #f0f0f2; padding: 4px 8px; border-radius: 4px; text-decoration: none; display: inline-block;\">웹에서 보기 ↗</a>
+                      </div>
                       <div style=\"font-size: 11px; font-weight: 700; color: #111111;\">NKE {stock_price_str} <span style=\"color:{stock_color};\">{stock_change_str}</span></div>
-                      <div style=\"font-size: 11px; color: #888888; margin-top: 2px;\">{today_str}</div>
+                      <div style=\"font-size: 10px; color: #888888; margin-top: 2px;\">{today_str}</div>
                     </td>
                   </tr>
                 </table>
