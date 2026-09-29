@@ -52,16 +52,19 @@ QUERIES = [
 
 # 🚫 [유료 / 멤버십 / 구독제 기사 차단 키워드 및 URL 패턴]
 PAYWALL_KEYWORDS = [
+    # 기존 차단 목록
     "중앙plus", "joongang plus", "the joongang plus", "중앙플러스", "joongang.co.kr/plus", 
     "plus.joongang", "아시아경제 멤버십", "조선plus", "조선일보 유료", "매경 럭스멘", 
     "유료", "멤버십", "구독자 전용", "더 남아있는 이야기", "프리미엄 기사", "아티클 플러스",
     "paywall", "유료기사", "유료회원", "구독기사", "이용권", "로그인후", "전용 콘텐츠",
-    "지금 바로 시작하기", "보유하신 이용권", "s&p100서 쫓겨난 나이키" # 해당 중앙Plus 특정 기사 키워드 포함
+    "지금 바로 시작하기", "보유하신 이용권",
+    # 💡 한국경제 프리미엄(Premium9) 차단 키워드 및 URL 패턴 추가
+    "hankyung.com/premium", "premium9", "한경 프리미엄", "한경premium", "한경 premium"
 ]
 
 # 🚫 유료 기사를 주로 내보내는 도메인/출처 차단
 PAYWALL_SOURCES = [
-    "중앙plus", "joongang plus", "조선일보 유료", "아시아경제 멤버십"
+    "중앙plus", "joongang plus", "조선일보 유료", "아시아경제 멤버십", "한경 프리미엄", "hankyung premium"
 ]
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
@@ -160,4 +163,4 @@ data = {
 }
 
 OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Updated {OUT}: 총 {len(items)}개 기사 반영 완료")
+print(f"Updated {OUT}: 총 {len(items)}개 기사 반영 완료 (한경 프리미엄 필터링 포함)")
