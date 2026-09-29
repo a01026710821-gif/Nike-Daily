@@ -2,14 +2,10 @@
   "date": "2026-09-29",
   "stock": {
     "symbol": "NKE (NYSE)",
-    "price": "$36.39",
-    "change": "+$0.29 (+0.80%)",
-    "is_up": true,
+    "price": "$35.84",
+    "change": "$-0.26 (-0.72%)",
+    "is_up": false,
     "chart": [
-      {
-        "date": "09/22",
-        "price": 36.1
-      },
       {
         "date": "09/23",
         "price": 36.05
@@ -25,6 +21,10 @@
       {
         "date": "09/28",
         "price": 36.39
+      },
+      {
+        "date": "09/29",
+        "price": 35.84
       }
     ]
   },
@@ -41,20 +41,29 @@
     },
     {
       "cat": "BRAND",
-      "title": "나이키 - 순환형 솔루션 발전시키기 - about.nike.com",
-      "summary": "나이키 - 순환형 솔루션 발전시키기 about.nike.com",
-      "source": "about.nike.com",
+      "title": "나이키 - 순환형 솔루션 발전시키기 - About Nike",
+      "summary": "나이키 - 순환형 솔루션 발전시키기 About Nike",
+      "source": "About Nike",
       "date": "Wed, 23 Sep 2026",
       "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9PTjBnZHo1YVA3eldNSnI4R3BvN2tIalkwU1R3dUhlWF9mV04zaWg1WEJ0VGJpaGJQS2ZkeDV6M0lkYy1FcXFrYzFoZm5BZXNVNzJOaG9hV21CYUgyREpsZEtHMzh0ODFoX2pCUERJV2JkZFlyMk9DQWdRLTRkeHM?oc=5",
       "image": ""
     },
     {
       "cat": "MARKET",
-      "title": "나이키·아디다스 제친 아식스…실적·주가 '동반 질주' - hankyung.com",
-      "summary": "나이키·아디다스 제친 아식스…실적·주가 '동반 질주' hankyung.com",
-      "source": "hankyung.com",
+      "title": "나이키·아디다스 제친 아식스…실적·주가 '동반 질주' - 한국경제",
+      "summary": "나이키·아디다스 제친 아식스…실적·주가 '동반 질주' 한국경제",
+      "source": "한국경제",
       "date": "Sun, 27 Sep 2026",
       "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5ObWZRN3FXcGdOeGd6b0VISFdGb09KS0FqMHFUZXhpclByamNkWVkxa0FlVlR2SW1xaGFORFVBNl96Vll4Z25hYXYxSE9BTTFFNDdEN1ZTWEptdw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "S&P100 쫓겨난 나이키…‘운동화 제국’ 뒤흔든 그들 공통점 - 중앙일보",
+      "summary": "S&P100 쫓겨난 나이키…‘운동화 제국’ 뒤흔든 그들 공통점 중앙일보",
+      "source": "중앙일보",
+      "date": "Tue, 29 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0tMEpEYnF1ZmM0Z2NWVldEa1dndTlQVGJzOGoxTnluenBJS3pYOUppV0VwV29YWkFCZE5Pa1ZWNTJjZWpIZWpxQ0tmV2NMazRFLXN1Tzd3?oc=5",
       "image": ""
     },
     {
@@ -67,21 +76,30 @@
       "image": ""
     },
     {
-      "cat": "BRAND",
-      "title": "나이키 밑창에 붙인 호스 조각… 거인이 놓친 ‘러닝의 본질’ 파고들다[이준만의 세상을 바꾼 기업가들] - 동아일보",
-      "summary": "나이키 밑창에 붙인 호스 조각… 거인이 놓친 ‘러닝의 본질’ 파고들다[이준만의 세상을 바꾼 기업가들] 동아일보",
-      "source": "동아일보",
-      "date": "Tue, 22 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5rTFFXWDlxaGFLbDUwb0hCUTFhVDZUX0l4QTNOMlZlNTRsZGtTUzF4TGluek5KODlIU0FwSF9ieVhTTEEzVUhmakZNUE5ud1laNmxCcnpSTThDOVU4YzhVcTZxUkxJN2c0WWdjVTZkUkVZM0x1OEHSAWZBVV95cUxQbHllMkRLUG5LZUZCZ19lT2FXdkpyUHF0eEEzRGprTUJJUDBQTXVaUU5HSTRRVV9uX01MNE9YS2s2QkJ3RUZTOWJ0Wjl2SmlEQ1dWVmZoUWtIVUJzR2F6Z0k5ZFUycGc?oc=5",
+      "cat": "MARKET",
+      "title": "[美특징주]나이키, 실적 발표 앞두고 목표가 하향에도 상승 - edaily.co.kr",
+      "summary": "[美특징주]나이키, 실적 발표 앞두고 목표가 하향에도 상승 edaily.co.kr",
+      "source": "edaily.co.kr",
+      "date": "Mon, 28 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOYWpURkVnSm1QcFlaUTVDdUtfWTFGRHZlaW52OTQ3T2MyYVBQbFd4U1FEVjBnajBfOUMwNTBnX1NWWndrR3A0aUVIem5od1VTUWp6a3B1RkhhYjNIc1d5cTBFQUp4SHgxV1MzWW9Wbldpd0dNdXV4SmJqLWtjMXVDdg?oc=5",
       "image": ""
     },
     {
-      "cat": "PRODUCT",
-      "title": "S&P100 쫓겨난 나이키…‘운동화 제국’ 뒤흔든 그들 공통점 - 중앙일보",
-      "summary": "S&P100 쫓겨난 나이키…‘운동화 제국’ 뒤흔든 그들 공통점 중앙일보",
-      "source": "중앙일보",
-      "date": "Mon, 28 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE0tMEpEYnF1ZmM0Z2NWVldEa1dndTlQVGJzOGoxTnluenBJS3pYOUppV0VwV29YWkFCZE5Pa1ZWNTJjZWpIZWpxQ0tmV2NMazRFLXN1Tzd3?oc=5",
+      "cat": "MARKET",
+      "title": "나이키 주가, 곧 발표될 실적에 7% 변동 가능성 - Investing.com 한국어",
+      "summary": "나이키 주가, 곧 발표될 실적에 7% 변동 가능성 Investing.com 한국어",
+      "source": "Investing.com 한국어",
+      "date": "Thu, 24 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1uRk5YQzc1RVhxRWJMb0dheFdCOUVYWlV2ZHhQYzczcG8xcFVNd3duMVNjT1Q4RU5URTg4OWQzTFdxWm5IdUF5UVFFUEZtX2k0Z1lDOVZkMVNYcTJRay1sYTY5RVQxU3QyZnlSTHd4MXF1M01oVjlz?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키 아틀리에가 샤캐리 리처드슨을 위해 완성한 하이패션 드라마 - Hypebae",
+      "summary": "나이키 아틀리에가 샤캐리 리처드슨을 위해 완성한 하이패션 드라마 Hypebae",
+      "source": "Hypebae",
+      "date": "Thu, 24 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcFQta0tfdVlvSmdtTzRVWS0yX3NyS3Q2eVpHN3NYVG9TVEw0UVNVU1VXX2h5SWN5UjJwdnhzTW1YNFlacHlCSFdDOG05cnFkZEY2YUFYdV96QlVBamRGekRWQk96empNOGFJZWJPU1BMYzY3aWo1SjRZaXBXYnotRm5TWVBvQzdmN3QtVmVocnYwWFYzXzJ5XzRjSC1MTDZTZmJQUlZ6eHN5MlNYQ0xELUVZNA?oc=5",
       "image": ""
     },
     {
@@ -95,11 +113,20 @@
     },
     {
       "cat": "BRAND",
-      "title": "나이키 - 가치 사슬 배출량 줄이기 - about.nike.com",
-      "summary": "나이키 - 가치 사슬 배출량 줄이기 about.nike.com",
-      "source": "about.nike.com",
+      "title": "나이키 - 가치 사슬 배출량 줄이기 - About Nike",
+      "summary": "나이키 - 가치 사슬 배출량 줄이기 About Nike",
+      "source": "About Nike",
       "date": "Wed, 23 Sep 2026",
       "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQbXpZZ1JRbHN1ajBYZ3JCOGxiNjBPMHJxX2JkZlNFLUppUm9JSmtCRDVBM0VQejlYUmFrLXVGdmdHU3k1WmZiMXZJWnNfbFhacTQtT1FTMlNrUjdsVlhNVjZpaUdJUF9nNzc0MGhCTmtaZEZlZHNBWUVINlpSQzlybFRn?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "MARKET",
+      "title": "나이키·아디다스에 들어간 K소재…러닝 붐 타고 매출 '쑥' - 한국경제",
+      "summary": "나이키·아디다스에 들어간 K소재…러닝 붐 타고 매출 '쑥' 한국경제",
+      "source": "한국경제",
+      "date": "Wed, 23 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1BNlpPTWp3Uk9sUlFBLWpxd0lkZ2FUOV95MUFVZ3FjZGJtVkNWN0RlWnhEczk1OVk4SFQxUFM1RE5WaWF2VlhwckVqZ2puR3JFM1hwNzRGRkh1dw?oc=5",
       "image": ""
     },
     {
@@ -112,21 +139,21 @@
       "image": ""
     },
     {
+      "cat": "SPORTS",
+      "title": "\"나이키 로고 가렸다\"…돌변한 음바페의 새 축구화 뭐길래 - 한국경제",
+      "summary": "\"나이키 로고 가렸다\"…돌변한 음바페의 새 축구화 뭐길래 한국경제",
+      "source": "한국경제",
+      "date": "Wed, 23 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFByN2RrZE5SeU5pMjBybG9tRldRN25jYzBCVW9LbG9EQ0YzUTlvSkR0cE9DMHA1R29tWkNBTi0tY3ZFaUJJYm9yeVJxdFJWbHRtTDlDRkZFbzJFUQ?oc=5",
+      "image": ""
+    },
+    {
       "cat": "BRAND",
       "title": "나이키 '문 슈 OG 레더 SP', 빈티지 무드의 세 가지 컬러웨이로 귀환 - Hypebeast.KR",
       "summary": "나이키 '문 슈 OG 레더 SP', 빈티지 무드의 세 가지 컬러웨이로 귀환 Hypebeast.KR",
       "source": "Hypebeast.KR",
       "date": "Mon, 28 Sep 2026",
       "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxPUWJXbDVKUmxvNGtQd0Z2VEN2R3B6MVQ5RXllX3l5WUlfV1o0Z0hKSjdubG9sOVBwWXZ6VERlaUd3cm85Y1FyUHpBazV2QnFXcnVaaC1kS250ZnZTNzJ5dUVJdWd1RGFYNU1wTlBEZ0RaaWJ6WWlpbWVSTk9UYXRxYllrYWhieTBxck8yWUhjRTFCdTVHa3RsbFVfQXh4RFM0T3dKSUtmUVFHaDh4dHcwYzhWekQySWtsTV9PX0tIT0MtOWoxdTc3aldkcWc0dGw0eERwTk5Ma3ZjcS1PRmZWQnBuVHV2eVdnRF9lSnI1TGlhRUJOajV6ZTVrQ1VBZm0tUWhXVWF3dDZVNmVXSFFLNmx6TDYyMVBSU2ctWE1ZU1FZc0RGOV85Y1pJaWJxVmJ1a0VXczNiNkpuQQ?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "나이키 에어 맥스 돌체, ‘일렉트릭 블루’로 등장 - Hypebeast.KR",
-      "summary": "나이키 에어 맥스 돌체, ‘일렉트릭 블루’로 등장 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Tue, 22 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPbXBwVDRFN0x4azZuSURqRmd0N3pDeVktMTdlaDJFckgwZ2QyWlYwYWNmVHRqT3RhUGV4RTZfMkZQbFhpNWVaS1JTNWNYeHNiTEFUN2EzUk4wenFZRkNxX1F6UG1EaUVCS2YwWS1wN2RGNlBIUHZpYzAwLUwySWp3ZnFoREpZUUcxa1lSU2xNbTE?oc=5",
       "image": ""
     },
     {
@@ -158,47 +185,20 @@
     },
     {
       "cat": "BRAND",
-      "title": "나이키, 케이틀린 클라크의 캔자스시티 치프스 팬심을 담은 ‘케이틀린 1 Chiefs’ 공개 - Hypebeast.KR",
-      "summary": "나이키, 케이틀린 클라크의 캔자스시티 치프스 팬심을 담은 ‘케이틀린 1 Chiefs’ 공개 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Tue, 22 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxPeUdGTndsc2wwc0ZFRENYejVyWnN4c0Exd2lzOTQ5UHRXYWtaTV9YcE9abFhBQkUwSjBNXzJobGVlbGNJZVhqdEg3eWxNelpVZWVmdEw1VW95MlZ0TWlHX1NJV2RscU1yMTdqelJhUjNpY3QtSTRXZEk3N3FtUEl5NkR1UFhsOTJOQ2tDdA?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "Jacquemus x Nike Moon Shoe ‘Emerald Rise’ 출시 정보 | Hypebeast.KR - Hypebeast.KR",
-      "summary": "Jacquemus x Nike Moon Shoe ‘Emerald Rise’ 출시 정보 | Hypebeast.KR Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Tue, 22 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxNYi1LdDNsRUVLZ2FRdHJMdDVSY2lJajEzSXRwdzc5YjA3NXJTUEFsUGVtTjdnelFxWm1xNi1lZ2NQOEF1NkVYdDdCRGVRVVZMM3UyTkVhckZOZU9vV2xIUnI0eEhMVWVKbktELWVULVdXLVNBd21oVlRfazd0SkRDTEMxd3hTN3RpUm81RUlVYVpzM1E?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "나이키와 젤러펠드, 3D 프린팅 AIRMAX 1000.3 ‘스톤/버건디 크러시’ 공개 - Hypebeast.KR",
-      "summary": "나이키와 젤러펠드, 3D 프린팅 AIRMAX 1000.3 ‘스톤/버건디 크러시’ 공개 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Tue, 22 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOMUlPY0pEbDU2cGw2YjNYWkFzd1hobnNyM2hoUEhWSDc2R3JxYkpaNWlrcm1kbmFOWVo0cFFaeUlnazRzRjlPYTRYWndWcTdNakd5cmRPMHgwbjh0ZmdoTGlENHhJREtSaDQwNnFEeHpla0RLSU43M2VoOF95dDAyVWhCVVh1QmhqSTFnMGNmS3lQMTRaTlE?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "나이키, 뱀가죽 질감과 세 가지 골드 참으로 꾸민 에어 포스 1 로우 - Hypebeast.KR",
-      "summary": "나이키, 뱀가죽 질감과 세 가지 골드 참으로 꾸민 에어 포스 1 로우 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Tue, 22 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxPSWZnem40SVpjSi1Ba0tnS1c5M1o4OXg4S0ZCX3RuQm8zeExjZFdfZ1lJRV9ndGtXMEVNVm9tdjdaZXdqQlVOQzlXQlA5WWMxdllScWhaQ0hqRVRFUFREMkNjME8zMnphMnFvU3JJRExLbTdkdl9zUU10X25zUTdOQy04RjJLTDVHLWhHWm9STkw?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
       "title": "나이키 공동 창립자 필 나이트, 오리건대학교에 10억 달러 기부 - Hypebeast.KR",
       "summary": "나이키 공동 창립자 필 나이트, 오리건대학교에 10억 달러 기부 Hypebeast.KR",
       "source": "Hypebeast.KR",
       "date": "Fri, 25 Sep 2026",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYkh1S0FhcnZZNWJQS2hGSS1nWE9rVTVNZjVnalpUeVZ0aHMyeThMWDNTVTU0OFVoMWRqbjNQeExwY0tsZEJCM25mbmVudnR2S0h1TlFXVjlpTlg3M2d1RXNORFpTeEZFUjFEREcxWUdFTnl2U1Q2aHhpMkdfWmlNWnRrSlZwb01ZME8yMEFRSnA5SzhfLTU1RC1lMlMwaUpWcHMwQmZ3?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "샤이 길저스-알렉산더, 미출시 버질 아블로 아카이브 x 나이키 에어 포스 1 로우 착용 - Hypebeast.KR",
+      "summary": "샤이 길저스-알렉산더, 미출시 버질 아블로 아카이브 x 나이키 에어 포스 1 로우 착용 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Tue, 29 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxPRnZFQU5NY0tQZFlfRGhISWw2ZEJUYnZsaTJ2emg2bnluOWxZR2t2ck9aMWJYOHV5cWVHcDdnMDRfcF9wNGZKT01aXzVPZTVLZUJXQjVqNktpTGlOb0NSNlRlZUluenQtLVJIT1pMTDZkRmZGX2JTLU0yeXY3ZjgyTm43ZklMLUpTTEdCWjA0aWNReUtkVzNya0ZNcWhOcW5hTjQzNUVPN1dMU1NoZllYUERzbmVFM1NLOGNjNlR5cEpsdzNVdFk5V21PeUJXZ0xtM3c?oc=5",
       "image": ""
     },
     {
@@ -208,60 +208,6 @@
       "source": "Hypebeast.KR",
       "date": "Mon, 28 Sep 2026",
       "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQakNVZjJWMU1XY01NQ3VXdGZOaEc4N3NQemc5Q3dQMUV2d0dyZUlrbDQtTE9yenJPSDJnYXlya1FzZHJVRUdXOWRqb3dFYWoxbzFmZndfdkZhYjNkZjB6UHVjVWJ4dktnLU84RUYtZHlZTHNxdmpmMlNTMHdlUlpsS3hwWkdWUUZZcU15NW5CRzh3Vld2MUE?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "MARKET",
-      "title": "나이키 주가, 곧 발표될 실적에 7% 변동 가능성 - Investing.com 한국어",
-      "summary": "나이키 주가, 곧 발표될 실적에 7% 변동 가능성 Investing.com 한국어",
-      "source": "Investing.com 한국어",
-      "date": "Thu, 24 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE1uRk5YQzc1RVhxRWJMb0dheFdCOUVYWlV2ZHhQYzczcG8xcFVNd3duMVNjT1Q4RU5URTg4OWQzTFdxWm5IdUF5UVFFUEZtX2k0Z1lDOVZkMVNYcTJRay1sYTY5RVQxU3QyZnlSTHd4MXF1M01oVjlz?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "나이키 아틀리에가 샤캐리 리처드슨을 위해 완성한 하이패션 드라마 - Hypebae",
-      "summary": "나이키 아틀리에가 샤캐리 리처드슨을 위해 완성한 하이패션 드라마 Hypebae",
-      "source": "Hypebae",
-      "date": "Thu, 24 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOcFQta0tfdVlvSmdtTzRVWS0yX3NyS3Q2eVpHN3NYVG9TVEw0UVNVU1VXX2h5SWN5UjJwdnhzTW1YNFlacHlCSFdDOG05cnFkZEY2YUFYdV96QlVBamRGekRWQk96empNOGFJZWJPU1BMYzY3aWo1SjRZaXBXYnotRm5TWVBvQzdmN3QtVmVocnYwWFYzXzJ5XzRjSC1MTDZTZmJQUlZ6eHN5MlNYQ0xELUVZNA?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "MARKET",
-      "title": "미끄럼틀 탄 나이키·팝마트... 주가 1년새 절반이나 폭락한 이유 - v.daum.net",
-      "summary": "미끄럼틀 탄 나이키·팝마트... 주가 1년새 절반이나 폭락한 이유 v.daum.net",
-      "source": "v.daum.net",
-      "date": "Tue, 22 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9oYjdyMVVJLTVHTmJOTVFNd3lOMmYwV3pfbUhFZ3dueWVLNzZra29ndnpUdmRuX18zdS1CRjVHT0x4d3FERTBrN2FCUVhJNWM?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "SPORTS",
-      "title": "\"나이키 로고 가렸다\"…돌변한 음바페의 새 축구화 뭐길래 - hankyung.com",
-      "summary": "\"나이키 로고 가렸다\"…돌변한 음바페의 새 축구화 뭐길래 hankyung.com",
-      "source": "hankyung.com",
-      "date": "Wed, 23 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFByN2RrZE5SeU5pMjBybG9tRldRN25jYzBCVW9LbG9EQ0YzUTlvSkR0cE9DMHA1R29tWkNBTi0tY3ZFaUJJYm9yeVJxdFJWbHRtTDlDRkZFbzJFUQ?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "MARKET",
-      "title": "나이키·아디다스에 들어간 K소재…러닝 붐 타고 매출 '쑥' - hankyung.com",
-      "summary": "나이키·아디다스에 들어간 K소재…러닝 붐 타고 매출 '쑥' hankyung.com",
-      "source": "hankyung.com",
-      "date": "Wed, 23 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1BNlpPTWp3Uk9sUlFBLWpxd0lkZ2FUOV95MUFVZ3FjZGJtVkNWN0RlWnhEczk1OVk4SFQxUFM1RE5WaWF2VlhwckVqZ2puR3JFM1hwNzRGRkh1dw?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "MARKET",
-      "title": "[美특징주]나이키, 실적 발표 앞두고 목표가 하향에도 상승 - edaily.co.kr",
-      "summary": "[美특징주]나이키, 실적 발표 앞두고 목표가 하향에도 상승 edaily.co.kr",
-      "source": "edaily.co.kr",
-      "date": "Mon, 28 Sep 2026",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOYWpURkVnSm1QcFlaUTVDdUtfWTFGRHZlaW52OTQ3T2MyYVBQbFd4U1FEVjBnajBfOUMwNTBnX1NWWndrR3A0aUVIem5od1VTUWp6a3B1RkhhYjNIc1d5cTBFQUp4SHgxV1MzWW9Wbldpd0dNdXV4SmJqLWtjMXVDdg?oc=5",
       "image": ""
     },
     {
@@ -289,6 +235,60 @@
       "source": "Investing.com 한국어",
       "date": "Fri, 25 Sep 2026",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE16eHRKeUFWQngxWkhka2xHM1R5MEZNdHp4ak5yc2kxa2x2VGROZW5ZTkdkd2xlaHpkR0hiOXRfdTg4aDkyLTAtTEtKLWpMbFY5YWxWZDM1Um9aSU9hclRLSWRFRWJWYjJ6SlpQdGd2TllTdmdSYkFB?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "롯데온, 가을옷 최대 93% 할인…나이키·타미힐피거 등 참여 - v.daum.net",
+      "summary": "롯데온, 가을옷 최대 93% 할인…나이키·타미힐피거 등 참여 v.daum.net",
+      "source": "v.daum.net",
+      "date": "Sun, 27 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE9McXB1NFA0emwtNGpKNmFyWkFoNnljdjJzdWI4Q2UzWlFKWm9RajU3WGkyTktmSjNmb0FSSE9aVE54ZE9tMEdVREFXdTgteTg?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "폭스바겐·나이키 지수 퇴출 수모…노키아처럼 돌아올 수 있을까[주末머니] - v.daum.net",
+      "summary": "폭스바겐·나이키 지수 퇴출 수모…노키아처럼 돌아올 수 있을까[주末머니] v.daum.net",
+      "source": "v.daum.net",
+      "date": "Sat, 26 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1NaWdkUFVZNkE4c0pEOEJtNDhLaVlaUGdNNU41N1dRUFdNNXF4VWNvNDBHM0lQdU9qNFFiS3dqTEFvSENuVWNDaW1xeEd1T1E?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "드디어 등장! 남자들이 애타게 원하던 나이키 문 슈 - 지큐 코리아 (GQ Korea)",
+      "summary": "드디어 등장! 남자들이 애타게 원하던 나이키 문 슈 지큐 코리아 (GQ Korea)",
+      "source": "지큐 코리아 (GQ Korea)",
+      "date": "Tue, 29 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxQX2RLV2wtM1UtOVQxbG55aWE4TzFFUmF0UW55aFBxUDFveGtGcXJRYzlsODdnRzhMVjlSTHQzeTBnUUN4LTlvaHh0RmdHb2l6QVkzX014M3ROOUttQlBDQWxrSXdobXRFX1ZiQUpTRjZnQm5GUHhGQnFLQ0pTaDBxdzhtZE9PeDlOVmNKTGlKVGlZYUtZaFZzTG1MR2kxNzhOWnJ1b296MHpwYmNYSFd1ZUZiTWxCbEhQYmFYU3NBUkJlMVAtblVDQlNFTzl1bUV6eWl4d0Q3Z3VzNGpXVFk5bmppV0lvU0k4b3RuanE0bXdkdjZBZ0laeGtFWmx4Tm5YXzlNX2lTdFhmeGxHOU84NW4wSDk0MTJYUkxuTDMxM2w3Szd1TVlDRHVkMXduSUVGZ1lkM2RBLTdxZVNveF8yWWNrQWFFX3VE?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "[유효상 칼럼] 왜 나이키 제국에 균열이 생겼을까 - 머니투데이 - 머니투데이",
+      "summary": "[유효상 칼럼] 왜 나이키 제국에 균열이 생겼을까 - 머니투데이 머니투데이",
+      "source": "머니투데이",
+      "date": "Mon, 28 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5YTUtCSS03S1B3ZmxwbDd2S05OODZZZ2hyNTZ5QWRIcjdXM0pxcGtEZldIMlVGZVhkSzhvc0pDNTAzbkVURld3aENIRENDSGd1eUVPNjRJZnBiZm1NM0dsczViT0wweFVPaVlic2pneS1QSDZwZ210Uk9KUFVod9IBfkFVX3lxTE5YTUtCSS03S1B3ZmxwbDd2S05OODZZZ2hyNTZ5QWRIcjdXM0pxcGtEZldIMlVGZVhkSzhvc0pDNTAzbkVURld3aENIRENDSGd1eUVPNjRJZnBiZm1NM0dsczViT0wweFVPaVlic2pneS1QSDZwZ210Uk9KUFVodw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "MARKET",
+      "title": "나이키 주가 10년래 최저치로 폭락: 지금이 저가 매수 적기일까? - TradingKey",
+      "summary": "나이키 주가 10년래 최저치로 폭락: 지금이 저가 매수 적기일까? TradingKey",
+      "source": "TradingKey",
+      "date": "Thu, 24 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPVDk2enJXYk94b0lha1g1eWVKaUgyajYzVTNtRF9Bd05CU09wY29Uc0l1VjdYT25jY05yd29CZEdUSWFGVkI4eFZhU0dfdjBjVndCRDY3c2I1b2JQb1pHdEpZOHQzaGQzeW1ySGpEbkgyQzVLdWstOUw5RHFQaEFZc09vWHY5WFJobjRaRV84N1U3Mk5pYnRnLVdma3hpckkyRjZWNHNrMnVYNUl0ZldWMU92VjFXYWtJVktCV2hOQi1wZWMxWUVMdFEtZDhsaVc5R1lGY3ktMA?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "MARKET",
+      "title": "20년 나이키 신던 음바페도 택했다…러닝화로 뜬 온, 9조원 매출 노린다는데 - v.daum.net",
+      "summary": "20년 나이키 신던 음바페도 택했다…러닝화로 뜬 온, 9조원 매출 노린다는데 v.daum.net",
+      "source": "v.daum.net",
+      "date": "Wed, 23 Sep 2026",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBkRGt3eHpjRzRoT0wyWk96ODBSVi1GMWVDNHNpWklyRjRZR0c0RU5WekFIT0RlbmptRzN3c2F2dEQ4b21iVEFNYXR3RQ?oc=5",
       "image": ""
     },
     {
