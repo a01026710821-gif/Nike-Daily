@@ -50,6 +50,13 @@ QUERIES = [
     '나이키 선수 OR 유니폼'
 ]
 
+# 🚫 유료 / 구독제 기사 필터링 키워드 목록
+PAYWALL_KEYWORDS = [
+    "중앙plus", "joongang plus", "the joongang plus", "중앙플러스",
+    "유료", "멤버십", "구독자 전용", "더 남아있는 이야기", "프리미엄 기사",
+    "paywall", "유료기사", "유료회원"
+]
+
 UA = "Mozilla/5.0 (NIKE-WEEKLY/1.0)"
 items = []; seen = set()
 
@@ -87,7 +94,7 @@ for q in QUERIES:
             title = clean(x.findtext("title"))
             link = x.findtext("link") or ""
             pub = x.findtext("pubDate") or ""
-            source = x.findtext("source") or "Google News"
+            source = clean(x.findtext("source") or "Google News")
             desc = clean(x.findtext("description"))
             img_url = extract_image(x)
             
@@ -96,11 +103,19 @@ for q in QUERIES:
                 continue
             seen.add(key)
             
-            low = title.lower() + " " + desc.lower()
-            if not any(w in low for w in ["나이키", "nike", "조던", "jordan", "컨버스"]):
+            full_text = f"{title} {source} {desc} {link}".lower()
+            
+            # 🚫 1) 유료/구독제 기사 필터링
+            if any(pk in full_text for pk in PAYWALL_KEYWORDS):
+                print(f"유료 기사 제외됨: {title}")
+                continue
+
+            # 2) 나이키 관련 필수 단어 검사
+            if not any(w in full_text for w in ["나이키", "nike", "조던", "jordan", "컨버스"]):
                 continue
                 
-            # 💡 강화된 4가지 카테고리 세분화 로직
+            # 3) 4가지 카테고리 세분화
+            low = title.lower() + " " + desc.lower()
             cat = "BRAND"  # 기본값
             if any(w in low for w in ["축구", "농구", "선수", "국대", "유니폼", "스포츠", "엠바페", "손흥민", "nba", "올림픽", "골프"]):
                 cat = "SPORTS"
@@ -136,4 +151,4 @@ data = {
 }
 
 OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-print("Updated", OUT, len(items), "items with 4 detailed categories")
+print("Updated", OUT, len(items), "items with paywall filters applied")
