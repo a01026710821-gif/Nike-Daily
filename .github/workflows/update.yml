@@ -2,8 +2,14 @@ name: Update Nike Weekly News & Send Email
 
 on:
   schedule:
-    - cron: '50 21 * * 0' # 매주 월요일 아침 6시 50분 (KST)
+    - cron: '50 21 * * 0' # 매주 월요일 아침 6시 50분 (KST) 자동 실행 (메일 발송 포함)
   workflow_dispatch:
+    inputs:
+      send_email:
+        description: '이메일 수신자에게 메일을 함께 발송할까요?'
+        required: true
+        type: boolean
+        default: false  # 수동 실행 시 기본값: 메일 발송 안 함 (웹 갱신만 진행)
 
 jobs:
   update-and-mail:
@@ -41,6 +47,8 @@ jobs:
           )
 
       - name: Send Email Newsletter
+        # 월요일 정기 자동 실행(schedule)이거나, 수동 실행 시 send_email 옵션을 체크(true)했을 때만 메일 발송
+        if: ${{ github.event_name == 'schedule' || inputs.send_email == true }}
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
@@ -88,7 +96,6 @@ jobs:
 
           today_str = datetime.date.today().strftime('%Y년 %m월 %d일')
 
-          # 4개 카테고리별 분리
           product_items = [a for a in articles if a.get('cat') == 'PRODUCT'][:3]
           brand_items = [a for a in articles if a.get('cat') == 'BRAND'][:3]
           sports_items = [a for a in articles if a.get('cat') == 'SPORTS'][:3]
@@ -147,8 +154,6 @@ jobs:
           <head><meta charset=\"utf-8\"></head>
           <body style=\"margin: 0; padding: 20px 10px; background-color: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\">
             <div style=\"max-width: 680px; margin: 0 auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);\">
-              
-              <!-- 헤더 -->
               <div style=\"padding: 20px 25px; border-bottom: 1px solid #eeeeee;\">
                 <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                   <tr>
@@ -167,7 +172,6 @@ jobs:
                 </table>
               </div>
 
-              <!-- 4개 섹션 출력 -->
               <div style=\"padding: 10px 20px 20px 20px;\">
                 {render_section('제품 · 컬렉션', 'PRODUCT', product_items)}
                 {render_section('브랜드 · 마케팅', 'BRAND', brand_items)}
@@ -175,7 +179,6 @@ jobs:
                 {render_section('증시 · 기업경영', 'MARKET', market_items)}
               </div>
 
-              <!-- 푸터 -->
               <div style=\"background-color: #f9f9fb; border-top: 1px solid #eeeeee; padding: 15px 20px; text-align: center; font-size: 11px; color: #777777;\">
                 <p style=\"margin: 0 0 6px 0; font-weight: 600;\">본 메일은 NIKE WEEKLY 주간 뉴스레터 구독자에게 발송됩니다.</p>
                 <p style=\"margin: 0;\">
