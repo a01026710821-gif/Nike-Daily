@@ -41,17 +41,16 @@ def fetch_nike_stock():
         print("주가 정보 수집 실패:", e)
         return {"symbol": "NKE (NYSE)", "price": "$82.50", "change": "+$1.20 (+1.48%)", "is_up": True, "chart": []}
 
-# 2. 뉴스 수집 쿼리 (나이키 + 경쟁사 브랜드 키워드)
-# 💡 경쟁사는 신발 모델명을 완전히 제외하고 브랜드명/기업동향 중심으로 구성
+# 2. 뉴스 수집 쿼리
 QUERIES = [
     '나이키',
     '나이키 주가 OR 실적 OR 매출',
     '나이키 운동화 OR 신제품',
     '나이키 선수 OR 유니폼',
-    '아디다스 OR 뉴발란스 OR 호카 OR 온러닝 OR 룰루레몬 OR 푸마' # 경쟁사 검색용
+    '아디다스 OR 뉴발란스 OR 호카 OR 온러닝 OR 룰루레몬 OR 푸마'
 ]
 
-# 🚫 [유료 / 멤버십 / 특정 언론사 차단 키워드 및 URL 패턴]
+# 🚫 [유료 / 멤버십 / 특정 언론사 차단 키워드]
 PAYWALL_KEYWORDS = [
     "중앙plus", "joongang plus", "the joongang plus", "중앙플러스", "joongang.co.kr/plus", 
     "plus.joongang", "아시아경제 멤버십", "조선plus", "조선일보 유료", "매경 럭스멘", 
@@ -65,8 +64,8 @@ PAYWALL_SOURCES = [
     "중앙plus", "joongang plus", "조선일보 유료", "아시아경제 멤버십", "한국경제", "한경"
 ]
 
-# 경쟁사 감지 키워드 (모델명 제외, 브랜드명만 사용)
-COMPETITOR_BRANDS = ["아디다스", "adidas", "뉴발란스", "new balance", "호카", "hoka", "온러닝", "on running", "룰루레몬", "lululemon", "푸마", "puma", "언더아머"]
+# 경쟁사 감지 키워드 (모델명 제외, 브랜드명 중심)
+COMPETITOR_BRANDS = ["아디다스", "adidas", "뉴발란스", "new balance", "호카", "hoka", "온러닝", "on running", "룰루레몬", "lululemon", "푸마", "puma", "언더아머", "under armour"]
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 items = []; seen = set()
@@ -119,7 +118,7 @@ for q in QUERIES:
             if any(ps in source.lower() for ps in PAYWALL_SOURCES) or any(pk in full_text for pk in PAYWALL_KEYWORDS):
                 continue
 
-            # 2) 나이키 또는 경쟁사 브랜드 포함 여부 확인
+            # 2) 나이키 또는 경쟁사 브랜드 포함 확인
             is_nike = any(w in full_text for w in ["나이키", "nike", "조던", "jordan", "컨버스"])
             is_competitor = any(cb in full_text for cb in COMPETITOR_BRANDS)
 
@@ -128,11 +127,10 @@ for q in QUERIES:
 
             seen.add(key)
                 
-            # 3) 5가지 카테고리 세분화 (COMPETITOR 카테고리 추가)
+            # 3) 카테고리 분류
             low = title.lower() + " " + desc.lower()
-            cat = "BRAND"  # 기본값
             
-            # 경쟁사 뉴스는 최우선적으로 COMPETITOR 분류
+            # 경쟁사 키워드가 감지되면 최우선 경쟁사로 분류
             if is_competitor and not is_nike:
                 cat = "COMPETITOR"
             elif any(w in low for w in ["축구", "농구", "선수", "국대", "유니폼", "스포츠", "엠바페", "손흥민", "nba", "올림픽", "골프"]):
@@ -141,7 +139,7 @@ for q in QUERIES:
                 cat = "MARKET"
             elif any(w in low for w in ["신발", "운동화", "스니커즈", "에어맥스", "페가수스", "조던", "신제품", "출시", "컬렉션", "스니커"]):
                 cat = "PRODUCT"
-            elif any(w in low for w in ["광고", "캠페인", "브랜드", "마케팅", "팝업", "엠버서더"]):
+            else:
                 cat = "BRAND"
                 
             summary = desc[:200] if desc else title
@@ -157,7 +155,7 @@ for q in QUERIES:
     except Exception as e:
         pass
 
-items = items[:35]
+items = items[:40]
 today = datetime.date.today().isoformat()
 stock_info = fetch_nike_stock()
 
@@ -169,4 +167,4 @@ data = {
 }
 
 OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Updated {OUT}: 총 {len(items)}개 기사 반영 완료 (COMPETITOR 카테고리 포함)")
+print(f"Updated {OUT}: 총 {len(items)}개 기사 수집 완료")
