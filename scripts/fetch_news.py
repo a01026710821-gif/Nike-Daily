@@ -41,13 +41,14 @@ def fetch_nike_stock():
         print("주가 정보 수집 실패:", e)
         return {"symbol": "NKE (NYSE)", "price": "$82.50", "change": "+$1.20 (+1.48%)", "is_up": True, "chart": []}
 
-# 2. 뉴스 수집 쿼리
+# 2. 뉴스 수집 쿼리 (나이키 + 경쟁사 브랜드 키워드)
+# 💡 경쟁사는 신발 모델명을 완전히 제외하고 브랜드명/기업동향 중심으로 구성
 QUERIES = [
     '나이키',
-    '나이키 주가',
-    '나이키 운동화 OR 에어맥스 OR 조던',
-    '나이키 실적 OR 매출',
-    '나이키 선수 OR 유니폼'
+    '나이키 주가 OR 실적 OR 매출',
+    '나이키 운동화 OR 신제품',
+    '나이키 선수 OR 유니폼',
+    '아디다스 OR 뉴발란스 OR 호카 OR 온러닝 OR 룰루레몬 OR 푸마' # 경쟁사 검색용
 ]
 
 # 🚫 [유료 / 멤버십 / 특정 언론사 차단 키워드 및 URL 패턴]
@@ -57,14 +58,15 @@ PAYWALL_KEYWORDS = [
     "유료", "멤버십", "구독자 전용", "더 남아있는 이야기", "프리미엄 기사", "아티클 플러스",
     "paywall", "유료기사", "유료회원", "구독기사", "이용권", "로그인후", "전용 콘텐츠",
     "지금 바로 시작하기", "보유하신 이용권",
-    # 💡 한국경제(hankyung.com) 관련 전체 URL 및 키워드 차단
     "hankyung.com", "hankyung", "한국경제"
 ]
 
-# 🚫 제외할 언론사명 (한국경제 포함)
 PAYWALL_SOURCES = [
     "중앙plus", "joongang plus", "조선일보 유료", "아시아경제 멤버십", "한국경제", "한경"
 ]
+
+# 경쟁사 감지 키워드 (모델명 제외, 브랜드명만 사용)
+COMPETITOR_BRANDS = ["아디다스", "adidas", "뉴발란스", "new balance", "호카", "hoka", "온러닝", "on running", "룰루레몬", "lululemon", "푸마", "puma", "언더아머"]
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 items = []; seen = set()
@@ -111,24 +113,29 @@ for q in QUERIES:
             if not title or key in seen:
                 continue
             
-            # 검사용 종합 텍스트
             full_text = f"{title} {source} {desc} {link}".lower()
             
-            # 🚫 1) 한국경제 및 유료 출처/키워드 일체 차단
+            # 🚫 1) 유료/차단 언론사 필터링
             if any(ps in source.lower() for ps in PAYWALL_SOURCES) or any(pk in full_text for pk in PAYWALL_KEYWORDS):
-                print(f"[제외됨 (한국경제/유료)]: {title}")
                 continue
 
-            # 2) 나이키 관련 필수 단어 포함 검사
-            if not any(w in full_text for w in ["나이키", "nike", "조던", "jordan", "컨버스"]):
+            # 2) 나이키 또는 경쟁사 브랜드 포함 여부 확인
+            is_nike = any(w in full_text for w in ["나이키", "nike", "조던", "jordan", "컨버스"])
+            is_competitor = any(cb in full_text for cb in COMPETITOR_BRANDS)
+
+            if not (is_nike or is_competitor):
                 continue
 
             seen.add(key)
                 
-            # 3) 4가지 카테고리 분류
+            # 3) 5가지 카테고리 세분화 (COMPETITOR 카테고리 추가)
             low = title.lower() + " " + desc.lower()
             cat = "BRAND"  # 기본값
-            if any(w in low for w in ["축구", "농구", "선수", "국대", "유니폼", "스포츠", "엠바페", "손흥민", "nba", "올림픽", "골프"]):
+            
+            # 경쟁사 뉴스는 최우선적으로 COMPETITOR 분류
+            if is_competitor and not is_nike:
+                cat = "COMPETITOR"
+            elif any(w in low for w in ["축구", "농구", "선수", "국대", "유니폼", "스포츠", "엠바페", "손흥민", "nba", "올림픽", "골프"]):
                 cat = "SPORTS"
             elif any(w in low for w in ["주가", "주식", "실적", "매출", "영업이익", "증시", "증권", "펀드", "투자", "s&p"]):
                 cat = "MARKET"
@@ -150,16 +157,16 @@ for q in QUERIES:
     except Exception as e:
         pass
 
-items = items[:30]
+items = items[:35]
 today = datetime.date.today().isoformat()
 stock_info = fetch_nike_stock()
 
 data = {
     "date": today,
     "stock": stock_info,
-    "insight": "한 주간 Google News에서 수집된 나이키 관련 분야별 브리핑입니다.",
+    "insight": "한 주간 Google News에서 수집된 나이키 및 주요 경쟁사 분야별 브리핑입니다.",
     "items": items
 }
 
 OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Updated {OUT}: 총 {len(items)}개 기사 반영 완료 (한국경제 전체 제외 반영)")
+print(f"Updated {OUT}: 총 {len(items)}개 기사 반영 완료 (COMPETITOR 카테고리 포함)")
