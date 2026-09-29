@@ -41,15 +41,6 @@ def fetch_nike_stock():
         print("주가 정보 수집 실패:", e)
         return {"symbol": "NKE (NYSE)", "price": "$82.50", "change": "+$1.20 (+1.48%)", "is_up": True, "chart": []}
 
-# 2. 뉴스 수집 쿼리
-QUERIES = [
-    '나이키',
-    '나이키 주가 OR 실적 OR 매출',
-    '나이키 운동화 OR 신제품',
-    '나이키 선수 OR 유니폼',
-    '아디다스 OR 뉴발란스 OR 호카 OR 온러닝 OR 룰루레몬 OR 푸마'
-]
-
 # 🚫 [유료 / 멤버십 / 특정 언론사 차단 키워드]
 PAYWALL_KEYWORDS = [
     "중앙plus", "joongang plus", "the joongang plus", "중앙플러스", "joongang.co.kr/plus", 
@@ -64,11 +55,9 @@ PAYWALL_SOURCES = [
     "중앙plus", "joongang plus", "조선일보 유료", "아시아경제 멤버십", "한국경제", "한경"
 ]
 
-# 경쟁사 감지 키워드 (모델명 제외, 브랜드명 중심)
-COMPETITOR_BRANDS = ["아디다스", "adidas", "뉴발란스", "new balance", "호카", "hoka", "온러닝", "on running", "룰루레몬", "lululemon", "푸마", "puma", "언더아머", "under armour"]
+COMPETITOR_BRANDS = ["아디다스", "adidas", "뉴발란스", "new balance", "호카", "hoka", "온러닝", "on running", "룰루레몬", "lululemon", "푸마", "puma", "언더아머"]
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
-items = []; seen = set()
 
 def clean(s):
     s = re.sub(r'<[^>]+>', ' ', s or '')
@@ -88,18 +77,18 @@ def extract_image(item_element):
         pass
     return ""
 
-for q in QUERIES:
+def fetch_rss(query_str):
     url = "https://news.google.com/rss/search?" + urllib.parse.urlencode({
-        "q": q + " when:7d",
+        "q": query_str + " when:7d",
         "hl": "ko",
         "gl": "KR",
         "ceid": "KR:ko"
     })
+    results = []
     try:
         req = urllib.request.Request(url, headers={"User-Agent": UA})
         data = urllib.request.urlopen(req, timeout=20).read()
         root = ET.fromstring(data)
-        
         for x in root.findall(".//item"):
             title = clean(x.findtext("title"))
             link = x.findtext("link") or ""
@@ -108,54 +97,89 @@ for q in QUERIES:
             desc = clean(x.findtext("description"))
             img_url = extract_image(x)
             
-            key = re.sub(r'[^가-힣a-z0-9]', '', title.lower())
-            if not title or key in seen:
-                continue
-            
             full_text = f"{title} {source} {desc} {link}".lower()
             
-            # 🚫 1) 유료/차단 언론사 필터링
+            # 유료 차단
             if any(ps in source.lower() for ps in PAYWALL_SOURCES) or any(pk in full_text for pk in PAYWALL_KEYWORDS):
                 continue
 
-            # 2) 나이키 또는 경쟁사 브랜드 포함 확인
-            is_nike = any(w in full_text for w in ["나이키", "nike", "조던", "jordan", "컨버스"])
-            is_competitor = any(cb in full_text for cb in COMPETITOR_BRANDS)
-
-            if not (is_nike or is_competitor):
-                continue
-
-            seen.add(key)
-                
-            # 3) 카테고리 분류
-            low = title.lower() + " " + desc.lower()
-            
-            # 경쟁사 키워드가 감지되면 최우선 경쟁사로 분류
-            if is_competitor and not is_nike:
-                cat = "COMPETITOR"
-            elif any(w in low for w in ["축구", "농구", "선수", "국대", "유니폼", "스포츠", "엠바페", "손흥민", "nba", "올림픽", "골프"]):
-                cat = "SPORTS"
-            elif any(w in low for w in ["주가", "주식", "실적", "매출", "영업이익", "증시", "증권", "펀드", "투자", "s&p"]):
-                cat = "MARKET"
-            elif any(w in low for w in ["신발", "운동화", "스니커즈", "에어맥스", "페가수스", "조던", "신제품", "출시", "컬렉션", "스니커"]):
-                cat = "PRODUCT"
-            else:
-                cat = "BRAND"
-                
-            summary = desc[:200] if desc else title
-            items.append({
-                "cat": cat,
+            results.append({
                 "title": title,
-                "summary": summary,
+                "summary": desc[:200] if desc else title,
                 "source": source,
                 "date": pub[:16],
                 "url": link,
-                "image": img_url
+                "image": img_url,
+                "full_text": full_text
             })
     except Exception as e:
-        pass
+        print("RSS 수집 오류:", e)
+    return results
 
-items = items[:40]
+items = []
+seen = set()
+
+# 1. 나이키 전용 수집
+nike_queries = ['나이키', '나이키 주가 OR 실적', '나이키 운동화 OR 신제품', '나이키 선수 OR 유니폼']
+for q in nike_queries:
+    raw_news = fetch_rss(q)
+    for news in raw_news:
+        key = re.sub(r'[^가-힣a-z0-9]', '', news["title"].lower())
+        if not news["title"] or key in seen:
+            continue
+        
+        # 나이키 키워드 필수
+        if not any(w in news["full_text"] for w in ["나이키", "nike", "조던", "jordan", "컨버스"]):
+            continue
+
+        seen.add(key)
+        
+        low = news["full_text"]
+        if any(w in low for w in ["축구", "농구", "선수", "국대", "유니폼", "스포츠", "엠바페", "손흥민", "nba", "올림픽", "골프"]):
+            cat = "SPORTS"
+        elif any(w in low for w in ["주가", "주식", "실적", "매출", "영업이익", "증시", "증권", "펀드", "투자"]):
+            cat = "MARKET"
+        elif any(w in low for w in ["신발", "운동화", "스니커즈", "에어맥스", "페가수스", "조던", "신제품", "출시", "컬렉션", "스니커"]):
+            cat = "PRODUCT"
+        else:
+            cat = "BRAND"
+
+        items.append({
+            "cat": cat,
+            "title": news["title"],
+            "summary": news["summary"],
+            "source": news["source"],
+            "date": news["date"],
+            "url": news["url"],
+            "image": news["image"]
+        })
+
+# 💡 2. 경쟁사 전용 수집 (독립 쿼리로 무조건 확보)
+comp_queries = ['아디다스', '뉴발란스', '호카 OR 온러닝', '룰루레몬 OR 푸마']
+comp_count = 0
+for q in comp_queries:
+    raw_news = fetch_rss(q)
+    for news in raw_news:
+        if comp_count >= 6: # 경쟁사 뉴스 최대 6개 확보
+            break
+        key = re.sub(r'[^가-힣a-z0-9]', '', news["title"].lower())
+        if not news["title"] or key in seen:
+            continue
+
+        # 경쟁사 브랜드 감지
+        if any(cb in news["full_text"] for cb in COMPETITOR_BRANDS):
+            seen.add(key)
+            items.append({
+                "cat": "COMPETITOR",
+                "title": news["title"],
+                "summary": news["summary"],
+                "source": news["source"],
+                "date": news["date"],
+                "url": news["url"],
+                "image": news["image"]
+            })
+            comp_count += 1
+
 today = datetime.date.today().isoformat()
 stock_info = fetch_nike_stock()
 
@@ -167,4 +191,4 @@ data = {
 }
 
 OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Updated {OUT}: 총 {len(items)}개 기사 수집 완료")
+print(f"Updated {OUT}: 총 {len(items)}개 기사 수집 완료 (경쟁사 기사 {comp_count}개 포함)")
