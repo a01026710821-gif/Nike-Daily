@@ -11,7 +11,7 @@
     .container { max-width: 1100px; margin: 0 auto; }
     header { background-color: #ffffff; border-radius: 12px; padding: 24px 30px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
     .logo { font-size: 28px; font-weight: 900; letter-spacing: -1px; color: #111; }
-    .sub-title { font-size: 12px; font-weight: 700; color: #86868b; text-transform: uppercase; letter-spacing: 1px; }
+    .sub-title { font-size: 11px; font-weight: 700; color: #86868b; text-transform: uppercase; letter-spacing: 1px; }
     .stock-box { background-color: #f5f5f7; padding: 10px 16px; border-radius: 8px; text-align: right; }
     .stock-price { font-size: 16px; font-weight: 800; color: #111; }
     .stock-change { font-size: 12px; font-weight: 700; }
@@ -29,6 +29,7 @@
     .card-title:hover { text-decoration: underline; }
     .card-desc { font-size: 13px; color: #515154; margin-bottom: 12px; flex-grow: 1; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     .card-meta { font-size: 11px; color: #86868b; }
+    .no-data { font-size: 13px; color: #86868b; padding: 15px 0; font-style: italic; }
     footer { text-align: center; margin-top: 40px; padding: 20px; font-size: 12px; color: #86868b; }
   </style>
 </head>
@@ -40,7 +41,7 @@
         <div class="logo">NIKE WEEKLY</div>
       </div>
       <div class="stock-box">
-        <div class="sub-title" id="report-date">2026-00-00</div>
+        <div class="sub-title" id="report-date">발행일: --</div>
         <div class="stock-price" id="stock-symbol">NKE --</div>
         <div class="stock-change" id="stock-change">--</div>
       </div>
@@ -79,32 +80,38 @@
         container.innerHTML = '';
 
         categories.forEach(cat => {
-          const items = data.items.filter(i => i.cat === cat.key);
-          if (items.length === 0) return;
+          const items = data.items ? data.items.filter(i => i.cat === cat.key) : [];
 
           const section = document.createElement('div');
           section.innerHTML = `<div class="section-title"><span>${cat.title}</span><span class="sub-title">${cat.key}</span></div>`;
           
-          const grid = document.createElement('div');
-          grid.className = 'grid';
+          if (items.length > 0) {
+            const grid = document.createElement('div');
+            grid.className = 'grid';
 
-          items.forEach(item => {
-            const imgHtml = item.image ? `<img class="card-img" src="${item.image}" alt="news" onerror="this.style.display='none'">` : '';
-            const card = document.createElement('div');
-            card.className = 'card';
-            card.innerHTML = `
-              ${imgHtml}
-              <div class="card-body">
-                <div class="tag">${item.cat}</div>
-                <a href="${item.url}" target="_blank" class="card-title">${item.title}</a>
-                <div class="card-desc">${item.summary}</div>
-                <div class="card-meta">${item.source} &bull; ${item.date}</div>
-              </div>
-            `;
-            grid.appendChild(card);
-          });
+            items.forEach(item => {
+              const imgHtml = item.image ? `<img class="card-img" src="${item.image}" alt="news" onerror="this.style.display='none'">` : '';
+              const card = document.createElement('div');
+              card.className = 'card';
+              card.innerHTML = `
+                ${imgHtml}
+                <div class="card-body">
+                  <div class="tag">${item.cat}</div>
+                  <a href="${item.url}" target="_blank" class="card-title">${item.title}</a>
+                  <div class="card-desc">${item.summary}</div>
+                  <div class="card-meta">${item.source} &bull; ${item.date}</div>
+                </div>
+              `;
+              grid.appendChild(card);
+            });
+            section.appendChild(grid);
+          } else {
+            const emptyMsg = document.createElement('div');
+            emptyMsg.className = 'no-data';
+            emptyMsg.innerText = '해당 분야의 최신 뉴스를 수집 중입니다.';
+            section.appendChild(emptyMsg);
+          }
 
-          section.appendChild(grid);
           container.appendChild(section);
         });
 
