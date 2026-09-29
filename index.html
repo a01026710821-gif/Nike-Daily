@@ -3,436 +3,115 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NIKE WEEKLY — Intelligence Report</title>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <title>NIKE WEEKLY - 주간 나이키 뉴스 브리핑</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Action+Man&family=Inter:wght@400;700;800;900&display=swap');
-
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background-color: #000000;
-      color: #ffffff;
-      padding: 0;
-      margin: 0;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* 나이키 스티키 상단 바 */
-    .top-bar {
-      background: #111111;
-      border-bottom: 1px solid #222222;
-      padding: 12px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .swoosh-logo {
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      color: #ffffff;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-    .top-date {
-      font-size: 12px;
-      font-weight: 700;
-      color: #888888;
-      letter-spacing: 1px;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px 80px 20px;
-    }
-
-    /* 히어로 헤더 */
-    header {
-      margin-bottom: 40px;
-      border-bottom: 2px solid #ffffff;
-      padding-bottom: 20px;
-    }
-    .brand-sub {
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 3px;
-      color: #f35b04; /* 나이키 오렌지 포인트 */
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .brand-title {
-      font-size: 48px;
-      font-weight: 900;
-      letter-spacing: -2px;
-      line-height: 1.0;
-      text-transform: uppercase;
-    }
-
-    /* 주가 차트 카드 (다크 모드) */
-    .stock-section {
-      background: #111111;
-      border: 1px solid #222222;
-      border-radius: 4px;
-      padding: 24px;
-      margin-bottom: 40px;
-    }
-    .stock-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 20px;
-    }
-    .stock-title {
-      font-size: 13px;
-      font-weight: 800;
-      color: #aaaaaa;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-    .stock-price {
-      font-size: 32px;
-      font-weight: 900;
-      letter-spacing: -1px;
-      color: #ffffff;
-    }
-    .stock-change {
-      font-size: 14px;
-      font-weight: 800;
-      margin-left: 8px;
-    }
-    .up { color: #34c759; }
-    .down { color: #ff3b30; }
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; background-color: #f5f5f7; color: #1d1d1f; line-height: 1.5; padding: 20px; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header { background-color: #ffffff; border-radius: 12px; padding: 24px 30px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
+    .logo { font-size: 28px; font-weight: 900; letter-spacing: -1px; color: #111; }
+    .sub-title { font-size: 12px; font-weight: 700; color: #86868b; text-transform: uppercase; letter-spacing: 1px; }
+    .stock-box { background-color: #f5f5f7; padding: 10px 16px; border-radius: 8px; text-align: right; }
+    .stock-price { font-size: 16px; font-weight: 800; color: #111; }
+    .stock-change { font-size: 12px; font-weight: 700; }
+    .up { color: #2e7d32; }
+    .down { color: #d32f2f; }
     
-    .chart-container {
-      position: relative;
-      height: 180px;
-      width: 100%;
-    }
-
-    /* 나이키 스타일 네비게이션 탭 */
-    .filter-bar {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 40px;
-      overflow-x: auto;
-      padding-bottom: 8px;
-    }
-    .filter-btn {
-      background: #111111;
-      border: 1px solid #333333;
-      padding: 10px 20px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: 800;
-      color: #888888;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-      text-transform: uppercase;
-    }
-    .filter-btn:hover {
-      background: #222222;
-      color: #ffffff;
-      border-color: #555555;
-    }
-    .filter-btn.active {
-      background: #ffffff;
-      color: #000000;
-      border-color: #ffffff;
-    }
-
-    /* 뉴스 그리드 */
-    .section-group {
-      margin-top: 50px;
-    }
-    .section-group:first-child { margin-top: 0; }
-
-    .section-title {
-      font-size: 20px;
-      font-weight: 900;
-      letter-spacing: -0.5px;
-      border-bottom: 1px solid #333333;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      text-transform: uppercase;
-    }
-    .section-sub { font-size: 11px; color: #f35b04; font-weight: 800; }
-    
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
-    .card {
-      background: #111111;
-      border: 1px solid #222222;
-      border-radius: 4px;
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: #555555;
-    }
-    .card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 2px;
-      margin-bottom: 14px;
-      filter: grayscale(20%);
-    }
-    .card-cat {
-      font-size: 10px;
-      font-weight: 900;
-      text-transform: uppercase;
-      color: #f35b04;
-      letter-spacing: 1px;
-      margin-bottom: 6px;
-    }
-    .card-title {
-      font-size: 16px;
-      font-weight: 800;
-      line-height: 1.35;
-      color: #ffffff;
-      text-decoration: none;
-      margin-bottom: 8px;
-      letter-spacing: -0.3px;
-    }
+    .section-title { font-size: 18px; font-weight: 800; margin: 30px 0 15px 0; padding-bottom: 8px; border-bottom: 2px solid #111; display: flex; justify-content: space-between; align-items: center; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
+    .card { background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
+    .card-img { width: 100%; height: 160px; object-fit: cover; background-color: #eee; }
+    .card-body { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; }
+    .tag { font-size: 11px; font-weight: 800; color: #0066cc; text-transform: uppercase; margin-bottom: 6px; }
+    .card-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; color: #111; text-decoration: none; }
     .card-title:hover { text-decoration: underline; }
-    .card-desc {
-      font-size: 13px;
-      color: #999999;
-      line-height: 1.5;
-      margin-bottom: 14px;
-      flex-grow: 1;
-    }
-    .card-meta { font-size: 11px; color: #666666; font-weight: 600; }
-    
-    footer {
-      border-top: 1px solid #222222;
-      padding-top: 30px;
-      margin-top: 80px;
-      text-align: center;
-      font-size: 12px;
-      color: #666666;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
+    .card-desc { font-size: 13px; color: #515154; margin-bottom: 12px; flex-grow: 1; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-meta { font-size: 11px; color: #86868b; }
+    footer { text-align: center; margin-top: 40px; padding: 20px; font-size: 12px; color: #86868b; }
   </style>
 </head>
 <body>
-
-  <!-- 상단 스티키 바 -->
-  <div class="top-bar">
-    <a href="#" class="swoosh-logo">NIKE DAILY</a>
-    <div class="top-date" id="report-date">2026.09.28</div>
-  </div>
-
   <div class="container">
     <header>
-      <div class="brand-sub">WEEKLY INTELLIGENCE REPORT</div>
-      <div class="brand-title">JUST DO IT. DAILY BRIEF.</div>
+      <div>
+        <div class="sub-title">Weekly Intelligence Dashboard</div>
+        <div class="logo">NIKE WEEKLY</div>
+      </div>
+      <div class="stock-box">
+        <div class="sub-title" id="report-date">2026-00-00</div>
+        <div class="stock-price" id="stock-symbol">NKE --</div>
+        <div class="stock-change" id="stock-change">--</div>
+      </div>
     </header>
 
-    <!-- 주가 차트 -->
-    <div class="stock-section">
-      <div class="stock-header">
-        <div>
-          <div class="stock-title">NKE (NYSE) MARKET PRICE</div>
-          <div>
-            <span class="stock-price" id="stock-price">$0.00</span>
-            <span class="stock-change" id="stock-change">+0.00%</span>
-          </div>
-        </div>
-      </div>
-      <div class="chart-container">
-        <canvas id="stockChart"></canvas>
-      </div>
-    </div>
-
-    <!-- 카테고리 필터링 버튼 -->
-    <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterCategory('ALL', this)">ALL STORIES</button>
-      <button class="filter-btn" onclick="filterCategory('PRODUCT', this)">PRODUCT</button>
-      <button class="filter-btn" onclick="filterCategory('BRAND', this)">BRAND & MARKETING</button>
-      <button class="filter-btn" onclick="filterCategory('SPORTS', this)">SPORTS & ATHLETES</button>
-      <button class="filter-btn" onclick="filterCategory('MARKET', this)">BUSINESS & MARKET</button>
-    </div>
-
-    <div class="content">
-      <!-- 1. 제품 · 컬렉션 -->
-      <div class="section-group" id="group-product">
-        <div class="section-title">
-          <span>제품 · 컬렉션</span>
-          <span class="section-sub">PRODUCT / INNOVATION</span>
-        </div>
-        <div class="grid" id="grid-product"></div>
-      </div>
-
-      <!-- 2. 브랜드 · 마케팅 -->
-      <div class="section-group" id="group-brand">
-        <div class="section-title">
-          <span>브랜드 · 마케팅</span>
-          <span class="section-sub">BRAND / CAMPAIGN</span>
-        </div>
-        <div class="grid" id="grid-brand"></div>
-      </div>
-
-      <!-- 3. 스포츠 · 선수 -->
-      <div class="section-group" id="group-sports">
-        <div class="section-title">
-          <span>스포츠 · 선수</span>
-          <span class="section-sub">SPORTS / ATHLETES</span>
-        </div>
-        <div class="grid" id="grid-sports"></div>
-      </div>
-
-      <!-- 4. 증시 · 기업경영 -->
-      <div class="section-group" id="group-market">
-        <div class="section-title">
-          <span>증시 · 기업경영</span>
-          <span class="section-sub">BUSINESS / MARKET</span>
-        </div>
-        <div class="grid" id="grid-market"></div>
-      </div>
-    </div>
+    <div id="content"></div>
 
     <footer>
-      NIKE WEEKLY BRIEFING &bull; AUTOMATED INTELLIGENCE SYSTEM
+      &copy; NIKE WEEKLY. Automated Business Intelligence Powered by GitHub Actions.
     </footer>
   </div>
 
   <script>
-    let stockChartInstance = null;
-
-    function filterCategory(cat, btnElement) {
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      btnElement.classList.add('active');
-
-      const groups = {
-        PRODUCT: document.getElementById('group-product'),
-        BRAND: document.getElementById('group-brand'),
-        SPORTS: document.getElementById('group-sports'),
-        MARKET: document.getElementById('group-market')
-      };
-
-      if (cat === 'ALL') {
-        Object.values(groups).forEach(g => { if (g) g.style.display = 'block'; });
-      } else {
-        Object.keys(groups).forEach(key => {
-          if (groups[key]) {
-            groups[key].style.display = (key === cat) ? 'block' : 'none';
-          }
-        });
-      }
-    }
-
     async function loadNews() {
       try {
-        const res = await fetch('./data/news.json?v=' + new Date().getTime());
+        const res = await fetch('data/news.json?t=' + new Date().getTime());
         const data = await res.json();
-
-        if(data.date) document.getElementById('report-date').innerText = data.date;
-
-        // 주가 차트 바인딩 (다크 테마용 스타일 적용)
+        
+        document.getElementById('report-date').innerText = '발행일: ' + data.date;
         if (data.stock) {
-          const s = data.stock;
-          document.getElementById('stock-price').innerText = s.price || '$0.00';
+          document.getElementById('stock-symbol').innerText = data.stock.symbol + ' ' + data.stock.price;
           const changeEl = document.getElementById('stock-change');
-          changeEl.innerText = s.change || '';
-          changeEl.className = 'stock-change ' + (s.is_up ? 'up' : 'down');
-
-          if (s.chart && s.chart.length > 0) {
-            const labels = s.chart.map(c => c.date);
-            const prices = s.chart.map(c => c.price);
-            
-            const ctx = document.getElementById('stockChart').getContext('2d');
-            if (stockChartInstance) stockChartInstance.destroy();
-
-            const chartColor = s.is_up ? '#34c759' : '#ff3b30';
-
-            stockChartInstance = new Chart(ctx, {
-              type: 'line',
-              data: {
-                labels: labels,
-                datasets: [{
-                  label: '종가 ($)',
-                  data: prices,
-                  borderColor: chartColor,
-                  backgroundColor: 'rgba(255, 255, 255, 0.03)',
-                  borderWidth: 2,
-                  fill: true,
-                  tension: 0.2,
-                  pointRadius: 3,
-                  pointBackgroundColor: chartColor
-                }]
-              },
-              options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: {
-                  x: { 
-                    grid: { display: false },
-                    ticks: { color: '#666666', font: { size: 10 } }
-                  },
-                  y: { 
-                    grid: { color: '#222222' },
-                    ticks: { color: '#666666', font: { size: 10 } }
-                  }
-                }
-              }
-            });
-          }
+          changeEl.innerText = data.stock.change;
+          changeEl.className = 'stock-change ' + (data.stock.is_up ? 'up' : 'down');
         }
 
-        // 카테고리 그리드 바인딩
-        const items = data.items || [];
-        const grids = {
-          PRODUCT: document.getElementById('grid-product'),
-          BRAND: document.getElementById('grid-brand'),
-          SPORTS: document.getElementById('grid-sports'),
-          MARKET: document.getElementById('grid-market')
-        };
+        const categories = [
+          { key: 'PRODUCT', title: '제품 · 컬렉션' },
+          { key: 'BRAND', title: '브랜드 · 마케팅' },
+          { key: 'SPORTS', title: '스포츠 · 선수' },
+          { key: 'MARKET', title: '증시 · 기업경영' },
+          { key: 'COMPETITOR', title: '경쟁사 동향' }
+        ];
 
-        Object.values(grids).forEach(g => g.innerHTML = '');
+        const container = document.getElementById('content');
+        container.innerHTML = '';
 
-        items.forEach(item => {
-          const cat = item.cat || 'BRAND';
-          const targetGrid = grids[cat] || grids['BRAND'];
+        categories.forEach(cat => {
+          const items = data.items.filter(i => i.cat === cat.key);
+          if (items.length === 0) return;
 
-          const imgHtml = item.image ? `<img src="${item.image}" alt="news">` : '';
-          const cardHtml = `
-            <div class="card">
+          const section = document.createElement('div');
+          section.innerHTML = `<div class="section-title"><span>${cat.title}</span><span class="sub-title">${cat.key}</span></div>`;
+          
+          const grid = document.createElement('div');
+          grid.className = 'grid';
+
+          items.forEach(item => {
+            const imgHtml = item.image ? `<img class="card-img" src="${item.image}" alt="news" onerror="this.style.display='none'">` : '';
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
               ${imgHtml}
-              <div class="card-cat">${cat}</div>
-              <a class="card-title" href="${item.url}" target="_blank">${item.title}</a>
-              <div class="card-desc">${(item.summary || '').substring(0, 90)}...</div>
-              <div class="card-meta">${item.source || ''} &bull; ${item.date || ''}</div>
-            </div>
-          `;
+              <div class="card-body">
+                <div class="tag">${item.cat}</div>
+                <a href="${item.url}" target="_blank" class="card-title">${item.title}</a>
+                <div class="card-desc">${item.summary}</div>
+                <div class="card-meta">${item.source} &bull; ${item.date}</div>
+              </div>
+            `;
+            grid.appendChild(card);
+          });
 
-          targetGrid.innerHTML += cardHtml;
+          section.appendChild(grid);
+          container.appendChild(section);
         });
 
       } catch (e) {
         console.error('데이터 로드 실패:', e);
       }
     }
-
     loadNews();
   </script>
 </body>
