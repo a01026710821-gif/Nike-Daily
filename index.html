@@ -7,30 +7,50 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; background-color: #f5f5f7; color: #1d1d1f; line-height: 1.5; padding: 20px; }
+    body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif; background-color: #f5f5f7 !important; color: #1d1d1f; line-height: 1.5; padding: 30px 20px; }
     .container { max-width: 1100px; margin: 0 auto; }
-    header { background-color: #ffffff; border-radius: 12px; padding: 24px 30px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.03); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px; }
-    .logo { font-size: 28px; font-weight: 900; letter-spacing: -1px; color: #111; }
-    .sub-title { font-size: 11px; font-weight: 700; color: #86868b; text-transform: uppercase; letter-spacing: 1px; }
-    .stock-box { background-color: #f5f5f7; padding: 10px 16px; border-radius: 8px; text-align: right; }
-    .stock-price { font-size: 16px; font-weight: 800; color: #111; }
-    .stock-change { font-size: 12px; font-weight: 700; }
+    
+    /* 헤더 및 주가 차트 영역 */
+    header { background-color: #ffffff; border-radius: 14px; padding: 24px 30px; margin-bottom: 30px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; border: 1px solid #e5e5e7; }
+    .logo { font-size: 28px; font-weight: 900; letter-spacing: -1px; color: #111111; }
+    .sub-title { font-size: 11px; font-weight: 800; color: #86868b; text-transform: uppercase; letter-spacing: 1.2px; }
+    
+    /* 주가 & 차트 박스 */
+    .stock-container { display: flex; align-items: center; gap: 20px; background-color: #f9f9fb; padding: 12px 20px; border-radius: 10px; border: 1px solid #e8e8ed; }
+    .stock-info { text-align: right; }
+    .stock-price { font-size: 18px; font-weight: 800; color: #111111; }
+    .stock-change { font-size: 12px; font-weight: 700; margin-top: 2px; }
     .up { color: #2e7d32; }
     .down { color: #d32f2f; }
     
-    .section-title { font-size: 18px; font-weight: 800; margin: 30px 0 15px 0; padding-bottom: 8px; border-bottom: 2px solid #111; display: flex; justify-content: space-between; align-items: center; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 18px; }
-    .card { background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
-    .card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0,0,0,0.08); }
-    .card-img { width: 100%; height: 160px; object-fit: cover; background-color: #eee; }
+    /* 미니 차트 SVG */
+    .chart-box { width: 110px; height: 35px; }
+    
+    /* 섹션 및 카드 레이아웃 */
+    .section-title { font-size: 18px; font-weight: 800; margin: 35px 0 15px 0; padding-bottom: 10px; border-bottom: 2px solid #111111; display: flex; justify-content: space-between; align-items: center; color: #111111; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+      header { flex-direction: column; align-items: flex-start; }
+      .stock-container { width: 100%; justify-content: space-between; }
+    }
+
+    .card { background-color: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 10px rgba(0,0,0,0.03); border: 1px solid #e8e8ed; transition: transform 0.2s, box-shadow 0.2s; display: flex; flex-direction: column; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.08); }
+    .card-img { width: 100%; height: 160px; object-fit: cover; background-color: #f0f0f2; }
     .card-body { padding: 18px; flex-grow: 1; display: flex; flex-direction: column; }
-    .tag { font-size: 11px; font-weight: 800; color: #0066cc; text-transform: uppercase; margin-bottom: 6px; }
-    .card-title { font-size: 15px; font-weight: 700; margin-bottom: 8px; line-height: 1.4; color: #111; text-decoration: none; }
-    .card-title:hover { text-decoration: underline; }
-    .card-desc { font-size: 13px; color: #515154; margin-bottom: 12px; flex-grow: 1; line-height: 1.4; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-    .card-meta { font-size: 11px; color: #86868b; }
-    .no-data { font-size: 13px; color: #86868b; padding: 15px 0; font-style: italic; }
-    footer { text-align: center; margin-top: 40px; padding: 20px; font-size: 12px; color: #86868b; }
+    .tag { font-size: 11px; font-weight: 800; color: #111111; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 0.5px; }
+    .card-title { font-size: 15px; font-weight: 800; margin-bottom: 8px; line-height: 1.4; color: #111111; text-decoration: none; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-title:hover { color: #0066cc; }
+    .card-desc { font-size: 13px; color: #515154; margin-bottom: 14px; flex-grow: 1; line-height: 1.45; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-meta { font-size: 11px; color: #86868b; font-weight: 500; }
+    .no-data { font-size: 13px; color: #86868b; padding: 20px; background: #ffffff; border-radius: 8px; border: 1px dashed #d2d2d7; text-align: center; }
+    
+    footer { text-align: center; margin-top: 50px; padding: 25px; font-size: 12px; color: #86868b; border-top: 1px solid #e5e5e7; }
   </style>
 </head>
 <body>
@@ -40,10 +60,16 @@
         <div class="sub-title">Weekly Intelligence Dashboard</div>
         <div class="logo">NIKE WEEKLY</div>
       </div>
-      <div class="stock-box">
-        <div class="sub-title" id="report-date">발행일: --</div>
-        <div class="stock-price" id="stock-symbol">NKE --</div>
-        <div class="stock-change" id="stock-change">--</div>
+      
+      <div class="stock-container">
+        <!-- SVG 주가 차트 -->
+        <div class="chart-box" id="chart-area"></div>
+        
+        <div class="stock-info">
+          <div class="sub-title" id="report-date">발행일: --</div>
+          <div class="stock-price" id="stock-symbol">NKE --</div>
+          <div class="stock-change" id="stock-change">--</div>
+        </div>
       </div>
     </header>
 
@@ -55,6 +81,30 @@
   </div>
 
   <script>
+    function renderSparkline(chartData, isUp) {
+      if (!chartData || chartData.length < 2) return '';
+      const prices = chartData.map(d => d.price);
+      const min = Math.min(...prices);
+      const max = Math.max(...prices);
+      const range = max - min || 1;
+      
+      const width = 110;
+      const height = 35;
+      
+      const points = chartData.map((d, i) => {
+        const x = (i / (chartData.length - 1)) * width;
+        const y = height - ((d.price - min) / range) * (height - 8) - 4;
+        return `${x.toFixed(1)},${y.toFixed(1)}`;
+      }).join(' ');
+
+      const strokeColor = isUp ? '#2e7d32' : '#d32f2f';
+      return `
+        <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">
+          <polyline fill="none" stroke="${strokeColor}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" points="${points}" />
+        </svg>
+      `;
+    }
+
     async function loadNews() {
       try {
         const res = await fetch('data/news.json?t=' + new Date().getTime());
@@ -66,6 +116,11 @@
           const changeEl = document.getElementById('stock-change');
           changeEl.innerText = data.stock.change;
           changeEl.className = 'stock-change ' + (data.stock.is_up ? 'up' : 'down');
+          
+          // 주가 차트 그려주기
+          if (data.stock.chart) {
+            document.getElementById('chart-area').innerHTML = renderSparkline(data.stock.chart, data.stock.is_up);
+          }
         }
 
         const categories = [
@@ -80,7 +135,7 @@
         container.innerHTML = '';
 
         categories.forEach(cat => {
-          const items = data.items ? data.items.filter(i => i.cat === cat.key) : [];
+          const items = data.items ? data.items.filter(i => i.cat === cat.key).slice(0, 6) : [];
 
           const section = document.createElement('div');
           section.innerHTML = `<div class="section-title"><span>${cat.title}</span><span class="sub-title">${cat.key}</span></div>`;
