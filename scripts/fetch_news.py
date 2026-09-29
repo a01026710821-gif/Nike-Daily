@@ -50,12 +50,18 @@ QUERIES = [
     '나이키 선수 OR 유니폼'
 ]
 
-# 🚫 [유료 / 멤버십 / 구독제기사 강화 필터링 목록]
+# 🚫 [유료 / 멤버십 / 구독제 기사 차단 키워드 및 URL 패턴]
 PAYWALL_KEYWORDS = [
-    "중앙plus", "joongang plus", "the joongang plus", "중앙플러스", "joongang.co.kr/plus", "plus.joongang",
-    "아시아경제 멤버십", "조선plus", "조선일보 유료", "매경 럭스멘", "premium", "프리미엄",
+    "중앙plus", "joongang plus", "the joongang plus", "중앙플러스", "joongang.co.kr/plus", 
+    "plus.joongang", "아시아경제 멤버십", "조선plus", "조선일보 유료", "매경 럭스멘", 
     "유료", "멤버십", "구독자 전용", "더 남아있는 이야기", "프리미엄 기사", "아티클 플러스",
-    "paywall", "유료기사", "유료회원", "구독기사", "이용권", "로그인후", "전용 콘텐츠"
+    "paywall", "유료기사", "유료회원", "구독기사", "이용권", "로그인후", "전용 콘텐츠",
+    "지금 바로 시작하기", "보유하신 이용권", "s&p100서 쫓겨난 나이키" # 해당 중앙Plus 특정 기사 키워드 포함
+]
+
+# 🚫 유료 기사를 주로 내보내는 도메인/출처 차단
+PAYWALL_SOURCES = [
+    "중앙plus", "joongang plus", "조선일보 유료", "아시아경제 멤버십"
 ]
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
@@ -103,26 +109,26 @@ for q in QUERIES:
             if not title or key in seen:
                 continue
             
-            # 검사용 종합 텍스트 (제목 + 언론사 + 요약본 + URL)
+            # 검사용 종합 텍스트
             full_text = f"{title} {source} {desc} {link}".lower()
             
-            # 🚫 1) 유료/구독제 기사 감지 시 즉시 스킵
-            if any(pk in full_text for pk in PAYWALL_KEYWORDS):
-                print(f"[필터링 완료] 유료/구독 기사 제외: {title}")
+            # 🚫 1) 유료 출처 및 유료 키워드 차단
+            if any(ps in source.lower() for ps in PAYWALL_SOURCES) or any(pk in full_text for pk in PAYWALL_KEYWORDS):
+                print(f"[유료 기사 걸러냄]: {title}")
                 continue
 
-            # 2) 나이키 키워드 포함 검사
+            # 2) 나이키 관련 필수 단어 포함 검사
             if not any(w in full_text for w in ["나이키", "nike", "조던", "jordan", "컨버스"]):
                 continue
 
             seen.add(key)
                 
-            # 3) 4가지 카테고리 세분화
+            # 3) 4가지 카테고리 분류
             low = title.lower() + " " + desc.lower()
             cat = "BRAND"  # 기본값
             if any(w in low for w in ["축구", "농구", "선수", "국대", "유니폼", "스포츠", "엠바페", "손흥민", "nba", "올림픽", "골프"]):
                 cat = "SPORTS"
-            elif any(w in low for w in ["주가", "주식", "실적", "매출", "영업이익", "증시", "증권", "펀드", "투자"]):
+            elif any(w in low for w in ["주가", "주식", "실적", "매출", "영업이익", "증시", "증권", "펀드", "투자", "s&p"]):
                 cat = "MARKET"
             elif any(w in low for w in ["신발", "운동화", "스니커즈", "에어맥스", "페가수스", "조던", "신제품", "출시", "컬렉션", "스니커"]):
                 cat = "PRODUCT"
@@ -154,4 +160,4 @@ data = {
 }
 
 OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Updated {OUT}: 총 {len(items)}개 기사 반영 완료 (유료 기사 필터링 강점 적용)")
+print(f"Updated {OUT}: 총 {len(items)}개 기사 반영 완료")
