@@ -2,14 +2,14 @@ name: Update Nike Weekly News & Send Email
 
 on:
   schedule:
-    - cron: '50 21 * * 0' # 매주 월요일 아침 6시 50분 (KST) 자동 실행 (메일 발송 포함)
+    - cron: '50 21 * * 0' # 매주 월요일 아침 6시 50분 (KST) 자동 실행
   workflow_dispatch:
     inputs:
       send_email:
         description: '이메일 수신자에게 메일을 함께 발송할까요?'
         required: true
         type: boolean
-        default: false  # 수동 실행 시 기본값: 메일 발송 안 함 (웹 갱신만 진행)
+        default: false
 
 jobs:
   update-and-mail:
@@ -47,7 +47,6 @@ jobs:
           )
 
       - name: Send Email Newsletter
-        # 월요일 정기 자동 실행(schedule)이거나, 수동 실행 시 send_email 옵션을 체크(true)했을 때만 메일 발송
         if: ${{ github.event_name == 'schedule' || inputs.send_email == true }}
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
@@ -100,6 +99,7 @@ jobs:
           brand_items = [a for a in articles if a.get('cat') == 'BRAND'][:3]
           sports_items = [a for a in articles if a.get('cat') == 'SPORTS'][:3]
           market_items = [a for a in articles if a.get('cat') == 'MARKET'][:3]
+          competitor_items = [a for a in articles if a.get('cat') == 'COMPETITOR'][:3]
 
           def render_card(item):
               if not item: return ''
@@ -177,6 +177,7 @@ jobs:
                 {render_section('브랜드 · 마케팅', 'BRAND', brand_items)}
                 {render_section('스포츠 · 선수', 'SPORTS', sports_items)}
                 {render_section('증시 · 기업경영', 'MARKET', market_items)}
+                {render_section('경쟁사 동향', 'COMPETITOR', competitor_items)}
               </div>
 
               <div style=\"background-color: #f9f9fb; border-top: 1px solid #eeeeee; padding: 15px 20px; text-align: center; font-size: 11px; color: #777777;\">
