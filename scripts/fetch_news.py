@@ -50,21 +50,20 @@ QUERIES = [
     '나이키 선수 OR 유니폼'
 ]
 
-# 🚫 [유료 / 멤버십 / 구독제 기사 차단 키워드 및 URL 패턴]
+# 🚫 [유료 / 멤버십 / 특정 언론사 차단 키워드 및 URL 패턴]
 PAYWALL_KEYWORDS = [
-    # 기존 차단 목록
     "중앙plus", "joongang plus", "the joongang plus", "중앙플러스", "joongang.co.kr/plus", 
     "plus.joongang", "아시아경제 멤버십", "조선plus", "조선일보 유료", "매경 럭스멘", 
     "유료", "멤버십", "구독자 전용", "더 남아있는 이야기", "프리미엄 기사", "아티클 플러스",
     "paywall", "유료기사", "유료회원", "구독기사", "이용권", "로그인후", "전용 콘텐츠",
     "지금 바로 시작하기", "보유하신 이용권",
-    # 💡 한국경제 프리미엄(Premium9) 차단 키워드 및 URL 패턴 추가
-    "hankyung.com/premium", "premium9", "한경 프리미엄", "한경premium", "한경 premium"
+    # 💡 한국경제(hankyung.com) 관련 전체 URL 및 키워드 차단
+    "hankyung.com", "hankyung", "한국경제"
 ]
 
-# 🚫 유료 기사를 주로 내보내는 도메인/출처 차단
+# 🚫 제외할 언론사명 (한국경제 포함)
 PAYWALL_SOURCES = [
-    "중앙plus", "joongang plus", "조선일보 유료", "아시아경제 멤버십", "한경 프리미엄", "hankyung premium"
+    "중앙plus", "joongang plus", "조선일보 유료", "아시아경제 멤버십", "한국경제", "한경"
 ]
 
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
@@ -115,9 +114,9 @@ for q in QUERIES:
             # 검사용 종합 텍스트
             full_text = f"{title} {source} {desc} {link}".lower()
             
-            # 🚫 1) 유료 출처 및 유료 키워드 차단
+            # 🚫 1) 한국경제 및 유료 출처/키워드 일체 차단
             if any(ps in source.lower() for ps in PAYWALL_SOURCES) or any(pk in full_text for pk in PAYWALL_KEYWORDS):
-                print(f"[유료 기사 걸러냄]: {title}")
+                print(f"[제외됨 (한국경제/유료)]: {title}")
                 continue
 
             # 2) 나이키 관련 필수 단어 포함 검사
@@ -163,4 +162,4 @@ data = {
 }
 
 OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Updated {OUT}: 총 {len(items)}개 기사 반영 완료 (한경 프리미엄 필터링 포함)")
+print(f"Updated {OUT}: 총 {len(items)}개 기사 반영 완료 (한국경제 전체 제외 반영)")
