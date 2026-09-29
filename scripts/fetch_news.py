@@ -41,7 +41,7 @@ def fetch_nike_stock():
         print("주가 정보 수집 실패:", e)
         return {"symbol": "NKE (NYSE)", "price": "$82.50", "change": "+$1.20 (+1.48%)", "is_up": True, "chart": []}
 
-# 2. 최근 7일간의 주간 뉴스 수집
+# 2. 뉴스 수집 쿼리
 QUERIES = [
     '나이키',
     '나이키 주가',
@@ -50,14 +50,15 @@ QUERIES = [
     '나이키 선수 OR 유니폼'
 ]
 
-# 🚫 유료 / 구독제 기사 필터링 키워드 목록
+# 🚫 [유료 / 멤버십 / 구독제기사 강화 필터링 목록]
 PAYWALL_KEYWORDS = [
-    "중앙plus", "joongang plus", "the joongang plus", "중앙플러스",
-    "유료", "멤버십", "구독자 전용", "더 남아있는 이야기", "프리미엄 기사",
-    "paywall", "유료기사", "유료회원"
+    "중앙plus", "joongang plus", "the joongang plus", "중앙플러스", "joongang.co.kr/plus", "plus.joongang",
+    "아시아경제 멤버십", "조선plus", "조선일보 유료", "매경 럭스멘", "premium", "프리미엄",
+    "유료", "멤버십", "구독자 전용", "더 남아있는 이야기", "프리미엄 기사", "아티클 플러스",
+    "paywall", "유료기사", "유료회원", "구독기사", "이용권", "로그인후", "전용 콘텐츠"
 ]
 
-UA = "Mozilla/5.0 (NIKE-WEEKLY/1.0)"
+UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 items = []; seen = set()
 
 def clean(s):
@@ -101,18 +102,20 @@ for q in QUERIES:
             key = re.sub(r'[^가-힣a-z0-9]', '', title.lower())
             if not title or key in seen:
                 continue
-            seen.add(key)
             
+            # 검사용 종합 텍스트 (제목 + 언론사 + 요약본 + URL)
             full_text = f"{title} {source} {desc} {link}".lower()
             
-            # 🚫 1) 유료/구독제 기사 필터링
+            # 🚫 1) 유료/구독제 기사 감지 시 즉시 스킵
             if any(pk in full_text for pk in PAYWALL_KEYWORDS):
-                print(f"유료 기사 제외됨: {title}")
+                print(f"[필터링 완료] 유료/구독 기사 제외: {title}")
                 continue
 
-            # 2) 나이키 관련 필수 단어 검사
+            # 2) 나이키 키워드 포함 검사
             if not any(w in full_text for w in ["나이키", "nike", "조던", "jordan", "컨버스"]):
                 continue
+
+            seen.add(key)
                 
             # 3) 4가지 카테고리 세분화
             low = title.lower() + " " + desc.lower()
@@ -151,4 +154,4 @@ data = {
 }
 
 OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-print("Updated", OUT, len(items), "items with paywall filters applied")
+print(f"Updated {OUT}: 총 {len(items)}개 기사 반영 완료 (유료 기사 필터링 강점 적용)")
