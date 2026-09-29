@@ -262,13 +262,14 @@
       </div>
     </div>
 
-    <!-- 카테고리 필터링 버튼 -->
+    <!-- 카테고리 필터링 버튼 (COMPETITOR 추가) -->
     <div class="filter-bar">
       <button class="filter-btn active" onclick="filterCategory('ALL', this)">ALL STORIES</button>
       <button class="filter-btn" onclick="filterCategory('PRODUCT', this)">PRODUCT</button>
       <button class="filter-btn" onclick="filterCategory('BRAND', this)">BRAND & MARKETING</button>
       <button class="filter-btn" onclick="filterCategory('SPORTS', this)">SPORTS & ATHLETES</button>
       <button class="filter-btn" onclick="filterCategory('MARKET', this)">BUSINESS & MARKET</button>
+      <button class="filter-btn" onclick="filterCategory('COMPETITOR', this)">COMPETITOR</button>
     </div>
 
     <div class="content">
@@ -307,6 +308,15 @@
         </div>
         <div class="grid" id="grid-market"></div>
       </div>
+
+      <!-- 5. 경쟁사 동향 (신설) -->
+      <div class="section-group" id="group-competitor">
+        <div class="section-title">
+          <span>경쟁사 동향</span>
+          <span class="section-sub">COMPETITOR / RIVALS</span>
+        </div>
+        <div class="grid" id="grid-competitor"></div>
+      </div>
     </div>
 
     <footer>
@@ -326,7 +336,8 @@
         PRODUCT: document.getElementById('group-product'),
         BRAND: document.getElementById('group-brand'),
         SPORTS: document.getElementById('group-sports'),
-        MARKET: document.getElementById('group-market')
+        MARKET: document.getElementById('group-market'),
+        COMPETITOR: document.getElementById('group-competitor')
       };
 
       if (cat === 'ALL') {
@@ -399,16 +410,17 @@
           }
         }
 
-        // 카테고리 그리드 바인딩
+        // 카테고리 그리드 바인딩 (COMPETITOR 추가)
         const items = data.items || [];
         const grids = {
           PRODUCT: document.getElementById('grid-product'),
           BRAND: document.getElementById('grid-brand'),
           SPORTS: document.getElementById('grid-sports'),
-          MARKET: document.getElementById('grid-market')
+          MARKET: document.getElementById('grid-market'),
+          COMPETITOR: document.getElementById('grid-competitor')
         };
 
-        Object.values(grids).forEach(g => g.innerHTML = '');
+        Object.values(grids).forEach(g => { if(g) g.innerHTML = ''; });
 
         items.forEach(item => {
           const cat = item.cat || 'BRAND';
@@ -425,7 +437,9 @@
             </div>
           `;
 
-          targetGrid.innerHTML += cardHtml;
+          if (targetGrid) {
+            targetGrid.innerHTML += cardHtml;
+          }
         });
 
       } catch (e) {
