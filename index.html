@@ -111,10 +111,9 @@
       width: 100%;
     }
 
-    /* 💡 잘림 방지 필터 바 레아아웃 최적화 */
     .filter-bar {
       display: flex;
-      flex-wrap: wrap; /* 화면 크기에 맞춰 자동 줄바꿈 처리 */
+      flex-wrap: wrap;
       gap: 8px;
       margin-bottom: 40px;
       padding-bottom: 8px;
@@ -122,9 +121,9 @@
     .filter-btn {
       background: #111111;
       border: 1px solid #333333;
-      padding: 8px 14px; /* 여백 조율로 안 잘리게 개선 */
+      padding: 8px 14px;
       border-radius: 20px;
-      font-size: 11px; /* 글자 크기 살짝 조정 */
+      font-size: 11px;
       font-weight: 800;
       color: #888888;
       cursor: pointer;
@@ -154,7 +153,7 @@
       letter-spacing: -0.5px;
       border-bottom: 1px solid #333333;
       padding-bottom: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -162,6 +161,29 @@
     }
     .section-sub { font-size: 11px; color: #f35b04; font-weight: 800; }
     
+    /* 💡 요약 박스 (3줄 불렛 포인트) 스타일 */
+    .summary-box {
+      background: #0d0d0d;
+      border-left: 3px solid #f35b04;
+      border-radius: 2px;
+      padding: 14px 18px;
+      margin-bottom: 20px;
+    }
+    .summary-box ul {
+      list-style-type: disc;
+      padding-left: 18px;
+    }
+    .summary-box li {
+      font-size: 13px;
+      color: #dddddd;
+      line-height: 1.6;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .summary-box li:last-child {
+      margin-bottom: 0;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -272,6 +294,7 @@
           <span>제품 · 컬렉션</span>
           <span class="section-sub">PRODUCT / INNOVATION</span>
         </div>
+        <div class="summary-box"><ul id="summary-product"></ul></div>
         <div class="grid" id="grid-product"></div>
       </div>
 
@@ -280,6 +303,7 @@
           <span>브랜드 · 마케팅</span>
           <span class="section-sub">BRAND / CAMPAIGN</span>
         </div>
+        <div class="summary-box"><ul id="summary-brand"></ul></div>
         <div class="grid" id="grid-brand"></div>
       </div>
 
@@ -288,6 +312,7 @@
           <span>스포츠 · 선수</span>
           <span class="section-sub">SPORTS / ATHLETES</span>
         </div>
+        <div class="summary-box"><ul id="summary-sports"></ul></div>
         <div class="grid" id="grid-sports"></div>
       </div>
 
@@ -296,6 +321,7 @@
           <span>증시 · 기업경영</span>
           <span class="section-sub">BUSINESS / MARKET</span>
         </div>
+        <div class="summary-box"><ul id="summary-market"></ul></div>
         <div class="grid" id="grid-market"></div>
       </div>
 
@@ -304,6 +330,7 @@
           <span>경쟁사 동향</span>
           <span class="section-sub">COMPETITOR / RIVALS</span>
         </div>
+        <div class="summary-box"><ul id="summary-competitor"></ul></div>
         <div class="grid" id="grid-competitor"></div>
       </div>
     </div>
@@ -398,6 +425,16 @@
           }
         }
 
+        // 💡 3줄 요약 바인딩
+        if (data.summaries) {
+          Object.keys(data.summaries).forEach(catKey => {
+            const sumUl = document.getElementById('summary-' + catKey.toLowerCase());
+            if (sumUl) {
+              sumUl.innerHTML = data.summaries[catKey].map(str => `<li>${str}</li>`).join('');
+            }
+          });
+        }
+
         const items = data.items || [];
         const grids = {
           PRODUCT: document.getElementById('grid-product'),
@@ -426,13 +463,6 @@
 
           if (targetGrid) {
             targetGrid.innerHTML += cardHtml;
-          }
-        });
-
-        // 💡 데이터가 없는 카테고리에 안내 문구 추가
-        Object.keys(grids).forEach(k => {
-          if (grids[k] && grids[k].children.length === 0) {
-            grids[k].innerHTML = '<div class="no-data">해당 카테고리의 최신 기사를 수집 중입니다.</div>';
           }
         });
 
