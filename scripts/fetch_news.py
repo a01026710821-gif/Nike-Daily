@@ -41,7 +41,6 @@ def fetch_nike_stock():
         print("주가 정보 수집 실패:", e)
         return {"symbol": "NKE (NYSE)", "price": "$82.50", "change": "+$1.20 (+1.48%)", "is_up": True, "chart": []}
 
-# 🚫 [유료 / 멤버십 / 특정 언론사 차단 키워드 및 URL 패턴]
 PAYWALL_KEYWORDS = [
     "중앙plus", "joongang plus", "the joongang plus", "중앙플러스", "joongang.co.kr/plus", 
     "plus.joongang", "아시아경제 멤버십", "조선plus", "조선일보 유료", "매경 럭스멘", 
@@ -49,7 +48,6 @@ PAYWALL_KEYWORDS = [
     "paywall", "유료기사", "유료회원", "구독기사", "이용권", "로그인후", "전용 콘텐츠",
     "지금 바로 시작하기", "보유하신 이용권",
     "hankyung.com", "hankyung", "한국경제",
-    # 💡 인베스팅닷컴 차단 키워드 및 URL 추가
     "investing.com", "kr.investing.com", "인베스팅닷컴", "article-93ch"
 ]
 
@@ -101,7 +99,6 @@ def fetch_rss(query_str):
             
             full_text = f"{title} {source} {desc} {link}".lower()
             
-            # 유료 기사 및 특정 언론사 차단
             if any(ps in source.lower() for ps in PAYWALL_SOURCES) or any(pk in full_text for pk in PAYWALL_KEYWORDS):
                 continue
 
@@ -121,7 +118,7 @@ def fetch_rss(query_str):
 items = []
 seen = set()
 
-# 1. 나이키 전용 기사 수집
+# 1. 나이키 전용 수집
 nike_queries = ['나이키', '나이키 주가 OR 실적', '나이키 운동화 OR 신제품', '나이키 선수 OR 유니폼']
 for q in nike_queries:
     raw_news = fetch_rss(q)
@@ -130,7 +127,6 @@ for q in nike_queries:
         if not news["title"] or key in seen:
             continue
         
-        # 나이키 관련 필수 단어 포함 검사
         if not any(w in news["full_text"] for w in ["나이키", "nike", "조던", "jordan", "컨버스"]):
             continue
 
@@ -150,19 +146,19 @@ for q in nike_queries:
             "cat": cat,
             "title": news["title"],
             "summary": news["summary"],
-            "source": news["source"],
+            "source": source if 'source' in locals() else news["source"],
             "date": news["date"],
             "url": news["url"],
             "image": news["image"]
         })
 
-# 2. 경쟁사 전용 기사 수집 (독립 수집 파이프라인)
+# 2. 경쟁사 전용 수집
 comp_queries = ['아디다스', '뉴발란스', '호카 OR 온러닝', '룰루레몬 OR 푸마']
 comp_count = 0
 for q in comp_queries:
     raw_news = fetch_rss(q)
     for news in raw_news:
-        if comp_count >= 6: # 경쟁사 기사 최대 6개 수집
+        if comp_count >= 6:
             break
         key = re.sub(r'[^가-힣a-z0-9]', '', news["title"].lower())
         if not news["title"] or key in seen:
@@ -181,6 +177,27 @@ for q in comp_queries:
             })
             comp_count += 1
 
+# 💡 3. 카테고리별 3줄 요약 문장 자동 생성 생성 함수
+summaries = {}
+categories = ["PRODUCT", "BRAND", "SPORTS", "MARKET", "COMPETITOR"]
+
+for cat in categories:
+    cat_items = [it for it in items if it["cat"] == cat]
+    cat_summaries = []
+    for it in cat_items[:3]:
+        # 기사 제목 기반 핵심 문장 정제
+        title_clean = re.sub(r' - [^-]+$', '', it["title"]).strip()
+        cat_summaries.append(title_clean)
+    
+    # 3개 미만일 경우 기본 안내문 처리
+    while len(cat_summaries) < 3:
+        if len(cat_summaries) == 0:
+            cat_summaries.append("한 주간 해당 카테고리의 주요 시장 이슈를 수집 분석 중입니다.")
+        else:
+            cat_summaries.append("글로벌 시장 동향 및 수주/생산 관련 모니터링을 지속 진행합니다.")
+            
+    summaries[cat] = cat_summaries[:3]
+
 today = datetime.date.today().isoformat()
 stock_info = fetch_nike_stock()
 
@@ -188,8 +205,9 @@ data = {
     "date": today,
     "stock": stock_info,
     "insight": "한 주간 Google News에서 수집된 나이키 및 주요 경쟁사 분야별 브리핑입니다.",
+    "summaries": summaries, # 요약 문장 데이터 추가
     "items": items
 }
 
 OUT.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-print(f"Updated {OUT}: 총 {len(items)}개 기사 수집 완료 (경쟁사 기사 {comp_count}개 포함)")
+print(f"Updated {OUT}: 총 {len(items)}개 기사 수집 및 카테고리별 요약 생성 완료")
