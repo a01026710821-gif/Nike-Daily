@@ -35,6 +35,12 @@ jobs:
         run: |
           python scripts/fetch_news.py
 
+      - name: Generate Executive Brief (AI)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python scripts/generate_executive_brief.py
+
       - name: Commit and Push Changes
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
@@ -55,7 +61,6 @@ jobs:
         run: |
           python -c "
           import os, json, smtplib, csv, urllib.request, datetime
-          from scripts.strategic_brief import render_brief
           from email.mime.multipart import MIMEMultipart
           from email.mime.text import MIMEText
 
@@ -91,7 +96,8 @@ jobs:
           articles = news_data.get('items', [])
           stock = news_data.get('stock', {})
           summaries = news_data.get('summaries', {})
-          strategic_html = render_brief(news_data)
+          from pathlib import Path
+          brief_html = Path('data/executive_brief_email.html').read_text(encoding='utf-8') if Path('data/executive_brief_email.html').exists() else ''
           if not articles:
               print('발송할 뉴스가 없습니다.')
               exit(0)
@@ -188,7 +194,7 @@ jobs:
               </div>
 
               <div style=\"padding: 10px 20px 20px 20px;\">
-                {strategic_html}
+                {brief_html}
                 {render_section('제품 · 컬렉션', 'PRODUCT', product_items, 'PRODUCT')}
                 {render_section('브랜드 · 마케팅', 'BRAND', brand_items, 'BRAND')}
                 {render_section('스포츠 · 선수', 'SPORTS', sports_items, 'SPORTS')}
