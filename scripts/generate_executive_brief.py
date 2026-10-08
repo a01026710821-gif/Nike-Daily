@@ -78,7 +78,7 @@ Nike 자체의 글로벌 경영전략만 분석하십시오. SHC, 협력사 대�
                'generationConfig': {'responseMimeType':'application/json', 'temperature':0.2, 'maxOutputTokens':2500}}
     req = urllib.request.Request(url, data=json.dumps(payload).encode(),
         headers={'Content-Type':'application/json', 'x-goog-api-key':key}, method='POST')
-    with urllib.request.urlopen(req, timeout=65) as resp:
+    with urllib.request.urlopen(req, timeout=180) as resp:
         raw=json.load(resp)
     parts = raw['candidates'][0]['content']['parts']
     result = json.loads(''.join(p.get('text','') for p in parts))
