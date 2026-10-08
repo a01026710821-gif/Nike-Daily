@@ -15,7 +15,7 @@ from zoneinfo import ZoneInfo
 
 NEWS = Path('data/news.json')
 OUTPUT = Path('data/executive_brief_email.html')
-MODEL = os.environ.get('GEMINI_MODEL', 'gemini-2.5-flash')
+MODEL = os.environ.get('GEMINI_MODEL', 'gemini-3.8-flash')
 
 
 def h(s):
