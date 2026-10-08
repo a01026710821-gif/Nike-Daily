@@ -186,7 +186,7 @@ jobs:
                     </td>
                     <td align=\"right\" valign=\"top\">
                       <div style=\"margin-bottom: 6px;\">
-                        <a href=\"https://a01026710821-gif.github.io/Nike-Daily/\" style=\"font-size: 11px; font-weight: 800; color: #111111; background-color: #f0f0f2; padding: 4px 8px; border-radius: 4px; text-decoration: none; display: inline-block;\">웹에서 보기 ↗</a>
+                        <a href=\"https://a01026710821-gif.github.io/Nike-Daily/\" style=\"font-size: 11px; font-weight: 800; color: #111111; background-color: #f0f0f2; padding: 4px 8px; border-radius: 4px; text-decoration: none; display: inline-block;\">웹페이지 보기 ↗</a>
                       </div>
                       <div style=\"font-size: 11px; font-weight: 700; color: #111111;\">NKE {stock_price_str} <span style=\"color:{stock_color};\">{stock_change_str}</span></div>
                       <div style=\"font-size: 12px; color: #777777; margin-top: 2px;\">{today_str}</div>
