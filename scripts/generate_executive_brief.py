@@ -9,6 +9,8 @@ import os
 from pathlib import Path
 import re
 import sys
+import time
+import socket
 import urllib.request
 import urllib.error
 from zoneinfo import ZoneInfo
@@ -78,8 +80,25 @@ Nike 자체의 글로벌 경영전략만 분석하십시오. SHC, 협력사 대�
                'generationConfig': {'responseMimeType':'application/json', 'temperature':0.2, 'maxOutputTokens':2500}}
     req = urllib.request.Request(url, data=json.dumps(payload).encode(),
         headers={'Content-Type':'application/json', 'x-goog-api-key':key}, method='POST')
-    with urllib.request.urlopen(req, timeout=180) as resp:
-        raw=json.load(resp)
+    # Retry only temporary service failures; do not retry invalid models or quota errors.
+    for attempt in range(2):
+        try:
+            print(f'Gemini request: model={MODEL}, attempt={attempt + 1}/2, articles={len(articles)}', flush=True)
+            with urllib.request.urlopen(req, timeout=180) as resp:
+                raw = json.load(resp)
+            break
+        except urllib.error.HTTPError as exc:
+            detail = exc.read(700).decode('utf-8', errors='replace')
+            print(f'Gemini HTTP {exc.code}: {detail[:400]}', flush=True)
+            if exc.code not in (500, 502, 503, 504) or attempt == 1:
+                raise
+            print('Temporary server error; retry once after 25 seconds.', flush=True)
+            time.sleep(25)
+        except (TimeoutError, socket.timeout, urllib.error.URLError) as exc:
+            if attempt == 1:
+                raise
+            print(f'Temporary network/timeout error ({type(exc).__name__}); retry once after 25 seconds.', flush=True)
+            time.sleep(25)
     parts = raw['candidates'][0]['content']['parts']
     result = json.loads(''.join(p.get('text','') for p in parts))
     return result
@@ -100,47 +119,31 @@ def valid_report(report, articles):
 
 
 def render(report, articles, start, end):
-    """Outlook/desktop-friendly email HTML using inline styles and tables."""
-    byid = {a['id']: a for a in articles}
-    font = "font-family:Arial,'Malgun Gothic','Apple SD Gothic Neo',sans-serif;"
-    body = font + 'font-size:15px;line-height:1.85;color:#333333;margin:0;'
-    kicker = font + 'font-size:12px;line-height:1.5;font-weight:700;color:#bd4b17;letter-spacing:.5px;margin:0 0 12px;'
-    def block(label, content, shade=False):
-        bg = '#f5f6f7' if shade else '#ffffff'
-        return (f'<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;margin:0 0 16px;">'
-                f'<tr><td style="background:{bg};padding:20px 18px;border:1px solid #e4e5e7;">'
-                f'<p style="{kicker}">{label}</p>{content}</td></tr></table>')
-    pieces = [
-        f'<div style="{font}max-width:100%;margin:20px 0 28px;">',
-        '<table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="border-collapse:collapse;">',
-        '<tr><td style="background:#161616;padding:24px 20px;">',
-        f'<p style="{font}font-size:11px;color:#d7d7d7;letter-spacing:1px;margin:0 0 8px;">NIKE WEEKLY / EXECUTIVE INTELLIGENCE</p>',
-        f'<h2 style="{font}font-size:26px;line-height:1.25;color:#ffffff;margin:0 0 10px;">WEEKLY STRATEGIC BRIEF</h2>',
-        f'<p style="{font}font-size:13px;color:#dddddd;margin:0;">{start.isoformat()} – {end.isoformat()} | 지난주 발행 기사 기반</p>',
-        f'<p style="{font}font-size:12px;line-height:1.7;color:#cccccc;margin:10px 0 0;">본 보고서는 전주 주요 Nike 관련 기사의 제목과 요약을 바탕으로 AI가 작성한 경영전략 분석 자료입니다.</p>',
-        '</td></tr></table>',
-        '<div style="height:16px;line-height:16px;">&nbsp;</div>',
-        block('EXECUTIVE SUMMARY',
-              f'<h3 style="{font}font-size:21px;line-height:1.5;color:#111111;margin:0 0 12px;">{h(report["headline"])}</h3>'
-              f'<p style="{body}">{h(report["executive_summary"])}</p>', True),
-        f'<p style="{kicker}margin:24px 0 12px;">01 / KEY STRATEGIC DEVELOPMENTS</p>'
-    ]
-    for idx, d in enumerate(report['developments'], 1):
-        links = []
+    byid={a['id']:a for a in articles}
+    sec='font-size:13px;font-weight:800;letter-spacing:0.5px;color:#b45309;margin:0 0 12px'
+    text='font-size:15px;line-height:1.85;color:#333333;margin:0 0 13px'
+    pieces=['<div style="border:1px solid #dedede;padding:24px 22px;margin:15px 0 25px;background-color:#ffffff">',
+            '<div style="font-size:12px;font-weight:800;letter-spacing:1px;color:#777">NIKE WEEKLY / EXECUTIVE INTELLIGENCE</div>',
+            '<h2 style="font-size:25px;line-height:1.4;color:#111;margin:8px 0 8px">WEEKLY STRATEGIC BRIEF</h2>',
+            f'<div style="font-size:13px;color:#777;margin-bottom:20px">{start.isoformat()} – {end.isoformat()} · 지난주 발행 기사 기반</div>',
+            '<div style="border-top:3px solid #111;padding-top:16px">',
+            f'<p style="{sec}">EXECUTIVE SUMMARY</p>',
+            f'<h3 style="font-size:20px;line-height:1.5;color:#111;margin:0 0 10px">{h(report["headline"])}</h3>',
+            f'<p style="{text}">{h(report["executive_summary"])}</p></div>',
+            f'<div style="border-top:1px solid #ddd;padding-top:16px;margin-top:12px"><p style="{sec}">01 / KEY STRATEGIC DEVELOPMENTS</p>']
+    for idx,d in enumerate(report['developments'],1):
+        links=[]
         for ref in d['source_ids'][:3]:
-            a = byid[ref]
-            links.append(f'<a href="{h(a["url"])}" style="color:#a94316;text-decoration:underline;">{h(a["source"] or ref)} ({h(a["date"])})</a>')
-        content = (
-            f'<h3 style="{font}font-size:18px;line-height:1.5;color:#111;margin:0 0 14px;">{idx:02d}. {h(d["title"])}</h3>'
-            f'<p style="{body}margin-bottom:12px;"><strong style="color:#111;">보도 내용</strong>　{h(d["fact"])}</p>'
-            f'<p style="{body}margin-bottom:12px;"><strong style="color:#111;">전략적 의미</strong>　{h(d["meaning"])}</p>'
-            f'<p style="{font}font-size:12px;line-height:1.7;color:#666;margin:12px 0 0;">근거 기사: {" / ".join(links)}</p>'
-        )
-        pieces.append(block('STRATEGIC ISSUE', content))
-    pieces.append(block('02 / STRATEGIC OUTLOOK', f'<p style="{body}">{h(report["outlook"])}</p>', True))
-    pieces.append(block('03 / MANAGEMENT WATCH POINT', f'<p style="{body}">{h(report["watch"])}</p>'))
-    pieces.append(f'<p style="{font}font-size:12px;line-height:1.7;color:#777;margin:12px 2px 0;">자료 범위: 주간 RSS 제목·요약. {h(report.get("limitations", ""))} 전략적 해석과 전망은 공개 보도에 근거한 분석 의견입니다.</p>')
-    pieces.append('</div>')
+            a=byid[ref]
+            links.append(f'<a href="{h(a["url"])}" style="color:#555;text-decoration:underline">{h(a["source"] or ref)} · {h(a["date"])}</a>')
+        pieces.extend([f'<p style="font-size:17px;line-height:1.6;font-weight:800;color:#111;margin:20px 0 9px">{idx:02d}. {h(d["title"])}</p>',
+                       f'<p style="{text}"><b>보도 내용</b> {h(d["fact"])}</p>',
+                       f'<p style="{text}"><b>전략적 의미</b> {h(d["meaning"])}</p>',
+                       '<p style="font-size:12px;line-height:1.6;color:#777;margin:0">근거: '+ ' / '.join(links) +'</p>'])
+    pieces.extend(['</div>',
+                   f'<div style="border-top:1px solid #ddd;padding-top:16px;margin-top:16px"><p style="{sec}">02 / STRATEGIC OUTLOOK</p><p style="{text}">{h(report["outlook"])}</p></div>',
+                   f'<div style="border-top:1px solid #ddd;padding-top:16px;margin-top:16px"><p style="{sec}">03 / MANAGEMENT WATCH POINT</p><p style="{text}">{h(report["watch"])}</p></div>',
+                   f'<p style="font-size:12px;color:#777;line-height:1.6;margin-top:20px">자료 범위: 주간 RSS 제목·요약. {h(report.get("limitations",""))} 전략적 해석과 전망은 공개 보도에 근거한 분석 의견입니다.</p>', '</div>'])
     return '\n'.join(pieces)
 
 
