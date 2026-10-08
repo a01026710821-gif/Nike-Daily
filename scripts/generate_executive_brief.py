@@ -117,6 +117,7 @@ def render(report, articles, start, end):
         f'<p style="{font}font-size:11px;color:#d7d7d7;letter-spacing:1px;margin:0 0 8px;">NIKE WEEKLY / EXECUTIVE INTELLIGENCE</p>',
         f'<h2 style="{font}font-size:26px;line-height:1.25;color:#ffffff;margin:0 0 10px;">WEEKLY STRATEGIC BRIEF</h2>',
         f'<p style="{font}font-size:13px;color:#dddddd;margin:0;">{start.isoformat()} – {end.isoformat()} | 지난주 발행 기사 기반</p>',
+        f'<p style="{font}font-size:12px;line-height:1.7;color:#cccccc;margin:10px 0 0;">본 보고서는 전주 주요 Nike 관련 기사의 제목과 요약을 바탕으로 AI가 작성한 경영전략 분석 자료입니다.</p>',
         '</td></tr></table>',
         '<div style="height:16px;line-height:16px;">&nbsp;</div>',
         block('EXECUTIVE SUMMARY',
