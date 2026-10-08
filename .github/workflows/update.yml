@@ -60,7 +60,7 @@ jobs:
           SUBSCRIBERS_SHEET_URL: ${{ secrets.SUBSCRIBERS_SHEET_URL }}
         run: |
           python -c "
-          import os, json, smtplib, csv, urllib.request, datetime
+          import os, json, smtplib, csv, urllib.request, datetime, html as html_lib
           from email.mime.multipart import MIMEMultipart
           from email.mime.text import MIMEText
 
@@ -98,6 +98,7 @@ jobs:
           summaries = news_data.get('summaries', {})
           from pathlib import Path
           brief_html = Path('data/executive_brief_email.html').read_text(encoding='utf-8') if Path('data/executive_brief_email.html').exists() else ''
+          ai_notice = '<div style=\"padding:12px 16px;background:#f5f5f5;border-left:3px solid #ea580c;margin:14px 0 18px;font-size:13px;line-height:1.7;color:#555555;\">본 보고서는 전주 주요 Nike 관련 기사의 제목과 요약을 바탕으로 AI가 작성한 경영전략 분석 자료입니다.</div>' if brief_html else ''
           if not articles:
               print('발송할 뉴스가 없습니다.')
               exit(0)
@@ -113,34 +114,35 @@ jobs:
           def render_card(item):
               if not item: return ''
               cat = item.get('cat', 'BUSINESS')
-              title = item.get('title', '')
-              summary = item.get('summary', '')[:100] + '...' if len(item.get('summary', '')) > 100 else item.get('summary', '')
-              source = item.get('source', '')
-              date = item.get('date', '')
-              url = item.get('url', '#')
-              img_url = item.get('image', '')
+              title = html_lib.escape(str(item.get('title', '')))
+              raw_summary = str(item.get('summary', ''))
+              summary = html_lib.escape(raw_summary[:190] + ('...' if len(raw_summary) > 190 else ''))
+              source = html_lib.escape(str(item.get('source', '')))
+              date = html_lib.escape(str(item.get('date', '')))
+              url = html_lib.escape(str(item.get('url', '#')) if str(item.get('url', '')).startswith(('https://','http://')) else '#', quote=True)
+              img_url = html_lib.escape(str(item.get('image', '')), quote=True) if str(item.get('image', '')).startswith(('https://','http://')) else ''
 
               img_tag = ''
               if img_url:
                   img_tag = f'<div style=\"margin-bottom: 10px; max-height: 120px; overflow: hidden; border-radius: 4px;\"><img src=\"{img_url}\" style=\"width: 100%; height: auto; display: block; object-fit: cover;\" alt=\"news image\" /></div>'
 
               return f'''
-              <div style=\"background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 6px; padding: 18px; box-sizing: border-box;\">
+              <div style=\"background-color: #ffffff; border: 1px solid #dddddd; border-radius: 6px; padding: 22px; box-sizing: border-box;\">
                 {img_tag}
                 <div style=\"font-size: 10px; font-weight: 800; color: #111111; letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 4px;\">{cat}</div>
-                <a href=\"{url}\" style=\"text-decoration: none; color: #111111; font-size: 16px; font-weight: 800; line-height: 1.55; display: block; margin-bottom: 6px;\">{title}</a>
-                <p style=\"font-size: 14px; color: #555555; line-height: 1.7; margin: 0 0 8px 0;\">{summary}</p>
-                <div style=\"font-size: 12px; color: #777777;\">{source} &bull; {date}</div>
+                <a href=\"{url}\" style=\"text-decoration: none; color: #111111; font-size: 18px; font-weight: 800; line-height: 1.6; display: block; margin-bottom: 6px;\">{title}</a>
+                <p style=\"font-size: 15px; color: #444444; line-height: 1.8; margin: 0 0 8px 0;\">{summary}</p>
+                <div style=\"font-size: 13px; color: #777777;\">{source} &bull; {date}</div>
               </div>
               '''
 
           def render_section(title_kr, title_en, items, cat_key):
               if not items: return ''
               cat_sums = summaries.get(cat_key, [])
-              sum_bullets = ''.join([f'<li style=\"margin-bottom: 4px; font-size: 14px; line-height: 1.7; color: #333333;\">{s}</li>' for s in cat_sums])
+              sum_bullets = ''.join([f'<li style=\"margin-bottom: 8px; font-size: 15px; line-height: 1.8; color: #333333;\">{html_lib.escape(str(s))}</li>' for s in cat_sums])
               
               summary_html = f'''
-              <div style=\"background-color: #f8f9fa; border-left: 3px solid #111111; padding: 15px 18px; margin-bottom: 16px;\">
+              <div style=\"background-color: #f8f9fa; border-left: 3px solid #ea580c; padding: 18px 20px; margin-bottom: 16px;\">
                 <ul style=\"margin: 0; padding-left: 16px;\">
                   {sum_bullets}
                 </ul>
@@ -151,7 +153,7 @@ jobs:
               <div style=\"border-bottom: 2px solid #111111; padding-bottom: 4px; margin-top: 25px; margin-bottom: 10px;\">
                 <table width=\"100%\">
                   <tr>
-                    <td style=\"font-size: 18px; font-weight: 800; color: #111111;\">{title_kr}</td>
+                    <td style=\"font-size: 21px; font-weight: 800; color: #111111;\">{title_kr}</td>
                     <td align=\"right\" style=\"font-size: 10px; font-weight: 700; color: #888888;\">{title_en}</td>
                   </tr>
                 </table>
@@ -177,27 +179,29 @@ jobs:
           <head><meta charset=\"utf-8\"></head>
           <body style=\"margin: 0; padding: 20px 10px; background-color: #f5f5f7; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\">
             <div style=\"max-width: 720px; margin: 0 auto; background-color: #ffffff; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05);\">
-              <div style=\"padding: 20px 25px; border-bottom: 1px solid #eeeeee;\">
+              <div style=\"padding: 28px 25px; background-color: #171717; border-bottom: 3px solid #ea580c;\">
                 <table width=\"100%\" border=\"0\" cellspacing=\"0\" cellpadding=\"0\">
                   <tr>
                     <td valign=\"top\">
-                      <div style=\"font-size: 10px; font-weight: 800; letter-spacing: 1.5px; color: #777777; text-transform: uppercase; margin-bottom: 2px;\">WEEKLY INTELLIGENCE REPORT</div>
-                      <div style=\"font-size: 26px; font-weight: 900; letter-spacing: -1px; color: #111111;\">NIKE WEEKLY</div>
+                      <div style=\"font-size: 11px; font-weight: 800; letter-spacing: 1.5px; color: #fb923c; text-transform: uppercase; margin-bottom: 2px;\">WEEKLY INTELLIGENCE REPORT</div>
+                      <div style=\"font-size: 32px; font-weight: 900; letter-spacing: -1px; color: #ffffff;\">NIKE WEEKLY</div>
                     </td>
                     <td align=\"right\" valign=\"top\">
                       <div style=\"margin-bottom: 6px;\">
-                        <a href=\"https://a01026710821-gif.github.io/Nike-Daily/\" style=\"font-size: 11px; font-weight: 800; color: #111111; background-color: #f0f0f2; padding: 4px 8px; border-radius: 4px; text-decoration: none; display: inline-block;\">웹페이지 보기 ↗</a>
+                        <a href=\"https://a01026710821-gif.github.io/Nike-Daily/\" style=\"font-size: 13px; font-weight: 800; color: #ffffff; background-color: #353535; padding: 4px 8px; border-radius: 4px; text-decoration: none; display: inline-block;\">웹페이지 보기 ↗</a>
                       </div>
-                      <div style=\"font-size: 11px; font-weight: 700; color: #111111;\">NKE {stock_price_str} <span style=\"color:{stock_color};\">{stock_change_str}</span></div>
-                      <div style=\"font-size: 12px; color: #777777; margin-top: 2px;\">{today_str}</div>
+                      <div style=\"font-size: 12px; font-weight: 700; color: #ffffff;\">NKE {stock_price_str} <span style=\"color:{stock_color};\">{stock_change_str}</span></div>
+                      <div style=\"font-size: 13px; color: #777777; margin-top: 2px;\">{today_str}</div>
                     </td>
                   </tr>
                 </table>
               </div>
 
               <div style=\"padding: 14px 22px 26px 22px;\">
-                {brief_html}
-                {render_section('제품 · 컬렉션', 'PRODUCT', product_items, 'PRODUCT')}
+                {ai_notice}
+          {brief_html}
+                <div style=\"padding:16px 0 6px;border-bottom:3px solid #111111;font-size:23px;font-weight:900;color:#111111;\">WEEKLY NEWS DIGEST</div>
+          {render_section('제품 · 컬렉션', 'PRODUCT', product_items, 'PRODUCT')}
                 {render_section('브랜드 · 마케팅', 'BRAND', brand_items, 'BRAND')}
                 {render_section('스포츠 · 선수', 'SPORTS', sports_items, 'SPORTS')}
                 {render_section('증시 · 기업경영', 'MARKET', market_items, 'MARKET')}
