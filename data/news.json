@@ -21,6 +21,10 @@
       {
         "date": "10/06",
         "price": 34.61
+      },
+      {
+        "date": "10/07",
+        "price": 34.36
       }
     ]
   },
@@ -333,15 +337,6 @@
       "image": ""
     },
     {
-      "cat": "BRAND",
-      "title": "누구나 경쟁할 수 있도록, 나이키 ‘레이스 데이 스피드 시스템’ - 지큐 코리아 (GQ Korea)",
-      "summary": "누구나 경쟁할 수 있도록, 나이키 ‘레이스 데이 스피드 시스템’ 지큐 코리아 (GQ Korea)",
-      "source": "지큐 코리아 (GQ Korea)",
-      "date": "Thu, 01 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiyAJBVV95cUxOcWJKempfSW1VNC1JN1piY0ljb3FURlRnckpFbWo2VmU3SU1NVzR6X01TSFJJNEk1M2lhZDFVbkYzSDcwbzF3Q3FXekJWcjRweGpoZFp3bDhwbkMxdVNXTjFsQkMxTkZkdzZnOW5RWV9aYjI4WVFKSTZnZjFBNXNqY3hMbGN4YjNhaHJrc2lFQUllYVRnYjRrMk9GcVlCUFNrb1ByS0ctWnAzNXFQWUxScWQxdWh0U2ZsZWVwMWpNc1d4cWNlejFWZlpQVnF2WkxpUVlTTGg0WWxIZGRndkt6cEZqX3ZEb0MwMWhaM1FPc0hxSW9rVUl6SjRPRUpsMVRYS1JkWDVXZS1aYkhxUHlYRU8zMUs0Vm84d25zN25NNFlWQ3FrcW0xN1VSZG1uOGQ4MXVMcDdCRVN2d3lJd0pwWTk5elRaR1lv?oc=5",
-      "image": ""
-    },
-    {
       "cat": "SPORTS",
       "title": "'스포츠 중심' 성장 확인한 나이키…'빠른 나이키'로 체질 개선 - 뉴시스",
       "summary": "'스포츠 중심' 성장 확인한 나이키…'빠른 나이키'로 체질 개선 뉴시스",
@@ -357,15 +352,6 @@
       "source": "Daum",
       "date": "Thu, 01 Oct 2026",
       "url": "https://news.google.com/rss/articles/CBMiRkFVX3lxTFBGa2pTZ1dIVHJOQXFrN2VzY2ExQnV3aHVzRVY5a0ZlcnRSMTVxdmNXUjZfMVA5b0VaZXJnRzNtTXlRRWtTeUE?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "러너가 필요로 하는 기능 다 담았다…나이키, ‘레이스 데이 스피드 시스템’ 공개 - 서울경제",
-      "summary": "러너가 필요로 하는 기능 다 담았다…나이키, ‘레이스 데이 스피드 시스템’ 공개 서울경제",
-      "source": "서울경제",
-      "date": "Thu, 01 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE9fS0F1R3ZrWUFPVUVybTY3TEphM05EdUJKbnpKUEJSUlVvWUN2Q3N4RmVaRmNLYWU1aktVZFpsN3NqZm42RDU1MzdhVkQtM25YS2fSAVNBVV95cUxPMk1HcGtETGlLQmlJQlIzUW1QUTZObGFqalQ1R3NXQW02YXFjMHRvQzR6OXplQjhIMUZUTXBkZC1XSFgydl9KTktLN2hOUkN4a283aw?oc=5",
       "image": ""
     },
     {
@@ -393,15 +379,6 @@
       "source": "뉴스핌",
       "date": "Tue, 06 Oct 2026",
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFB2MVlEZjhwbW4wTzk5OUdFM2tyMmpQZndDZVBRRDhSb3A3cUp3elNPdFRlYWdnSlJLTVp5MDdMOWNqSWFjRHRBY1pOcWpNTk9MU0pyWDZlM29jVDVX?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "나이키 턴어라운드 ‘진전’ 확인됐지만 속도는 기대 이하···애널리스트 “회복에 시간 필요” - Benzinga",
-      "summary": "나이키 턴어라운드 ‘진전’ 확인됐지만 속도는 기대 이하···애널리스트 “회복에 시간 필요” Benzinga",
-      "source": "Benzinga",
-      "date": "Thu, 01 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMivwJBVV95cUxNWWNuVVRyVWZzcHlrQkJLWDFpR1h5X3JEWTFNbUExT2JFYk5YQm5PQXFLbGpjdGlzdVU0XzdROGptV0h3RGlkSmNhU1JoeHJFZ3FPODVnM3MyX2p0LVA5UDFGQTJRYVJOYlNlUFlXT3lfa21tRURYNk9VbTRuSzhKY3VMTlhSZHQ2SUQ2ZGNDdXpxZ2dtZ3B0a1FnaE9Rc2R6VlBxQkRrcWhsNjZmZVZ3LV9WYmFPWmROOG9iSVlyMkRqa20tYXhjQjUzYTNMRHVTUG54RFVsZ2tmR3dWaVEwUXphRmYtdW5Za2JpRzVKektfWGJtTlRWQzZucVFfaGU5aHNrOVpvQzVnNnN4SGMtdVNkbGVEUjBiQnZIVk5HWHA2T0xhU09VR1RndmJKaXIxTWFyVFJDakh3dU1WbjQ0?oc=5",
       "image": ""
     },
     {
@@ -513,15 +490,6 @@
       "image": ""
     },
     {
-      "cat": "BRAND",
-      "title": "나이키 레이싱화 판 다시 짠다…에어 줌 4개 쌓은 ‘에이펙스’ 공개 - 뉴스탭",
-      "summary": "나이키 레이싱화 판 다시 짠다…에어 줌 4개 쌓은 ‘에이펙스’ 공개 뉴스탭",
-      "source": "뉴스탭",
-      "date": "Thu, 01 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5vdVp3cm56Ql83M2NGcWxzUmdLbXFURUdfRk9IbzR5aDUtSmlNUjZpRE5wVzVDTUpQTXFoY3ZLTTZGMGI2NV9Wc3YzdEkxR2tMbWkwX2VLY3RPcHFDZ05wM3lhazNnQjU5ZkxzWA?oc=5",
-      "image": ""
-    },
-    {
       "cat": "MARKET",
       "title": "나이키 주가, 1분기 실적 발표 후 8% 급락···2013년 이후 최저 수준 - Benzinga",
       "summary": "나이키 주가, 1분기 실적 발표 후 8% 급락···2013년 이후 최저 수준 Benzinga",
@@ -558,15 +526,6 @@
       "image": ""
     },
     {
-      "cat": "BRAND",
-      "title": "위기의 나이키, 새 구조조정 프로그램 발표 - 어패럴뉴스",
-      "summary": "위기의 나이키, 새 구조조정 프로그램 발표 어패럴뉴스",
-      "source": "어패럴뉴스",
-      "date": "Mon, 05 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9HeU1vSkViUWlRMUwtVUZBdVJKcUZmSTVpV1NXYU5qQm9CVWp3U2VZQ0RkQzRndVNOQVFjMmJhRnE2bWhpeW1MYjhEbURhMk5XWGVFejJVSlo3MW1DLTJ6bElfVEx5UFBrRG84WmJUX3B3Z25vZ0E?oc=5",
-      "image": ""
-    },
-    {
       "cat": "MARKET",
       "title": "지난주 화제의 주식: 마이크론, 나이키, 메타, 알파벳 및 AMD - Benzinga",
       "summary": "지난주 화제의 주식: 마이크론, 나이키, 메타, 알파벳 및 AMD Benzinga",
@@ -582,6 +541,15 @@
       "source": "이데일리",
       "date": "Thu, 01 Oct 2026",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNOXhBUkMtTnI5QWtVQ19ROGxGRDRMVHBnUzRJZ0NtTmcyaXZFZkgtQTJweDh5Q21rMFM2UlBJNjl0Yjc5YVAtRnZhb3htVEZ0Z3lLQi1paVllMXozZlhMOThCUDRfQ2FSRDBiT0x0OHhHZUFnVTBUQlZ1UWZuM2phOQ?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "위기의 나이키, 새 구조조정 프로그램 발표 - 어패럴뉴스",
+      "summary": "위기의 나이키, 새 구조조정 프로그램 발표 어패럴뉴스",
+      "source": "어패럴뉴스",
+      "date": "Mon, 05 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9HeU1vSkViUWlRMUwtVUZBdVJKcUZmSTVpV1NXYU5qQm9CVWp3U2VZQ0RkQzRndVNOQVFjMmJhRnE2bWhpeW1MYjhEbURhMk5XWGVFejJVSlo3MW1DLTJ6bElfVEx5UFBrRG84WmJUX3B3Z25vZ0E?oc=5",
       "image": ""
     },
     {
@@ -666,21 +634,21 @@
       "image": ""
     },
     {
+      "cat": "BRAND",
+      "title": "AI 사고 나이키 팔아 '돈벌기 쉬운 시대' 끝…BofA의 경고 - 노컷뉴스",
+      "summary": "AI 사고 나이키 팔아 '돈벌기 쉬운 시대' 끝…BofA의 경고 노컷뉴스",
+      "source": "노컷뉴스",
+      "date": "Tue, 06 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBOVTU3ZmFFY0h3Mkw2VURodUl5WnBSWXAta2FBZ09UWEtEVFNRc2ZfSzI1dGpWQUtGYl9KTzVJeW1NSGloQlNJQTRXcWVyUkZCM3c?oc=5",
+      "image": ""
+    },
+    {
       "cat": "MARKET",
       "title": "목요일 주목해야 할 주식: 어큐이티, 액센츄어, 나이키, 시높시스 및 바이코 - Benzinga",
       "summary": "목요일 주목해야 할 주식: 어큐이티, 액센츄어, 나이키, 시높시스 및 바이코 Benzinga",
       "source": "Benzinga",
       "date": "Thu, 01 Oct 2026",
       "url": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxQWDlNZDlKRXVyS1FtWk9yUDAzeEthSDhFVjFrb3RsVWhTSFltZi1jTFY5OXk1X3dCU213Qkt0dFoxNjRPRUh4aDVXdXQwMnlxMkFRampyaFhieGxHazlhOTdRbDlmMXZJUXlwNUxyV2tPcm52Z3dJLXVCSlRyVTVkUXdlT1pPeTAtWUVUS1hYRlc4dlpmNW9fMGJhc19MMmdhM0RmMmVDdEpYcFJhUF9sZV9BRnVwRVRZX00wRnpIQm1oaHpFM1djMWZYbXFzWTF5aXM1OEROYzAtb0Q5b0o2cWw0cW13SVVPM0M3dS1jWExSbTNZTFc2S3J5aEI4ckdlNlktVm5KMm5RUUl6dUlPckFqOVNBMHByajZMd0RVN2NJcVQ0b0RHMEc0Q1JpWlhFNnF5NU9TX1Z6Zkg4NWdBVTNaUFVNUFRsVEpfQktveG9SV1NsWGZacA?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "[포토] 나이키 배틀 포스 3on3 파이널, 승리는 우리것 - 점프볼",
-      "summary": "[포토] 나이키 배틀 포스 3on3 파이널, 승리는 우리것 점프볼",
-      "source": "점프볼",
-      "date": "Sun, 04 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9KMkszc1lJRnd6WWdOTnI2Vl92NC0yaHV2YVgyQTBLMnR5YllaVzZ0dkhWRUtVZzVtVTk4QzY5UVRkYUdSbzV3dkdLUWJZbXlEbk1HME9OVDNmck9NSFlVcGF3cnVWWUs2N2lsMUpkOElzMVJpMnc?oc=5",
       "image": ""
     },
     {
@@ -774,6 +742,15 @@
       "image": ""
     },
     {
+      "cat": "MARKET",
+      "title": "나이키, 판매 부진에 구조조정…中 매출 22% 급감·주가 13년 만에 최저 - 파이낸셜뉴스",
+      "summary": "나이키, 판매 부진에 구조조정…中 매출 22% 급감·주가 13년 만에 최저 파이낸셜뉴스",
+      "source": "파이낸셜뉴스",
+      "date": "Fri, 02 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5Pa3dBaE5ZZ1g5c2k3Tm1vWmhrY2tfMGxhUi1URkhuN2ZUZFZaNV8wLU9PUUYySUJnUXNhaC0tWEt0NHZmc2ZBODlvYUtGR0dUN0NoNXRxUFBHUQ?oc=5",
+      "image": ""
+    },
+    {
       "cat": "BRAND",
       "title": "Nike Stock Falls 9% as Soft Revenue Outlook and Restructuring Plan Overshadow Earnings Beat - TIKR.com",
       "summary": "Nike Stock Falls 9% as Soft Revenue Outlook and Restructuring Plan Overshadow Earnings Beat TIKR.com",
@@ -856,15 +833,6 @@
     },
     {
       "cat": "MARKET",
-      "title": "나이키, 판매 부진에 구조조정…中 매출 22% 급감·주가 13년 만에 최저 - 파이낸셜뉴스",
-      "summary": "나이키, 판매 부진에 구조조정…中 매출 22% 급감·주가 13년 만에 최저 파이낸셜뉴스",
-      "source": "파이낸셜뉴스",
-      "date": "Fri, 02 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE5Pa3dBaE5ZZ1g5c2k3Tm1vWmhrY2tfMGxhUi1URkhuN2ZUZFZaNV8wLU9PUUYySUJnUXNhaC0tWEt0NHZmc2ZBODlvYUtGR0dUN0NoNXRxUFBHUQ?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "MARKET",
       "title": "주가 2013년 이후 최저로 주저앉은 나이키…25억 달러 감축 '배수의 진' - 더쎈뉴스",
       "summary": "주가 2013년 이후 최저로 주저앉은 나이키…25억 달러 감축 '배수의 진' 더쎈뉴스",
       "source": "더쎈뉴스",
@@ -888,15 +856,6 @@
       "source": "미주조선일보",
       "date": "Sun, 04 Oct 2026",
       "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPQWFXRmpKbFloZVZXd1Y5OW93dmFlaVlETWpkVVRraUF2UjgwR2dOSEh5QW9WWDFTWF8xTmRLVGY0aS1COUIxaVN1MWtDS3pTcEtDRjZHX2NLUGdfX3JEdDYyTHA3dFNHT2FEVlJrWUFuZWVBSkpzMmhOSnB1TUpUSWVpSlJLd2RMMDUwanZOREloMDd6azVBMUJUUjZNZEJaUER1MA?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "AI 사고 나이키 팔아 '돈벌기 쉬운 시대' 끝…BofA의 경고 - 노컷뉴스",
-      "summary": "AI 사고 나이키 팔아 '돈벌기 쉬운 시대' 끝…BofA의 경고 노컷뉴스",
-      "source": "노컷뉴스",
-      "date": "Tue, 06 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBOVTU3ZmFFY0h3Mkw2VURodUl5WnBSWXAta2FBZ09UWEtEVFNRc2ZfSzI1dGpWQUtGYl9KTzVJeW1NSGloQlNJQTRXcWVyUkZCM3c?oc=5",
       "image": ""
     },
     {
@@ -1009,20 +968,20 @@
     },
     {
       "cat": "COMPETITOR",
+      "title": "아디다스 온라인 스토어 교환 의 비밀을 풀다 - 2026년 최신판 - Calgary Roughnecks",
+      "summary": "아디다스 온라인 스토어 교환 의 비밀을 풀다 - 2026년 최신판 Calgary Roughnecks",
+      "source": "Calgary Roughnecks",
+      "date": "Wed, 07 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE9ZRlpfeENFUTUtRHZyck84OGhidk9ldnlYcUhwVTMyTkxlWjRGekVYSGtIVDFwSDZEd0IzQXZfcmlpTFZ2blN0YlozNUJPSjdNMU9HYzlTYnpTNGJRVkcxU01wVWF1LWx5MGZnazh3dUpKVWUy?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "COMPETITOR",
       "title": "아디다스 오리지널스 x 피치스, 두 번째 협업 컬렉션 출시 - 패션포스트",
       "summary": "아디다스 오리지널스 x 피치스, 두 번째 협업 컬렉션 출시 패션포스트",
       "source": "패션포스트",
       "date": "Sun, 04 Oct 2026",
       "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE02bVVjNG1uNXZ0V2o5TC1NS2oyeU4xTUUwM2VlOUh4M0N6UF9uM1dCQ1puRTBfTlFtWlp4c3FlTlhDRnRySWZiWFR0UUM3aFFqckl4dGw3SDJLMFFTOXFMTHc2ZzhPOFk1UmQ5bjFIenZBSnFmY1dmX1Jn?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "COMPETITOR",
-      "title": "'2018 아디다스 마이드림 FC' 축구 클리닉 개최 - OSEN",
-      "summary": "'2018 아디다스 마이드림 FC' 축구 클리닉 개최 OSEN",
-      "source": "OSEN",
-      "date": "Fri, 02 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE5YbDdJakc1Mk1rS19LeEtvX21JWHBBYm1YeHQ2MkdDQ0FjdjNsTkwxRWtwRDl3MVpSYWY3N2x5dTVib1ktN2h5QTNZVlY3QnFHSExjMA?oc=5",
       "image": ""
     }
   ]
