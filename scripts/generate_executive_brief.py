@@ -8,6 +8,7 @@ import json
 import os
 from pathlib import Path
 import re
+import random
 import sys
 import time
 import socket
@@ -18,6 +19,8 @@ from zoneinfo import ZoneInfo
 NEWS = Path('data/news.json')
 OUTPUT = Path('data/executive_brief_email.html')
 MODEL = os.environ.get('GEMINI_MODEL', 'gemini-3.8-flash')
+# Five total attempts; bounded exponential backoff plus jitter.
+RETRY_DELAYS = (30, 60, 120, 240)
 
 
 def h(s):
@@ -80,25 +83,28 @@ Nike 자체의 글로벌 경영전략만 분석하십시오. SHC, 협력사 대�
                'generationConfig': {'responseMimeType':'application/json', 'temperature':0.2, 'maxOutputTokens':2500}}
     req = urllib.request.Request(url, data=json.dumps(payload).encode(),
         headers={'Content-Type':'application/json', 'x-goog-api-key':key}, method='POST')
-    # Retry only temporary service failures; do not retry invalid models or quota errors.
-    for attempt in range(2):
+    # Retry transient failures only; keep model, credentials and quota handling unchanged.
+    max_attempts = len(RETRY_DELAYS) + 1
+    for attempt in range(max_attempts):
         try:
-            print(f'Gemini request: model={MODEL}, attempt={attempt + 1}/2, articles={len(articles)}', flush=True)
+            print(f'Gemini request: model={MODEL}, attempt={attempt + 1}/{max_attempts}, articles={len(articles)}', flush=True)
             with urllib.request.urlopen(req, timeout=180) as resp:
                 raw = json.load(resp)
             break
         except urllib.error.HTTPError as exc:
             detail = exc.read(700).decode('utf-8', errors='replace')
             print(f'Gemini HTTP {exc.code}: {detail[:400]}', flush=True)
-            if exc.code not in (500, 502, 503, 504) or attempt == 1:
+            if exc.code not in (500, 502, 503, 504) or attempt == max_attempts - 1:
                 raise
-            print('Temporary server error; retry once after 25 seconds.', flush=True)
-            time.sleep(25)
+            delay = RETRY_DELAYS[attempt] + random.uniform(0, 5)
+            print(f'Temporary server error; retry after {delay:.1f} seconds.', flush=True)
+            time.sleep(delay)
         except (TimeoutError, socket.timeout, urllib.error.URLError) as exc:
-            if attempt == 1:
+            if attempt == max_attempts - 1:
                 raise
-            print(f'Temporary network/timeout error ({type(exc).__name__}); retry once after 25 seconds.', flush=True)
-            time.sleep(25)
+            delay = RETRY_DELAYS[attempt] + random.uniform(0, 5)
+            print(f'Temporary network/timeout error ({type(exc).__name__}); retry after {delay:.1f} seconds.', flush=True)
+            time.sleep(delay)
     parts = raw['candidates'][0]['content']['parts']
     result = json.loads(''.join(p.get('text','') for p in parts))
     return result
@@ -169,6 +175,7 @@ def main():
         print('Executive brief generated with verified source IDs.')
     except Exception as exc:
         print('AI generation failed; original newsletter continues:', type(exc).__name__, str(exc)[:180])
+        print('::warning title=NIKE WEEKLY AI brief missing::AI generation failed; newsletter continues without the strategic brief.')
 
 if __name__=='__main__':
     main()
