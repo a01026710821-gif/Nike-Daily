@@ -23,6 +23,60 @@ MODEL = os.environ.get('GEMINI_MODEL', 'gemini-3.8-flash')
 RETRY_DELAYS = (30, 60, 120, 240)
 
 
+class RetryableReportError(ValueError):
+    """A complete, validated report was not returned."""
+
+
+def report_schema(articles):
+    text_fields = {name: {'type': 'STRING'} for name in
+                   ('headline', 'executive_summary', 'outlook', 'watch', 'limitations')}
+    text_fields['developments'] = {
+        'type': 'ARRAY', 'minItems': 1, 'maxItems': 3,
+        'items': {'type': 'OBJECT',
+                  'properties': {
+                      'title': {'type': 'STRING'}, 'fact': {'type': 'STRING'},
+                      'meaning': {'type': 'STRING'},
+                      'source_ids': {'type': 'ARRAY', 'minItems': 1, 'maxItems': 3,
+                                     'items': {'type': 'STRING',
+                                               'enum': [a['id'] for a in articles]}}},
+                  'required': ['title', 'fact', 'meaning', 'source_ids']}}
+    return {'type': 'OBJECT', 'properties': text_fields,
+            'required': list(text_fields)}
+
+
+def parse_report_response(raw, articles):
+    if not isinstance(raw, dict):
+        raise RetryableReportError('API response is not an object')
+    feedback = raw.get('promptFeedback') or {}
+    if feedback.get('blockReason'):
+        raise RuntimeError('Gemini blocked the prompt: ' + str(feedback['blockReason']))
+    candidates = raw.get('candidates') or []
+    if not candidates or not isinstance(candidates[0], dict):
+        raise RetryableReportError('API response has no candidate')
+    candidate = candidates[0]
+    reason = candidate.get('finishReason', 'UNKNOWN')
+    parts = (candidate.get('content') or {}).get('parts') or []
+    text = ''.join(p['text'] for p in parts if isinstance(p, dict)
+                   and not p.get('thought') and isinstance(p.get('text'), str)).strip()
+    usage = raw.get('usageMetadata') or {}
+    print(f'Gemini response: finishReason={reason}, text_chars={len(text)}, '
+          f'output_tokens={usage.get("candidatesTokenCount", "unknown")}, '
+          f'thought_tokens={usage.get("thoughtsTokenCount", "unknown")}', flush=True)
+    if reason == 'MAX_TOKENS':
+        raise RetryableReportError('MAX_TOKENS: incomplete response')
+    if reason not in ('STOP', 'UNKNOWN'):
+        raise RuntimeError('Gemini stopped without a usable report: ' + str(reason))
+    if not text:
+        raise RetryableReportError('Empty report text')
+    try:
+        result = json.loads(text)
+    except json.JSONDecodeError as exc:
+        raise RetryableReportError(f'Report JSON invalid: {exc.msg}, position={exc.pos}') from exc
+    if not valid_report(result, articles):
+        raise RetryableReportError('Report schema/source-ID validation failed')
+    return result
+
+
 def h(s):
     return html.escape(str(s or ''), quote=True)
 
@@ -75,22 +129,28 @@ Nike 자체의 글로벌 경영전략만 분석하십시오. SHC, 협력사 대�
 관찰 사실과 전략적 해석을 구분하고, 전망은 조건부로 표현하십시오.
 반드시 기사 id를 근거로 연결하고, 다른 출처를 만들지 마십시오.
 한국어 간결한 보고체(~함/~필요), 과장/상투적 문구 금지.
+각 항목은 1~3문장으로 제한하고 전체 보고서는 약 1,500자 이내로 간결하게 작성하십시오.
 출력은 아래 JSON 스키마를 따르십시오:
 {{"headline":"...", "executive_summary":"2~3문장", "developments":[{{"title":"...", "fact":"확인된 기사 보도 요약", "meaning":"전략적 해석", "source_ids":["N1"]}}], "outlook":"조건부 전망", "watch":"향후 확인할 경영지표 또는 공식 발표", "limitations":"제한사항 1문장"}}
 기사 목록(JSON):\n{json.dumps(articles, ensure_ascii=False)}'''
     url = f'https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent'
-    payload = {'contents':[{'parts':[{'text':prompt}]}],
-               'generationConfig': {'responseMimeType':'application/json', 'temperature':0.2, 'maxOutputTokens':2500}}
-    req = urllib.request.Request(url, data=json.dumps(payload).encode(),
-        headers={'Content-Type':'application/json', 'x-goog-api-key':key}, method='POST')
+    payload = {'contents': [{'parts': [{'text': prompt}]}],
+               'generationConfig': {'responseMimeType': 'application/json',
+                                    'responseSchema': report_schema(articles),
+                                    'temperature': 0.2, 'maxOutputTokens': 8192}}
     # Retry transient failures only; keep model, credentials and quota handling unchanged.
     max_attempts = len(RETRY_DELAYS) + 1
     for attempt in range(max_attempts):
         try:
             print(f'Gemini request: model={MODEL}, attempt={attempt + 1}/{max_attempts}, articles={len(articles)}', flush=True)
+            req = urllib.request.Request(url, data=json.dumps(payload).encode(),
+                headers={'Content-Type': 'application/json', 'x-goog-api-key': key}, method='POST')
             with urllib.request.urlopen(req, timeout=180) as resp:
-                raw = json.load(resp)
-            break
+                try:
+                    raw = json.load(resp)
+                except json.JSONDecodeError as exc:
+                    raise RetryableReportError('API envelope JSON invalid: ' + exc.msg) from exc
+            return parse_report_response(raw, articles)
         except urllib.error.HTTPError as exc:
             detail = exc.read(700).decode('utf-8', errors='replace')
             print(f'Gemini HTTP {exc.code}: {detail[:400]}', flush=True)
@@ -105,9 +165,15 @@ Nike 자체의 글로벌 경영전략만 분석하십시오. SHC, 협력사 대�
             delay = RETRY_DELAYS[attempt] + random.uniform(0, 5)
             print(f'Temporary network/timeout error ({type(exc).__name__}); retry after {delay:.1f} seconds.', flush=True)
             time.sleep(delay)
-    parts = raw['candidates'][0]['content']['parts']
-    result = json.loads(''.join(p.get('text','') for p in parts))
-    return result
+        except RetryableReportError as exc:
+            print(f'Invalid/incomplete AI response: {exc}', flush=True)
+            if attempt == max_attempts - 1:
+                raise
+            if 'MAX_TOKENS' in str(exc):
+                payload['generationConfig']['maxOutputTokens'] = 16384
+            delay = RETRY_DELAYS[attempt] + random.uniform(0, 5)
+            print(f'Request a fresh complete report after {delay:.1f} seconds.', flush=True)
+            time.sleep(delay)
 
 
 def valid_report(report, articles):
@@ -118,9 +184,10 @@ def valid_report(report, articles):
     dev = report.get('developments')
     if not isinstance(dev, list) or not 1 <= len(dev) <= 3: return False
     for d in dev:
+        if not isinstance(d, dict): return False
         if any(not isinstance(d.get(k),str) or len(d[k].strip())<8 for k in ('title','fact','meaning')): return False
         refs=d.get('source_ids')
-        if not isinstance(refs,list) or not refs or any(r not in ids for r in refs): return False
+        if not isinstance(refs,list) or not refs or any(not isinstance(r, str) or r not in ids for r in refs): return False
     return True
 
 
