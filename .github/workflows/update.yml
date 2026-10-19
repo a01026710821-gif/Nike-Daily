@@ -109,6 +109,17 @@ jobs:
               date_str = now.strftime('%Y년 %m월 %d일')
               end = now.date() - dt.timedelta(days=now.weekday() + 1)
               start = end - dt.timedelta(days=6)
+              stock = data.get('stock') or {}
+              price = stock.get('price')
+              if price and str(price).strip():
+                  change = stock.get('change', '')
+                  stock_color = '#2e7d32' if stock.get('is_up', True) else '#d32f2f'
+                  stock_line = (f'NKE {esc(price)} &nbsp; '
+                                f'<span style="color:{stock_color};">{esc(change)}</span>')
+              else:
+                  stock_line = 'NKE · 주가 정보 없음'
+              stock_html = (f'<tr><td style="{FONT}font-size:13px;line-height:22px;'
+                            f'color:#555555;padding:14px 0 0;">{stock_line}</td></tr>')
               sections = []
               for key, title in [('PRODUCT', '제품 · 컬렉션'), ('BRAND', '브랜드 · 마케팅'),
                                  ('SPORTS', '스포츠 · 선수'), ('MARKET', '증시 · 기업경영'),
@@ -150,6 +161,7 @@ jobs:
           <tr><td style="{FONT}font-size:11px;line-height:18px;letter-spacing:2px;color:#b94722;font-weight:bold;padding-bottom:10px;">WEEKLY INTELLIGENCE REPORT</td></tr>
           <tr><td class="masthead" style="{FONT}font-size:54px;line-height:64px;font-weight:bold;letter-spacing:-2px;color:#202020;padding-bottom:16px;">NIKE WEEKLY<span style="color:#b94722;">.</span></td></tr>
           <tr><td><table {T}><tr><td width="72%" valign="top" style="{FONT}font-size:12px;line-height:21px;color:#666666;">{date_str}<br>분석 기간 {start.strftime('%m.%d')}–{end.strftime('%m.%d')}</td><td width="28%" align="right" valign="top" style="{FONT}font-size:12px;line-height:21px;"><a href="{WEB}" style="color:#555555;text-decoration:underline;">웹에서 읽기 ↗</a></td></tr></table></td></tr>
+          {stock_html}
           </table></td></tr>
           <tr><td class="pad" style="padding:28px 32px 0;{FONT}font-size:12px;line-height:21px;color:#777777;">{notice}</td></tr>
           <tr><td class="pad" style="padding:24px 32px 0;">{brief_html}</td></tr>
