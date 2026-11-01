@@ -1,771 +1,780 @@
 {
-  "date": "2026-10-25",
+  "date": "2026-11-01",
   "stock": {
     "symbol": "NKE (NYSE)",
-    "price": "$37.30",
-    "change": "+$0.17 (+0.46%)",
+    "price": "$38.67",
+    "change": "+$1.37 (+3.67%)",
     "is_up": true,
     "chart": [
       {
-        "date": "10/19",
-        "price": 37.21
+        "date": "10/26",
+        "price": 37.91
       },
       {
-        "date": "10/20",
-        "price": 37.88
+        "date": "10/27",
+        "price": 37.56
       },
       {
-        "date": "10/21",
-        "price": 37.53
+        "date": "10/28",
+        "price": 37.15
       },
       {
-        "date": "10/22",
-        "price": 38.32
+        "date": "10/29",
+        "price": 38.42
       },
       {
-        "date": "10/23",
-        "price": 37.3
+        "date": "10/30",
+        "price": 38.67
       }
     ]
   },
   "insight": "한 주간 Google News에서 수집된 나이키 및 주요 경쟁사 분야별 브리핑입니다.",
   "summaries": {
     "PRODUCT": [
-      "레드 타탄 패턴을 입은 나이키 '플래이드 팩' 4종 출시",
-      "질감이 돋보이는 나이키 에어맥스 고아돔 '블랙 포니 헤어', 올 10월 재출시",
-      "메이슨, 젤러펠트와 협업한 3D 프린팅 나이키 에어맥스 뮬 공개"
+      "팔라스 스케이트보드와 나이키의 매너 플레이스 FC 컬렉션, 2000년대 초 풋볼 킷을 소환하다",
+      "부활하는 나이키의 하이브리드 스니커 힐, 오볼로 2.0 퍼스트 룩",
+      "Nike ACG x Helinox, 시그니처 오렌지 컬러의 초경량 캠프 가구 세트 출시"
     ],
     "BRAND": [
       "​나이키, 이대로 괜찮은가",
-      "나이키, 뉴욕에서 열린 ‘더 코드’ 전시에서 버질 아블로의 창의적 유산 기리다",
-      "클래식 실루엣을 덜어낸 나이키 에어 맥스 90 SP \"블랙 레더\""
+      "'산'에 꽂힌 나이키, 'ACG'로 아웃도어 시장 공략",
+      "인도의 차세대 러너를 위해 탄생한 나이키 베감 런"
     ],
     "SPORTS": [
-      "나이키, 농구에서 영감을 받은 새로운 N7 컬렉션으로 토착민 문화와 디자인을 기념하다",
-      "여학생 300명 한자리에…초록우산·나이키, 스포츠 페스티벌",
-      "칼하트 WIP, 나이키 스포츠웨어 및 서플라이와 손잡고 SURPLUS 2026 컬렉션 재출시"
+      "스포츠와 음악, 미국 남부를 하나로 잇는 나이키의 특별 한정 조지아 x 아웃캐스트 컬렉션",
+      "나이키와 이스트사이드 골프의 '제로 그래비티' 풋웨어 컬렉션 공식 이미지 공개",
+      "아워 레가시와 나이키, 러닝 파트너십 앞두고 '스포츠 숍 NYC' 팝업 오픈"
     ],
     "MARKET": [
-      "[영상] 중국인만 믿었는데 이럴 수가…“매출 26% 폭락” 잘 나가던 나이키에 무슨 일이",
-      "나이키, 목요일 주가 2% 상승한 이유는?",
-      "매출 재설정이 나이키(NKE) 주식에 대한 강세 전망을 바꾸게 될까?"
+      "“나이키·아디다스 대신”…오니츠카타이거, 뜨자마자 8조 터졌다…얇고 날렵한 복고풍 신발 인기…매출 60% 증가…",
+      "나이키(NKE) 주가, 경영진 교체와 실적 반등에 힘입어 적정 수준에 도달했을 가능성",
+      "나이키(NKE)의 인도 러닝화 출시가 투자 전망을 어떻게 바꿨는가"
     ],
     "COMPETITOR": [
-      "아디다스 슈퍼스타, 리베레이더스(Liberaiders)의 퍼지한 감성을 입다",
-      "아디다스, '트럼프 관세' 3천억원 돌려받고 역대 최고 실적",
-      "아디다스골프, '아디다스 오픈 코드케이오스 챔피언십' 성료"
+      "배드 버니 x 아디다스, 배드보 1.0 '그레이 쓰리' 공개",
+      "나이키와 아디다스 최신 러닝화 10K 실착 후기",
+      "구찌부터 아디다스까지…KT알파 쇼핑, 11월 쇼핑 혜택 확대"
     ]
   },
   "items": [
+    {
+      "cat": "PRODUCT",
+      "title": "팔라스 스케이트보드와 나이키의 매너 플레이스 FC 컬렉션, 2000년대 초 풋볼 킷을 소환하다 - Hypebeast.KR",
+      "summary": "팔라스 스케이트보드와 나이키의 매너 플레이스 FC 컬렉션, 2000년대 초 풋볼 킷을 소환하다 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Mon, 26 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxOMENuMUw5Qm9JcTdyODEyS0EzMUJobmkzVjRlNlluS19rZXBMZWltSUdoZWVSdDQ4UzNicVJkQ3pLZ0JnSlpDQ2tKUUZjZzlVbGtTdGhxc05FNEhtVkNlSUVJOWxubzhveTBvRmNMNGlmazU0R0VxNWd0SnZ2eFNmVUZBNHZqTWExVDlrMzdOZEFqUml4Uy0wMjJyTlBsNmhTZmlmRVd5Vk0ySE9G?oc=5",
+      "image": ""
+    },
     {
       "cat": "BRAND",
       "title": "​나이키, 이대로 괜찮은가 - 패션포스트",
       "summary": "​나이키, 이대로 괜찮은가 패션포스트",
       "source": "패션포스트",
-      "date": "Sat, 24 Oct 2026",
+      "date": "Sun, 01 Nov 2026",
       "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE1feEFiT1VHSm9URHdsTEVNZzVKelhHR2VBT3lGeTlmeXotcGE1STUwc1JaZmNYOE12YjhHcXI3eVE5THdCLUJqMy1uWlVKYkRBQ2ZFUUNORFUzbVM4TW9XSHpubU1vTW02eHVlbXVMVmkya2NCekE?oc=5",
       "image": ""
     },
     {
-      "cat": "PRODUCT",
-      "title": "레드 타탄 패턴을 입은 나이키 '플래이드 팩' 4종 출시 - Hypebeast.KR",
-      "summary": "레드 타탄 패턴을 입은 나이키 '플래이드 팩' 4종 출시 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPVUVObGthd1BhakJjcXdYcTUybm9kZ0YwZkFxcGJSLWdwSkFEVFNsSG9nSXlxU0stNldVZW81X0JQck1RZUlpYkhqcUNuS3ZuSUZmS29QT2FXRjA5ZjJETjVteFY0ZlZqODAyaUxST2RQYWRBRkR0cWxJNlJZZVktZHluOHBrYWNQVkVzUVZrSUhmN3BkcFJnOFlmcE02SUE4eFh0NXplOGdrdFdEdGNUNmtTWllMNlBnTTM0U2Y3YS1LQy1UUXNqT1NXNl95OTJFemtrLUJwQnllcWN6TzU1a1NGWXRMc0w4alQ4R25VdFpwTFhnNzJqSA?oc=5",
+      "cat": "BRAND",
+      "title": "'산'에 꽂힌 나이키, 'ACG'로 아웃도어 시장 공략 - 비즈워치",
+      "summary": "'산'에 꽂힌 나이키, 'ACG'로 아웃도어 시장 공략 비즈워치",
+      "source": "비즈워치",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFA5a2NmZ2ZKZWsxajh1aU0xTXZpTVFZM0drcy1TcHQ2VGg1SkdtQTVfdUFMcmN5RmNLbnVRMC1mSWFBT20tUjFGSjJGSTBPTThqWklLTVF0SWpnTXpMSzMxTVZMbGhicFRQb1QyYg?oc=5",
       "image": ""
     },
     {
       "cat": "SPORTS",
-      "title": "나이키, 농구에서 영감을 받은 새로운 N7 컬렉션으로 토착민 문화와 디자인을 기념하다 - About Nike",
-      "summary": "나이키, 농구에서 영감을 받은 새로운 N7 컬렉션으로 토착민 문화와 디자인을 기념하다 About Nike",
+      "title": "스포츠와 음악, 미국 남부를 하나로 잇는 나이키의 특별 한정 조지아 x 아웃캐스트 컬렉션 - About Nike",
+      "summary": "스포츠와 음악, 미국 남부를 하나로 잇는 나이키의 특별 한정 조지아 x 아웃캐스트 컬렉션 About Nike",
       "source": "About Nike",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPejczS1RhWE5NMXUwc1ZYcXd6X24tS0dtcWVFTDlFTjFJQk5qOXYxVnpVQXhNYi1rVG1CWnNteXVIZ2Y1SGFnWHA0cUl1Q0hCT1AwNk55RlRPVVlxanRuYXR3VEZUOGpOT3AzQXp4a2d6MWRWQTFLTnZyd3NFWlpoSllwd0ljUnl1MXRSTm13NjIzTkFoSXQtSkoxWmktcFhxVXZibmlVc2xuUFVXWjF4YXJTV2Q5eXQ3a3ZiX3JNcXhyNmNuMm95RXJn?oc=5",
+      "date": "Mon, 26 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBzdTFNMTJ4aW5LUWhIRlRpV2lraTRjRTlEeUZOczd1ZzJVaXMyeG9xdzNWaW1BVnotMk1ZbWpBaEZ0T0doS1pkWUFtcU9NUUxybTY4SFJEV3RpdW9YcFE?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "부활하는 나이키의 하이브리드 스니커 힐, 오볼로 2.0 퍼스트 룩 - Hypebeast.KR",
+      "summary": "부활하는 나이키의 하이브리드 스니커 힐, 오볼로 2.0 퍼스트 룩 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Wed, 28 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE1iS0ptWnZhNmZrNlBYUFhfV2ZZRFQ5VVBMWHhEUmQ2MFdmbmxnMGxpWkZWZEFheG1IRXZPQ3ZQdTZMZThoNzBacU1mejE5V3ZBbXBmZHVsbE0xQ20zNF8tYW5YS3Vhd2JfU2MxMm92dW1yZ2s4c1lLaHdoUG93Zw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "인도의 차세대 러너를 위해 탄생한 나이키 베감 런 - About Nike",
+      "summary": "인도의 차세대 러너를 위해 탄생한 나이키 베감 런 About Nike",
+      "source": "About Nike",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOS3VMT05VMG9xTTJzSmRvbnRfdTFkUmZmWnJjZEp2VVdTZXgyaFpJcjUzcXI1MUdIeEZBLWdKWngwMjBsMm9INTZPNnl2cGlOd2xVYW5wdTF0dy1aRng4UldPSmZEankweDRSYS1vNHVuTkNxY0h3OGVybGRXQU9xN001S1dFeWhrNWsyYVVPNmFTNlBfWm9nSDdhT0FZUzh2eF9VTkdNZHU?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "Nike ACG x Helinox, 시그니처 오렌지 컬러의 초경량 캠프 가구 세트 출시 - Hypebeast.KR",
+      "summary": "Nike ACG x Helinox, 시그니처 오렌지 컬러의 초경량 캠프 가구 세트 출시 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Tue, 27 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNV3YwbVhtdS0yaFJEdWxZLS1RbG9fcXpoRWJMM0l2a21yTExGLWZfVzNwZS1MVkVLTWEtMUtuc0FKMWlFZE8yZDNkZWswM1hQZEEwVTYxUC1udjRVdS10d3RfOGUxTWo5WlN1R3g3NlNfSzRGY2lFN0txcXZXMlNyMWp4RUF5TDdQRUM0?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 베트남 최초의 전기 바지선 도입으로 공급망 배출량을 감축하다 - About Nike",
+      "summary": "나이키, 베트남 최초의 전기 바지선 도입으로 공급망 배출량을 감축하다 About Nike",
+      "source": "About Nike",
+      "date": "Wed, 28 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxOcUNiaTFfdzVRcUhVYjRPdTd6MGJESUp4aEdVaDN2TkZSb0xDdWtidXdZMUMzT0l5MG1FNUxHRDIxUmJDaVByMlZ2VEtKOGg3RExPVVNOYkhLeEtVNjI2RVlaY181SlpzNHNOVlg3cVdHckItbnZXM3QtOXBFY2dBYlc2N2k4UmNTMzNuWlg5MWFSSnpvQUJOekw2aEVjdTk0eG1lTG5TZ1p1SDloVjBOT1FVOGVwZkI0bDV6TUhwalJzX084ZEtoYUViSVBxNDhidU1wb3VuMA?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키와 아워 레가시 워크 숍, 협업 퍼포먼스 러닝 라인 발표 - Hypebeast.KR",
+      "summary": "나이키와 아워 레가시 워크 숍, 협업 퍼포먼스 러닝 라인 발표 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Mon, 26 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPdVBYXzhiRTdPbVFOVjhkbVdSdHoyRElkc1ZNU3cwTFZWZ2p1TXE5ZTY5YUFmWHhLcWx6c2VPSlhaTHFIWVlDTGtjTXNva0JxLXdKWXBTbDJLSGUzbE45MHpDRmdvREIwREt2UkhzZmpxNG1ybUdNZm84RFZUVmhYYTZtV1RIZm9OcDFXcWdsT1hwd3BHTDNSWjNKbnFJckVtYno3cDRnVDYzQkVKR01lUldXSkNBNGhvTzVMOUpLYzlZX0k?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "르브론 제임스의 페니와이즈 코스튬을 구현한 나이키 르브론 24 \"스톰 드레인\" - Hypebeast.KR",
+      "summary": "르브론 제임스의 페니와이즈 코스튬을 구현한 나이키 르브론 24 \"스톰 드레인\" Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Tue, 27 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNTGVXUHNMcHJpcFlRdFVsZHNCRGxBTUFFZHFsUlRUUk13ZE5oTjZoM3pRUTRfVTJXdGJkd2lEbHBDeTEzSW5TNW1XOGpsV3B1aTBuN2xRYmlFX0VUU3lqajRNNEVRWG9qSTVPdDg3cXU5YXcxWTVhdHpnQVlkSGp3c1lTcHI5Ny0welhEQ1FpdU9Zd0Nm?oc=5",
       "image": ""
     },
     {
       "cat": "SPORTS",
-      "title": "여학생 300명 한자리에…초록우산·나이키, 스포츠 페스티벌 - 연합뉴스",
-      "summary": "여학생 300명 한자리에…초록우산·나이키, 스포츠 페스티벌 연합뉴스",
+      "title": "나이키와 이스트사이드 골프의 '제로 그래비티' 풋웨어 컬렉션 공식 이미지 공개 - Hypebeast.KR",
+      "summary": "나이키와 이스트사이드 골프의 '제로 그래비티' 풋웨어 컬렉션 공식 이미지 공개 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Tue, 27 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxNT056aFQzYjR0R3hES1RoSnpkem9oSHNvWERMa2g3ZjM1dVo2anlFbGVRM2U5YUc2d3gwSWRZZnpUMkU0aEswMF9tQ0NERXJHcU5NdlRrMXd0SHNZeDYwYkRCdk5oTENfNFFsbUFjY0szdmhFTnVtQVl5MGY2S0FGLU1TV1RlZjFIdF9SYXBsR2JWalhwcW52LWF4THA0UDJKR0ktdmVxZktUeWxDb295aG5oRllFcEUxdnVNMXdzMXZ6dWRzZzNqSzNMcFhGWk40YVlHWjgxRTZrZTJf?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 에어 맥스 플러스에 글래스고의 명물 '트래픽 콘'을 담아내다 - Hypebeast.KR",
+      "summary": "나이키, 에어 맥스 플러스에 글래스고의 명물 '트래픽 콘'을 담아내다 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Fri, 30 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQc0UwaUZHcElVbVEwa0k4WlBiYTd5emJPWjhMZnk3eWZlR2VMZC1uZHpKYzdmT0ZhOU9fM3JnM1VRS3BWejRsYUdmXzlWcXdIWVlOUzc5U1BvVlBlMkF4TDlSbVhxYlFYRHBXSzR3Zk9ULWduZWU4Q3F4SE1sUXdScXFRTkJoZ2lWMzdpMHp1cVRxbzRnSkNR?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "나이키, 조지아 불독스와 함께 '아웃캐스트 U(OutKast U)' 컬렉션 공개 - Hypebeast.KR",
+      "summary": "나이키, 조지아 불독스와 함께 '아웃캐스트 U(OutKast U)' 컬렉션 공개 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Tue, 27 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxOcmdnMEptVklJZFNSVW1vWnR1T3dSNElPVmxDVzRBcWhMSGVEb29CSVc1aFlMX3lleFlwQXUxa2lxS05ReXhpb2xjZFZVbHNlLVpaZGxORlNvWG1qeEV6Mkx6Snd4QXBqengzak8xa0dPbHlxU0tpSzBFdDJreU1wNVRNVW10bkdsRUt5dFRCajdaSGhyallpMnA5QlZBWHpqMlNN?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "SPORTS",
+      "title": "아워 레가시와 나이키, 러닝 파트너십 앞두고 '스포츠 숍 NYC' 팝업 오픈 - Hypebeast.KR",
+      "summary": "아워 레가시와 나이키, 러닝 파트너십 앞두고 '스포츠 숍 NYC' 팝업 오픈 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Fri, 30 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNSk1NM19kbE53b2o0b1FyWmpRNzJ3TXBlWElvSTdXZkpnRFpWNW1PVDFlelloVW9UMTNPNkdqcU9NRmswbWswc00yUTJzYnR5ZlY2WWdVVDU1ckRQbWVwdkJEVzQwTUVYdnpGcTR0YXlJOUh0R1h5Ny1rcVBoZ1A2RHJlRFhGd0NyRnJNbVpwd3M4bmR4NGpYZVRoLUptMEsz?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "유니온과 나이키의 덩크 로우 '내추럴 셀렉션' 컬렉션, 활용도 높은 세 가지 컬러웨이로 출시 - Hypebeast.KR",
+      "summary": "유니온과 나이키의 덩크 로우 '내추럴 셀렉션' 컬렉션, 활용도 높은 세 가지 컬러웨이로 출시 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Fri, 30 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMi-gFBVV95cUxQdnNrMFVsQVJNM2p6amI1SzZVZWlodHRTbFlnNTdfdTZwUmlKR0J4M216VU45NzJtUFZwelBMbUFXa2lhU2hpREdPdnFKUGZNNm5XLVJSbFpXZjJsWlM1QkZzdFdYWGVnU1VkRGFYOUFYNkZPT25mRkR4M0RYdVA5aFR3SEZOelRZdkFPLU95QVJPbzNTaGZnRlh1QTJEcVUzSVRBbGc1MUNzSFNJcUk3UWNEQS1LcVloMHJmRV9XYUduTHVOeXA0QlRfSkhmU1JYakowSW1McjZWOTNMSmgtOG5RdzlZU0dUUWZEM04tS0dfY2hCamlub0Zn?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 에어 포스 1 '07로 밀워키 브루어스의 월드 시리즈 우승 기념 - Hypebeast.KR",
+      "summary": "나이키, 에어 포스 1 '07로 밀워키 브루어스의 월드 시리즈 우승 기념 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Sat, 31 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPZ1JFYXVyZXNjTnNjazl2RkhLTkRfRkNzVjRKWWV5cXJkaFZGV1hZR1FmZ0dENG5SeXNEcUF2b2FiMnhEM2RWX0dLZE5nd2g0MHdNSjJnY0VvZWlrQmotZERyYXVRZDNDazU3dUMzWGhQYTlIWGhVclVhMDU4Vk5vOU9FNmJrSjNDYlpOYmt2cnpHUUJw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "코르테이즈, '미스틱 나이키 샥스 R419' 및 협업 어패럴 도쿄 팝업 스토어 오픈 - Hypebeast.KR",
+      "summary": "코르테이즈, '미스틱 나이키 샥스 R419' 및 협업 어패럴 도쿄 팝업 스토어 오픈 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOLWxXVDRPZFpHRzd3TVVxWTM3WS1jbnFTckRoWkt1WExIQTAtRW5TMTlBNHpMMUhPRk5Id0xvSU9VM1BmVWozUEVvT2RkVjVrTUl3ZmV0bmFWMnV6VUhOVEhSX1hLTTNYYnFoTlRIaUZoZTRCMkZLcE9CTHpQeDUyOFR0WFFrMnlsRjhfc2VlNEN2NzhBMXJBSThZZzRkNjZ6WjFENDRQRlk2UQ?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "트래비스 스캇 x CPFM x 나이키 3자 협업 '플리 1' 2027년 봄 출시 루머 - Hypebeast.KR",
+      "summary": "트래비스 스캇 x CPFM x 나이키 3자 협업 '플리 1' 2027년 봄 출시 루머 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOdUVVYWo5LWcyNUQwajEyS1RETGZVUzNxN3BnTXF4Z3c2aEZzQ1Zsa2dyZjJUTHNDRHh5aTQtRkh3czRnTU9xenhLMXZDYTlqVlB3UnhFOTE2SjdjT1JQT21oaDhWSkMxc3Y4QkZDeXBSSS1OcXc1WmlmbFZsN19tQUhRaDk2ZWVkR1NOREh6M2hHVXdQUXI0Rkl3ekhLZWEwV1pXZQ?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키 ACG, 한옥 베이스캠프 ʻACG 북촌 마루’ 오픈 - 아이즈매거진 | eyesmag",
+      "summary": "나이키 ACG, 한옥 베이스캠프 ʻACG 북촌 마루’ 오픈 아이즈매거진 | eyesmag",
+      "source": "아이즈매거진 | eyesmag",
+      "date": "Fri, 30 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE9pTEM0VjdFY0JhbDc5Um1ncDY3M2oyR1JlUG5DWDFYR2RSZDN2RDlxYUlxNXlrUGdZVS0zc0NaU2FWQnVzQU9YdmZ5cmtQWlpiSTIzZlI2UWpOYXo4N2hTaVdUUEgyOG9RbVVVaDI0TEM?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "SPORTS",
+      "title": "나이키(NIKE)는 어떻게 세계 최고의 스포츠 브랜드가 되었나? 'Nike: Form Follows Motion'@MAD - NYCultureBeat",
+      "summary": "나이키(NIKE)는 어떻게 세계 최고의 스포츠 브랜드가 되었나? 'Nike: Form Follows Motion'@MAD NYCultureBeat",
+      "source": "NYCultureBeat",
+      "date": "Tue, 27 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBxOHByMVRyRGZ0dmtsMGwtT1lXUWdvNEg2M0YtclZoR096OEZZeUMycVRfVmxMbnUydHJ2NDJlSnV0NW1UQmFUUEJRNDd2RXdCY3VCcXlxUk1pY3ZzQjBmVWdSQ1pOTmhHOHNxdEV0WGxjbTVFNDVKWlY0LUxkckk?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "디온 샌더스 주니어의 '웰 오프 포에버', 나이키 에어 DT 프로토 92 협업 스니커즈 출시 - Hypebeast.KR",
+      "summary": "디온 샌더스 주니어의 '웰 오프 포에버', 나이키 에어 DT 프로토 92 협업 스니커즈 출시 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Sun, 01 Nov 2026",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNUS1yaHhFOVd5d2NxUDRZTWVWSEZXV1ZqeUZQMFkwM0Y2TU84Rm5xM0dXN0JZWWVBY0UteS10RzU1V2ZxTzdRdTRlazZFQXd3TzRJc0xVdTZvZ1dvTDVNTnJNaXNOQmo4NU9uYi1qTzNXSTd5UVdSXzdZamc4cmNZQVNJY1Bkb3pzWHdlRTFVOU9vMU5hWFY2UTVJWnRUSEJTeEUyVGpNZw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "Nike, 완전히 새로운 SF3 방수 재킷 및 Boreas 플리스로 Tech 라인업 재정비 - Hypebeast.KR",
+      "summary": "Nike, 완전히 새로운 SF3 방수 재킷 및 Boreas 플리스로 Tech 라인업 재정비 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Mon, 26 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNb2tlbXoxQUdFNy1XREI1UDRrLXZ2Nl9ZT1RxREs3REk5R2FMSlg2Rk1INDlobWl3aUlvaEVSZEQyOXNBTlBjVG10MWY5Zy1OUUtVRmUxTHZpb0poc25IZjl2MU1DTDJheXkxMnE2LTVkanl6MkRGUTNheVNwUmVOMTBlUUFGVHVfVlNoTmxUQmJEVGk0YmZJNkNJSEZmWTRDcE44RTVPRkdsRUw1dFViT2NJSQ?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "SPORTS",
+      "title": "나이키·아디다스·푸마까지…스포츠 브랜드로 뜨거운 서촌과 북촌 - 뉴시스",
+      "summary": "나이키·아디다스·푸마까지…스포츠 브랜드로 뜨거운 서촌과 북촌 뉴시스",
+      "source": "뉴시스",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5KWUc5c202bDl4amtqS1RNeTJZSklhb1p0OFhTU1VfT2ZZdV9UZEYzU2E3ZFQ1YUlPUkd3aHotdk9aLU1ZejFSWHlIWmJJeWkwZnpNdFV0eW1mTzR6ejhEQU5iaGtBVHp1ZzRZd0pEam9zdnRuLWVPZtIBeEFVX3lxTE5KWUc5c202bDl4amtqS1RNeTJZSklhb1p0OFhTU1VfT2ZZdV9UZEYzU2E3ZFQ1YUlPUkd3aHotdk9aLU1ZejFSWHlIWmJJeWkwZnpNdFV0eW1mTzR6ejhEQU5iaGtBVHp1ZzRZd0pEam9zdnRuLWVPZg?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "[크랩] 나이키도 휘청거린다는데 아식스는 대체 어떻게 살아난 걸까? - KBS 뉴스",
+      "summary": "[크랩] 나이키도 휘청거린다는데 아식스는 대체 어떻게 살아난 걸까? KBS 뉴스",
+      "source": "KBS 뉴스",
+      "date": "Mon, 26 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5jaUhJbGFuTmZiTS15bThEdHZkamJVdUEyeFZMWEdyWnd3emZpTzBYZTVrXzdPRTNNLS1TVDdMVFg1S0lRSFpGNENURkY0UTNpM3JCaG9pQWtnbEk?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키 바스켓볼과 르브론 제임스, '르브론 24' 공식 공개 - Hypebeast.KR",
+      "summary": "나이키 바스켓볼과 르브론 제임스, '르브론 24' 공식 공개 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Sun, 01 Nov 2026",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQOHZyX1ZGLTN5WFZPRC11MlI0WEh2aXdFbW9fNDVDX253bWhpSWpYMGk3Q0lBN0R3S1NtS3NHUEVWZ0NrSktlMTFEVHJjY0NIc0ltdEFPMzNZblM4WDdJT2p1a3NVNHBobFFkcm9aUXFkVmtmbzZFdXVrcHJzd095LVNkWEFsZEwydzVPMlR2ZDBrQnE3RGJLVDNjLWR6SjRFNENoZllzNm1VUF9nbGZ1c2JjZDhvWGc?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "Travis Scott x Nike CPFM Air Flea 1 \"Cactus Jack\" 자세히 보기 - Hypebeast.KR",
+      "summary": "Travis Scott x Nike CPFM Air Flea 1 \"Cactus Jack\" 자세히 보기 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Sun, 01 Nov 2026",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxPSjh5NTNqYUgxRFl2dE40M09ZdjNXYldLcXAyMUVFRl9ETWNXZnpxUzRGUkVIQ1p0STFvOUtTYWdJYV9CNEpsUjR6YjhCVVBPRk1UYXIzdS1mMkJqcE1hR1JLSHJuTTU3NDhOdDdDVmZTNkNqMmtkQkdCZUFBNzlSMkJOd0pUT1duWlFxRDVHNUtxb1Mwc1RFUjVLd0ljdjlEb0Z1N1B5UkNzdw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "“극한의 추위를 견디기 위한 최고 솔루션”… 나이키 ACG 라바 플로우 울트라 라이트, 248g 초경량으로 ‘눈길’ - 문화일보",
+      "summary": "“극한의 추위를 견디기 위한 최고 솔루션”… 나이키 ACG 라바 플로우 울트라 라이트, 248g 초경량으로 ‘눈길’ 문화일보",
+      "source": "문화일보",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBueW5oQk80bE5iSktnalg5Z3VCTE9fZ0o0TnFxcXFqSjdZQ0xsOWgwaU5SdG9pNEUzdEExdTdIcTVBV2poTGwwNWE0dmJrdkJ3?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 북촌에 '아웃도어 커뮤니티' 조성…\"탐험은 인간 본성\"(종합) - 연합뉴스",
+      "summary": "나이키, 북촌에 '아웃도어 커뮤니티' 조성…\"탐험은 인간 본성\"(종합) 연합뉴스",
       "source": "연합뉴스",
-      "date": "Thu, 22 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1EM3ZuTHl1bDV0SHQ2V2FWWkFpRHh5Zk5Hd2h3a1FKTWJ5bjc2cGV1S1FDVzFNa2VTYVRmMmVweFEzY0xmdzFQdTVzeVZQRnFocEdWRlBQWjNQcUHSAWBBVV95cUxNZXE3ZTBWSjNjUVhJUnMtS2ZlZEx1Rjh0Y3BIelZNTkZxMGNWcjhJMGJVelc5Wlc2MzZ4TDBLYnRGaENiQzVRWjJpdjI0bGRJRVIwZWZLUGJxMkFpWnlsbmY?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "질감이 돋보이는 나이키 에어맥스 고아돔 '블랙 포니 헤어', 올 10월 재출시 - 하입비스트",
-      "summary": "질감이 돋보이는 나이키 에어맥스 고아돔 '블랙 포니 헤어', 올 10월 재출시 하입비스트",
-      "source": "하입비스트",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPaW9kR1k0alFYQkNCZXFDSkJ2T2lVVTk3VU5NR2ltTzdTaG9fMEotODBUYS00NF9RYTNRTkthMFkzd3hsdU1xRHNCNV9zcmlnemVDVmN0ekE4a3l0S1JYRFphWkdVTWdpQW1mZEQ1QkFOaUZwb0g1aldhbHlEcTV0TlFFMEZHVjhLaUtGNk9RTFRBR3NzcGpIQnowSHVwQkZxaEJYaQ?oc=5",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTFB1UDhzWXdhTUNzMGVid3owN09oUk9pb3NrbTJMMm5qV2pIZVlBdlpmLUd2WXVKX3BxN1FvWlZDZWc3WGFhMHBNaW5fYm0tTTVGZmtxRUdoLUJFR0XSAWBBVV95cUxOOWx4TkNLbjgtR2VXN21qb2JDekFWYWxnbEFDNFZGUUZRZUlNYmJZdXNxY2lmcHgwNTh6b05NMkduVUxqV0FlT1FWUzBnc24ybHhxWjVWblA0bGctanNoMmw?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "나이키, 뉴욕에서 열린 ‘더 코드’ 전시에서 버질 아블로의 창의적 유산 기리다 - About Nike",
-      "summary": "나이키, 뉴욕에서 열린 ‘더 코드’ 전시에서 버질 아블로의 창의적 유산 기리다 About Nike",
-      "source": "About Nike",
-      "date": "Mon, 19 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZzFUSjljejY4eVRKUklIb2hlbkJvcGlQaWdGYlRCcmpQSHN2X2x3aTV2aWpvWHg1OXNBb0wtN0prVElGT0RCb0s5YUZfWFJ4R0RLeWlIMWs1LVA2ZHMzbVdsMUdMNzRvbVZYM1I2U0RacmNmNGRWTS1fQVVDRF8tanpLMVVLVlpiT2tteTFFdTRLVGw1N1ZfdTZKYmg1VnAtMUNQd1FmWWlCZ1RCQUtZYlQwdFkxMk0td0dtc0lfN3M?oc=5",
+      "title": "한옥에서 나이키 ACG 만난다… 中·美 이어 서울 북촌에 3번째 전문 매장 - 문화일보",
+      "summary": "한옥에서 나이키 ACG 만난다… 中·美 이어 서울 북촌에 3번째 전문 매장 문화일보",
+      "source": "문화일보",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE43TDBxc0Q5N2xlRGE1SjVKcXVWYW1QS3R3M2loQTBhQzZiZXBQa3NrajFMR1hKNDAwemRmN3FBdEZEYWlKWjB4VDlybTc2VFpz?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "클래식 실루엣을 덜어낸 나이키 에어 맥스 90 SP \"블랙 레더\" - Hypebeast.KR",
-      "summary": "클래식 실루엣을 덜어낸 나이키 에어 맥스 90 SP \"블랙 레더\" Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQWmJINnBsTWtjREZfYW1mZGtyUUpyYi11N2tZdndCSTFrS0VscU5QZHhjNG1jbjY0RzlodTlWZFVFN283V0lJVXVLVEpVWDAwMU04YUFJbVhxdzBDVmlOZ2VqYy1YQUI1dE41dDV2UGlnNGU0QXhXRkFXV3BtY1U2N3B2RmdmeDVIZmxmZVNn?oc=5",
+      "title": "나이키, 이제 주얼리도 만든다 - Hypebae",
+      "summary": "나이키, 이제 주얼리도 만든다 Hypebae",
+      "source": "Hypebae",
+      "date": "Fri, 30 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQczlpRERkZG5GWUdXQjNkNEN0T2tydzU5dWdoYWQzRnBmYi01T1pSUmxyZ0ZWd3VkRk5GWngyZEtmaFdWTEdzci0yV3daRjlOTWhDeEhjS2JCYlVFWWpBU2o1OUZjaUlCQ3NmU3dUaXd1MUlXYXFaODRwSXgwV29SSVJhQWxtVkR2cGhQYURGcUQzalZBemYtRm5LOHNEUQ?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "코르테이즈, 나이키 샥스 R419 '메탈릭 실버' 첫 공개 - Hypebeast.KR",
-      "summary": "코르테이즈, 나이키 샥스 R419 '메탈릭 실버' 첫 공개 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Mon, 19 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNLUMtcUJWOG55ZE9vbDV4V0dBRTRnanRMaXg1ZDBtQ2g5b0xfbmpfM2k2VXpwNTFzQmNfdTdyNHhUM3gyOHNidjFKWEVEMkNQTjJNU0FzVXd2X2dhVmNFT0JtejcxX2Z4blo3MmV3Y0lVckQ3MVcxbFB0eDNTX1JLTU1YOXRVRXhiM2NUSW9WQ3RwZ0R0YjEyTmN4SHl2U3NM?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "메이슨, 젤러펠트와 협업한 3D 프린팅 나이키 에어맥스 뮬 공개 - Hypebeast.KR",
-      "summary": "메이슨, 젤러펠트와 협업한 3D 프린팅 나이키 에어맥스 뮬 공개 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Thu, 22 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxNQkg3bmF3U2VzeGtvc1UwNlJSM2llaE1HOGNhZGt5Mm5CWXgtZFF6MjI5bUl3UlJQVWVRMFE0RDlQekYyeDhZQlNyN0Rvc3F4cm5vSndzaHhrNWhtWWFHU1lyMVAza3h4Q0VMRGNSNllkOWVQLUVsSEdCTWNtNVROOHROSm1SM3FjUTFj?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "SPORTS",
-      "title": "칼하트 WIP, 나이키 스포츠웨어 및 서플라이와 손잡고 SURPLUS 2026 컬렉션 재출시 - Hypebeast.KR",
-      "summary": "칼하트 WIP, 나이키 스포츠웨어 및 서플라이와 손잡고 SURPLUS 2026 컬렉션 재출시 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Mon, 19 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQU05mVS1OUldTNGJuYnhKcDR1SXlxNG9FVWcwR0xwSW9fZTRuSWExRWcxVmUzVE50cVBabXcwUmU4UERoWUlhVGEydjNZNUNtWDVPNkxCMFluLWtuNkExQVRGYlpCZ1cyOEdjNGNfQjlJb2xVTVNnWHllYkhzR045YU9hOFJfWjZsSVlHM2NCSl9OdDhzd093?oc=5",
+      "title": "나이키, 북촌 한옥에 아웃도어 커뮤니티 공간 'ACG 마루' 조성 - 연합뉴스",
+      "summary": "나이키, 북촌 한옥에 아웃도어 커뮤니티 공간 'ACG 마루' 조성 연합뉴스",
+      "source": "연합뉴스",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE51NkRiV25mTHZzSi1LeVU5Qy11NTBWYldUMEs0T1ppc25jNHhldE5nV2xQWXkyTmw1WC16LXV6a1g3NmIwLWUzYXplYlBwWTEyZm5URFIyblBsWk3SAWBBVV95cUxNMFctMGRpczJtWmZzNGJWWXJtR1ZtaUdyajY0VTY3aTViX2FPLVpQU0xFQ0dUZjhYT3JXY3FrdkV2ajItUC1jNFpSTHpvVjF6VGQ5ZFRNbWV3czlsZHdVNnI?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "나이키, 코비 3 로우 프로트로 '맘바 이터노'로 디아 데 로스 무에르토스(망자의 날) 기념 - Hypebeast.KR",
-      "summary": "나이키, 코비 3 로우 프로트로 '맘바 이터노'로 디아 데 로스 무에르토스(망자의 날) 기념 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Mon, 19 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOd2NaOHhBckJZejdIQmwtZjNESnFKSFMwYWtjQ24yNVhqMFBTNENlUW5iSko3WGdFSGV4T1prd3pSWU44czd6TUNfNUg2V1pNa2hZV1ZEbDlZUlVHLTBROXFKVnd2M3pqR3pGSURSdFJyX1NHcVlVTVpmMjNKVVZaeU1TM0t2cGNsUzc2TU0wZ2dVdw?oc=5",
+      "title": "“아웃도어에 진심”…서울 북촌에 베이스캠프 연 나이키 ACG [가봤어요] - 이코노미스트",
+      "summary": "“아웃도어에 진심”…서울 북촌에 베이스캠프 연 나이키 ACG [가봤어요] 이코노미스트",
+      "source": "이코노미스트",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE1fMXBPZEZaYy1YTllFVW5ZbG5lMG5qeUxhandJMXVIQjNMZjNoUjVEMHgxRm94bmJoWS1QMERybm5jT2NQSlRpd3E3RE1DTGdfVkp4THhEVXFsTW9LV1pBWVpB?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "나이키 에어 포스 1 '01 \"필리\", 식서스 컬러로 르브론 제임스의 합류를 환영하다 - Hypebeast.KR",
-      "summary": "나이키 에어 포스 1 '01 \"필리\", 식서스 컬러로 르브론 제임스의 합류를 환영하다 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxOUmRxVXFwNGpQNDFZcmwxTE1kMEFyNjM1ckR6RzJTYy1uY24xaFVUR2V4dmNFWEUwX0N4T2h0bzNQWWpmQTE4SkJQcFpUNGRJQkJyMlpHUkZqQ0lkdnhERHZJMWFBdE9BNTlfSjFSTUQxN0ticFRnY1F4QTVfeHlsS0hrMkIwUQ?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "에나멜 광택과 시스루 패널로 완성된 나이키 에어맥스 90 '라이트 오어우드 브라운' - Hypebeast.KR",
-      "summary": "에나멜 광택과 시스루 패널로 완성된 나이키 에어맥스 90 '라이트 오어우드 브라운' Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Sun, 25 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQRVRoUy1nY1VWWFRPS2FmMWZoQzNnLXp3WTR3OUVxWjhtUUxIemkyMU93RXZUNHRZTlRidW9pWnpXV3lvcTZwYWJwMnRUOTFBQ0lOUzZONGdTUEVWUGMzWkhicm9xanJUdnVRakZCLU5tMHRUNF9kSUtILXV0WU9JSGY5Yk9kX0lwNFN4RndzOGc0QQ?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "올 11월 출시를 앞둔 스퀘어 토 나이키 에어 포스 1 로우 ‘트리플 블랙’ - Hypebeast.KR",
-      "summary": "올 11월 출시를 앞둔 스퀘어 토 나이키 에어 포스 1 로우 ‘트리플 블랙’ Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Sun, 25 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxQeU4xZlVldnIyWjkwZ1p1SDNBNjRuQ3pSMWRYajdtWGpQZ3RieTBZZm1qSnB0YlRWTmhxTlVzbDQzYU5yM3RFOVprOTNNRlgyN3RwbWd1Y2J3eEZPOGxVUExNZ1hNU1Vpb05abTl1S3MydXJBcXV5NXJpbTQ2YkVSQVBERGpvVzhUN1pVaXlLdw?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "나이키, 코비 덩크 로우 프로트로를 '맘바 에테르노' 컬렉션에 추가 - Hypebeast.KR",
-      "summary": "나이키, 코비 덩크 로우 프로트로를 '맘바 에테르노' 컬렉션에 추가 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxONWxjWWRwTFBKRm5uWWhlTDlDYkNtdks1RXlndjlOSWp0Y29sMG1ITUFpdTZRamNpakdPQkNrQXN1WDJPNDh3dG9FQTVKNmFMNXQ4ZW00aEVRb2plN2VQQnF2V2dwWks4ZTVoMGFOeHFDVElFQUEyb2dMZk5FWmJYOVh5WmRxVHA0eHQwMmlQQ1FjcFQ2dlE?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "세븐일레븐, 나이키 에어맥스 95 관련 상표권 소송 취하 - Hypebeast.KR",
-      "summary": "세븐일레븐, 나이키 에어맥스 95 관련 상표권 소송 취하 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPU0ZMVnFFMmVudWtac3BZVTZWUmRCUWh4dm5GNGZKOERnd1BGb3Z0a2VNdy02WkZRME5rNDB2OUtuQklMN05JRF9lSHc2dkpnUnZxY0NMTlhpdnNCXy1WYXZMbHA5WEFzdFh1ejZKd1N1cTdNQmtxeTl3RVlLYmFWS096UFkyVDJpMi03c0RNOWhiNlQ1?oc=5",
+      "title": "너무 이상해서 사라졌던 나이키 러닝화, 30년 만에 더 기괴하게 돌아왔다 - 지큐 코리아 (GQ Korea)",
+      "summary": "너무 이상해서 사라졌던 나이키 러닝화, 30년 만에 더 기괴하게 돌아왔다 지큐 코리아 (GQ Korea)",
+      "source": "지큐 코리아 (GQ Korea)",
+      "date": "Sun, 01 Nov 2026",
+      "url": "https://news.google.com/rss/articles/CBMi2AJBVV95cUxOMTl3MHZPNnFRenJRMzIzZlB5Q1o2V0FfRWt4SnFrOWhPN2hRWm4yckFfT3h2ZS16a1ExUWhYZDMxUGdhLXcxanNTVWszN3dpQWVWdGViUGZ3WExiSmpzeXZUS0k3UmU2UFY2U0N5REVoVktES0ZfOXQyZ0pDUGhrbkVDcFVrZndIRXl4RERzTHlwOWZUSktVTnZUdW4ySk9KNkc2T3ZSOUZueEROdG5IcXlGRUx3aEFnSmFCVEotTV9EUU9FTzFoTklpTWVXV1p6YVJ4RFZLZ0xOOGo3cUZEdEtlc3l0U0lSREttVnBkbFdGYzZ3UzZmNnpiWkwxa09WaUZfa0RmMVpBbXhOQzZiYzZmbmtNVjhLU0VCcGo4WXNFVEdDT3dBX2hTc1o1UVRtb0tEc01Ka1hOWTd1b3RRTlUxU0RENW45clJPWWtubGRrSDJKTVpjZA?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "필라델피아 76ers 컬러웨이의 모노크롬 나이키 르브론 24 공개 - Hypebeast.KR",
-      "summary": "필라델피아 76ers 컬러웨이의 모노크롬 나이키 르브론 24 공개 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Thu, 22 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNWExHUHFobDloZzU2SWJLWkN4UXpHOWNROWgxeVcyTmxJUVhKM3M2dzl0cG1KZEJ1Ump2akYtWDhlX09yUEdma2VJUGxHcG9iQ1dxdTlvcjd1VG9TTnI3cklQb3k1RlNuSmJXRlFCTXpzeWhReDNNZEd1UHlTOXNEOEx3Y0Y2Nkprd1hVbUc1MGl6UVF4MTFVZWxWMFlDdw?oc=5",
+      "title": "경복궁 인근 아웃도어 성지되나…나이키 ACG 북촌 진출 - 국제신문",
+      "summary": "경복궁 인근 아웃도어 성지되나…나이키 ACG 북촌 진출 국제신문",
+      "source": "국제신문",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPUlBYTU1LQXJzb0ZVNzNhVWc1U1FyR1VRWFNfcjlxQU96WFp2RnIxRVFrZ1BDOHVOZ1FqYTFzZ2hLM05XX0xzcWpaN2ZUck1DSDI5aVVxamNoRzFrMlRKTmlVa1gxdHppTm9mamNBbUs0c2pPdTlQWnR3YVZIQ2hpcXhtSWtyb0tkcmFwX3pVU0FxT1U?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "Supreme x Nike Air Force 1 Low \"Olive Camo\" 퍼스트 룩 - Hypebeast.KR",
-      "summary": "Supreme x Nike Air Force 1 Low \"Olive Camo\" 퍼스트 룩 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPV1dvV2pzVkw4dHFZcjBUOTBpMkZhamJ3c3lEei13eFVwNDhJX3RCbGpTMEhULWNLd3hPSGZuRFhib3Y0WUpRLWJaNGtkWmptY0dVbTJaX1ZRdnYzT2RyLUtsM2VXbUNvYTQ1YllvZW9QbGpfUUFjOWdESzNHZ2pjSks0bkhmMjZFaTlpNGxMTHJiM0VVNnl1cUV6UzlQS255RHJ4ZEF3?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "조던도 우즈도 소용없다…‘나이키의 굴욕’ 부른 中 애국소비 - 중앙일보",
-      "summary": "조던도 우즈도 소용없다…‘나이키의 굴욕’ 부른 中 애국소비 중앙일보",
-      "source": "중앙일보",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE1zN0E1cDAyb0hSdVlReHpFYTlERDhRZEFZTkR1U2VLMGVUVjh5WlBtSUY4R3JBaV9mUWlqRHVEenRsTTIyeVRfME16bFZnWlhmU3NpMXF3?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "제일런 브런슨, 닉스 우승 반지 수여식을 위한 올골드 나이키 코비 6 프로트로 착용 - 하입비스트",
-      "summary": "제일런 브런슨, 닉스 우승 반지 수여식을 위한 올골드 나이키 코비 6 프로트로 착용 하입비스트",
-      "source": "하입비스트",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOdU93cnBhVVBhTHRreTFhVDRpVi1vQzl5NGNJUExQdEVHZ2xMV3JBUWlQTE9fQU5pemc2aDRJNWtRR21CVjV6TEhkNDZ5V2RZbjQwYWpUMUtLWlpoM21Ya0VYT19MZkdpaDFDY0xIajc3SURjWW96dEdlZ2JmQ0tSbHVhMU9CT1gtcnlOdUJMX2tnb2t6b2duR2FLUHVtMmp4RGNrdUd0X3VfbkRBZ0VoWkhnYUs?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "SPORTS",
-      "title": "초록우산·나이키코리아, 초등 여학생 300명과 축구·농구 스포츠 축제 열어 - 더나은미래",
-      "summary": "초록우산·나이키코리아, 초등 여학생 300명과 축구·농구 스포츠 축제 열어 더나은미래",
-      "source": "더나은미래",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBTbkJ4bVJQS3lZXzVha3o4X3JhSHBYYzNOME5zbndmZ3ZsbmdMSVRVRVZVWnA0SGRrVHpwNlRCdnJXWEQxd2hVRnAzU3ZyMDBER1E?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "제논, 나이키 양산 검증 통과…AI 자동화 수주 확대 - 지디넷코리아",
-      "summary": "제논, 나이키 양산 검증 통과…AI 자동화 수주 확대 지디넷코리아",
-      "source": "지디넷코리아",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5YNkhFU3owTjhYdU5HUUtKSS1ORjFBTmJDVHlyWS1CVHREZHdvTVFRWTQzNGVxRVdvYXp3VmUtLXZNdFo3dVI4MVJ3TXcxWUt5aHRWLXFB?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "조던도 우즈도 소용없다…‘나이키의 굴욕’ 부른 中 애국소비 - 미주중앙일보",
-      "summary": "조던도 우즈도 소용없다…‘나이키의 굴욕’ 부른 中 애국소비 미주중앙일보",
-      "source": "미주중앙일보",
-      "date": "Sat, 24 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBKRWx6TlBiYy16YzZnMHczc1JWQ00wUXJUd3NOQ3VIYnp5UzVud1BwbFdHWVlDTmtlMlVVVnY3cVNnNWh6d0syQ2Vyb0hIN3BHZUFlemtYSVlYZE92VXJtYzBR?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "제논, 나이키 신발 AI 비전 검사 양산 검증 통과…불량 탐지율 99.7%·99.2% - 메트로신문",
-      "summary": "제논, 나이키 신발 AI 비전 검사 양산 검증 통과…불량 탐지율 99.7%·99.2% 메트로신문",
-      "source": "메트로신문",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBoVUVkWFFnbzFKNEVjWm1fWk9YYW9NVy0zaWRaME9QNTdsNlRkeGJIS3BrajdZRTV4eEduOWtuRTA4d1Njd3VvUG5CTTVna3l3aC01U3JGc3I3eVhaQnBDVg?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "제논, 인니 '나이키 신발' 품질검사 AI 양산 검증 통과 - 전자신문",
-      "summary": "제논, 인니 '나이키 신발' 품질검사 AI 양산 검증 통과 전자신문",
-      "source": "전자신문",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5xbTlqZjZXODRYV1N4ZmdNVGJBc0ZCdDVQektUeEtnNTBuaGM2Tk1Od2Zsb1VuVEd3b2dYenZMZzRlaWo1blZtc19nYk44Zw?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "“나이키만 신는 줄 알았는데”…러닝 초보도 홀딱 반한 이 운동화[희나애락] - 이데일리",
-      "summary": "“나이키만 신는 줄 알았는데”…러닝 초보도 홀딱 반한 이 운동화[희나애락] 이데일리",
-      "source": "이데일리",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOT1ZwNlItQl93Wk56c1BCTVpQY1NGWHhOTzBWREprUmR5eTN6Q01rMVl0QzFlY1FwM1FOYmp3elBHUVMxWEVEVXFoVzgzVGtLSk5FXzRJa3dUZW1MX1NteEc0MGhwM3k2QU45UXVTNFBRY05WLUJ4OWhmVnozLUtIbA?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "\"내 나라 물건만 산다, 정가 주고는 더더욱 못 사\" 중국인들 난리에…한물 간 나이키 - 아시아경제",
-      "summary": "\"내 나라 물건만 산다, 정가 주고는 더더욱 못 사\" 중국인들 난리에…한물 간 나이키 아시아경제",
-      "source": "아시아경제",
-      "date": "Sat, 24 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4wdXZOWnM0QWhydWJ0YThXazNrYjlTNWpuUnBiVExmeW9SZXBnX1NsOGR5TG1BRWJUQVJiU3cxWld4dE9OMnFmM1I1MkpISHF6azlLZ3V1eE5LdTIyN0tUZA?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "[단독]나이키도 인정한 '불량 잡는 AI'…제논 로봇 기술은? - 이데일리TV",
-      "summary": "[단독]나이키도 인정한 '불량 잡는 AI'…제논 로봇 기술은? 이데일리TV",
-      "source": "이데일리TV",
-      "date": "Mon, 19 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9vMlJ2UGdtNVk5UG13bUEwcHRWNmJOdzEycHVYZko2SGs1eVVidEFXQklqMzcyNTBURndxYjFYSk01VmJNNDBCMzdhSlBLUUpJMG9VQ1ZBOTRGODJ4NUFJX29RTmRKa1RVWkFJeVRmTFNpVWpEZUExSDA4cw?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "정대만의 ‘아식스’는 강백호의 ‘나이키’를 어떻게 추격했나 - 한겨레",
-      "summary": "정대만의 ‘아식스’는 강백호의 ‘나이키’를 어떻게 추격했나 한겨레",
-      "source": "한겨레",
-      "date": "Sat, 24 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNdFNXUlNMb2ptWU0yZ2xjSEt0ZU1WM2F4QXlJNHIwbkhsOGd2eXpDOWt2ZzB6cG5NT25rVDNzT2JveFVEWjc4R3FYNWpKdngxcVUtaUEydlNhc04yTExwcEIzY2FxUjd0YUhaZHNtdjJRVVJ6d0oyZ1BDQlBSekNuM1Zn?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "제논, 나이키 신발 불량 탐지율 99.7%…AI 제조 자동화 속도 - 매일일보",
-      "summary": "제논, 나이키 신발 불량 탐지율 99.7%…AI 제조 자동화 속도 매일일보",
-      "source": "매일일보",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE05YXgyZmFrQXJaMldlRWFFSHFCRC0yZ1JiWV9IY01nT1VIN0FlMmdCR2Q5Ri1aLWkxZmxCNEdrY0VqSGV2ZzRQUHVyTV9leTFjUjFpdzRiQVdsMHp1YVFCQURrVG4?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "제논, 나이키 신발 제조 AI 검사 양산 검증 통과…인도네시아 자동화 사업 확대 - 벤처스퀘어",
-      "summary": "제논, 나이키 신발 제조 AI 검사 양산 검증 통과…인도네시아 자동화 사업 확대 벤처스퀘어",
-      "source": "벤처스퀘어",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE8tWHdFX2gxOHhmRVJtR1ZYbTUySHF5cHg0amN5ZGg5OWNvaWcwOXZUT0x1WENrbGZPUVF6Ri14bkVrb2lPclhCRXVGNVVXbWM?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "[단독]나이키도 인정한 '불량 잡는 AI'…제논 로봇 기술은? - 이데일리",
-      "summary": "[단독]나이키도 인정한 '불량 잡는 AI'…제논 로봇 기술은? 이데일리",
-      "source": "이데일리",
-      "date": "Mon, 19 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQRDJGTHU1bGl1Z0Vpd1U5bnB0U3lKTTVyUmxzMUJsS1VqTVpfLTZKRmJJalZVWW9FV0U5WE1xUFNtR0NJTzV6YzVna2Q0NWU1a3pIMUdQVlZoMElWWFJvREZYNXFZMVZ0YmN5a1pwVTJSV05KNHk1czZHcVhSOEo2ZQ?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "제논, 나이키 AI 검사 양산 검증 통과...인도네시아서 후속 사업 수주 - 더에이아이",
-      "summary": "제논, 나이키 AI 검사 양산 검증 통과...인도네시아서 후속 사업 수주 더에이아이",
-      "source": "더에이아이",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE8yNHBPaHRGblBZQkNxR3VrQ3V4UVpVeElMbm9fNXc4TUdQc0hlYTZHY3g5OFduVWxqdU5Yc1BrcmdoNmVOcHlRUG1pbG5Tc0hMci1QaWI4cFNFY0VNQkNTcnRmNTFpZEE5N0E?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "SSG닷컴 23일까지 '브랜드 쇼케이스', 르샵·나이키·스케쳐스 할인 - 비즈니스포스트",
-      "summary": "SSG닷컴 23일까지 '브랜드 쇼케이스', 르샵·나이키·스케쳐스 할인 비즈니스포스트",
-      "source": "비즈니스포스트",
-      "date": "Mon, 19 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFAzSjh1OUwwaVNOUzlTZXNzT1ZjeTVVS0xKNnVhVW9xcW1YSHFyWEhEaG1VYnFVZ3V4eVNVbzNSQVRaRF9CdnVvbnFSV0lXS3B6SG5aczByUnNoZVYtMV82dmtKWU5QVXdhdkVqbE5ncGlFak0?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "\"코카콜라·나이키가 광고비 비중 높이는 사이 구글·메타는 줄였다\" - 브랜드브리프",
-      "summary": "\"코카콜라·나이키가 광고비 비중 높이는 사이 구글·메타는 줄였다\" 브랜드브리프",
-      "source": "브랜드브리프",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE5Gb1IzNUtjNExZOVVZXzA5bUN0WnJKVGdIdFZRM2U4QUktVExhbnl2LUwxNUVKZVl1S01oeXRVODdtb3pzdGhxQXNVell4UTRaRDhKd1hVeG9hYnhTWmo3bWVMNGZnVWdVYURLVGgwbnBXcjh5TXJkNWtIdTR4QQ?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "롯데온, 중국 패션 플랫폼 ‘포이즌’ 론칭…나이키·호카 국내 미출시 상품 선보여 - 나눔경제뉴스",
-      "summary": "롯데온, 중국 패션 플랫폼 ‘포이즌’ 론칭…나이키·호카 국내 미출시 상품 선보여 나눔경제뉴스",
-      "source": "나눔경제뉴스",
-      "date": "Sun, 18 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1EcktGdkQwTEZ1MDM2TEV4TnFaX0pTSWhGRmVoaXNCYWpTQ1VfS0o3NTVEYkxjN2NWeGFyMFVFYVB5Y25RM2lmLXlPb1c4NEpXelAyNGhJMWdqU2xlbVB3UnlSUzVMQ1dLdHp0bA?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "제논, 나이키 신발 AI 검사 양산 검증 통과…추가 과제 수주 - 비욘드포스트",
-      "summary": "제논, 나이키 신발 AI 검사 양산 검증 통과…추가 과제 수주 비욘드포스트",
-      "source": "비욘드포스트",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5SQXB6UTdCXzZSdkJlUlhLMGs2TnpCbHVrRlRFOGJldmswVDV1NExSRGNtRlNfYlBnMmlIV0dSNWZMZVpiWm1TN2xwc2lMc25tVHVFLXo4QUYxVlBLU20tSUtlR2t2ZnRBb05FWmdnN1hqT3M0RUxXOVM0LXI?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "Bronny James의 Nike LeBron Witness 10, 아이시 블루 컬러와 시스루 디테일로 출시 - Hypebeast.KR",
-      "summary": "Bronny James의 Nike LeBron Witness 10, 아이시 블루 컬러와 시스루 디테일로 출시 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQdTRlV0hacXN2blc4cUhpQTJZTnVsRmJnQm12TXltUG13Q1ZyRnBMaGhDVlFac2VwdWZHdlVLXzBmbmRYckU0cUx3VVFGOEVHMmJoNXR5V2tEc0J4UVdMNHVoLUQ1ZnhWcHBfUnpvZlhHMTlJOFdlMG1sYUFJZ0pBUTV6azNxM0tMM1ozMEhnc1FXT3dDakE?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "나이키 제이홉 니고 에어 포스 1 협업 스니커 10월 22일 출시, 호비코어 디테일 총정리 - PAP Magazine",
-      "summary": "나이키 제이홉 니고 에어 포스 1 협업 스니커 10월 22일 출시, 호비코어 디테일 총정리 PAP Magazine",
-      "source": "PAP Magazine",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQUnRqSDZyQW53cUp5WjdKM2Z4LWlTTGhPdGVRUHdCeXFMbjVzMWlRNS1vWVBPeUliVjJwc1pVbGxLNWJJNk1KT0tCVGRLcG9WM3FjVzZkWE00dWRaTFZsQVdGYWRwNVFoOGJKMkI0RDRCNDV2ZTNqZldKdlIydDZRSGxxLUF3b0VqTjNn?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "One Block Down x Nike Air Max 95 Lux, 2026년 홀리데이 시즌 출시 예정 - Hypebeast.KR",
-      "summary": "One Block Down x Nike Air Max 95 Lux, 2026년 홀리데이 시즌 출시 예정 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Thu, 22 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNejFtbDNwT2hmdjlkTnJHd1FudjFTSGhTckZEaG90YzA5VDZfeVJSQUZKbkR5aEJnVDA0TmsyVlZ4OHYxN3NYdTFkNE1fMHlWT2FoTFo1WjdJMW8wQWlBelNMVkxHMmJDRnpLdDFZdlhMU2JuMlRRVWZBZ0hESENEMmhiMTFtdkdnVExSSTl1RTh6M3dpeUVVbE5QNnhvaTNqSlloTXdkLThhTW5SOWU2WVowV25FQ0tNLWxvbzlpYXVQUmtfckFhUjFWdDhnVW9NQ3pqQkVB?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "제논, 인도네시아 AI 제조 자동화 확대…나이키 양산 검증 통과 - 테크월드",
-      "summary": "제논, 인도네시아 AI 제조 자동화 확대…나이키 양산 검증 통과 테크월드",
-      "source": "테크월드",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE94SXk5RFIxSmhsODNlNlJuZWdXS29hOHgwNWtvMEpqV1VNZHhTeDFGSjIxUXhyT0VUeHNfRFdqb1pMcWZ5UWo4TUNabnNTdmpqZGxjeFdTNXhSTE5IUXhTeUdjb2pmNVVs?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "나이키 신발 밑창 불량, AI 카메라가 가려낸다… 제논 인도네시아 양산 검증 통과 - 플래텀(Platum)",
-      "summary": "나이키 신발 밑창 불량, AI 카메라가 가려낸다… 제논 인도네시아 양산 검증 통과 플래텀(Platum)",
-      "source": "플래텀(Platum)",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiSEFVX3lxTE5IZlZCdHB5bHNsdlNlaTREZldTeTUwdEtvbWM2ZUlZZ3lWVEJJN1RQbDdzMk9nUF9tekxHVEp0dU1IOFVZa0FiWg?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "MARKET",
-      "title": "[영상] 중국인만 믿었는데 이럴 수가…“매출 26% 폭락” 잘 나가던 나이키에 무슨 일이 - 서울경제",
-      "summary": "[영상] 중국인만 믿었는데 이럴 수가…“매출 26% 폭락” 잘 나가던 나이키에 무슨 일이 서울경제",
+      "title": "“나이키는 안 팔리는데 아디다스는 불티”…중국서 무슨 일이 [김연하의 킬링이슈] - 서울경제",
+      "summary": "“나이키는 안 팔리는데 아디다스는 불티”…중국서 무슨 일이 [김연하의 킬링이슈] 서울경제",
       "source": "서울경제",
-      "date": "Sat, 24 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE1jMVdGaG9uM0lDaWFwMHRKbnNzVmNhWmZ4c3VLQ25CNnBJWk93VDBSbzNpekJ0RDFyR1RIY3I2cl8waS1hQXpCNWhxVDRkTWtpR3c?oc=5",
+      "date": "Sat, 31 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTE5nLWdjRW5NWUpyUWpaaW45blEzZWFTbEF1cHZPLWN1Y1IwaGk0OE1VSDBUbDlvZDRJb0FqSHpINjRLb25oTnNKZkJhTWVmWDJWUkHSAVNBVV95cUxPNGFjU1FWakhxd2JRQlNrQW9QVDUtLXc0aHJIZXVBSVk2NE9zOWZuby0wVzloMGpEYktPRjM2Vk96bzYzWWN6cENrQnVyLUZGRG5uUQ?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "토종에 밀리고 소비자도 떠나고…나이키, 중국에서 무슨 일이 - 아시아경제",
-      "summary": "토종에 밀리고 소비자도 떠나고…나이키, 중국에서 무슨 일이 아시아경제",
-      "source": "아시아경제",
-      "date": "Sat, 24 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxQUDZRVkE0ZGdKXzFXeGhWeUlNdlc0Ykw2VThjUWFUX1o3WmxtakQ3VUJzTUtiV2ZIXzhCRVVlYzhnZ0xBdGZRVWYxdElCZl9GUWI0S1lXWk9RclMzaG0yMDRUTlc4LWVsTktsX3l3UGt5VG1HZnZMaVI2OHR1UUt6bXhn?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "Nike First Sight Shadow “Cream II and Enigma Stone”, Y2K 감성의 코트 슬립온 - Hypebeast.KR",
-      "summary": "Nike First Sight Shadow “Cream II and Enigma Stone”, Y2K 감성의 코트 슬립온 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNdDdEZEF2QlRRZ3ZTMTJabzJrVkV0Vng4UnRIdUd0U3RSS2E1TFM1TC1BZldJaGNrdnR6dW9ZMnk2ckdfQkxwbTA4MG1QVHQzbU1vNEZva3JHWWtWNmsxeWZsTmh5elYtOVpVVWxsaFNLUXhTdlp3MjJfa3RsQ0FPb2oxRkdNclFHd3MyWkhKMnBkbTh1SE9MWlkyMW1qUHc?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "나이키·아디다스 신발이 5천 원부터…ABC마트, 이천서 '게라지 세일' - 뉴스탭",
-      "summary": "나이키·아디다스 신발이 5천 원부터…ABC마트, 이천서 '게라지 세일' 뉴스탭",
-      "source": "뉴스탭",
-      "date": "Sat, 24 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1NbFZvekhXUGg5YlI5OFV2LVlwTTMxOUxLMm94SjVMNVhMMVQ2c3lfQklpamhjSnhmUXBoLWl4ZndVUlJydURsYmFKaGtLVnJVc2pNRmhRSGtkWnZ6ZFNNN3dnWW55RXpTMzMxVw?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "MARKET",
-      "title": "나이키, 목요일 주가 2% 상승한 이유는? - Benzinga",
-      "summary": "나이키, 목요일 주가 2% 상승한 이유는? Benzinga",
-      "source": "Benzinga",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxPZUhGX29oMWFnWkJ4N0VJU3lBcHl3OTV6ZW1oR3VzajducDJ5ZWl5THlSN1lLQTBLLVl2Y3hXcHp3X0NoY09RT1l3RmFnS0NFOWh3NlZqX3VTX1FFRTZ6QlZwX1YwMXBBUTZfUHVWMXV1UWFGblVUcDlVay1QZGVrSXZmSEhyLUtpS3lvdWdRRVBpUlJRay1WclNrMG9hekRydmVCc0pGekZ4T05rRW9GVmV2d2ExYnNTbEEzTHRoR0E0ZFVCc09QV0oxNzN3OGdjQk1Fa2xBaG9IREJ3aFVvVmVEaC0tTDVXSU1telZxaE12aTFjSk9GaUs3N1h0dE5RdFlPdw?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "나이키스킴스, 첫 아우터웨어 및 강렬한 유니버시티 레드 컬러 웨이 출시 - Hypebeast.KR",
-      "summary": "나이키스킴스, 첫 아우터웨어 및 강렬한 유니버시티 레드 컬러 웨이 출시 Hypebeast.KR",
-      "source": "Hypebeast.KR",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxNdlQ3VDI5TWsta2p5SENkalBPN2VmcUhZNXY2aTJpQ0MtWm9yOURxZ0E3VkxWSWxGbHRwN0pDMzU5Q3lJdEpfUGVnWGE1SGNCTW9MNE04UXQ3V1Z6bXFYRU1oMko5NHJZVm9ZcDc5NXVKY2k1Vm9GQ2V1WHE5R0RoNm5GMUsyczZxRU53QWZxb1Jma0twWGhPMWt2YWVlNWU5LTE0S2FJdw?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "나이키·아식스·호카 등 카본 러닝화 7종 품질 비교 - 주간현대",
-      "summary": "나이키·아식스·호카 등 카본 러닝화 7종 품질 비교 주간현대",
-      "source": "주간현대",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTFBhdGJGUE1DV1dXRVRSRjdlWk5wc2I5TUkydEZCT1MxQjV4YlpwY1ZWOXAtTEx6aFRhX0tpaWc5R0xvanY5a3hmajZR?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "SPORTS",
-      "title": "나이키 중국 매출 26% 급감…한국 스포츠산업에도 파장 - 뉴스비전e",
-      "summary": "나이키 중국 매출 26% 급감…한국 스포츠산업에도 파장 뉴스비전e",
-      "source": "뉴스비전e",
-      "date": "Sun, 25 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE5lOGhqcUg5M1N6NTJocU11NEV1TWVKR2pSYWw4NEd0QXQtUmRSQVFGbG1oUUE3MldNMkU4SjFGREVlMWFjVk5sc3VZVTBxOUJpaFBxVF9CdmxlVEhkWkVhOExVN1U4UQ?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "제논 \"나이키 AI 품질검사 양산 검증 통과 - 디지털투데이",
-      "summary": "제논 \"나이키 AI 품질검사 양산 검증 통과 디지털투데이",
-      "source": "디지털투데이",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE9VQldkWHNLenF4dXJpUjBFdlp2Y1VpU1RBSWpyci1GVFlobEJ3YzdYX19jMHEtampqNWFzVlR4aS1ybzB5OW8wSU5BMWZkVzFMYU85QWY1N3ZjOUlvSXphOU56ME02VDZTNEZuUFFkam1DaXc?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "PRODUCT",
-      "title": "신발 공장 파고드는 AI 자동화… 제논, 나이키 풋웨어 검증 통과하고 인도네시아 수주 확대 - 에이빙",
-      "summary": "신발 공장 파고드는 AI 자동화… 제논, 나이키 풋웨어 검증 통과하고 인도네시아 수주 확대 에이빙",
-      "source": "에이빙",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5DTU1Mb0Q5ZjNrNjZvSHA2Qk9YaDJTUUdNaEs5ZW5scE1zVTd1Y3YtWmJLR01MaXRPbG8wZzVkMFJLSTNreWxQNFhnVlg2aENTUFZDVGx0N216UU5JSmUzSjdyb2Y2MEHSAWtBVV95cUxNT3BMcG83R1JUdVhsRkxPeWFZcnJkMkVnWWFGemFkVVd6WG8yT1NBS1RBLUhuYXBaaFh2Yl9LVURLQ2gxUkNONUVYY0lkeEh5elI5Q29qa2tRenNINFl4NnY5QkVPeHc0aFY1cw?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "SPORTS",
-      "title": "나이키, 스포츠 브랜드 관심도 1위 도약 - 한스경제",
-      "summary": "나이키, 스포츠 브랜드 관심도 1위 도약 한스경제",
-      "source": "한스경제",
-      "date": "Thu, 22 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1KeHV4M1dIYUs4ekVEQUZDSHZzWlVSdWRBclpqTzBGeEQzaGhzVmZjLW5yb0xmbkN0R0JKejlfaUdXMjZldFJOT2JRbXM3eEFwUlcxZWtrdmdfQ0RxRlFPZnU1djRuQzNEbWxF0gFvQVVfeXFMTkpiSW1ZNnNKT3F5Q0gwYXdRSFBYY1FLdHhjWjY1N3JhQ0ZmT0tLQ3ZsMHdiTjNVSktHQ3U4WWxwUW0xaDZzZkhkcnBYVWtoSFNfVVZ6Qzl1ZVB0Y2JWaW5wYXVjMnUwSGpWVUs5azQw?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "Nike gặp khó vì Converse - Vietnam.vn",
-      "summary": "Nike gặp khó vì Converse Vietnam.vn",
-      "source": "Vietnam.vn",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1nOHVSb1JpNmNkOUEzMkpzS3hCbklibjR4d19qWC0xQ2ZOd2FMTlVZTFN1MmlvMWFxbUdsOS1qWHZ2TTZZRE0zQjJSamFfUGxzWElpTW9nQTZEaWlJZlNR?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "ABC마트, 24~25일 '게라지 세일' 개최…나이키·아디다스 5000원부터 - 이투데이",
-      "summary": "ABC마트, 24~25일 '게라지 세일' 개최…나이키·아디다스 5000원부터 이투데이",
-      "source": "이투데이",
-      "date": "Thu, 22 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMidEFVX3lxTE5FNHF5ME0zWjc4ZkZsbXg4Y1NCd3EzV2tNMWU1YlRTZVhTTFM1VWNRMmc5VFV3UnI5Nk1QT3oxdmh1YnZFZndkWXhEQWx4M1N4dEQ4cTMyZnZnN1FyNHZaemJ6X3Z6YW55WjBOcXkxWWZaYUxZ?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "신세계사이먼, 아울렛 전점서 4일간 추가 할인···나이키 최대 30% - 스마트비즈",
-      "summary": "신세계사이먼, 아울렛 전점서 4일간 추가 할인···나이키 최대 30% 스마트비즈",
-      "source": "스마트비즈",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE9UV3B3WEZVUmZzbXBZcGFWLWwzSXN0RjFkZEctd3R6ay1rQ2RLOGRsTXc5R0JrazdISDNQZnQzWlJwU19rSVJXSm91eWxGUkRoUUlBM2NOZ2Z0Q1BLZUQ2Yy0zRk9ud0tLU2xLVw?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "게임 소개에 담긴 장르 표현을 풀어보는 나이키 토토 사이트 - Calgary Roughnecks",
-      "summary": "게임 소개에 담긴 장르 표현을 풀어보는 나이키 토토 사이트 Calgary Roughnecks",
-      "source": "Calgary Roughnecks",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPZHRLdU82NTNJX1JtWTBRWG9VTjFhaEJqT083UnBmR0MwekpzWDBVSFFXMzR5aDJGVU1BVTB3MTc2c1NmYUVidlBId0QyYnZFNjlNSm1TZ2FmM19RRGEwWTE4Y0tGd0tkaWRoMVZjRk83cVNDdDNZRnk5SVlsb1dNb3J3UWhBUWdxZTY3dkpsbk1RTml3SkpYS2dmSGFTSDFDMXc3X05vOA?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "나이키 창업자 필 나이트, 오리건대에 10억달러 ‘통 큰 기부’ > 시애틀 뉴스/핫이슈 - SeattleN",
-      "summary": "나이키 창업자 필 나이트, 오리건대에 10억달러 ‘통 큰 기부’ > 시애틀 뉴스/핫이슈 SeattleN",
-      "source": "SeattleN",
-      "date": "Sun, 18 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE5BMm96Q3hZdmRQZ3BLdGtJdTRONTMwQUhVXzcyb0wycks3MXNXdUd1MDE4ZW1Qa1V5NHlWY0lObGJfMjdxdThpdmpHdFJSb0hzLU90amxaX1FKT1ZRdFVQcC14TGVGN09XT3ZLemt5cnk?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "[나이키3on3] 김동우, 정진운 떴다! 나이키 부산결선 막올려 - 점프볼",
-      "summary": "[나이키3on3] 김동우, 정진운 떴다! 나이키 부산결선 막올려 점프볼",
-      "source": "점프볼",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5xUTNHd2JPTlV0RkMtWkVsVU9sVTNDTHE4aGhWTXgxUGhGUmkwR3hRNXNXM09yOVl3T3pLV3VLYzhRVlg1MDFhTlJvQ2xJODVuQ1Jsb2lhYVNwai1KR3JMQm5lX1Fta09LNFp2WC1MMjRjazZKaHc?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "제논, 인도네시아 AI 제조 자동화 사업 순항… 나이키 풋웨어 양산 검증 통과 이어 신규 수주 잇따라 - https://www.didimkorea.net/",
-      "summary": "제논, 인도네시아 AI 제조 자동화 사업 순항… 나이키 풋웨어 양산 검증 통과 이어 신규 수주 잇따라 https://www.didimkorea.net/",
-      "source": "https://www.didimkorea.net/",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE0xNWdqQ1NrV3h4UE5NdzZnYTVxc3NaTlFGbHRPWDZkTlNkaUFWMHZla0FUUjBhOVE2YWtJaGxtMEtoeTZDZV96Q1RieGprMEU?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "MARKET",
-      "title": "매출 재설정이 나이키(NKE) 주식에 대한 강세 전망을 바꾸게 될까? - Simply Wall Street",
-      "summary": "매출 재설정이 나이키(NKE) 주식에 대한 강세 전망을 바꾸게 될까? Simply Wall Street",
-      "source": "Simply Wall Street",
-      "date": "Sat, 24 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNcGllbkgxZXdTZ25IRkNPZ0JHX3BWdEFzVkZjbTN0MWZOOTlfdlp2Q2RkcGZ6X3NiMzlEdzctYTlCVVJ6RzA4dFliUUhLanZTMzVady11V1RZT2NDYkVCYjJ6OVRsWlNHdUdycEZsRmdncmZ2SkwtY3NTOUhRMUJhZzhTc0J1S0QzanhCbExfR2hkcU1SNmJN0gGXAUFVX3lxTE1waWVuSDFld1NnbkhGQ09nQkdfcFZ0QXNWRmNtM3QxZk45OV92WnZDZGRwZnpfc2IzOUR3Ny1hOUJVUnpHMDh0WWJRSEtqdlMzNVp3LXVXVFlPY0NiRUJiMno5VGxaU0d1R3JwRmxGZ2dyZnZKTC1jc1M5SFExQmFnOFNzQnVLRDNqeEJsTF9HaGRxTVI2Yk0?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "나이키 토토 : 전문가들의 조언 - Calgary Roughnecks",
-      "summary": "나이키 토토 : 전문가들의 조언 Calgary Roughnecks",
-      "source": "Calgary Roughnecks",
-      "date": "Mon, 19 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPN3ByWHdvQmZtOFM3RndxRUJySFAyd2lUSmp0VDNKZWlncmRIRmMtMzl5cVQ2dVlCSzRoMHN1N2hYazRjM0xZTFhmd09KZGtZY1Btaml3Y0pJODRxRkRBeFY0d01USXRBLVRnQ1duZXh2eWViZExPdXRYZ05iZUhmTXFJbk9QMm5VeEhiVXEySEoteUdiSFJpNHBfRHVrZURTWFM3aHFaQ0VOdzdEMk5tUlNnbUV0NUFpeW40WmVB?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "BRAND",
-      "title": "Xenon Passes Mass Production Verification for AI Inspection in Nike Shoe Manufacturing… Expands Automation Business in Indonesia - 벤처스퀘어",
-      "summary": "Xenon Passes Mass Production Verification for AI Inspection in Nike Shoe Manufacturing… Expands Automation Business in Indonesia 벤처스퀘어",
+      "title": "나이키 ACG, 북촌 한옥에 아웃도어 베이스캠프 열다…도심과 자연 잇는 ‘북촌 마루’ - 벤처스퀘어",
+      "summary": "나이키 ACG, 북촌 한옥에 아웃도어 베이스캠프 열다…도심과 자연 잇는 ‘북촌 마루’ 벤처스퀘어",
       "source": "벤처스퀘어",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5COXJ1bFpQYzlkTm9WSVdRRzg3R0xZbW9OZGViR1AzdV9sRWpoRDNpaWo5TmYwX0R6Wm9UYzRreEFTOFJQTXFXUnJzU3BmV05NSjRj?oc=5",
+      "date": "Wed, 28 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE54ZUtHNnBUYW9YM251bm1IMDctUG1TNGVVelZBU1ZSLWFvZnFFakZzb21CaU13bFpUSjZaN1MwSWJzYVQ5VS03bFd5c0REczg?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "Nike Slips as Greater China Falls 26% and Converse Drops 28% in Q1 - TIKR.com",
-      "summary": "Nike Slips as Greater China Falls 26% and Converse Drops 28% in Q1 TIKR.com",
-      "source": "TIKR.com",
-      "date": "Sun, 25 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxNRGtOVnNRaFdKUjd2dFY1dllZaXI2c1pZeUVEbzRkR19EODBMNGlyMWVRaFAyM1dsWW9SUE1VUEU1RENHanBUSGp2NjhXdU8yeEwtd09OMEh1SDB2WXNDa3pkN2lXVVBNZWpPU2xET2g1OE0yNy04ZkZueEtRdG9HYkdrV1lHNFlGRzVhQmF1emR6SkhnMFpsXw?oc=5",
+      "title": "[지평선] 프랑스 시위와 나이키 - 한국일보",
+      "summary": "[지평선] 프랑스 시위와 나이키 한국일보",
+      "source": "한국일보",
+      "date": "Sun, 01 Nov 2026",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5rREowS1NWN01HVTdwMmZJVDAwUFFNeHVDQ2RYbEN1ZGYyTWQ5Qlhlb2hLYi1RT1N3UjZpV2NfWTJjRXJFNndnbVFBREFEY21GNHhCWU1kSEdrbDdFNDJGcWt0Z01sWGVybmFpMHMzMjZmdlHSAXNBVV95cUxOa0RKMEtTVjdNR1U3cDJmSVQwMFBRTXh1Q0NkWGxDdWRmMk1kOUJYZW9oS2ItUU9Td1I2aVdjX1kyY0VyRTZ3Z21RQURBRGNtRjR4QllNZEhHa2w3RTQyRnFrdGdNbFhlcm5haTBzMzI2ZnZR?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "Barclays Sees $45 and Wolfe Sees $28 for Nike Stock. Here’s Where the Stock Could Go - TIKR.com",
-      "summary": "Barclays Sees $45 and Wolfe Sees $28 for Nike Stock. Here’s Where the Stock Could Go TIKR.com",
-      "source": "TIKR.com",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOREJnck1nWGx4bHFkX1RQdE1rYzY2MUEyMGZ0aU03ZGFBMzVrdkMyMmYzNmhzVmhJa3FEQTVPWWZtQ2F0bUY2SHlUU18xLVJQc3VQWmVRelFlQ3V6Sm9mcVFJTjhzdnJCcjdteVNVbGhSbG5vSU5aOTFKNHNmLXU1S3gtcVZ3ekxKT3liTHctYk1YS24yeEptUUNFbjJ4VDVIQlZLdU16VjhaZ1gyVEE?oc=5",
+      "title": "“북악산 길목, 자연과 탐험 잇는다”…나이키, ‘ACG 북촌 마루’ 오픈 - 서울경제TV",
+      "summary": "“북악산 길목, 자연과 탐험 잇는다”…나이키, ‘ACG 북촌 마루’ 오픈 서울경제TV",
+      "source": "서울경제TV",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTFAxaVBqTjU2V0hpSmdQNVdVcDBLcGZPSUZFSzd1YWI3V0xlWTBaclVtTmNjQ2RqRWkwU0hJelhQNUtaclVqMDRzdnVPaVNtSEU2UGdEWGJmbm1RYkYwRHFLeXpheUo?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 런던의 애프터 다크 투어를 이끄는 여성들을 조명하다 - Hypebae",
+      "summary": "나이키, 런던의 애프터 다크 투어를 이끄는 여성들을 조명하다 Hypebae",
+      "source": "Hypebae",
+      "date": "Mon, 26 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxPR3FVcVZ1UzBvUjNtWVkwaVNadDYwSWVSUGQ5RDFfVkxaVXRuaDdrWHR2XzJubFBhY01fVE9ndW5GdE9UdjZ5T2JXdkplV3ZieDhyS1N6N280a25QVmdLYXRFaUFPam1PeVQ0enpIV0c2dXFWakRNdGVOdktkZlJiR3ZqWlE2SUx4REVEYjZ5cldOUlNYM05QYkFXYnZSZFhyT1RyZm9sNXlUX2hhZzluc3FDSHJsZXc?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키 ACG, 북촌에 깃발…아웃도어 탐험 거점 '북촌마루' 오픈 - 뉴시스",
+      "summary": "나이키 ACG, 북촌에 깃발…아웃도어 탐험 거점 '북촌마루' 오픈 뉴시스",
+      "source": "뉴시스",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFBkblhBYzBZdXNyTVUwZmtzZWlma2QtLVp2bExZM3g0cUxxNTFtY0NYTFRLM1BzMzhyQzlCZEg3ZlhlS3hvZ0NUNWs1LWg0TDN3VzNRVkZQakRkRm9wVFpRNtIBeEFVX3lxTFBfTWRTMUhNZktDeXdxWTdvZkRId2dkWmZlZ04wVi0zaWZQTjdnWGNqZ1o1Zm4wRFA3c0ljdVk0MXIyVWhvQWNoZENTUXk3Rl9JQkNaVmJndDlDdEhGX0JPR19GRFFrb2RNSklTc1IxUVBNcC1vTi1JeA?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키 ACG, 서울 북촌에 아웃도어 체험 공간 개장 - 뉴스핌",
+      "summary": "나이키 ACG, 서울 북촌에 아웃도어 체험 공간 개장 뉴스핌",
+      "source": "뉴스핌",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5YQ1psWHd3VW95eDlsOWN2QTlhZXc2RTYxbXRrMWZ5YWhwTVZqWnFnZEVlbGpnS2N4NEE1d3VpbHdtcFBxNWxnZEEyOTJmT3RtREROYVRzajdqb1NW?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "Corteiz x Nike Shox R419 \"Game Royal\" 오피셜 룩 공개 - Hypebeast.KR",
+      "summary": "Corteiz x Nike Shox R419 \"Game Royal\" 오피셜 룩 공개 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Wed, 28 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQSERPU25PT2Izc08xYUc3QWJFU3NpNloyY0NPODRac0JQNHNPdmpmQUNQNU9oU2tTUzdyZDRTb0VaWHdwWXhhVTM1cVRUM0pUVXl2V1l2RHJjejJjLVFmMjFhcEI1Tkd3cGpRN21kbjNVWnNKTXFaR19KREgxeElUUWdEOVRsT29pQ1V1dHdURmhGU1BRSGhzRWs0WW1KSEtya2c?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "79% 폭락한 나이키, 지금 사야할까? - 네이버 프리미엄콘텐츠",
+      "summary": "79% 폭락한 나이키, 지금 사야할까? 네이버 프리미엄콘텐츠",
+      "source": "네이버 프리미엄콘텐츠",
+      "date": "Sat, 31 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOUDQyajZvcHlLZW1vd01hOTNoRVlpVmtyR043LXU2VEtFdGJDcHgwN1FIdHJBSzNDYWFBdmtKdDZLWjZ3SktlY0JTU0ZEbmZxM2VxaXE3anEzV2hXZmtkLXNLdmsxcEVBWVZVQmZNNTU4YWhlNGc2aS1BNzVCZXVMNzRfclRJbVpSWDB3?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 서울 북촌에 아웃도어 거점 'ACG 북촌 마루' 개장 - 아시아경제",
+      "summary": "나이키, 서울 북촌에 아웃도어 거점 'ACG 북촌 마루' 개장 아시아경제",
+      "source": "아시아경제",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE5wNjF5NDU3S1JZTHJmV0hKSHRxeTJnMzQxWnRRVTFTWUhqOTVINWhyVWpNNW9GeXFnVVNmZzRRcjFPSkNOaXdfUFlVSUx3aGJ3TkFsb2lfTzhwRGEtN1lKYQ?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "[현장] 나이키 ACG, 북촌 베이스캠프 구축…아웃도어 판 키운다 - 한국아이닷컴",
+      "summary": "[현장] 나이키 ACG, 북촌 베이스캠프 구축…아웃도어 판 키운다 한국아이닷컴",
+      "source": "한국아이닷컴",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE8zbkZZcXRlbGJjUzNTUG1uekRBY25QUG9mOUJGVTRESi00ckdiYUtNZ0JjcUdtdGF2OUlJRWhRcDhCS3RsSmE4ZlBPbXFFR2lEQ1JJZUd4WHBHMGhGWnpRUHNwR003X2RrR19Z0gFvQVVfeXFMUEMwZlEzQ3V6V01VT0d6b3doZE0weVU2MlBPRmctTWtGYjV1ZGtDSm44RnVmYmFlR1pKSENPZWdHZ09OWUtnaUowenJOb1B6bEM0bDFHbzhfM1VtUGdkb3VKaUZaQm9BZTdIU0lON3ln?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키 북촌에 아웃도어 체험공간 'ACG 북촌 마루' 공개 - 공감신문",
+      "summary": "나이키 북촌에 아웃도어 체험공간 'ACG 북촌 마루' 공개 공감신문",
+      "source": "공감신문",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBGcFhRcmp4b3IwVi13NnBwS2dJVVpvcS1BdU9CZVJsMHd0dkFNTmhOV3ZNOFY3UUJUWlBXbkNfMXdrdXBXdDJtTHY3eTdrNWN3UlZfdmFSU3Uya2RoVERmVlAwY0N2NVlM?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키 ACG, 북촌 한옥에 아웃도어 베이스캠프 연다 - 한국섬유신문",
+      "summary": "나이키 ACG, 북촌 한옥에 아웃도어 베이스캠프 연다 한국섬유신문",
+      "source": "한국섬유신문",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE1QVU4zNnVvbzFqbVFER213NWF1am1BZUtlVkJraVpSSEF2WWg0LVJlY0dsbGJSUlhWeWRjZ1dkVGYySVpmOGhiSTFZVHdzYWMtT3JrRFhTeGtNVEVQNW1UU1MyMjQ3TEdN?oc=5",
       "image": ""
     },
     {
       "cat": "PRODUCT",
-      "title": "나이키 P6000 발편한 운동화 러닝화 여성 키높이 P-6000 메탈릭 실버 화이트 - 판다랭크",
-      "summary": "나이키 P6000 발편한 운동화 러닝화 여성 키높이 P-6000 메탈릭 실버 화이트 판다랭크",
-      "source": "판다랭크",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1aOWZyd2h3LW42TE9qR2hfMTVVVlpkZDdVTHFFVW13Y2lKckFKeW9JazdJNHpwRWktLVdsWmpEc3FYc2E4Z3Q4?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "SPORTS",
-      "title": "(국내매장판)나이키 패딩 써마핏 다운 스포츠웨어 클럽 푸퍼 파카 IB2976 - 판다랭크",
-      "summary": "(국내매장판)나이키 패딩 써마핏 다운 스포츠웨어 클럽 푸퍼 파카 IB2976 판다랭크",
-      "source": "판다랭크",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE9Ebl8zLWZXaGZRXzY3MVBqOThzNVlNRWU1RUNFbDRlcXpSZEs2SnVFZFNnS1VwUjR1RTBoWjdEdFg0M1BnTDJn?oc=5",
+      "title": "나이키·라코스테도 다시 달았다···“운동화 신어도 키손실 없다”는 올겨울 잇템 - 경향신문",
+      "summary": "나이키·라코스테도 다시 달았다···“운동화 신어도 키손실 없다”는 올겨울 잇템 경향신문",
+      "source": "경향신문",
+      "date": "Sat, 31 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE1xaU1jay1GRFRzQXc0RDdCRUVadURsU1c1QjhJVjBjb1ljbDZHQlk2ak9pSUNNRFhvNW1hWHhDSjQyeG51ekNyODJ2REVWazItNnVvTHJXclI0UdIBX0FVX3lxTE1JYkVndkNwazRjM2VOdWR5R3dhMk9fTE5BV2FzZldBaVN4Vmd5ZHpQSnYtZHdBYjQxRDhVdkc1ZDAyZGRqTTFLOWZYaEM4VEhIeGdSS1gyX0o2aTRvMlpF?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "나이키 바람막이 윈드러너 러닝 우븐 스우시 경량 후드 자켓 HJ2013-010 025 - 판다랭크",
-      "summary": "나이키 바람막이 윈드러너 러닝 우븐 스우시 경량 후드 자켓 HJ2013-010 025 판다랭크",
-      "source": "판다랭크",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1LcXJZQlUtSjlKdUdISm5QZDY2bHplcFd2RkREYXJKN0k1OUtESEtNN1o2T1ZwMHZtWVlXZmdlZ2wwTWZhZUs0?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "SPORTS",
-      "title": "나이키 팬텀6 로우 엘리트 FG 선수용 축구화 천연 잔디용 크롬 블랙 - 판다랭크",
-      "summary": "나이키 팬텀6 로우 엘리트 FG 선수용 축구화 천연 잔디용 크롬 블랙 판다랭크",
-      "source": "판다랭크",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1wSVQ4em5NcTRXYzhpbDY4Mnc4Xy1JUVRKZjBzUTRVbzktRVRoWHJ6TlpneHh2NDFUSG5UN3E0SFpyZE5Oajgw?oc=5",
+      "title": "[현장] 장독대 옆 등산화, 대청마루엔 나이키 ACG…북촌 한옥의 변신 - www.ebn.co.kr",
+      "summary": "[현장] 장독대 옆 등산화, 대청마루엔 나이키 ACG…북촌 한옥의 변신 www.ebn.co.kr",
+      "source": "www.ebn.co.kr",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBsb1NLNWo4dkJERjBkQ0djamk5QlNBRjQtN1dQa1k3Q2RMSUJPVWhqS0dDTkdGb1FERERXM2hwelo1WnR6OUt1RmpwWE1PM3RpUEFKSzBUYmZ5eW9SZ1NUbkxWTHBBSmZ3?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "나이키 머큐리얼 베이퍼 17 프로 TF 인조잔디 풋살화 터프화 IU2727-900 - 판다랭크",
-      "summary": "나이키 머큐리얼 베이퍼 17 프로 TF 인조잔디 풋살화 터프화 IU2727-900 판다랭크",
-      "source": "판다랭크",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE1KZ01yZ0FodldIVUVvX0RrVzMwc2g4X3N0U0UzMldoeG1vRHVRRU9VR1RoWmJYc1htUkZ6NXYwazZUeXl0T0FN?oc=5",
+      "title": "아웃도어 집결한 나이키, 서울 북촌에 ACG 커뮤니티 연다 - 뉴스1",
+      "summary": "아웃도어 집결한 나이키, 서울 북촌에 ACG 커뮤니티 연다 뉴스1",
+      "source": "뉴스1",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE80eDJhYUs5dE9PejJPMU0wRUViajdrbFZUekk2aUZIemlfSC1vejZqRGZGSElwQ1FMWG1ZdUZ3NlE0R2Yzczk5UE4tVXpZZ3FWTmlqV1RsU2Y?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "올리세 7년 만에 나이키 택한 이유 - 판다랭크",
-      "summary": "올리세 7년 만에 나이키 택한 이유 판다랭크",
-      "source": "판다랭크",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTFA4WmgwclpuZUtESDg0RmgxMGdKUHNKVFhMUkNldGhQRlRSQkQtWjB4Y2xMdng5MEJLVTlCRzFHRWx5VjJNMUpJ?oc=5",
-      "image": ""
-    },
-    {
-      "cat": "SPORTS",
-      "title": "나이키, 음바페 떠나자 올리세 영입! 7년간 축구화 계약 거절한 이유는? - 판다랭크",
-      "summary": "나이키, 음바페 떠나자 올리세 영입! 7년간 축구화 계약 거절한 이유는? 판다랭크",
-      "source": "판다랭크",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiR0FVX3lxTE81XzNNV0FVc0hxU1l0ZWZieExlTnNNTGEyT0ZCSTQzY0lPMTF6YVhocEVpVDF1SW9wMzNCbWVRWEFPNURKNnZv?oc=5",
+      "title": "등산화 끈, 한옥에서 맨다... 나이키 ACG ‘북촌 마루’ 문 연다 - STN SPORTS",
+      "summary": "등산화 끈, 한옥에서 맨다... 나이키 ACG ‘북촌 마루’ 문 연다 STN SPORTS",
+      "source": "STN SPORTS",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5oWEE3bmFiNWlkcXNKT2ZMOXJ6Ym1nMmdQeW9VeloyQjhkcU9ZcGlpN1NCUGhCRm4wZU8wUG00NGpibUxpSTU0bEV5N1lfUU9xbHN4cjVDZk5uM3lTamlCOWxwZXJuR2dISkpEbEtQOA?oc=5",
       "image": ""
     },
     {
       "cat": "BRAND",
-      "title": "나이키는 컨버스 때문에 어려움을 겪고 있다. - Vietnam.vn",
-      "summary": "나이키는 컨버스 때문에 어려움을 겪고 있다. Vietnam.vn",
+      "title": "나이키 ACG, 서울 북촌에 특별한 베이스캠프 열었다…6개월간 운영 - 뉴스탭",
+      "summary": "나이키 ACG, 서울 북촌에 특별한 베이스캠프 열었다…6개월간 운영 뉴스탭",
+      "source": "뉴스탭",
+      "date": "Sat, 31 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFAyU0d0VzllV3d1OHJDdWtMVUlXRjM1MDRXMnJ1OE9RWkExWUFUcXFEMXEtTGlFWGR0TW9Ka3FwNG1UQVlQUkRiUGhzN0NPeWphYWwzdGltbTJQTzdheHM3RHdNOVVHY1RYY0dKZw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 아웃도어 베이스캠프 ‘ACG 북촌 마루’ 오픈 - 싱글리스트",
+      "summary": "나이키, 아웃도어 베이스캠프 ‘ACG 북촌 마루’ 오픈 싱글리스트",
+      "source": "싱글리스트",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE8wdDBnRzU1RWhEY29iaUNWTW40bXBVazhIYThVQ1VEekE5dkVyeVJJRkFUZ3E5UnMyZGxsOVRnS2x4amNaS0dwVWZKQXNRR0k3bVFmZGFBd3RQSl95VEgtWDU0cWJQUQ?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "장독대에 ACG 로고가… 나이키가 북촌에 차린 '베이스캠프' - 패션비즈",
+      "summary": "장독대에 ACG 로고가… 나이키가 북촌에 차린 '베이스캠프' 패션비즈",
+      "source": "패션비즈",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTE5qMkdEcVVPZDYtaENkSTBXVW9oT3JJZUV1R0czdEIwQ2x4VGpvVUloeXphc1NWdVRqc1lWUVNUWVZoV3Y2TzQ1NDdDWFl5M1kz?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키 ACG 북촌 마루 오픈 일정, 위치, 프로그램 총정리 - PAP Magazine",
+      "summary": "나이키 ACG 북촌 마루 오픈 일정, 위치, 프로그램 총정리 PAP Magazine",
+      "source": "PAP Magazine",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPQ05lUmhsYmFMREZrRExROGtLYVZmVlBPV09mLW14ak13TWUyazhmcXNKMzNZajgySjhZWjBvdm1Rd2hTbmlQanhmRV9qTHBKYXJKeUZ4NG92Q0dGU3lrZzlSQVA4MXJRTk1UcXZQN3RSM01GdEFjZUFRcHpGQmdXXw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 북촌에 아웃도어 커뮤니티 공간 ‘ACG 북촌 마루’ 선보여 - 스페셜타임스",
+      "summary": "나이키, 북촌에 아웃도어 커뮤니티 공간 ‘ACG 북촌 마루’ 선보여 스페셜타임스",
+      "source": "스페셜타임스",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE1fVVdDTkc1SVpDVG9ldWFqOGdtd1FhUjcwZmE5S3R3N0RJWVdnX3F1SVJkc0lsajdnalpQd2R1TDJESlZCOFVJRTREREE5bnVfbUJwS3dLZ09jb1VhTDY4R194M3BsMndYVU5wRHhKMjFyb0U?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "MARKET",
+      "title": "“나이키·아디다스 대신”…오니츠카타이거, 뜨자마자 8조 터졌다…얇고 날렵한 복고풍 신발 인기…매출 60% 증가… - 재경일보",
+      "summary": "“나이키·아디다스 대신”…오니츠카타이거, 뜨자마자 8조 터졌다…얇고 날렵한 복고풍 신발 인기…매출 60% 증가… 재경일보",
+      "source": "재경일보",
+      "date": "Fri, 30 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBUVTM1X1lmMDhndFhkZXBVVnpUd1JyQ2tsZlVXUS1XNW9SZ1dEdF9rd0tuYWFiTTdaanZuQW45azU2WTZIa2locjFwSQ?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "Kids of Immigrants, Nike Tiempo Maestro Elite FG SE에 \"Sundial\" 입히다 - Hypebeast.KR",
+      "summary": "Kids of Immigrants, Nike Tiempo Maestro Elite FG SE에 \"Sundial\" 입히다 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Sun, 01 Nov 2026",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxQSW1WdlJ0cURpZlVaX1FTMnRrM0RxTVJUUkoxcl9JT2RQdVFOQ0NaVzNDSU9YRF9Hci1TUlhnUmpSdjZfTWZ0Y2EtaWNhcmszcnJfWmc0SVRtbnVYc0xtOWkyMFNlbHhsTkRUOXBZWm5Kb0dhZTdxQmhfMVB6QWlGVDhjcVM2SmI2V2N2bTNvck5Pa0VwbGo2ZzllRERLdVRHXzZz?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 아웃도어 커뮤니티 ACG 북촌 마루 오픈 - 한스경제",
+      "summary": "나이키, 아웃도어 커뮤니티 ACG 북촌 마루 오픈 한스경제",
+      "source": "한스경제",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1QOHRRLVRNVHRlWUNxQmZFRkpFOGdvWnpoTkdaUjVMR0paVXA0cDd0b1FFdVowSjBOOG9XTkg1QVMtQkYtWE1za29GSHdEWm5oejRRR3JlTEZxbkRzbXhUQTdCakEtRzRGUXk0?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "[르포] 달라진 러닝 판도에 ‘전문성’ 정조준···나이키, ‘ACG 카드’ 꺼냈다 - 이뉴스투데이",
+      "summary": "[르포] 달라진 러닝 판도에 ‘전문성’ 정조준···나이키, ‘ACG 카드’ 꺼냈다 이뉴스투데이",
+      "source": "이뉴스투데이",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBZcjVjVmFoTTByNXRGZGNzY1lJSWE2cEhXTFRiZVlLc1U1MVk1Um9FZzJrR0xvcEZMbjBrNFhfM3JaRG12bVpScFpLNG5hNEJ2WDVCWkhLZGl4RW9VWHZWYUxSbFd3OHhuZVowUzVqY2PSAXRBVV95cUxPc2J6Q2FDYWxrT1dxTm9jMjk1UFZOSF8zVmVnb2lsajJ0bFVjbEJTVFlTVnpfQmtHaXYwUXlSRUNQRklZV3RDbERVRlA5cTNYVVM1RDZUYnRTLWVaZ0lqaGRmdDRvVDZaOUFBa1E4ZHEtcWxQZw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "한옥에서 트레일 탐험 준비…나이키 ACG 북촌 마루 문 연다 - 위키트리",
+      "summary": "한옥에서 트레일 탐험 준비…나이키 ACG 북촌 마루 문 연다 위키트리",
+      "source": "위키트리",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5aVC1BaHFZSHoyaUJscGRpdmZTQUhmOHVXemxUMjB5WUR3QnpiLXluNHhPeUFTdmphaGZwTUFQLXNOaVl1T3BfZm1JbUQ2SUk0a2Y1LXFn?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "PRODUCT",
+      "title": "CMA CGM, 나이키, 그리고 게마뎁트가 무공해 전기 바지선을 출시했습니다. - Vietnam.vn",
+      "summary": "CMA CGM, 나이키, 그리고 게마뎁트가 무공해 전기 바지선을 출시했습니다. Vietnam.vn",
       "source": "Vietnam.vn",
-      "date": "Fri, 23 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE1nOHVSb1JpNmNkOUEzMkpzS3hCbklibjR4d19qWC0xQ2ZOd2FMTlVZTFN1MmlvMWFxbUdsOS1qWHZ2TTZZRE0zQjJSamFfUGxzWElpTW9nQTZEaWlJZlNR?oc=5",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNYUZvc1dZNEpSQnpTN3BfRUM5b2w3d3NYWkt3ODZLRVpBczlVQXV2MUQtaF9IU21jcUFwYmVQT2xwWW5hdVhlY0J4dEw5TGhCZ3FLa09YSzVNYThxVlE2UDZqelBNTnVFVFRNaEpmQ0kwbG9JVzJvemFac0JwbldIckRQVk9xSElHWVhRTVR5M0tVX1NBNHNteWdPMA?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키 ACG, 서울 북촌에 아웃도어 체험 공간 개장 - 헤럴드경제",
+      "summary": "나이키 ACG, 서울 북촌에 아웃도어 체험 공간 개장 헤럴드경제",
+      "source": "헤럴드경제",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9NTWFQaC0wUlJhY05qcklkMWpvTWlveTFHWkhkcHB0MThnWXE0OWlYUlNRckpaTk9sSjRiVjNRZi1ZWVo5ejhKemNUa3Q1U1hGVkhqMHF3?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 아웃도어 베이스캠프 조성… “트레일러너·하이커의 탐험 거점” - 헤럴드경제",
+      "summary": "나이키, 아웃도어 베이스캠프 조성… “트레일러너·하이커의 탐험 거점” 헤럴드경제",
+      "source": "헤럴드경제",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5mVTVPSTFCX0Z2ZDN5R2tINDBUTElvTUxlTzdId2dEMVJQR0s5bVNNRHRzclV1Q1VqbXpVZ2hEa3BTVWN2YWE3c3otZzNEVWhRSUYyYkln?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "[현장] 나이키 ACG, 서울 북촌에 산을 들인 이유는? - 뉴스인사이드",
+      "summary": "[현장] 나이키 ACG, 서울 북촌에 산을 들인 이유는? 뉴스인사이드",
+      "source": "뉴스인사이드",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE1wSUZ2b0h3a1NWZ1ZmSGxVQWNuajZGelVaUkg5ckxIRmdRUVVsaWFiVmZPc2FqTi1GZXpnSzBBdzVMUTg5U0J6VFZ2VFVINWlCaXRlaHZsM1pQeVhBNi1id3Vpb25CVWxGZkhjUjh3?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "MARKET",
+      "title": "나이키(NKE) 주가, 경영진 교체와 실적 반등에 힘입어 적정 수준에 도달했을 가능성 - Simply Wall St",
+      "summary": "나이키(NKE) 주가, 경영진 교체와 실적 반등에 힘입어 적정 수준에 도달했을 가능성 Simply Wall St",
+      "source": "Simply Wall St",
+      "date": "Tue, 27 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQMjZzZ0lGcXNlekZFSWRKVGRrZlFoeks2dDZMTFFaT0U5NU9WdHJ1cnBtMk53VlhsZ1JDY054SG1ZM3lzbXlZaGdUazlpbW5IQnpzZ2ktdlRDdHl1S2Y2cjNFRDFjUzhCcU9QVmUzaEZwd0RDVjQ1YjFUVFV5RTJRby10empvT2V4M1Q1REFKTFpNd9IBlwFBVV95cUxQN1BVbjZvLU9reFdvRzZQTzJKTVEwSldwRzhpRHNGc29jQVF2RXhnZm1ONnBrM1RtOThUVEw0SEZ6SVFHRVExckxRWXk5NkN6Wmw0ZEg5VWdoZUVVQ3Nxclp6LWY2QVlVWEhBX016dUxGbGYtWUt6WmJZdE02M2Jwdml1RkNGXzZIRTI3bElNbGtlS0NNWV93?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "MARKET",
+      "title": "나이키(NKE)의 인도 러닝화 출시가 투자 전망을 어떻게 바꿨는가 - Simply Wall St",
+      "summary": "나이키(NKE)의 인도 러닝화 출시가 투자 전망을 어떻게 바꿨는가 Simply Wall St",
+      "source": "Simply Wall St",
+      "date": "Sat, 31 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNMWYzZWNERFlwWnRzRVlNS0xqVHItbS1XbGN0aWc0X2FUUFlKXzZBM3ltc3RMZ3JyWElmSmlLaWtqME1DYkl1MU14alhpUXVCODlHWTZEMHZsM2dWblV2T0I5XzQ2MzBySXphU29sY3J6UWdfWVBVMHpEakxjRVJFaFFrUXVmSlVnNmh6WmdzMGNaWk1YN0V30gGXAUFVX3lxTE0xZjNlY0REWXBadHNFWU1LTGpUci1tLVdsY3RpZzRfYVRQWUpfNkEzeW1zdExncnJYSWZKaUtpa2owTUNiSXUxTXhqWGlRdUI4OUdZNkQwdmwzZ1ZuVXZPQjlfNDYzMHJJemFTb2xjcnpRZ19ZUFUwekRqTGNFUkVoUWtRdWZKVWc2aHpaZ3MwY1paTVg3RXc?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키, 한국의 자연과 ACG 정신 잇다! 북촌에 아웃도어 베이스캠프 ‘ACG 북촌 마루’ 오픈 - 패션엔",
+      "summary": "나이키, 한국의 자연과 ACG 정신 잇다! 북촌에 아웃도어 베이스캠프 ‘ACG 북촌 마루’ 오픈 패션엔",
+      "source": "패션엔",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE41c1R4UW80cUQ3Mk1qelFidTZ2NzZ5S0VEMDRRMzdxeFFxZ1oyWUZ5OEUwUUFSbEtQWGhKa1dzRDc5a0dsVjZQeG5JQ2dFQkhmTUlvYUY5U00wdVNXdHl2Z3RyeXVzVGlYUjhVbldXZHIzaDY4V3Fr?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "MARKET",
+      "title": "나이키, 코스트코 등 50개 기업, OKXICE 주식 토큰화 반대 움직임 동참 - 민심뉴스",
+      "summary": "나이키, 코스트코 등 50개 기업, OKXICE 주식 토큰화 반대 움직임 동참 민심뉴스",
+      "source": "민심뉴스",
+      "date": "Sun, 01 Nov 2026",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5BcmxLSE9odmdFNGNybU5faGVCRWJLN3M0OVE4dEdYUWNZT1hXcEp4dnhId2JndWJoM1pSaTJBcUw5LWdZb3VNYndyc0pVTTViSHRlS29pWk1lckJWZkU3N0hJanJ0Z2Jpd0xTNQ?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "호치민시 세무국은 구글, GS25, RMIT, 나이키 등을 포함한 358개 기업을 표창했습니다. - Vietnam.vn",
+      "summary": "호치민시 세무국은 구글, GS25, RMIT, 나이키 등을 포함한 358개 기업을 표창했습니다. Vietnam.vn",
+      "source": "Vietnam.vn",
+      "date": "Tue, 27 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQSHZISmdmcmZHbkVUQ1B3MGRWYkxrZzIxaDJzdXhJRzJwdE5SUEVERzFLemVDNWlKT3FIdEJqNnZaWDMtUGhaVVRGRHhxcHNYa3JFRGgwTC1TZUxValZoUHdEMW1qajl0cW1pR1BpUV9EMzhGTjlvNTVpU2MzbDgtRGtpNjNXelVzaFNRYmdhaGhQaFNTOGotbnJFX2UxZw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "[기업과 인물] 필 나이트 나이키 창업 - 브런치",
+      "summary": "[기업과 인물] 필 나이트 나이키 창업 브런치",
+      "source": "브런치",
+      "date": "Mon, 26 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9ZVjdUR2lxdFhDczdWNmczQmJsYjU3T1NrYndHaFNPNFFIc2xZRTJnbXJ6ZnVrTGphWkpUMUZLV2VWVWp0VHZrVWZIQ3VpZw?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "SPORTS",
+      "title": "[현장] “선수는 1mm 차이도 안다”…나이키 ACG, 북촌마루서 아웃도어 승부수 - 지피코리아",
+      "summary": "[현장] “선수는 1mm 차이도 안다”…나이키 ACG, 북촌마루서 아웃도어 승부수 지피코리아",
+      "source": "지피코리아",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5NZklacU1UOTBUSWFwRlhqZUp3WXdQUUFBSnNuYlFId0NtMm0taHphUHZMVmUyRnIxMF9LNEQyY1dnNUV3enpaMzV3d1o1ZjBRc01MLTJxaUd6WlBNeTZYYkZvWnhGRlVTakNOUm1B0gFuQVVfeXFMTk1mSVpxTVQ5MFRJYXBGWGplSndZd1BRQUFKc25iUUh3Q20ybS1oemFQdkxWZTJGcjEwX0s0RDJjV2c1RXd6elozNXd3WjVmMFFzTUwtMnFpR3paUE15NlhiRm9aeEZGVVNqQ05SbUE?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "스케쳐스가 아디다스와 나이키를 제치고 2026년 발롱도르를 '수상'했습니다. - Vietnam.vn",
+      "summary": "스케쳐스가 아디다스와 나이키를 제치고 2026년 발롱도르를 '수상'했습니다. Vietnam.vn",
+      "source": "Vietnam.vn",
+      "date": "Wed, 28 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPcFFNb2lBODdOWVlEcFNXUHZ5OHF5TVlOMkNhQk1UdnJqcFp1MGlhd2VjZEhyXzNjQkFLMnptX2IyVVRHS3pzYTBMV3BBcl9QcEZPZXFYUm55X3dCbklXLXdhQzh1bkxHckFJNUhZR2doVUNXdjNmRW9qOXdBclhEX01lU2JYWUww?oc=5",
+      "image": ""
+    },
+    {
+      "cat": "BRAND",
+      "title": "나이키 ACG, 북촌에 아웃도어 베이스캠프 오픈 - 어패럴뉴스",
+      "summary": "나이키 ACG, 북촌에 아웃도어 베이스캠프 오픈 어패럴뉴스",
+      "source": "어패럴뉴스",
+      "date": "Fri, 30 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBneEpGb1FqVXJFbS1KTVlyTXctdFFSWUN0NHZrbG0xRkwtaWVPUE44ZkpCS1I3dGFXZGU3RmRFX2lmekc0ZURaYVQtR2FLMjlXVjFyWHdkYnA5d1ZnV3hiX3ZDbUdfVFR2eS1MXzhza28wNDJzWG9sNQ?oc=5",
       "image": ""
     },
     {
       "cat": "COMPETITOR",
-      "title": "아디다스 슈퍼스타, 리베레이더스(Liberaiders)의 퍼지한 감성을 입다 - 하입비스트",
-      "summary": "아디다스 슈퍼스타, 리베레이더스(Liberaiders)의 퍼지한 감성을 입다 하입비스트",
-      "source": "하입비스트",
-      "date": "Thu, 22 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQbWFVU0t0Y1dRZzlhSFFLUTZMUW5QY1ZELS1IWkhQUVpzbzM2UTJaQ2pyZVc3Uy1VYlFmV2RwOUU4Y2Q4WTd6VndBdHJGamJySjItZVN1ZFVEVEcxNXlHUFpDRHF6UHNYb1pTSk9wemM0dGlXMl9ic2twUzN2VXZlOXVmRHJzRmFCSElnSFEtV2JBelVMRWhLOVdaUE1Yd2ZBRzVlSVoxMGR5eTRCcjJCWjd3UG10ZzZ6Qms4?oc=5",
+      "title": "배드 버니 x 아디다스, 배드보 1.0 '그레이 쓰리' 공개 - Hypebeast.KR",
+      "summary": "배드 버니 x 아디다스, 배드보 1.0 '그레이 쓰리' 공개 Hypebeast.KR",
+      "source": "Hypebeast.KR",
+      "date": "Fri, 30 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPQ3pSazhXT3J5dDFpSk12THpXbjQ0WlFPWmctWVRaN2xrYm1iN2d1YVVkMTZMazBQeVpmUlFPbDNiOHR1RUNJWng4WE1SYWV5d2U0bU5UZHNjR0V1MTk2ckNzN3lxRVFTMzc5cXNWQVlucXN3V25oMkt5S3hwMzR3Q3RZRkFMOS01Tmd4aWtTbkltQUVWbTVvTC1TenBsUQ?oc=5",
       "image": ""
     },
     {
       "cat": "COMPETITOR",
-      "title": "아디다스, '트럼프 관세' 3천억원 돌려받고 역대 최고 실적 - 연합뉴스",
-      "summary": "아디다스, '트럼프 관세' 3천억원 돌려받고 역대 최고 실적 연합뉴스",
-      "source": "연합뉴스",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE5HZE5Qa3lCYnVkbTBMNmZfaGZUb2lFNTFEdjNEYkhqQXRISVRTd2lvbW9GendFeTE4Zk1FR2dYcmFoOFVOaDg2VzlEOG12bDdZZk1uTkszRGxfelnSAWBBVV95cUxNOTVFVVdUekZyQTVWS2cxNXhidS05ODh3Mm8zUGJucW5LWlU4M0FOWElhTDRSY2dUS0JkOThOaE9TRWlwNVZYRUtoQVpEX2sxQXdDY1Vkbkx3OHNpZm0tM3g?oc=5",
+      "title": "나이키와 아디다스 최신 러닝화 10K 실착 후기 - 에스콰이어 코리아",
+      "summary": "나이키와 아디다스 최신 러닝화 10K 실착 후기 에스콰이어 코리아",
+      "source": "에스콰이어 코리아",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTE01M25qRWxPWXVzbVBSRjZMLTNqUnlNRUE4dGoxNk54Nng4XzNTalg0S3F1cUNPT0ZmejZzWmJCbi1VUzc5NEdHS3d2Nm92WU01U3FDU0VMZXpzUQ?oc=5",
       "image": ""
     },
     {
       "cat": "COMPETITOR",
-      "title": "아디다스골프, '아디다스 오픈 코드케이오스 챔피언십' 성료 - 프라임경제",
-      "summary": "아디다스골프, '아디다스 오픈 코드케이오스 챔피언십' 성료 프라임경제",
-      "source": "프라임경제",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5aOFpZMkI3dVJTbFFuMlBqT0I4YU15S0tjMngtWURjbGNnc0J1cXR2cXJNQ1pkTm5fZzdTQ3BuWWdKalBheWRtUEN0NXAxSFpNbURTUVY5dm40OTRfY3lhVHNuUl9RUnI3aDVrNw?oc=5",
+      "title": "구찌부터 아디다스까지…KT알파 쇼핑, 11월 쇼핑 혜택 확대 - 뉴시스",
+      "summary": "구찌부터 아디다스까지…KT알파 쇼핑, 11월 쇼핑 혜택 확대 뉴시스",
+      "source": "뉴시스",
+      "date": "Thu, 29 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9EMnpmYkV4dlZYSVZVQ2JNXzZ4Mm4wX0xOSlBxbVA5MXFuZ3hEdHJQckRJSTJvM1BCSEtRZXhBSFg4Mng5dTM2cHJSWnhsNjlLQmI0VkF1aXlnYlVxMHdPVA?oc=5",
       "image": ""
     },
     {
       "cat": "COMPETITOR",
-      "title": "[유럽 특징주] 아디다스, 3Q 실적 앞두고 연간 영업이익 전망 상향 - 뉴스핌",
-      "summary": "[유럽 특징주] 아디다스, 3Q 실적 앞두고 연간 영업이익 전망 상향 뉴스핌",
-      "source": "뉴스핌",
-      "date": "Wed, 21 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE12djdKS1pubjkyZXBGZ1dPaFN5aFJ5eGZ5MDhpaFc3ck4wZmotNWVsS0YxN01NR0JOaXc1SEVqYkVGQ1ZmSGROdkExMHpMRE5zOVBDN1BCX3Q5a3A2?oc=5",
+      "title": "아디다스 x 새티스파이, 두 번째 협업 컬렉션 공개 - 아이즈매거진 | eyesmag",
+      "summary": "아디다스 x 새티스파이, 두 번째 협업 컬렉션 공개 아이즈매거진 | eyesmag",
+      "source": "아이즈매거진 | eyesmag",
+      "date": "Fri, 30 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE1oR3EyOUE3bmJENGlJNGl0RTd5NnFXdTRyVEhoMXpjbjFNZDBQZ19nSzZoRW5lcU5qQ29OblZINUdoQ3hvMDFTdmxPa1F6MVgzb0c4Q0dtaGNIUTV0TTJQdnlGcmNPR2g0cElDZkhjVWN1RlBaejl6ag?oc=5",
       "image": ""
     },
     {
       "cat": "COMPETITOR",
-      "title": "X세대 심장을 뒤흔들 1970년대 감성의 귀환, 아디다스 삼바 - GQ Korea",
-      "summary": "X세대 심장을 뒤흔들 1970년대 감성의 귀환, 아디다스 삼바 GQ Korea",
-      "source": "GQ Korea",
-      "date": "Mon, 19 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMizwJBVV95cUxOS0ItZUx1UE9YcjNLbF9acEdXdkNYbVpHU0FRd0JmY2dQaDRPeF92eTRiODdORUhPLTItdFVaeWU3b0lMQ2E5VTNTVzhCdkM0VUhlVlcxZDlYblZ1QmNYYkNlejF4aHBYUGRXUnF3WGEwdGQzczBEbXE1aWRlMk1uTThJaWg1VVVMd01BWmlUNHBjZU5FX0dGNEtxQW9jcERXTmdpeHRIdkY5YnZMYVl3UWJ4OURvX0pUTlphbjNpMWh1WFBXQzlCbEdxS0FtOXVCYUJ5dU8zTnNBelpad0lMc0FOUU9LdVZ1WXdSU1VVMHdLRnNKZGU5eFhrM1BrYkNsTVZvLUNuRE5ESjhrVUJvUGxUWmxZUUNUX1ppV0stYmI0V0FzMF8yOXdQVGNBa1Flc3c0OUhGT0NTUElxSlYyUzZTczlYQl92bVJud2NkZw?oc=5",
+      "title": "유럽서 삐끗한 아디다스, 재고 털어내고 4분기 반등 노린다 - 글로벌이코노믹",
+      "summary": "유럽서 삐끗한 아디다스, 재고 털어내고 4분기 반등 노린다 글로벌이코노믹",
+      "source": "글로벌이코노믹",
+      "date": "Fri, 30 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQUEdwY0NUN1pXZXBvT01JTFVZRENqNklWaDUyMnpqcVdnUktIc0hLMFY2Q0NaWHdCMmtjd1FxWnlEV1U2WjE5bnhPNkxsNkVMVVo2UEZ3bE5ENFJUeUxuWXFfbFVqNWx5M3V3Zmk4Vi1mZktJN3UtRnFYMi1MWHdJQmN5UHhfb3lE?oc=5",
       "image": ""
     },
     {
       "cat": "COMPETITOR",
-      "title": "아디다스골프, 고객 초청 아마추어 챔피언십 개최 - 매일일보",
-      "summary": "아디다스골프, 고객 초청 아마추어 챔피언십 개최 매일일보",
-      "source": "매일일보",
-      "date": "Tue, 20 Oct 2026",
-      "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1qeDQyN0c5eWYxUHhMY1ZOZXFrdnQ1RjRDdERCclJyZ0t3cksxRTJDRDFJQ3pndzBQVmswRVllVS1Jb3dwR1d2NjZoaUVwdUlVS0JJRUxtT1BFcGRnR25PUGtGQ1o?oc=5",
+      "title": "아디다스 오리지널스와 웨일스 보너, 2026 FW 시즌을 위해 다시 뭉치다 - Hypebae",
+      "summary": "아디다스 오리지널스와 웨일스 보너, 2026 FW 시즌을 위해 다시 뭉치다 Hypebae",
+      "source": "Hypebae",
+      "date": "Tue, 27 Oct 2026",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPQ2ZNZGxaaGdZN1VibVBHZnRtRTZ3N1o0anVPVF9qYVVrN1J2b3FqanhLZE5kRnNTMDVTUXdJX3hub09TN19uNkR1a204NWFIUVpydHozMUVKM3hOay1peXF6a1RNNFpKbGJzMV9aYWNmdDh6Y3ZVckZaaE1QQnlzY2JiY3puTXdtS3B3RHRVTDNjRGlCU0RlbXVRMVotQUFxa0RNY1V2LVUzdVJmOGlWLTh4TXgtN1lHWkJubnU0NW5YWGRuMEY4?oc=5",
       "image": ""
     }
   ]
