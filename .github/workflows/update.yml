@@ -2,7 +2,7 @@ name: Update NIKE Weekly News & Send Email
 
 on:
   schedule:
-    - cron: '50 21 * * 0' # 월요일 06:50 KST (UTC 일요일 21:50)
+    - cron: '0 21 * * 0' # 월요일 06:00 KST (UTC 일요일 21:00)
   workflow_dispatch:
     inputs:
       send_email:
@@ -27,6 +27,7 @@ concurrency:
 
 jobs:
   update-and-mail:
+    if: ${{ github.ref == 'refs/heads/main' }}
     runs-on: ubuntu-latest
     timeout-minutes: 40
     permissions:
@@ -71,164 +72,24 @@ jobs:
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
           SUBSCRIBERS_SHEET_URL: ${{ secrets.SUBSCRIBERS_SHEET_URL }}
           TEST_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.test_only == true }}
+          NEWSLETTER_LEDGER_KEY: ${{ secrets.NEWSLETTER_LEDGER_KEY }}
           TEST_RECIPIENT: ${{ inputs.test_recipient }}
         run: |
           python - <<'PYMAIL'
           import csv
           import datetime as dt
           import html
+          import hashlib
+          import hmac
           import io
           import json
           import os
           from pathlib import Path
           import re
           import smtplib
+          import subprocess
           import urllib.request
           from email.mime.multipart import MIMEMultipart
           from email.mime.text import MIMEText
           from email.utils import formatdate, make_msgid
           from zoneinfo import ZoneInfo
-
-          FONT = "font-family:Pretendard,'Malgun Gothic','맑은 고딕',Arial,sans-serif;"
-          WEB = 'https://a01026710821-gif.github.io/Nike-Daily/'
-          T = 'role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"'
-
-
-          def esc(value):
-              return html.escape(re.sub(r'\bnike\b', 'NIKE', str(value or ''), flags=re.I), quote=True)
-
-
-          def safe_url(value):
-              value = str(value or '').strip()
-              return html.escape(value, quote=True) if value.startswith(('https://', 'http://')) else '#'
-
-
-          def build_email(data, brief_html, now):
-              articles = data.get('items', [])
-              summaries = data.get('summaries', {})
-              date_str = now.strftime('%Y년 %m월 %d일')
-              end = now.date() - dt.timedelta(days=now.weekday() + 1)
-              start = end - dt.timedelta(days=6)
-              stock = data.get('stock') or {}
-              price = stock.get('price')
-              if price and str(price).strip():
-                  change = stock.get('change', '')
-                  stock_color = '#2e7d32' if stock.get('is_up', True) else '#d32f2f'
-                  stock_line = (f'NKE {esc(price)} &nbsp; '
-                                f'<span style="color:{stock_color};">{esc(change)}</span>')
-              else:
-                  stock_line = 'NKE · 주가 정보 없음'
-              stock_html = (f'<tr><td style="{FONT}font-size:13px;line-height:22px;'
-                            f'color:#555555;padding:14px 0 0;">{stock_line}</td></tr>')
-              sections = []
-              for key, title in [('PRODUCT', '제품 · 컬렉션'), ('BRAND', '브랜드 · 마케팅'),
-                                 ('SPORTS', '스포츠 · 선수'), ('MARKET', '증시 · 기업경영'),
-                                 ('COMPETITOR', '경쟁사 동향')]:
-                  items = [a for a in articles if a.get('cat') == key][:3]
-                  if not items:
-                      continue
-                  rows = [f'<tr><td style="{FONT}padding:24px 0 8px;font-size:11px;line-height:18px;letter-spacing:1px;color:#b94722;font-weight:bold;">{key} / {title}</td></tr>']
-                  cat_summaries = summaries.get(key, [])
-                  if isinstance(cat_summaries, list) and cat_summaries:
-                      text = '<br>'.join('• ' + esc(s) for s in cat_summaries)
-                      rows.append(f'<tr><td style="{FONT}padding:0 0 14px;font-size:14px;line-height:25px;color:#666666;">{text}</td></tr>')
-                  for item in items:
-                      summary = str(item.get('summary', ''))
-                      summary = summary[:190] + ('…' if len(summary) > 190 else '')
-                      url = safe_url(item.get('url'))
-                      rows.append(f'''<tr><td style="padding:12px 0 18px;border-bottom:1px solid #e5e5df;"><table {T}>
-          <tr><td style="{FONT}font-size:19px;line-height:29px;font-weight:bold;padding:0 0 8px;"><a href="{url}" style="color:#202020;text-decoration:none;">{esc(item.get('title'))}</a></td></tr>
-          <tr><td style="{FONT}font-size:15px;line-height:27px;mso-line-height-rule:exactly;color:#555555;padding:0 0 10px;">{esc(summary)}</td></tr>
-          <tr><td style="{FONT}font-size:12px;line-height:20px;color:#777777;">{esc(item.get('source'))} · {esc(item.get('date'))} &nbsp; <a href="{url}" style="color:#777777;text-decoration:underline;">원문 읽기 ↗</a></td></tr>
-          </table></td></tr>''')
-                  sections.append(f'<table {T}>' + ''.join(rows) + '</table>')
-              notice = ('본 보고서는 전주 주요 NIKE 관련 기사 제목과 요약을 바탕으로 AI가 작성한 경영전략 분석 자료입니다.'
-                        if brief_html else '이번 호는 기사 중심으로 제공됩니다. AI 전략 분석은 생성되지 않았습니다.')
-              label = '04 &nbsp; WEEKLY NEWS DIGEST' if brief_html else 'WEEKLY NEWS DIGEST'
-              document = f'''<!DOCTYPE html>
-          <html lang="ko" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
-          <head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>NIKE WEEKLY</title>
-          <!--[if !mso]><!--><style>@font-face{{font-family:Pretendard;font-style:normal;font-weight:400;src:url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/static/woff2/Pretendard-Regular.woff2') format('woff2')}}@font-face{{font-family:Pretendard;font-style:normal;font-weight:700;src:url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/web/static/woff2/Pretendard-Bold.woff2') format('woff2')}}</style><!--<![endif]-->
-          <style>table{{border-collapse:collapse;mso-table-lspace:0pt;mso-table-rspace:0pt}}td{{word-break:normal;overflow-wrap:break-word}}@media only screen and (max-width:600px){{.pad{{padding-left:20px!important;padding-right:20px!important}}.masthead{{font-size:38px!important;line-height:46px!important}}}}</style>
-          <!--[if mso]><style>body,table,td,p,a,span{{font-family:'Malgun Gothic','맑은 고딕',Arial,sans-serif!important}}</style><xml><o:OfficeDocumentSettings><o:AllowPNG/><o:PixelsPerInch>96</o:PixelsPerInch></o:OfficeDocumentSettings></xml><![endif]-->
-          </head><body bgcolor="#ecece9" style="margin:0;padding:0;background-color:#ecece9;{FONT}">
-          <div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">NIKE 주간 전략 분석과 주요 뉴스 · {start}–{end}</div>
-          <table {T} bgcolor="#ecece9"><tr><td align="center" style="padding:24px 8px;">
-          <!--[if mso]><table role="presentation" width="700" border="0" cellspacing="0" cellpadding="0" align="center"><tr><td><![endif]-->
-          <table {T} bgcolor="#ffffff" style="width:100%;max-width:700px;background-color:#ffffff;table-layout:fixed;">
-          <tr><td bgcolor="#202020" class="pad" style="{FONT}background-color:#202020;color:#ffffff;font-size:11px;line-height:18px;letter-spacing:1.5px;padding:12px 32px;">THE WEEK IN STRATEGY &amp; CULTURE</td></tr>
-          <tr><td class="pad" style="padding:28px 32px 22px;border-bottom:4px solid #202020;"><table {T}>
-          <tr><td style="{FONT}font-size:11px;line-height:18px;letter-spacing:2px;color:#b94722;font-weight:bold;padding-bottom:10px;">WEEKLY INTELLIGENCE REPORT</td></tr>
-          <tr><td class="masthead" style="{FONT}font-size:54px;line-height:64px;font-weight:bold;letter-spacing:-2px;color:#202020;padding-bottom:16px;">NIKE WEEKLY<span style="color:#b94722;">.</span></td></tr>
-          <tr><td><table {T}><tr><td width="72%" valign="top" style="{FONT}font-size:12px;line-height:21px;color:#666666;">{date_str}<br>분석 기간 {start.strftime('%m.%d')}–{end.strftime('%m.%d')}</td><td width="28%" align="right" valign="top" style="{FONT}font-size:12px;line-height:21px;"><a href="{WEB}" style="color:#555555;text-decoration:underline;">웹에서 읽기 ↗</a></td></tr></table></td></tr>
-          {stock_html}
-          </table></td></tr>
-          <tr><td class="pad" style="padding:28px 32px 0;{FONT}font-size:12px;line-height:21px;color:#777777;">{notice}</td></tr>
-          <tr><td class="pad" style="padding:24px 32px 0;">{brief_html}</td></tr>
-          <tr><td class="pad" style="padding:30px 32px 0;"><table {T}><tr><td style="{FONT}border-top:3px solid #202020;padding:20px 0 0;font-size:13px;line-height:22px;letter-spacing:1px;font-weight:bold;color:#202020;">{label}</td></tr></table></td></tr>
-          <tr><td class="pad" style="padding:0 32px 30px;">{''.join(sections)}</td></tr>
-          <tr><td class="pad" bgcolor="#f4f4f1" style="background-color:#f4f4f1;padding:24px 32px;{FONT}font-size:12px;line-height:22px;color:#777777;"><b style="color:#202020;letter-spacing:1px;">NIKE WEEKLY.</b><br>전주의 뉴스를 읽고, 다음 주의 흐름을 생각합니다.<br>본 메일은 주간 뉴스레터 구독자에게 발송됩니다.<br><a href="{WEB}" style="color:#555555;text-decoration:underline;">웹사이트에서 보기</a></td></tr>
-          </table><!--[if mso]></td></tr></table><![endif]-->
-          </td></tr></table></body></html>'''
-              plain = 'NIKE WEEKLY\n' + date_str + '\n\n' + '\n\n'.join(
-                  str(a.get('title', '')) + '\n' + str(a.get('url', '')) for a in articles[:15]) + '\n\n' + WEB
-              return document, plain, date_str
-
-
-          def main():
-              gmail_user = os.environ.get('GMAIL_USER', '').strip()
-              gmail_pass = os.environ.get('GMAIL_APP_PASSWORD', '').strip()
-              sheet_url = os.environ.get('SUBSCRIBERS_SHEET_URL', '').strip()
-              test_recipient = os.environ.get('TEST_RECIPIENT', '').strip()
-              test_only = os.environ.get('TEST_ONLY', 'false').lower() == 'true'
-              if not gmail_user or not gmail_pass:
-                  raise RuntimeError('GMAIL_USER or GMAIL_APP_PASSWORD missing')
-              if test_only:
-                  if not test_recipient or '@' not in test_recipient or '\n' in test_recipient or '\r' in test_recipient:
-                      raise RuntimeError('A valid test recipient is required')
-                  subscribers = [test_recipient]
-                  print('TEST MODE: subscriber sheet is not loaded; one recipient only.')
-              else:
-                  if not sheet_url:
-                      raise RuntimeError('SUBSCRIBERS_SHEET_URL missing')
-                  with urllib.request.urlopen(sheet_url, timeout=60) as response:
-                      rows = csv.reader(io.StringIO(response.read().decode('utf-8-sig')))
-                      next(rows, None)
-                      subscribers = sorted({col.strip() for row in rows for col in row
-                                            if '@' in col and '\n' not in col and '\r' not in col})
-                  if not subscribers:
-                      raise RuntimeError('Subscriber list is empty')
-              data = json.loads(Path('data/news.json').read_text(encoding='utf-8'))
-              if not data.get('items'):
-                  raise RuntimeError('No news articles to send')
-              brief_path = Path('data/executive_brief_email.html')
-              brief_html = brief_path.read_text(encoding='utf-8') if brief_path.exists() else ''
-              document, plain, date_str = build_email(data, brief_html, dt.datetime.now(ZoneInfo('Asia/Seoul')))
-              failures = []
-              with smtplib.SMTP_SSL('smtp.gmail.com', 465, timeout=60) as server:
-                  server.login(gmail_user, gmail_pass)
-                  for recipient in subscribers:
-                      msg = MIMEMultipart('alternative')
-                      msg['Subject'] = ('[TEST] ' if test_only else '') + f'[NIKE WEEKLY] 주간 나이키 뉴스 리포트 ({date_str})'
-                      msg['From'] = gmail_user
-                      msg['To'] = recipient
-                      msg['Date'] = formatdate(localtime=False)
-                      msg['Message-ID'] = make_msgid()
-                      msg.attach(MIMEText(plain, 'plain', 'utf-8'))
-                      msg.attach(MIMEText(document, 'html', 'utf-8'))
-                      try:
-                          refused = server.sendmail(gmail_user, [recipient], msg.as_string())
-                          if refused:
-                              raise RuntimeError('SMTP recipient refused')
-                          print('발송 완료:', recipient)
-                      except Exception as exc:
-                          failures.append(recipient)
-                          print('개별 발송 실패:', recipient, type(exc).__name__)
-              print(f'발송 결과: 성공 {len(subscribers)-len(failures)}, 실패 {len(failures)}, AI 포함 {bool(brief_html)}')
-              if failures:
-                  raise RuntimeError(f'{len(failures)} recipient(s) failed. Check logs before re-running to avoid duplicate messages.')
-
-
-          if __name__ == '__main__':
-              main()
-          PYMAIL
