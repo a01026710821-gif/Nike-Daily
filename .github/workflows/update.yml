@@ -1,3 +1,131 @@
+name: Update NIKE Weekly News & Send Email
+
+on:
+  schedule:
+    - cron: '0 21 * * 0' # 월요일 06:00 KST (UTC 일요일 21:00)
+  workflow_dispatch:
+    inputs:
+      send_email:
+        description: '이메일을 발송할까요?'
+        required: true
+        type: boolean
+        default: false
+      test_only:
+        description: '테스트 주소 한 곳에만 발송 (정기 실행에는 영향 없음)'
+        required: true
+        type: boolean
+        default: true
+      test_recipient:
+        description: '테스트 수신 주소'
+        required: false
+        type: string
+        default: 'baesung.kim@shcglobal.co.kr'
+
+concurrency:
+  group: nike-weekly-update-mail
+  cancel-in-progress: false
+
+jobs:
+  update-and-mail:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser beautifulsoup4 lxml requests
+
+      - name: Fetch Latest News
+        run: python scripts/fetch_news.py
+
+      - name: Generate Executive Brief (AI)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/generate_executive_brief.py
+
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/news.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto update news data"
+            git pull --rebase origin main
+            git push
+          fi
+
+      - name: Send Email Newsletter
+        if: ${{ github.event_name == 'schedule' || inputs.send_email == true }}
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          SUBSCRIBERS_SHEET_URL: ${{ secrets.SUBSCRIBERS_SHEET_URL }}
+          TEST_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.test_only == true }}
+          NEWSLETTER_LEDGER_KEY: ${{ secrets.NEWSLETTER_LEDGER_KEY }}
+          TEST_RECIPIENT: ${{ inputs.test_recipient }}
+        run: |
+          python - <<'PYMAIL'
+          import csv
+          import datetime as dt
+          import html
+          import hashlib
+          import hmac
+          import io
+          import json
+          import os
+          from pathlib import Path
+          import re
+          import smtplib
+          import subprocess
+          import urllib.request
+          from email.mime.multipart import MIMEMultipart
+          from email.mime.text import MIMEText
+          from email.utils import formatdate, make_msgid
+          from zoneinfo import ZoneInfo
+
+          FONT = "font-family:Pretendard,'Malgun Gothic','맑은 고딕',Arial,sans-serif;"
+          WEB = 'https://a01026710821-gif.github.io/Nike-Daily/'
+          T = 'role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"'
+
+
+          def esc(value):
+              return html.escape(re.sub(r'\bnike\b', 'NIKE', str(value or ''), flags=re.I), quote=True)
+
+
+          def safe_url(value):
+              value = str(value or '').strip()
+              return html.escape(value, quote=True) if value.startswith(('https://', 'http://')) else '#'
+
+
+          def build_email(data, brief_html, now):
+              articles = data.get('items', [])
+              summaries = data.get('summaries', {})
+              date_str = now.strftime('%Y년 %m월 %d일')
+              end = now.date() - dt.timedelta(days=now.weekday() + 1)
+              start = end - dt.timedelta(days=6)
+              stock = data.get('stock') or {}
+              price = stock.get('price')
+              if price and str(price).strip():
+                  change = stock.get('change', '')
+                  stock_color = '#2e7d32' if stock.get('is_up', True) else '#d32f2f'
+                  stock_line = (f'NKE {esc(price)} &nbsp; '
+                                f'<span style="color:{stock_color};">{esc(change)}</span>')
+              else:
+                  stock_line = 'NKE · 주가 정보 없음'
+              stock_html = (f'<tr><td style="{FONT}font-size:13px;line-height:22px;'
+                            f'color:#555555;padding:14px 0 0;">{stock_line}</td></tr>')
+              sections = []
               for key, title in [('PRODUCT', '제품 · 컬렉션'), ('BRAND', '브랜드 · 마케팅'),
                                  ('SPORTS', '스포츠 · 선수'), ('MARKET', '증시 · 기업경영'),
                                  ('COMPETITOR', '경쟁사 동향')]:
