@@ -2,7 +2,7 @@ name: Update NIKE Weekly News & Send Email
 
 on:
   schedule:
-    - cron: '0 21 * * 0' # 월요일 06:00 KST (UTC 일요일 21:00)
+        - cron: '53 20 * * 0' # 월요일 05:53 KST
   workflow_dispatch:
     inputs:
       send_email:
